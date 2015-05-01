@@ -17,3 +17,31 @@ function uclalib_news_form_views_exposed_form_alter(&$form, &$form_state) {
     $form['#info']['filter-search_api_views_fulltext']['label'] = '';
   }
 }
+
+/**
+ * Implementation of hook_views_pre_build().
+ */
+function uclalib_news_views_pre_build(&$view) {
+  if (array_key_exists('argument', $view->display_handler->handlers)) {
+    if (array_key_exists('created_year', $view->display_handler->handlers['argument'])) {
+      // set the created year's exception handler to the current date's year
+      $view->display_handler->handlers['argument']['created_year']->options['exception']['value'] = date("Y");
+    }
+    if (array_key_exists('created_month', $view->display_handler->handlers['argument'])) {
+      // set the created month's exception handler to the current date's month
+      $view->display_handler->handlers['argument']['created_month']->options['exception']['value'] = date("m");
+    }
+  }
+}
+
+/**
+ * Implementation of hook_preprocess_views_view_summary().
+ */
+function uclalib_news_preprocess_views_view_summary(&$variables) {
+  if ($variables['view']->name == 'blog_archives') {
+    foreach ($variables['view']->result as $key => $row) {
+      // renders the link in YYYY/MM format
+      $variables['view']->result[$key]->url = arg(1).'/'.substr($row->created_year_month,0,4).'/'.substr($row->created_year_month,4,2);
+    }
+  }
+}
