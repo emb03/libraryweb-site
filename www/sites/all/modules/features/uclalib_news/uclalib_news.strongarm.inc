@@ -77,10 +77,10 @@ function uclalib_news_strongarm() {
           'weight' => '2',
         ),
         'redirect' => array(
-          'weight' => '14',
+          'weight' => '13',
         ),
         'xmlsitemap' => array(
-          'weight' => '13',
+          'weight' => '12',
         ),
       ),
       'display' => array(),
