@@ -11,6 +11,163 @@ function uclalib_news_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'blog_archives';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'blog_archives';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Archives';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Blog Name (field_news_blog_name) */
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['id'] = 'field_news_blog_name_tid';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['table'] = 'field_data_field_news_blog_name';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['field'] = 'field_news_blog_name_tid';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['validate_options']['vocabularies'] = array(
+    'blog_name' => 'blog_name',
+  );
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['validate']['fail'] = 'empty';
+  /* Contextual filter: Content: Created year */
+  $handler->display->display_options['arguments']['created_year']['id'] = 'created_year';
+  $handler->display->display_options['arguments']['created_year']['table'] = 'node';
+  $handler->display->display_options['arguments']['created_year']['field'] = 'created_year';
+  $handler->display->display_options['arguments']['created_year']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['created_year']['exception']['value'] = '2015';
+  $handler->display->display_options['arguments']['created_year']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['created_year']['summary']['sort_order'] = 'desc';
+  $handler->display->display_options['arguments']['created_year']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['created_year']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['created_year']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['created_year']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['created_year']['validate']['type'] = 'numeric';
+  $handler->display->display_options['arguments']['created_year']['validate']['fail'] = 'empty';
+  /* Contextual filter: Content: Created month */
+  $handler->display->display_options['arguments']['created_month']['id'] = 'created_month';
+  $handler->display->display_options['arguments']['created_month']['table'] = 'node';
+  $handler->display->display_options['arguments']['created_month']['field'] = 'created_month';
+  $handler->display->display_options['arguments']['created_month']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['created_month']['exception']['value'] = '04';
+  $handler->display->display_options['arguments']['created_month']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['created_month']['summary']['sort_order'] = 'desc';
+  $handler->display->display_options['arguments']['created_month']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['created_month']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['created_month']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['created_month']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['created_month']['validate']['type'] = 'numeric';
+  $handler->display->display_options['arguments']['created_month']['validate']['fail'] = 'empty';
+  /* Contextual filter: Content: Created year + month */
+  $handler->display->display_options['arguments']['created_year_month']['id'] = 'created_year_month';
+  $handler->display->display_options['arguments']['created_year_month']['table'] = 'node';
+  $handler->display->display_options['arguments']['created_year_month']['field'] = 'created_year_month';
+  $handler->display->display_options['arguments']['created_year_month']['default_action'] = 'summary';
+  $handler->display->display_options['arguments']['created_year_month']['exception']['value'] = '';
+  $handler->display->display_options['arguments']['created_year_month']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['created_year_month']['default_argument_options']['argument'] = '0';
+  $handler->display->display_options['arguments']['created_year_month']['summary']['sort_order'] = 'desc';
+  $handler->display->display_options['arguments']['created_year_month']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['created_year_month']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['created_year_month']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['created_year_month']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['created_year_month']['validate']['type'] = 'php';
+  $handler->display->display_options['arguments']['created_year_month']['validate_options']['code'] = 'return FALSE;';
+  $handler->display->display_options['arguments']['created_year_month']['validate']['fail'] = 'summary';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  /* Filter criterion: Content: Blog Name (field_news_blog_name) */
+  $handler->display->display_options['filters']['field_news_blog_name_tid']['id'] = 'field_news_blog_name_tid';
+  $handler->display->display_options['filters']['field_news_blog_name_tid']['table'] = 'field_data_field_news_blog_name';
+  $handler->display->display_options['filters']['field_news_blog_name_tid']['field'] = 'field_news_blog_name_tid';
+  $handler->display->display_options['filters']['field_news_blog_name_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_news_blog_name_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_news_blog_name_tid']['vocabulary'] = 'blog_name';
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['argument_input'] = array(
+    'field_news_blog_name_tid' => array(
+      'type' => 'panel',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Blog Name (field_news_blog_name)',
+    ),
+    'created_year' => array(
+      'type' => 'none',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Created year',
+    ),
+    'created_month' => array(
+      'type' => 'none',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Created month',
+    ),
+    'created_year_month' => array(
+      'type' => 'none',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Created year + month',
+    ),
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['path'] = 'blog_view/%';
+  $export['blog_archives'] = $view;
+
+  $view = new view();
   $view->name = 'news_category_links';
   $view->description = '';
   $view->tag = 'default';
