@@ -164,8 +164,96 @@ function uclalib_news_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->display->display_options['path'] = 'blog_view/%';
+  $handler->display->display_options['path'] = 'blog_archives/%';
   $export['blog_archives'] = $view;
+
+  $view = new view();
+  $view->name = 'blog_terms';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'blog_terms';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Categories';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: News Categories */
+  $handler->display->display_options['fields']['field_news_categories']['id'] = 'field_news_categories';
+  $handler->display->display_options['fields']['field_news_categories']['table'] = 'field_data_field_news_categories';
+  $handler->display->display_options['fields']['field_news_categories']['field'] = 'field_news_categories';
+  $handler->display->display_options['fields']['field_news_categories']['label'] = '';
+  $handler->display->display_options['fields']['field_news_categories']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_news_categories']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_news_categories']['delta_offset'] = '0';
+  /* Sort criterion: Content: News Categories (field_news_categories) */
+  $handler->display->display_options['sorts']['field_news_categories_tid']['id'] = 'field_news_categories_tid';
+  $handler->display->display_options['sorts']['field_news_categories_tid']['table'] = 'field_data_field_news_categories';
+  $handler->display->display_options['sorts']['field_news_categories_tid']['field'] = 'field_news_categories_tid';
+  /* Contextual filter: Content: Blog Name (field_news_blog_name) */
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['id'] = 'field_news_blog_name_tid';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['table'] = 'field_data_field_news_blog_name';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['field'] = 'field_news_blog_name_tid';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['validate_options']['vocabularies'] = array(
+    'blog_name' => 'blog_name',
+  );
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['validate']['fail'] = 'summary';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+  /* Filter criterion: Content: News Categories (field_news_categories) */
+  $handler->display->display_options['filters']['field_news_categories_tid']['id'] = 'field_news_categories_tid';
+  $handler->display->display_options['filters']['field_news_categories_tid']['table'] = 'field_data_field_news_categories';
+  $handler->display->display_options['filters']['field_news_categories_tid']['field'] = 'field_news_categories_tid';
+  $handler->display->display_options['filters']['field_news_categories_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_news_categories_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_news_categories_tid']['vocabulary'] = 'news_categories';
+
+  /* Display: Categories - Page */
+  $handler = $view->new_display('page', 'Categories - Page', 'blog_terms_cats_page');
+  $handler->display->display_options['path'] = 'blog_terms_cats';
+
+  /* Display: Categories - Content pane */
+  $handler = $view->new_display('panel_pane', 'Categories - Content pane', 'blog_terms_categories_pane');
+  $handler->display->display_options['argument_input'] = array(
+    'field_news_blog_name_tid' => array(
+      'type' => 'panel',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Blog Name (field_news_blog_name)',
+    ),
+  );
+  $export['blog_terms'] = $view;
 
   $view = new view();
   $view->name = 'news_category_links';

@@ -396,3 +396,202 @@ function uclalib_news_default_page_manager_handlers() {
 
   return $export;
 }
+
+/**
+ * Implements hook_default_page_manager_pages().
+ */
+function uclalib_news_default_page_manager_pages() {
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'blog';
+  $page->task = 'page';
+  $page->admin_title = 'blog';
+  $page->admin_description = 'This is a (panel) page that holds a list of blog teasers for a blog with a sidebar that contains meta data, categories and archive links.';
+  $page->path = 'blog/%blog_name/!year/!month';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array(
+    'blog_name' => array(
+      'id' => 1,
+      'identifier' => 'Taxonomy term: ID',
+      'name' => 'term',
+      'settings' => array(
+        'input_form' => 'tid',
+        'vids' => array(
+          17 => '17',
+          14 => 0,
+          15 => 0,
+          11 => 0,
+          5 => 0,
+          6 => 0,
+          1 => 0,
+          2 => 0,
+          3 => 0,
+          12 => 0,
+          13 => 0,
+          7 => 0,
+          18 => 0,
+          8 => 0,
+          9 => 0,
+          10 => 0,
+          16 => 0,
+        ),
+        'breadcrumb' => 1,
+        'transform' => 0,
+      ),
+    ),
+    'year' => array(
+      'settings' => array(),
+      'identifier' => 'No context',
+    ),
+    'month' => array(
+      'settings' => array(),
+      'identifier' => 'No context',
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_blog__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'blog';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Blog Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'panel',
+    'access' => array(
+      'plugins' => array(
+        1 => array(
+          'name' => 'context_exists',
+          'settings' => array(
+            'exists' => '1',
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'or',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'sidebar-left-right';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'top' => NULL,
+      'sidebar_left' => NULL,
+      'sidebar_right' => NULL,
+      'main' => NULL,
+      'below_main_left' => NULL,
+      'below_main_right' => NULL,
+      'secondary' => NULL,
+      'below_secondary_left' => NULL,
+      'below_secondary_right' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '88ace288-0cdf-4ec3-b3e3-d38c05c219d4';
+  $display->window_title = '';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-0ff41de9-a23a-430f-8532-67b230ec60b2';
+    $pane->panel = 'sidebar_right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'blog_terms-blog_terms_categories_pane';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '0ff41de9-a23a-430f-8532-67b230ec60b2';
+    $display->content['new-0ff41de9-a23a-430f-8532-67b230ec60b2'] = $pane;
+    $display->panels['sidebar_right'][0] = 'new-0ff41de9-a23a-430f-8532-67b230ec60b2';
+    $pane = new stdClass();
+    $pane->pid = 'new-1c7ac53b-7b5d-47cc-a49a-61910a4c9dba';
+    $pane->panel = 'sidebar_right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'blog_archives-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '1c7ac53b-7b5d-47cc-a49a-61910a4c9dba';
+    $display->content['new-1c7ac53b-7b5d-47cc-a49a-61910a4c9dba'] = $pane;
+    $display->panels['sidebar_right'][1] = 'new-1c7ac53b-7b5d-47cc-a49a-61910a4c9dba';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-1c7ac53b-7b5d-47cc-a49a-61910a4c9dba';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_blog__panelizer_node_619bbe79-7aa2-4a04-9159-e362ff6e22d7';
+  $handler->task = 'page';
+  $handler->subtask = 'blog';
+  $handler->handler = 'panelizer_node';
+  $handler->weight = 1;
+  $handler->conf = array(
+    'title' => 'Panelizer',
+    'contexts' => array(),
+    'relationships' => array(),
+    'context' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'context_exists',
+          'settings' => array(
+            'exists' => '1',
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'blog
+blog/*',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'or',
+    ),
+  );
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['blog'] = $page;
+
+  return $pages;
+
+}
