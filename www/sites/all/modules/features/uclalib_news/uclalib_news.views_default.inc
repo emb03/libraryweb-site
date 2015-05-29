@@ -195,6 +195,7 @@ function uclalib_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_categories']['label'] = '';
   $handler->display->display_options['fields']['field_news_categories']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_news_categories']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_news_categories']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_news_categories']['delta_offset'] = '0';
   /* Sort criterion: Content: News Categories (field_news_categories) */
   $handler->display->display_options['sorts']['field_news_categories_tid']['id'] = 'field_news_categories_tid';
@@ -214,7 +215,7 @@ function uclalib_news_views_default_views() {
   $handler->display->display_options['arguments']['field_news_blog_name_tid']['validate_options']['vocabularies'] = array(
     'blog_name' => 'blog_name',
   );
-  $handler->display->display_options['arguments']['field_news_blog_name_tid']['validate']['fail'] = 'summary';
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['validate']['fail'] = 'ignore';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -242,7 +243,46 @@ function uclalib_news_views_default_views() {
   $handler->display->display_options['path'] = 'blog_terms_cats';
 
   /* Display: Categories - Content pane */
-  $handler = $view->new_display('panel_pane', 'Categories - Content pane', 'blog_terms_categories_pane');
+  $handler = $view->new_display('panel_pane', 'Categories - Content pane', 'blog_terms_cats_pane');
+  $handler->display->display_options['argument_input'] = array(
+    'field_news_blog_name_tid' => array(
+      'type' => 'panel',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Blog Name (field_news_blog_name)',
+    ),
+  );
+
+  /* Display: Tags - Page */
+  $handler = $view->new_display('page', 'Tags - Page', 'blog_terms_tags_page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Tags';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: News Tags */
+  $handler->display->display_options['fields']['field_news_tags']['id'] = 'field_news_tags';
+  $handler->display->display_options['fields']['field_news_tags']['table'] = 'field_data_field_news_tags';
+  $handler->display->display_options['fields']['field_news_tags']['field'] = 'field_news_tags';
+  $handler->display->display_options['fields']['field_news_tags']['label'] = '';
+  $handler->display->display_options['fields']['field_news_tags']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_news_tags']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_news_tags']['delta_offset'] = '0';
+  $handler->display->display_options['path'] = 'blog_terms_tags';
+
+  /* Display: Tags - Content pane */
+  $handler = $view->new_display('panel_pane', 'Tags - Content pane', 'blog_terms_tags_pane');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Tags';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: News Tags */
+  $handler->display->display_options['fields']['field_news_tags']['id'] = 'field_news_tags';
+  $handler->display->display_options['fields']['field_news_tags']['table'] = 'field_data_field_news_tags';
+  $handler->display->display_options['fields']['field_news_tags']['field'] = 'field_news_tags';
+  $handler->display->display_options['fields']['field_news_tags']['label'] = '';
+  $handler->display->display_options['fields']['field_news_tags']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_news_tags']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_news_tags']['delta_offset'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'field_news_blog_name_tid' => array(
       'type' => 'panel',
