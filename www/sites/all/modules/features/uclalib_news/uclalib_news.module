@@ -35,6 +35,38 @@ function uclalib_news_views_pre_build(&$view) {
 }
 
 /**
+ * Implementation of hook_views_pre_render().
+ */
+function uclalib_news_views_pre_render(&$view) {
+  // De-dupe the blog Categoreiesand Tags before rendering
+  if ($view->name == 'blog_terms') {
+    $uniques = array();
+    if ($view->current_display == 'blog_terms_cats_pane') {
+      foreach ($view->result as $key => $value) {
+        // remove repeat results from array and add unique values to array
+        if (in_array($value->field_data_field_news_categories_field_news_categories_tid, $uniques)) {
+          unset($view->result[$key]);
+        } else {
+          $uniques[] = $value->field_data_field_news_categories_field_news_categories_tid;
+        }
+      }
+    }
+    if ($view->current_display == 'blog_terms_tags_pane') {
+      foreach ($view->result as $key => $value) {
+        // remove repeat results from array and add unique values to array
+        if (in_array($value->field_data_field_news_tags_field_news_tags_tid, $uniques)) {
+          unset($view->result[$key]);
+        } else {
+          $uniques[] = $value->field_data_field_news_tags_field_news_tags_tid;
+        }
+      }
+    }
+
+    unset($uniques);
+  }
+}
+
+/**
  * Implementation of hook_preprocess_views_view_summary().
  */
 function uclalib_news_preprocess_views_view_summary(&$variables) {
