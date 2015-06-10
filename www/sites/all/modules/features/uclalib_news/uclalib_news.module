@@ -38,7 +38,7 @@ function uclalib_news_views_pre_build(&$view) {
  * Implementation of hook_views_pre_render().
  */
 function uclalib_news_views_pre_render(&$view) {
-  // De-dupe the blog Categoreiesand Tags before rendering
+  // De-dupe the blog Categoreies and Tags before rendering
   if ($view->name == 'blog_terms') {
     $uniques = array();
     if ($view->current_display == 'blog_terms_cats_pane') {
@@ -61,7 +61,7 @@ function uclalib_news_views_pre_render(&$view) {
         }
       }
     }
-
+    // clear the $uniques array in case either of the above panes get used again during runtime
     unset($uniques);
   }
 }
