@@ -61,8 +61,6 @@ function uclalib_news_views_pre_render(&$view) {
         }
       }
     }
-    // clear the $uniques array in case either of the above panes get used again during runtime
-    unset($uniques);
   }
 }
 
