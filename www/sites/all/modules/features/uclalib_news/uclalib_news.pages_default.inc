@@ -66,8 +66,7 @@ function uclalib_news_default_page_manager_handlers() {
           'name' => 'php',
           'settings' => array(
             'description' => 'check if node has \'Blog Name\' term field value',
-            'php' => 'sdpm($contexts);
-if ($contexts[\'argument_entity_id:node_1\']->data->field_news_blog_name) {
+            'php' => 'if ($contexts[\'argument_entity_id:node_1\']->data->field_news_blog_name) {
   return TRUE;
 }',
           ),
@@ -101,7 +100,7 @@ if ($contexts[\'argument_entity_id:node_1\']->data->field_news_blog_name) {
     ),
   );
   $display->cache = array();
-  $display->title = 'UCLA Library News';
+  $display->title = '';
   $display->uuid = 'c51b826b-d14a-4999-be2f-00d34f3b8f68';
   $display->window_title = '%node:title | UCLA Library News';
   $display->content = array();
@@ -111,7 +110,7 @@ if ($contexts[\'argument_entity_id:node_1\']->data->field_news_blog_name) {
     $pane->panel = 'main';
     $pane->type = 'node_title';
     $pane->subtype = 'node_title';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'link' => 0,
@@ -195,7 +194,11 @@ if ($contexts[\'argument_entity_id:node_1\']->data->field_news_blog_name) {
     $pane->subtype = 'blog_terms-blog_terms_cats_pane';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'field_news_blog_name_tid' => '%node:field_news_blog_name',
+      ),
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -682,12 +685,20 @@ function uclalib_news_default_page_manager_pages() {
       ),
     ),
     'year' => array(
-      'settings' => array(),
-      'identifier' => 'No context',
+      'id' => 1,
+      'identifier' => 'Year (String)',
+      'name' => 'string',
+      'settings' => array(
+        'use_tail' => 0,
+      ),
     ),
     'month' => array(
-      'settings' => array(),
-      'identifier' => 'No context',
+      'id' => 2,
+      'identifier' => 'month (String)',
+      'name' => 'string',
+      'settings' => array(
+        'use_tail' => 0,
+      ),
     ),
   );
   $page->conf = array(
@@ -792,7 +803,11 @@ function uclalib_news_default_page_manager_pages() {
     $pane->subtype = 'blog_terms-blog_terms_cats_pane';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'field_news_blog_name_tid' => '%blog_name',
+      ),
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -830,7 +845,11 @@ function uclalib_news_default_page_manager_pages() {
     $pane->subtype = 'blog_terms-blog_terms_tags_pane';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'arguments' => array(
+        'field_news_blog_name_tid' => '%blog_name',
+      ),
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,

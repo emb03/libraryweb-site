@@ -218,6 +218,26 @@ function uclalib_news_views_default_views() {
     'blog_name' => 'blog_name',
   );
   $handler->display->display_options['arguments']['field_news_blog_name_tid']['validate']['fail'] = 'ignore';
+  /* Contextual filter: Content: Created year */
+  $handler->display->display_options['arguments']['created_year']['id'] = 'created_year';
+  $handler->display->display_options['arguments']['created_year']['table'] = 'node';
+  $handler->display->display_options['arguments']['created_year']['field'] = 'created_year';
+  $handler->display->display_options['arguments']['created_year']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['created_year']['title'] = '%1 – %3 %2';
+  $handler->display->display_options['arguments']['created_year']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['created_year']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['created_year']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['created_year']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Content: Created month */
+  $handler->display->display_options['arguments']['created_month']['id'] = 'created_month';
+  $handler->display->display_options['arguments']['created_month']['table'] = 'node';
+  $handler->display->display_options['arguments']['created_month']['field'] = 'created_month';
+  $handler->display->display_options['arguments']['created_month']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['created_month']['title'] = '%1 – %3 %2';
+  $handler->display->display_options['arguments']['created_month']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['created_month']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['created_month']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['created_month']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -256,6 +276,22 @@ function uclalib_news_views_default_views() {
       'panel' => '0',
       'fixed' => '',
       'label' => 'Content: Blog Name (field_news_blog_name)',
+    ),
+    'created_year' => array(
+      'type' => 'panel',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '1',
+      'fixed' => '',
+      'label' => 'Content: Created year',
+    ),
+    'created_month' => array(
+      'type' => 'panel',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '2',
+      'fixed' => '',
+      'label' => 'Content: Created month',
     ),
   );
   $export['blog_content'] = $view;
@@ -308,6 +344,7 @@ function uclalib_news_views_default_views() {
   $handler->display->display_options['arguments']['field_news_blog_name_tid']['validate_options']['vocabularies'] = array(
     'blog_name' => 'blog_name',
   );
+  $handler->display->display_options['arguments']['field_news_blog_name_tid']['validate_options']['type'] = 'convert';
   $handler->display->display_options['arguments']['field_news_blog_name_tid']['validate']['fail'] = 'ignore';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -339,7 +376,7 @@ function uclalib_news_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Categories - Content pane', 'blog_terms_cats_pane');
   $handler->display->display_options['argument_input'] = array(
     'field_news_blog_name_tid' => array(
-      'type' => 'panel',
+      'type' => 'user',
       'context' => 'entity:comment.author',
       'context_optional' => 0,
       'panel' => '0',
@@ -378,7 +415,7 @@ function uclalib_news_views_default_views() {
   $handler->display->display_options['fields']['field_news_tags']['delta_offset'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'field_news_blog_name_tid' => array(
-      'type' => 'panel',
+      'type' => 'user',
       'context' => 'entity:comment.author',
       'context_optional' => 0,
       'panel' => '0',
