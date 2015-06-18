@@ -65,7 +65,8 @@ function uclalib_news_views_default_views() {
   $handler->display->display_options['arguments']['created_year']['field'] = 'created_year';
   $handler->display->display_options['arguments']['created_year']['default_action'] = 'default';
   $handler->display->display_options['arguments']['created_year']['exception']['value'] = '2015';
-  $handler->display->display_options['arguments']['created_year']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['created_year']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['created_year']['default_argument_options']['argument'] = '2015';
   $handler->display->display_options['arguments']['created_year']['summary']['sort_order'] = 'desc';
   $handler->display->display_options['arguments']['created_year']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['created_year']['summary']['format'] = 'default_summary';
@@ -78,8 +79,9 @@ function uclalib_news_views_default_views() {
   $handler->display->display_options['arguments']['created_month']['table'] = 'node';
   $handler->display->display_options['arguments']['created_month']['field'] = 'created_month';
   $handler->display->display_options['arguments']['created_month']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['created_month']['exception']['value'] = '04';
-  $handler->display->display_options['arguments']['created_month']['default_argument_type'] = 'date';
+  $handler->display->display_options['arguments']['created_month']['exception']['value'] = '06';
+  $handler->display->display_options['arguments']['created_month']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['created_month']['default_argument_options']['argument'] = '06';
   $handler->display->display_options['arguments']['created_month']['summary']['sort_order'] = 'desc';
   $handler->display->display_options['arguments']['created_month']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['created_month']['summary']['format'] = 'default_summary';
@@ -189,6 +191,17 @@ function uclalib_news_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
+  /* No results behavior: Global: Messages */
+  $handler->display->display_options['empty']['messages']['id'] = 'messages';
+  $handler->display->display_options['empty']['messages']['table'] = 'views';
+  $handler->display->display_options['empty']['messages']['field'] = 'messages';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'No posts.';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -228,10 +241,14 @@ function uclalib_news_views_default_views() {
   $handler->display->display_options['arguments']['created_year']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['created_year']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['created_year']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['created_year']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['created_year']['validate']['type'] = 'numeric';
+  $handler->display->display_options['arguments']['created_year']['validate']['fail'] = 'empty';
   /* Contextual filter: Content: Created month */
   $handler->display->display_options['arguments']['created_month']['id'] = 'created_month';
   $handler->display->display_options['arguments']['created_month']['table'] = 'node';
   $handler->display->display_options['arguments']['created_month']['field'] = 'created_month';
+  $handler->display->display_options['arguments']['created_month']['exception']['value'] = '';
   $handler->display->display_options['arguments']['created_month']['title_enable'] = TRUE;
   $handler->display->display_options['arguments']['created_month']['title'] = '%1 – %3 %2';
   $handler->display->display_options['arguments']['created_month']['default_argument_type'] = 'fixed';
