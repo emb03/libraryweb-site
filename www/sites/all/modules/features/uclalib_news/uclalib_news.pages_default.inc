@@ -651,7 +651,7 @@ function uclalib_news_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'blog';
   $page->admin_description = 'This is a (panel) page that holds a list of blog teasers for a blog with a sidebar that contains meta data, categories and archive links.';
-  $page->path = 'blog/%blog_name/!year/!month';
+  $page->path = 'blog/!blog_name/!year/!month';
   $page->access = array();
   $page->menu = array();
   $page->arguments = array(
