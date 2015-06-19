@@ -55,7 +55,7 @@ function uclalib_news_preprocess_views_view_summary(&$variables) {
   if ($variables['view']->name == 'blog_archives') {
     foreach ($variables['view']->result as $key => $row) {
       // renders the link in YYYY/MM format
-      $variables['view']->result[$key]->url = arg(1).'/'.substr($row->created_year_month,0,4).'/'.substr($row->created_year_month,4,2);
+      $variables['view']->result[$key]->url = '/blog/'.arg(1).'/'.substr($row->created_year_month,0,4).'/'.substr($row->created_year_month,4,2);
     }
   }
 }
