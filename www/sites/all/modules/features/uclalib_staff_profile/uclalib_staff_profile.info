@@ -78,3 +78,4 @@ features[variable][] = node_preview_staff_profile
 features[variable][] = node_submitted_staff_profile
 features[views_view][] = staff_profiles
 project path = sites/all/modules/features
+stylesheets[all][] = css/staff_profile_extras.css
