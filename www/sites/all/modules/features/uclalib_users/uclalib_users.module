@@ -12,7 +12,7 @@ include_once 'uclalib_users.features.inc';
 function uclalib_users_username_alter(&$name, $account) {
   // Display the user's first and last name instead of drupal username (aka. UID).
   if (property_exists($account, 'field_first_name') && property_exists($account, 'field_last_name')  ) {
-    $name = $account->field_first_name['und'][0]['value'] . ' ' . $account->field_last_name['und'][0]['value'];
+    $name = $account->field_first_name['und'][0]['value'] . '' . $account->field_last_name['und'][0]['value'];
   }
 }
 
@@ -21,20 +21,4 @@ function uclalib_users_username_alter(&$name, $account) {
  */
 function uclalib_users_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
   $form['account']['name']['#title'] = $form['account']['name']['#title'] . " (UID)";
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function uclalib_users_preprocess_user_profile(&$variables) {
-  // DRUP-766: removes the "Member for:" data on the User page
-  unset($variables['user_profile']['summary']['member_for']);
-}
-
-/**
- * Implements hook_preprocess_HOOK().
- */
-function uclalib_users_preprocess_user_profile_category(&$variables) {
-  // DRUP-766: Removes the "History" heading above the "Member for:" on the user page
-  $variables['title'] = "";
 }
