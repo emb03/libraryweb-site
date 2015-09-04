@@ -217,5 +217,5 @@ span#expandAll.links.links, span#collapseAll.links.links.links {
 }
 
 .field.field--name-field-staff-departments.field--type-taxonomy-term-reference.field--label-hidden.clearfix {
-    /*-webkit-margin-start: -40px;*/
+    -webkit-padding-start: 0;
 }
