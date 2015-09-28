@@ -76,7 +76,7 @@
  * @see template_preprocess_node()
  * @see template_process()
  */
-//dpm($variables);
+dpm($variables);
 drupal_set_title(t('Staff Directory'));
 
 
