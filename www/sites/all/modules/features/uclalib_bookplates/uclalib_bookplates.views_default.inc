@@ -1,0 +1,115 @@
+<?php
+/**
+ * @file
+ * uclalib_bookplates.views_default.inc
+ */
+
+/**
+ * Implements hook_views_default_views().
+ */
+function uclalib_bookplates_views_default_views() {
+  $export = array();
+
+  $view = new view();
+  $view->name = 'bookplates';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'bookplates';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Collection Endowment Initiative';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'bookplates' => 'bookplates',
+  );
+
+  /* Display: Bookplates Landing Page */
+  $handler = $view->new_display('page', 'Bookplates Landing Page', 'page');
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'More Bookplates...';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['columns'] = '2';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_bookplate_author_title' => 'field_bookplate_author_title',
+    'field_bookplate_image' => 'field_bookplate_image',
+  );
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Bookplate Author Title */
+  $handler->display->display_options['fields']['field_bookplate_author_title']['id'] = 'field_bookplate_author_title';
+  $handler->display->display_options['fields']['field_bookplate_author_title']['table'] = 'field_data_field_bookplate_author_title';
+  $handler->display->display_options['fields']['field_bookplate_author_title']['field'] = 'field_bookplate_author_title';
+  $handler->display->display_options['fields']['field_bookplate_author_title']['label'] = '';
+  $handler->display->display_options['fields']['field_bookplate_author_title']['element_label_colon'] = FALSE;
+  /* Field: Content: Bookplate Image */
+  $handler->display->display_options['fields']['field_bookplate_image']['id'] = 'field_bookplate_image';
+  $handler->display->display_options['fields']['field_bookplate_image']['table'] = 'field_data_field_bookplate_image';
+  $handler->display->display_options['fields']['field_bookplate_image']['field'] = 'field_bookplate_image';
+  $handler->display->display_options['fields']['field_bookplate_image']['label'] = '';
+  $handler->display->display_options['fields']['field_bookplate_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_bookplate_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_bookplate_image']['type'] = 'image_link_formatter';
+  $handler->display->display_options['fields']['field_bookplate_image']['settings'] = array(
+    'image_style' => 'large',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Bookplate Author Title (field_bookplate_author_title) */
+  $handler->display->display_options['sorts']['field_bookplate_author_title_value']['id'] = 'field_bookplate_author_title_value';
+  $handler->display->display_options['sorts']['field_bookplate_author_title_value']['table'] = 'field_data_field_bookplate_author_title';
+  $handler->display->display_options['sorts']['field_bookplate_author_title_value']['field'] = 'field_bookplate_author_title_value';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  $handler->display->display_options['path'] = 'bookplates';
+  $export['bookplates'] = $view;
+
+  return $export;
+}
