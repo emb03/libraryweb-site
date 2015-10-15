@@ -97,7 +97,7 @@ drupal_set_title(t('Staff Directory'));
                         <div class="contact">
                           <div class="field__item even">
                             <br />
-<!--changes to text under image-->
+<!--changes to text under profile image-->
                             <strong>Phone</strong>
                             <?php echo render($content['field_staff_phone']);?>
                             <strong>Email</strong> <?php echo render($content['field_staff_email']);?>
