@@ -211,6 +211,7 @@ span#expandAll.links.links, span#collapseAll.links.links.links {
     padding: 0;
     margin: 0;
 }
+/*match NCSU styling*/
 .field__item.two ul, .field__item.even ul {
     padding:0;
     list-style-type: none;

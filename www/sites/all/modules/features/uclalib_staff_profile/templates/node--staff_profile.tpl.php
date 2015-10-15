@@ -97,7 +97,7 @@ drupal_set_title(t('Staff Directory'));
                         <div class="contact">
                           <div class="field__item even">
                             <br />
-
+<!--changes to text under image-->
                             <strong>Phone</strong>
                             <?php echo render($content['field_staff_phone']);?>
                             <strong>Email</strong> <?php echo render($content['field_staff_email']);?>
@@ -158,7 +158,7 @@ drupal_set_title(t('Staff Directory'));
             <?php foreach ((array)$field_staff_acad_dept_liaison as $item) { ?>
 
               <?php $content['field_staff_acad_dept_liaison']['#label_display'] = 'hidden';
-              print '<strong>Subject Speciality Areas</strong>'; // change to any HTML
+              print '<strong>Subject Specialty Areas</strong>'; // change to any HTML
               print render($content['field_staff_acad_dept_liaison']);
               break;
 
@@ -177,6 +177,5 @@ drupal_set_title(t('Staff Directory'));
 
 
           </div></div></div></div></div></div></div>
-</div>
 
 
