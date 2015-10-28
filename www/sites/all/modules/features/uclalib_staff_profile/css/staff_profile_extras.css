@@ -22,7 +22,7 @@ clear: left;
     clear: none !important;
 }
 
-.field__item.two {
+.field__item.two, .field--name-field-ask-me-about.field--type-field-collection {
     text-align: left;
 	font-weight:100;
     float:left;
@@ -214,18 +214,45 @@ span#expandAll.links.links, span#collapseAll.links.links.links {
     padding:0;
     list-style-type: none;
 }
-.field__item.two ul.links li:before{
+
+.field__item.two ul.links li:before, li.taxonomy_term_reference {
     padding: 0;
     margin: 0;
     -webkit-padding-start: 0;
-    content:"\00bb";
-    font-size:16px;
-    color:red;
+    content: "\2022";
+    font-size:14px;
+    color:#3283C1;
     padding-bottom: 0;
     padding-right: 5px;
     padding-top: 0;
+    text-align: left;
 }
 .field__item.two ul, .field__item.even ul {
     margin:0;
 }
 
+.icon {
+    line-height: 200%;
+}
+.field-collection-container {
+    padding:0;
+    list-style-type: none;
+    margin:0;
+}
+.field--name-field-ask-me-about.field--type-field-collection {
+    padding: 0;
+    margin: 0;
+    -webkit-padding-start: 0;
+    content: "\2022";
+    font-size:16px;
+    color:#3283C1;
+    padding-bottom: 0;
+    padding-right: 5px;
+    padding-top: 0;
+}
+/*
+Hiding the UI editing buttons that come with field collections
+*/
+ul.field-collection-view-links, ul.action-links.action-links-field-collection-add {
+    display: none;
+}
