@@ -113,3 +113,6 @@ function uclalib_omega_field__link_field($variables) {
   return $output;
 
 }
+function uclalib_omega_preprocess_field(&$vars) {
+  // Your code goes here.
+}

@@ -85,21 +85,22 @@ font-size:1.1em;
     color: #2d2f35;
     margin-left: 5px;
 }
-
-.views-submit-button {
-    margin-left: 18px;
-    position: absolute;
-    right: -13px;
-    margin: 0;
-    padding: 0;
-}
-
-.views-submit-button input {
-    margin: 2px !important;
-}
-
-
 /*Staff profile do not delete*/
+
+p.space-above {
+    padding-top: 13px;
+    margin-bottom: 0;
+}
+p.space-above-contact {
+    padding-top: 0;
+    margin-bottom: 0;
+}
+p.space-below-title {
+    padding-bottom: 26px;
+}
+p.space-above-textbox {
+    margin-bottom:-12px;
+}
 .pane-style-border-blue h2.pane-title {
     font-weight: 600;
 }
@@ -229,10 +230,6 @@ span#expandAll.links.links, span#collapseAll.links.links.links {
 }
 .field__item.two ul, .field__item.even ul {
     margin:0;
-}
-
-.icon {
-    line-height: 200%;
 }
 .field-collection-container {
     padding:0;

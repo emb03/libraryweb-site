@@ -88,7 +88,7 @@ drupal_set_title(t('Staff Directory'));
     <div class="pane-content">
       <div class="entity entity-bean bean-showcase clearfix">
         <div class="content">
-          <div class="field__items clearfix">
+          <div class="field__items">
             <div class="field__item one">
               <div class="field-collection-view clearfix view-mode-full">
                 <div class="field field--name-field-showcase-image field--type-image field--label-hidden"><div class="field__items">
@@ -96,31 +96,56 @@ drupal_set_title(t('Staff Directory'));
                     <div class="field field--name-field-showcase-image field--type-image field--label-hidden"><div class="field__items">
                         <div class="contact">
                           <div class="field__item even">
-                            <br />
+
                             <?php global $base_url; ?>
+                              <?php foreach ((array)$field_staff_phone as $item) { ?>
 
-                            <div class="icon"><img src="<?php echo $base_url; ?>/sites/all/themes/uclalib_omega/images/phone.png" width="48" height="48" alt="Phone">
+                                <?php $content['field_staff_phone']['.icon'] = 'hidden';
+                                print '</div><p class="space-above-contact"></p><div class="icon">';
+                                print "<img src='{$base_url}/sites/all/themes/uclalib_omega/images/phone.png' width='42' height='42'/></div>";
+
+                                print render($content['field_staff_phone']);
+                                break;
+
+                                ?>
+                              <?php } ?>
+
+                              <?php foreach ((array)$field_staff_email as $item) { ?>
+
+                              <?php $content['field_staff_email']['.icon'] = 'hidden';
+                              print '</div><p class="space-above-contact"></p><div class="icon">';
+print "<img src='{$base_url}/sites/all/themes/uclalib_omega/images/email.png' width='42' height='42' /></div>";
+
+                          print render($content['field_staff_email']);
+                                    break;
+
+                                    ?>
+                                    <?php } ?>
 
 
-                            <?php echo render($content['field_staff_phone']);?>
-                            </div>
-                            <div class="icon"><img src="<?php echo $base_url; ?>/sites/all/themes/uclalib_omega/images/email.png" width="48" height="48" alt="Email">
-
-                          <?php echo render($content['field_staff_email']);?>
-                            </div>
                           <div class="field field--name-field-showcase-image field--type-image field--label-hidden"><div class="field__items">
                               <div class="field__item even"><div class="field__items"><div class="field__item even">
-                                    <br />
-                                    <?php
-                                    print '<strong>Location</strong>'; // change to any HTML
+
+                                    <?php foreach ((array)$field_staff_location as $item) { ?>
+
+                                    <?php $content['field_staff_location']['#label_display'] = 'hidden';
+                                    print '<p class="space-above-contact"><strong>Location</strong></p>'; // change to any HTML
                                     print render($content['field_staff_location']);
-                                    ?>
-                                    <br />
-                                    <?php
-                                    print '<strong>Department</strong>'; // change to any HTML
+                                      break;
+
+                                      ?>
+                                    <?php } ?>
+
+                                    <?php foreach ((array)$field_staff_departments as $item) { ?>
+
+                                      <?php $content['field_staff_departments']['#label_display'] = 'hidden';
+                                    print '<p class="space-above-contact"><strong>Department</strong></p>'; // change to any HTML
                                     print render($content['field_staff_departments']);
+                                    break;
+
                                     ?>
-                                    <br />
+                                    <?php } ?>
+
 <!-- social icons reused from BS -->
                                     <div class="panel-pane pane-entity-field pane-node-field-location-social-links">
 
@@ -129,7 +154,7 @@ drupal_set_title(t('Staff Directory'));
             <?php foreach ((array)$field_location_social_links as $item) { ?>
 
               <?php $content['field_location_social_links']['#label_display'] = 'hidden';
-                                        print '<strong>Connect with me</strong>'; // change to any HTML
+                                        print '<p class="space-above-contact"><strong>Connect with me</strong></p>'; // change to any HTML
                                         print render($content['field_location_social_links']);
                                         break;
 
@@ -138,23 +163,16 @@ drupal_set_title(t('Staff Directory'));
 
                                         </div>
 </div>
-
-                                      <br />
-
-
-
                                     </div></div></div></div></div>
                           </div></div></div></div></div>
                 </div></div></div>
 
 
-          <div class="field__item two">
+          <div class="field__item two clearfix">
             <h2 class="pane-title left"><strong>
-                <?php echo render($content['uclalib_staff_name']);?>
-
-              </strong></h2>
+                <?php echo render($content['uclalib_staff_name']);?></strong></h2>
             <h3 class="pane-title left"><strong> <?php echo render($content['field_staff_job_title']);?></strong></h3>
-<br />
+            <p class="space-below-title"></p>
             <?php foreach ((array)$field_ask_me_about as $item) { ?>
 
               <?php $content['field_ask_me_about']['#label_display'] = 'hidden';
@@ -165,23 +183,22 @@ drupal_set_title(t('Staff Directory'));
 
              ?>
             <?php } ?>
-            <br />
+
             <?php foreach ((array)$field_staff_acad_dept_liaison as $item) { ?>
 
               <?php $content['field_staff_acad_dept_liaison']['#label_display'] = 'hidden';
 
-              print '<strong>Subject Specialty Areas</strong>'; // change to any HTML
+              print '<p class="space-above"><strong>Subject Specialty Areas</strong></p>'; // change to any HTML
               print render($content['field_staff_acad_dept_liaison']);
               break;
 
               ?>
             <?php } ?>
-            <br />
-            <?php foreach ((array)$field_text_block as $item) { ?>
+                        <?php foreach ((array)$field_text_block as $item) { ?>
               <?php 
               $content['field_text_block']['#label_display'] = 'hidden';
 
-              print '<strong>Biography</strong><br />'; // change to any HTML
+              print '<p class="space-above-textbox"><strong>Biography</strong></p>'; // change to any HTML
               print render($content['field_text_block']);
               ?>
             <?php } ?>
