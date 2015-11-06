@@ -1,6 +1,6 @@
 name = UCLALIB Search
 description = Search configuration.
-core = 7.x
+core = 7.1
 package = UCLALIB
 version = 7.x-1.1
 project = uclalib_search
@@ -138,5 +138,5 @@ features[views_view][] = location_search
 features[views_view][] = news_search
 features[views_view][] = site_multi_search
 features[views_view][] = staff_directory
-mtime = 1444692476
+mtime = 1446851240
 project path = /tmp

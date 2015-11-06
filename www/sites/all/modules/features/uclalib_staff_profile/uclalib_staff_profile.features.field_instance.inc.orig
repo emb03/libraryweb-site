@@ -22,7 +22,7 @@ function uclalib_staff_profile_field_default_field_instances() {
         'module' => 'uclalib_location',
         'settings' => array(),
         'type' => 'social_links',
-        'weight' => 15,
+        'weight' => 11,
       ),
       'hours_page' => array(
         'label' => 'above',
@@ -99,6 +99,8 @@ function uclalib_staff_profile_field_default_field_instances() {
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 16,
+<<<<<<< HEAD
+=======
     ),
   );
 
@@ -148,6 +150,7 @@ function uclalib_staff_profile_field_default_field_instances() {
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
       'weight' => 15,
+>>>>>>> 599a40d... DRUP-783 disabled links on tax term, added links to location, specified css based on content type, deleted code based on WST feedback
     ),
   );
 
@@ -162,8 +165,13 @@ function uclalib_staff_profile_field_default_field_instances() {
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
+<<<<<<< HEAD
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 8,
+=======
         'type' => 'taxonomy_term_reference_plain',
         'weight' => 6,
+>>>>>>> 599a40d... DRUP-783 disabled links on tax term, added links to location, specified css based on content type, deleted code based on WST feedback
       ),
       'hours_page' => array(
         'label' => 'above',
@@ -194,7 +202,11 @@ function uclalib_staff_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
+<<<<<<< HEAD
+      'weight' => 12,
+=======
       'weight' => 9,
+>>>>>>> 599a40d... DRUP-783 disabled links on tax term, added links to location, specified css based on content type, deleted code based on WST feedback
     ),
   );
 
@@ -210,7 +222,7 @@ function uclalib_staff_profile_field_default_field_instances() {
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 11,
+        'weight' => 10,
       ),
       'hours_page' => array(
         'label' => 'above',
@@ -239,7 +251,11 @@ function uclalib_staff_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
+<<<<<<< HEAD
+      'weight' => 10,
+=======
       'weight' => 13,
+>>>>>>> 599a40d... DRUP-783 disabled links on tax term, added links to location, specified css based on content type, deleted code based on WST feedback
     ),
   );
 
@@ -325,7 +341,7 @@ function uclalib_staff_profile_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 9,
+        'weight' => 5,
       ),
       'hours_page' => array(
         'label' => 'above',
@@ -386,7 +402,11 @@ function uclalib_staff_profile_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
+<<<<<<< HEAD
+      'weight' => 7,
+=======
       'weight' => 11,
+>>>>>>> 599a40d... DRUP-783 disabled links on tax term, added links to location, specified css based on content type, deleted code based on WST feedback
     ),
   );
 
@@ -435,7 +455,11 @@ function uclalib_staff_profile_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
+<<<<<<< HEAD
+      'weight' => 13,
+=======
       'weight' => 10,
+>>>>>>> 599a40d... DRUP-783 disabled links on tax term, added links to location, specified css based on content type, deleted code based on WST feedback
     ),
   );
 
@@ -451,7 +475,7 @@ function uclalib_staff_profile_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 6,
       ),
       'hours_page' => array(
         'label' => 'above',
@@ -503,7 +527,11 @@ function uclalib_staff_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
+<<<<<<< HEAD
+      'weight' => 8,
+=======
       'weight' => 7,
+>>>>>>> 599a40d... DRUP-783 disabled links on tax term, added links to location, specified css based on content type, deleted code based on WST feedback
     ),
   );
 
@@ -519,7 +547,7 @@ function uclalib_staff_profile_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'hours_page' => array(
         'label' => 'above',
@@ -589,7 +617,7 @@ function uclalib_staff_profile_field_default_field_instances() {
           'link' => 1,
         ),
         'type' => 'entityreference_label',
-        'weight' => 5,
+        'weight' => 7,
       ),
       'hours_page' => array(
         'label' => 'above',
@@ -624,7 +652,11 @@ function uclalib_staff_profile_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
+<<<<<<< HEAD
+      'weight' => 11,
+=======
       'weight' => 8,
+>>>>>>> 599a40d... DRUP-783 disabled links on tax term, added links to location, specified css based on content type, deleted code based on WST feedback
     ),
   );
 
@@ -640,7 +672,7 @@ function uclalib_staff_profile_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'hours_page' => array(
         'label' => 'above',
@@ -708,7 +740,7 @@ function uclalib_staff_profile_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 18,
+        'weight' => 0,
       ),
       'hours_page' => array(
         'label' => 'above',
@@ -777,7 +809,7 @@ function uclalib_staff_profile_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 17,
+        'weight' => 4,
       ),
       'hours_page' => array(
         'label' => 'above',
@@ -846,7 +878,7 @@ function uclalib_staff_profile_field_default_field_instances() {
         'module' => 'phone',
         'settings' => array(),
         'type' => 'phone',
-        'weight' => 10,
+        'weight' => 9,
       ),
       'hours_page' => array(
         'label' => 'above',
@@ -878,7 +910,11 @@ function uclalib_staff_profile_field_default_field_instances() {
       'module' => 'phone',
       'settings' => array(),
       'type' => 'phone_textfield',
+<<<<<<< HEAD
+      'weight' => 9,
+=======
       'weight' => 12,
+>>>>>>> 599a40d... DRUP-783 disabled links on tax term, added links to location, specified css based on content type, deleted code based on WST feedback
     ),
   );
 
@@ -894,7 +930,7 @@ function uclalib_staff_profile_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 16,
+        'weight' => 15,
       ),
       'hours_page' => array(
         'label' => 'above',
@@ -947,7 +983,11 @@ function uclalib_staff_profile_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
+<<<<<<< HEAD
+      'weight' => 19,
+=======
       'weight' => 17,
+>>>>>>> 599a40d... DRUP-783 disabled links on tax term, added links to location, specified css based on content type, deleted code based on WST feedback
     ),
   );
 

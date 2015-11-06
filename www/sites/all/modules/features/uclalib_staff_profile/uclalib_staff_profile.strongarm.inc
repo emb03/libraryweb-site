@@ -96,7 +96,7 @@ function uclalib_staff_profile_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'default_opening_hours' => array(
-          'weight' => '20',
+          'weight' => '19',
         ),
         'title' => array(
           'weight' => '0',
@@ -108,7 +108,7 @@ function uclalib_staff_profile_strongarm() {
           'weight' => '18',
         ),
         'xmlsitemap' => array(
-          'weight' => '17',
+          'weight' => '20',
         ),
       ),
       'display' => array(
@@ -117,11 +117,19 @@ function uclalib_staff_profile_strongarm() {
             'weight' => '19',
             'visible' => FALSE,
           ),
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
         ),
         'default_opening_hours' => array(
           'default' => array(
             'weight' => '17',
             'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '5',
+            'visible' => TRUE,
           ),
         ),
       ),
