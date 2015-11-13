@@ -101,7 +101,7 @@ drupal_set_title(t('Staff Directory'));
                               <?php foreach ((array)$field_staff_phone as $item) { ?>
 
                                 <?php $content['field_staff_phone']['.icon'] = 'hidden';
-                                print '</div><p class="space-above-contact"></p><div class="icon">';
+                                print '</div><div class="space-above"></div><div class="icon">';
                                 print "<img src='{$base_url}/sites/all/themes/uclalib_omega/images/phone.png' width='42' height='42'/></div>";
 
                                 print render($content['field_staff_phone']);
@@ -113,7 +113,7 @@ drupal_set_title(t('Staff Directory'));
                               <?php foreach ((array)$field_staff_email as $item) { ?>
 
                               <?php $content['field_staff_email']['.icon'] = 'hidden';
-                              print '</div><p class="space-above-contact"></p><div class="icon">';
+                              print '</div><div class="space-above"></div><div class="icon">';
 print "<img src='{$base_url}/sites/all/themes/uclalib_omega/images/email.png' width='42' height='42' /></div>";
 
                           print render($content['field_staff_email']);
@@ -129,7 +129,7 @@ print "<img src='{$base_url}/sites/all/themes/uclalib_omega/images/email.png' wi
                                     <?php foreach ((array)$field_staff_location as $item) { ?>
 
                                     <?php $content['field_staff_location']['#label_display'] = 'hidden';
-                                    print '<p class="space-above-contact"><strong>Location</strong></p>'; // change to any HTML
+                                    print '<div class="space-above">Location</div>'; // change to any HTML
                                     print render($content['field_staff_location']);
                                       break;
 
@@ -139,7 +139,7 @@ print "<img src='{$base_url}/sites/all/themes/uclalib_omega/images/email.png' wi
                                     <?php foreach ((array)$field_staff_departments as $item) { ?>
 
                                       <?php $content['field_staff_departments']['#label_display'] = 'hidden';
-                                    print '<p class="space-above-contact"><strong>Department</strong></p>'; // change to any HTML
+                                    print '<div class="space-above">Department</div>'; // change to any HTML
                                     print render($content['field_staff_departments']);
                                     break;
 
@@ -154,7 +154,7 @@ print "<img src='{$base_url}/sites/all/themes/uclalib_omega/images/email.png' wi
             <?php foreach ((array)$field_location_social_links as $item) { ?>
 
               <?php $content['field_location_social_links']['#label_display'] = 'hidden';
-                                        print '<p class="space-above-contact"><strong>Connect with me</strong></p>'; // change to any HTML
+                                        print '<div class="space-above"><Connect with me</div>'; // change to any HTML
                                         print render($content['field_location_social_links']);
                                         break;
 
@@ -169,15 +169,17 @@ print "<img src='{$base_url}/sites/all/themes/uclalib_omega/images/email.png' wi
 
 
           <div class="field__item two clearfix">
-            <h2 class="pane-title left"><strong>
-                <?php echo render($content['uclalib_staff_name']);?></strong></h2>
-            <h3 class="pane-title left"><strong> <?php echo render($content['field_staff_job_title']);?></strong></h3>
-            <p class="space-below-title"></p>
-            <?php foreach ((array)$field_ask_me_about as $item) { ?>
+            <h2 class="librarian-name left">
+              <?php echo render ($content['uclalib_staff_name']);?></h2>
 
-              <?php $content['field_ask_me_about']['#label_display'] = 'hidden';
-              print '<strong>Ask me about</strong>'; // change to any HTML
-              print render($content['field_ask_me_about']);
+            <h3 class="librarian-title"><?php echo render($content['field_staff_job_title']);
+                ?></h3>
+
+
+            <?php foreach ((array)$field_staff_area_of_expertise as $item) { ?>
+              <?php $content['field_staff_area_of_expertise']['#label_display'] = 'hidden';
+              print '<div class="space-above">Ask me about</div>'; // change to any HTML
+              print render($content['field_staff_area_of_expertise']);
 
               break;
 
@@ -188,20 +190,19 @@ print "<img src='{$base_url}/sites/all/themes/uclalib_omega/images/email.png' wi
 
               <?php $content['field_staff_acad_dept_liaison']['#label_display'] = 'hidden';
 
-              print '<p class="space-above"><strong>Subject Specialty Areas</strong></p>'; // change to any HTML
+              print '<div class="space-above">Subject Specialty Areas</div>'; // change to any HTML
               print render($content['field_staff_acad_dept_liaison']);
-              break;
+               break;
 
               ?>
             <?php } ?>
-                        <?php foreach ((array)$field_text_block as $item) { ?>
+            <?php foreach ((array)$field_text_block as $item) { ?>
               <?php 
               $content['field_text_block']['#label_display'] = 'hidden';
-
-              print '<p class="space-above-textbox"><strong>Biography</strong></p>'; // change to any HTML
+              print '<div class="space-above">Biography</div>'; // change to any HTML
               print render($content['field_text_block']);
               ?>
             <?php } ?>
-          </div></div></div></div></div></div></div>
+          </div></div></div></div></div></div>
 
 
