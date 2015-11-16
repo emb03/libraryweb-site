@@ -114,9 +114,9 @@ drupal_set_title(t('Staff Directory'));
 
                               <?php $content['field_staff_email']['.icon'] = 'hidden';
                               print '</div><div class="space-above"></div><div class="icon">';
-print "<img src='{$base_url}/sites/all/themes/uclalib_omega/images/email.png' width='42' height='42' /></div>";
+                              print "<img src='{$base_url}/sites/all/themes/uclalib_omega/images/email.png' width='42' height='42' /></div>";
 
-                          print render($content['field_staff_email']);
+                              print render($content['field_staff_email']);
                                     break;
 
                                     ?>
@@ -152,20 +152,18 @@ print "<img src='{$base_url}/sites/all/themes/uclalib_omega/images/email.png' wi
                                       <div class="pane-content">
 
             <?php foreach ((array)$field_location_social_links as $item) { ?>
-
               <?php $content['field_location_social_links']['#label_display'] = 'hidden';
-                                        print '<div class="space-above"><Connect with me</div>'; // change to any HTML
-                                        print render($content['field_location_social_links']);
-                                        break;
+              print '<div class="space-above">Connect with me</div>'; // change to any HTML                                        print render($content['field_location_social_links']);
+              print render($content['field_location_social_links']);
+              break;
 
-                                        ?>
+              ?>
             <?php } ?>
 
-                                        </div>
-</div>
-                                    </div></div></div></div></div>
-                          </div></div></div></div></div>
-                </div></div></div>
+
+</div></div></div></div></div>
+</div></div></div></div></div>
+</div></div></div>
 
 
           <div class="field__item two clearfix">
