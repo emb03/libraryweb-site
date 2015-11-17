@@ -53,71 +53,6 @@ function uclalib_staff_profile_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-staff_profile-field_quick_links'
-  $field_instances['node-staff_profile-field_quick_links'] = array(
-    'bundle' => 'staff_profile',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 19,
-      ),
-      'hours_page' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_quick_links',
-    'label' => 'Quick Links',
-    'required' => 0,
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'rel_remove' => 'default',
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-      'user_register_form' => FALSE,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'advanced_link',
-      'settings' => array(
-        'default_titles' => '',
-        'urls_allowed' => 'both',
-        'urls_filter' => '',
-        'urls_search' => 'start',
-      ),
-      'type' => 'advanced_link',
-      'weight' => 22,
-    ),
-  );
-
   // Exported field_instance: 'node-staff_profile-field_staff_acad_dept_liaison'
   $field_instances['node-staff_profile-field_staff_acad_dept_liaison'] = array(
     'bundle' => 'staff_profile',
@@ -383,7 +318,7 @@ function uclalib_staff_profile_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
@@ -410,7 +345,7 @@ function uclalib_staff_profile_field_default_field_instances() {
     'label' => 'Staff Image Thumbnail',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -425,28 +360,57 @@ function uclalib_staff_profile_field_default_field_instances() {
       'module' => 'image',
       'settings' => array(
         'insert' => 0,
-        'insert_absolute' => FALSE,
+        'insert_absolute' => 0,
         'insert_class' => '',
-        'insert_default' => array(
-          0 => 'auto',
-        ),
+        'insert_default' => 'auto',
         'insert_styles' => array(
-          0 => 'auto',
+          'auto' => 'auto',
+          'fancybox__category_icon' => 0,
+          'fancybox__custom_crop' => 0,
+          'fancybox__large' => 0,
+          'fancybox__linkit_thumb' => 0,
+          'fancybox__media_thumbnail' => 0,
+          'fancybox__medium' => 0,
+          'fancybox__thumbnail' => 0,
+          'fancybox__thumbnail_crop' => 0,
+          'fancybox__thumbnail_large' => 0,
+          'fancybox__thumbnail_small' => 0,
+          'fancybox__widescreen_crop' => 0,
+          'fancybox__widescreen_large' => 0,
+          'fancybox__widescreen_medium' => 0,
+          'fancybox__widescreen_small' => 0,
+          'icon_link' => 0,
+          'image' => 0,
+          'image_category_icon' => 0,
+          'image_custom_crop' => 0,
+          'image_large' => 0,
+          'image_linkit_thumb' => 0,
+          'image_media_thumbnail' => 0,
+          'image_medium' => 0,
+          'image_thumbnail' => 0,
+          'image_thumbnail_crop' => 0,
+          'image_thumbnail_large' => 0,
+          'image_thumbnail_small' => 0,
+          'image_widescreen_crop' => 0,
+          'image_widescreen_large' => 0,
+          'image_widescreen_medium' => 0,
+          'image_widescreen_small' => 0,
+          'link' => 0,
         ),
         'insert_width' => '',
-        'manualcrop_crop_info' => TRUE,
-        'manualcrop_default_crop_area' => TRUE,
-        'manualcrop_enable' => FALSE,
-        'manualcrop_filter_insert' => TRUE,
-        'manualcrop_inline_crop' => FALSE,
-        'manualcrop_instant_crop' => FALSE,
-        'manualcrop_instant_preview' => TRUE,
-        'manualcrop_keyboard' => TRUE,
-        'manualcrop_maximize_default_crop_area' => FALSE,
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 0,
+        'manualcrop_filter_insert' => 0,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => 0,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
         'manualcrop_require_cropping' => array(),
         'manualcrop_styles_list' => array(),
         'manualcrop_styles_mode' => 'include',
-        'manualcrop_thumblist' => FALSE,
+        'manualcrop_thumblist' => 0,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -1023,7 +987,6 @@ function uclalib_staff_profile_field_default_field_instances() {
   t('Biography');
   t('Enter academic degree(s) or professional credentials.');
   t('Enter some interesting professional facts about yourself here.');
-  t('Quick Links');
   t('Social Links');
   t('Staff Academic Dept Liaison');
   t('Staff Departments');
