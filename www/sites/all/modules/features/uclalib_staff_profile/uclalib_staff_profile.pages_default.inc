@@ -108,6 +108,33 @@ function uclalib_staff_profile_default_page_manager_handlers() {
     $pane->uuid = '20fb9e97-c2ec-4394-989e-70be6c636c69';
     $display->content['new-20fb9e97-c2ec-4394-989e-70be6c636c69'] = $pane;
     $display->panels['sidebar_left'][0] = 'new-20fb9e97-c2ec-4394-989e-70be6c636c69';
+    $pane = new stdClass();
+    $pane->pid = 'new-47fce699-6a57-4736-91d3-29088dbdaba0';
+    $pane->panel = 'sidebar_left';
+    $pane->type = 'quick_links';
+    $pane->subtype = 'quick_links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+        1 => 'argument_entity_id:node_1',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '47fce699-6a57-4736-91d3-29088dbdaba0';
+    $display->content['new-47fce699-6a57-4736-91d3-29088dbdaba0'] = $pane;
+    $display->panels['sidebar_left'][1] = 'new-47fce699-6a57-4736-91d3-29088dbdaba0';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-20fb9e97-c2ec-4394-989e-70be6c636c69';
   $handler->conf['display'] = $display;

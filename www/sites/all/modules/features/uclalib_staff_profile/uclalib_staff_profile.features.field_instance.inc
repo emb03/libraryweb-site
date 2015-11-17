@@ -53,6 +53,71 @@ function uclalib_staff_profile_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-staff_profile-field_quick_links'
+  $field_instances['node-staff_profile-field_quick_links'] = array(
+    'bundle' => 'staff_profile',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 19,
+      ),
+      'hours_page' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_quick_links',
+    'label' => 'Quick Links',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'advanced_link',
+      'settings' => array(
+        'default_titles' => '',
+        'urls_allowed' => 'both',
+        'urls_filter' => '',
+        'urls_search' => 'start',
+      ),
+      'type' => 'advanced_link',
+      'weight' => 22,
+    ),
+  );
+
   // Exported field_instance: 'node-staff_profile-field_staff_acad_dept_liaison'
   $field_instances['node-staff_profile-field_staff_acad_dept_liaison'] = array(
     'bundle' => 'staff_profile',
@@ -958,6 +1023,7 @@ function uclalib_staff_profile_field_default_field_instances() {
   t('Biography');
   t('Enter academic degree(s) or professional credentials.');
   t('Enter some interesting professional facts about yourself here.');
+  t('Quick Links');
   t('Social Links');
   t('Staff Academic Dept Liaison');
   t('Staff Departments');
