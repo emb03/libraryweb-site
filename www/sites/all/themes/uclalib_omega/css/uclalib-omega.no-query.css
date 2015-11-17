@@ -2264,9 +2264,9 @@ img[src="images/up.png"] {
 
 /* CSS Document Elaine's Additions*/
 .node-type-staff-profile .contact {
-  clear: left;
-  display: block;
-  float: left;
+  /*    clear: left;
+      display: block;
+      float: left;*/
   width: 90%;
 }
 .node-type-staff-profile .social-link {
@@ -2299,6 +2299,18 @@ img[src="images/up.png"] {
   width: 25%;
   clear: left;
   font-weight: 100;
+}
+.node-type-staff-profile .panel-pane.pane-uclalib-nav .pane-content h2.pane-title a {
+  background: none repeat scroll 0 0 #3283be;
+  color: #fff;
+}
+.node-type-staff-profile .sidebar-tier-2, .node-type-staff-profile .l-region--sidebar-left .pane-quick-links, .l-region--sidebar-left .node-type-staff-profile .pane-quick-links, .node-type-staff-profile .l-region--sidebar-left .pane-quick-links {
+  background: none repeat scroll 0 0 #eff3f4;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1.429em;
+  margin: 0 -25px;
+  padding: 10px 28px 11px;
 }
 
 .views-field.views-field-field-staff-last-name {
@@ -2398,13 +2410,15 @@ span#expandAll.links.links, span#collapseAll.links.links.links {
   padding-left: 20px;
 }
 
-.node-type-staff-profile .sidebar-tier-2, .node-type-staff-profile .l-region--sidebar-left .pane-quick-links, .l-region--sidebar-left .node-type-staff-profile .pane-quick-links, .l-region--sidebar-left .pane-quick-links {
+/*
+
+.node-type-staff-profile .l-region--sidebar-left .pane-quick-links {
   margin: 0;
   padding: 0;
 }
-
+*/
 /*styles added after templatizing in Drupal*/
-.logged-in.node-type-staff-profile.node-type-staff-profile ul.links {
+.node-type-staff-profile.node-type-staff-profile ul.links {
   padding: 0;
   margin: 0;
 }
@@ -2447,7 +2461,7 @@ span#expandAll.links.links, span#collapseAll.links.links.links {
   padding-right: 5px;
   padding-top: 0;
 }
-.node-type-staff-profile .field.field--name-field-text-block.field--type-text-long.field--label-hidden div.field__items div.field__item.even p {
+.node-type-staff-profile .field.field--name-field-text-block.field--type-text-long.field--label-hidden .field__items .field__item.even p {
   margin-top: 0;
 }
 
