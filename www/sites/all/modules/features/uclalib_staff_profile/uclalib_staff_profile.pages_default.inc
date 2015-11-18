@@ -89,7 +89,7 @@ function uclalib_staff_profile_default_page_manager_handlers() {
     $pane->pid = 'new-313a0fc7-859e-47cb-abb2-6b51bc2d3b8f';
     $pane->panel = 'sidebar_left';
     $pane->type = 'block';
-    $pane->subtype = 'bean-at-a-glance---staff-profile-0';
+    $pane->subtype = 'bean-at-a-glance---staff-profile';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
