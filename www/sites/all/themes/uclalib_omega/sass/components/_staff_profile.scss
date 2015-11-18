@@ -204,20 +204,23 @@ span {
 .node-type-staff-profile .field__item.two ul, .field__item.even ul {
   margin: 0;
 }
-.node-type-staff-profile .contextual-links-region.panel-pane.pane-bean-link-list.pane-bean-contact-quick-links {
+.node-type-staff-profile .panel-pane.pane-bean-link-list.pane-bean-contact-quick-links {
   background: #eff3f4 !important;
   line-height: 1.429em !important;
   margin: 0 -25px !important;
   padding: 10px 28px 11px !important;
   font-weight: bold !important;
-  font-size: 13px !important;
+  font-size: 14px !important;
 }
-.node-type-staff-profile .contextual-links-region.panel-pane.pane-bean-link-list {
+.node-type-staff-profile .panel-pane.pane-bean-link-list {
   background: #c1daeb;
   margin: 0 -25px;
   padding: 24px 30px 15px;
   font-weight: bold;
   font-size: 15px;
+}
+.node-type-staff-profile .field.field--name-field-text-block.field--type-text-long.field--label-hidden .field__items .field__item.even ul li {
+list-style-type: square;
 }
 
 .node-type-staff-profile h2.pane-title {
