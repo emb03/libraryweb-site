@@ -2441,8 +2441,41 @@ span#expandAll.links.links, span#collapseAll.links.links.links {
   text-align: left;
 }
 
+.node-type-staff-profile .panel-pane.pane-uclalib-nav {
+  background: #3283be;
+  color: #fff;
+}
+
 .node-type-staff-profile .field__item.two ul, .field__item.even ul {
   margin: 0;
+}
+
+.node-type-staff-profile .contextual-links-region.panel-pane.pane-bean-link-list.pane-bean-contact-quick-links {
+  background: #eff3f4 !important;
+  line-height: 1.429em !important;
+  margin: 0 -25px !important;
+  padding: 10px 28px 11px !important;
+  font-weight: bold !important;
+  font-size: 13px !important;
+}
+
+.node-type-staff-profile .contextual-links-region.panel-pane.pane-bean-link-list {
+  background: #c1daeb;
+  margin: 0 -25px;
+  padding: 24px 30px 15px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.node-type-staff-profile h2.pane-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 4px 0 0;
+}
+
+.node-type-staff-profile .l-region--sidebar-left .pane-uclalib-nav .pane-title a.active {
+  background: #3283be;
+  color: #fff;
 }
 
 .node-type-staff-profile .field-collection-container {
