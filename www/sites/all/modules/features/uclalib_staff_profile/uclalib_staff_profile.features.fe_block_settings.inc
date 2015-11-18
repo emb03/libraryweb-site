@@ -12,10 +12,10 @@ function uclalib_staff_profile_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['bean-at-a-glance---staff-profile-0'] = array(
+  $export['bean-at-a-glance---staff-profile'] = array(
     'cache' => 1,
     'custom' => 0,
-    'delta' => 'at-a-glance---staff-profile-0',
+    'delta' => 'at-a-glance---staff-profile',
     'module' => 'bean',
     'node_types' => array(),
     'pages' => '',
