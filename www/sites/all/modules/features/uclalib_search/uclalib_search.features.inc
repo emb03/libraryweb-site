@@ -387,8 +387,6 @@ function uclalib_search_default_search_api_server() {
       "host" : "localhost",
       "port" : "8080",
       "path" : "\\/solr\\/uclalibdev",
-      "http_user" : "UCLA_Library",
-      "http_pass" : "admin",
       "excerpt" : 1,
       "retrieve_data" : 0,
       "highlight_data" : 0,
