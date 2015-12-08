@@ -1,7 +1,11 @@
 <?php
 /**
  * @file
+<<<<<<< Updated upstream
  * Code for the UCLALIB Bookplates feature.
+=======
+ * Code for the uclalib_bookplates feature.
+>>>>>>> Stashed changes
  */
 
 include_once 'uclalib_bookplates.features.inc';
@@ -10,23 +14,15 @@ include_once 'uclalib_bookplates.features.inc';
 /**
  * Implements hook_ctools_plugin_directory()
  */
-/*function uclalib_staff_profile_ctools_plugin_directory($owner, $plugin_type) {
+function uclalib_bookplates_ctools_plugin_directory($owner, $plugin_type) {
   switch ("$owner:$plugin_type") {
     case 'ctools:content_types':
       return "plugins/$owner/$plugin_type";
   }
 
   return NULL;
-}*/
-/**
- * Implements hook_entity_info_alter(). see: http://www.webwash.net/tutorials/3-easy-ways-create-view-modes-drupal-7
- */
-function uclalib_bookplates_entity_info_alter(&$entity_info) {
-  $entity_info['node']['view modes']['landing_page'] = array(
-    'label' => t('Landing Page'),
-    'custom settings' => TRUE,
-  );
 }
+
 /**
  * Implements hook_preprocess_node().
  */
@@ -49,4 +45,3 @@ function uclalib_bookplates_theme($existing, $type, $theme, $path) {
   );
 }
 ?>
-

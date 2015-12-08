@@ -101,12 +101,14 @@ function uclalib_search_default_search_api_index() {
             "bundles" : { "destination" : "destination", "location" : "location" }
           }
         },
-        "search_api_alter_node_access" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_panelized_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "page_manager" } },
+        "uclalib_search_staff_index_fields" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_alter_node_access" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
-        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
         "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_aggregation" : { "status" : 1, "weight" : "0", "settings" : [] }
+        "search_api_alter_add_aggregation" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } }
       },
       "processors" : {
         "search_api_case_ignore" : {
@@ -150,6 +152,7 @@ function uclalib_search_default_search_api_index() {
             "suffix" : "\\u003C\\/strong\\u003E",
             "excerpt" : 1,
             "excerpt_length" : "256",
+            "exclude_fields" : [],
             "highlight" : "always"
           }
         }
@@ -248,6 +251,7 @@ function uclalib_search_default_search_api_index() {
         "field_amenities" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_amenities:description" : { "type" : "list\\u003Ctext\\u003E" },
         "field_amenities:name" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_bookplates_subject_area" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_destination_email" : { "type" : "text" },
         "field_destination_location" : { "type" : "integer", "entity_type" : "node" },
         "field_destination_phone" : { "type" : "text" },
@@ -286,7 +290,7 @@ function uclalib_search_default_search_api_index() {
         "field_staff_is_subject_librarian" : { "type" : "boolean" },
         "field_staff_job_title" : { "type" : "text" },
         "field_staff_last_name" : { "type" : "text" },
-        "field_staff_location" : { "type" : "integer", "entity_type" : "node" },
+        "field_staff_location" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
         "field_staff_middle_name" : { "type" : "text" },
         "field_staff_phone" : { "type" : "text" },
         "field_study_areas" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },

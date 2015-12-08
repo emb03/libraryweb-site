@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Default theme implementation to display a node.
@@ -76,14 +77,27 @@
  * @see template_preprocess_node()
  * @see template_process()
  */
-//dpm($variables);
-
-drupal_set_title(t('Collection Endowment Initiative'));
 ?>
-<h2><?php echo render($content['field_bookplate_author_title']);?></h2>
-<?php echo render($content['field_bookplate_image']);?><br />
-<?php echo render($content['body']);?><br />
+<article<?php print $attributes; ?>>
+  <?php if (!empty($title_prefix) || !empty($title_suffix) || !$page): ?>
 
+    <header>
 
+      <?php if (!$page): ?>
+        <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a></h2>
+      <?php endif; ?>
+    </header>
+  <?php endif; ?>
 
+  <div<?php print $content_attributes; ?>
 
+    <?php
+
+    print render($content);
+    dpm($variables);
+    print render($content['field_bookplate_author_first_nam']['. " " .']['field_bookplate_author_last_name']);
+
+    ?>
+  </div>
+
+</article>

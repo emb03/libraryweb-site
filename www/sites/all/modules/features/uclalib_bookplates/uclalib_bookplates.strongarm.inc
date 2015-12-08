@@ -81,10 +81,10 @@ function uclalib_bookplates_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_index' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
@@ -93,39 +93,54 @@ function uclalib_bookplates_strongarm() {
         'custom_settings' => FALSE,
       ),
       'landing_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'bookplates_landing_page' => array(
         'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(
       'form' => array(
         'default_opening_hours' => array(
-          'weight' => '5',
+          'weight' => '8',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '12',
         ),
         'redirect' => array(
-          'weight' => '6',
+          'weight' => '10',
         ),
         'xmlsitemap' => array(
-          'weight' => '7',
+          'weight' => '11',
         ),
       ),
       'display' => array(
         'default_opening_hours' => array(
           'teaser' => array(
-            'weight' => '2',
+            'weight' => '9',
             'visible' => FALSE,
           ),
           'default' => array(
-            'weight' => '4',
+            'weight' => '7',
             'visible' => FALSE,
           ),
           'landing_page' => array(
             'weight' => '1',
+            'visible' => FALSE,
+          ),
+          'bookplates_landing_page' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'search_index' => array(
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '9',
             'visible' => FALSE,
           ),
         ),

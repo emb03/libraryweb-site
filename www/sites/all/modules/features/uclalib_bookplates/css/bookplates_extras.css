@@ -1,0 +1,44 @@
+
+.node--bookplates--bookplates-landing-page header h2.node__title {
+    font-size: 14px;
+}
+.field.field--name-field-bookplates-subject-area.field--type-taxonomy-term-reference.field--label-hidden.clearfix ul.links li.taxonomy_term_reference {
+    list-style: outside none none;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.ctools-collapsible-container .ctools-toggle {
+    background-image: url("../images/collapsible-expanded.png");
+    background-position: 7px 7px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    float: left;
+    height: 21px;
+    width: 21px;
+}
+.ctools-collapsible-container .ctools-collapsible-handle {
+    display: none;
+}
+html.js .ctools-collapsible-container .ctools-collapsible-handle {
+    display: block;
+}
+.ctools-collapsible-container .ctools-collapsible-handle {
+    cursor: pointer;
+}
+.ctools-collapsible-container .ctools-toggle-collapsed {
+    background-image: url("../images/collapsible-collapsed.png");
+}
+.view-content table.views-view-grid tbody tr td article.node.node--bookplates.node--bookplates-landing-page.node--bookplates--bookplates-landing-page {
+    border: 1px solid red;
+}
+.view.view-bookplates-landing-page table.views-view-grid {
+    border: medium none;
+    padding: 0 20px 20px 0;
+}
+.field.field--name-field-bookplate-image .field__item.even img {
+    float: left;
+    padding: 0 20px 20px 0;
+}
+.page-bookplates.section-bookplates .l-region.l-region--main-column {
+    padding-left: 0;
+}
