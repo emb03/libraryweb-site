@@ -79,25 +79,19 @@
  */
 ?>
 <article<?php print $attributes; ?>>
-  <?php if (!empty($title_prefix) || !empty($title_suffix) || !$page): ?>
-
+    <?php if (!empty($title_prefix) || !empty($title_suffix) || !$page): ?>
     <header>
-
-      <?php if (!$page): ?>
+    <?php if (!$page): ?>
         <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a></h2>
       <?php endif; ?>
     </header>
-  <?php endif; ?>
+<?php endif; ?>
 
-  <div<?php print $content_attributes; ?>
+<div<?php print $content_attributes; ?>
 
-    <?php
-
+<?php
     print render($content);
-    dpm($variables);
-    print render($content['field_bookplate_author_first_nam']['. " " .']['field_bookplate_author_last_name']);
+?>
 
-    ?>
-  </div>
-
+</div>
 </article>

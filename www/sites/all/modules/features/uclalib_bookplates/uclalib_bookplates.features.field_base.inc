@@ -216,62 +216,43 @@ function uclalib_bookplates_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_donor_first_name_bookplate'
-  $field_bases['field_donor_first_name_bookplate'] = array(
+  // Exported field_base: 'field_donor_s_'
+  $field_bases['field_donor_s_'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_donor_first_name_bookplate',
+    'field_name' => 'field_donor_s_',
     'foreign keys' => array(
-      'format' => array(
+      'field_donor_first_name_format' => array(
         'columns' => array(
-          'format' => 'format',
+          'field_donor_first_name_format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+      'field_donor_last_name_format' => array(
+        'columns' => array(
+          'field_donor_last_name_format' => 'format',
         ),
         'table' => 'filter_format',
       ),
     ),
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'field_donor_first_name_format' => array(
+        0 => 'field_donor_first_name_format',
+      ),
+      'field_donor_last_name_format' => array(
+        0 => 'field_donor_last_name_format',
+      ),
+      'id' => array(
+        0 => 'id',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
+    'module' => 'multifield',
+    'settings' => array(),
     'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_donor_last_name_bookplate'
-  $field_bases['field_donor_last_name_bookplate'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_donor_last_name_bookplate',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
+    'type' => 'bookplates_donor_s_',
   );
 
   // Exported field_base: 'field_image_custom_link'

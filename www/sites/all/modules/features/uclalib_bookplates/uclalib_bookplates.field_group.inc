@@ -26,14 +26,12 @@ function uclalib_bookplates_field_group_info() {
       0 => 'field_bookplate_author_first_nam',
       1 => 'field_bookplate_author_last_name',
     ),
-    'format_type' => 'html-element',
+    'format_type' => 'html5',
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'element' => 'div',
+        'wrapper' => '',
         'classes' => '',
-        'attributes' => '',
-        'required_fields' => 1,
       ),
     ),
   );
@@ -50,21 +48,23 @@ function uclalib_bookplates_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Author',
-    'weight' => '0',
+    'weight' => '1',
     'children' => array(
       0 => 'field_bookplate_author_first_nam',
       1 => 'field_bookplate_author_last_name',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => 'Author',
       'instance_settings' => array(
-        'element' => 'div',
         'classes' => '',
-        'attributes' => '',
-        'required_fields' => 1,
         'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
       ),
+      'formatter' => 'open',
     ),
   );
   $export['group_author|node|bookplates|default'] = $field_group;
@@ -80,18 +80,17 @@ function uclalib_bookplates_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Author',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_bookplate_author_first_nam',
       1 => 'field_bookplate_author_last_name',
     ),
-    'format_type' => 'html-element',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => '',
+      'formatter' => 'collapsible',
       'instance_settings' => array(
-        'element' => 'div',
+        'description' => '',
         'classes' => '',
-        'attributes' => '',
         'required_fields' => 1,
       ),
     ),
