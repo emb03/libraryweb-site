@@ -21,12 +21,12 @@ function uclalib_bookplates_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Author',
-    'weight' => '0',
+    'weight' => '4',
     'children' => array(
       0 => 'field_bookplate_author_first_nam',
       1 => 'field_bookplate_author_last_name',
     ),
-    'format_type' => 'html5',
+    'format_type' => 'hidden',
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
@@ -48,12 +48,12 @@ function uclalib_bookplates_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Author',
-    'weight' => '1',
+    'weight' => '6',
     'children' => array(
       0 => 'field_bookplate_author_first_nam',
       1 => 'field_bookplate_author_last_name',
     ),
-    'format_type' => 'div',
+    'format_type' => 'hidden',
     'format_settings' => array(
       'label' => 'Author',
       'instance_settings' => array(
@@ -80,7 +80,7 @@ function uclalib_bookplates_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Author',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'field_bookplate_author_first_nam',
       1 => 'field_bookplate_author_last_name',

@@ -102,19 +102,19 @@ function uclalib_bookplates_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'default_opening_hours' => array(
-          'weight' => '9',
+          'weight' => '8',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '12',
         ),
         'redirect' => array(
-          'weight' => '11',
+          'weight' => '10',
         ),
         'xmlsitemap' => array(
-          'weight' => '12',
+          'weight' => '11',
         ),
       ),
       'display' => array(
@@ -124,7 +124,7 @@ function uclalib_bookplates_strongarm() {
             'visible' => FALSE,
           ),
           'default' => array(
-            'weight' => '9',
+            'weight' => '7',
             'visible' => FALSE,
           ),
           'landing_page' => array(

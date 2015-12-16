@@ -80,18 +80,36 @@
 ?>
 <article<?php print $attributes; ?>>
     <?php if (!empty($title_prefix) || !empty($title_suffix) || !$page): ?>
-    <header>
-    <?php if (!$page): ?>
-        <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a></h2>
-      <?php endif; ?>
-    </header>
-<?php endif; ?>
+        <header>
+            <?php print render($title_prefix); ?>
+            <?php if (!$page): ?>
+                <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a></h2>
+            <?php endif; ?>
+            <?php print render($title_suffix); ?>
+        </header>
+    <?php endif; ?>
+    <div<?php print $content_attributes; ?>>
+<?php //dpm($variables); ?>
 
-<div<?php print $content_attributes; ?>
+    <?php
 
-<?php
-    print render($content);
-?>
+    hide($content['field_bookplates_spak_code']);
+    print render ($content);
+    ?>
+    <div class="spak-code">
+       <a href="http://catalog.library.ucla.edu/vwebv/search?searchArg1=<?php
+       print render
+    ($content['field_bookplates_spak_code'][0]); ?>&argType1=all&searchCode1=SPAK&combine2=and&searchArg2=&argType2=all&searchCode2=SPAK&combine3=and&searchArg3=&argType3=all&searchCode3=GKEY&year=2014-2015&fromYear=&toYear=&location=all&place=all&type=all&status=all&medium=all&language=all&content=all&media=all&carrier=all&recCount=50&searchType=2&page.search.search.button=Search">See all results in
+        catalog</a>
+    </div>
 
-</div>
+    <?php if ($display_submitted): ?>
+        <footer class="node__submitted">
+            <?php print $user_picture; ?>
+            <p class="submitted"><?php print $submitted; ?></p>
+        </footer>
+    <?php endif; ?>
+    </div>
+
+    <?php print render($content['comments']); ?>
 </article>

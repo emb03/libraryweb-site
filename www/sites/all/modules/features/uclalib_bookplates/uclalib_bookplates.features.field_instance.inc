@@ -19,16 +19,14 @@ function uclalib_bookplates_field_default_field_instances() {
     'display' => array(
       'bookplates_landing_page' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'search_index' => array(
@@ -107,16 +105,14 @@ function uclalib_bookplates_field_default_field_instances() {
     'display' => array(
       'bookplates_landing_page' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'search_index' => array(
@@ -197,14 +193,14 @@ function uclalib_bookplates_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 1,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -272,7 +268,7 @@ function uclalib_bookplates_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -294,7 +290,7 @@ function uclalib_bookplates_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 2,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -359,7 +355,7 @@ function uclalib_bookplates_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -381,7 +377,7 @@ function uclalib_bookplates_field_default_field_instances() {
           'fancybox_image_style_fancybox' => 'large',
         ),
         'type' => 'fancybox',
-        'weight' => 3,
+        'weight' => 0,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -391,7 +387,7 @@ function uclalib_bookplates_field_default_field_instances() {
           'image_style' => 'large',
         ),
         'type' => 'image_link_formatter',
-        'weight' => 3,
+        'weight' => 0,
       ),
       'event_listed_from_bean' => array(
         'label' => 'above',
@@ -521,7 +517,7 @@ function uclalib_bookplates_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -534,73 +530,68 @@ function uclalib_bookplates_field_default_field_instances() {
     'display' => array(
       'bookplates_landing_page' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
+        'type' => 'text_default',
+        'weight' => 3,
       ),
       'default' => array(
         'label' => 'hidden',
-        'module' => 'link',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 8,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 6,
-      ),
-      'search_result' => array(
-        'label' => 'hidden',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 7,
+        'type' => 'text_default',
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_bookplates_spak_code',
-    'label' => 'Bookplates Spak Code',
+    'label' => 'Spak Code',
     'required' => 0,
     'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
       ),
-      'display' => array(
-        'url_cutoff' => 80,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
       ),
-      'enable_tokens' => 1,
-      'rel_remove' => 'default',
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
-      'validate_url' => 1,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'advanced_link',
+      'module' => 'text',
       'settings' => array(
-        'default_titles' => '',
-        'urls_allowed' => 'both',
-        'urls_filter' => '',
-        'urls_search' => 'start',
+        'size' => 60,
       ),
-      'type' => 'advanced_link',
-      'weight' => 8,
+      'type' => 'text_textfield',
+      'weight' => 7,
     ),
   );
 
@@ -616,14 +607,14 @@ function uclalib_bookplates_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 1,
       ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 7,
+        'weight' => 5,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -664,7 +655,7 @@ function uclalib_bookplates_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -682,7 +673,7 @@ function uclalib_bookplates_field_default_field_instances() {
           'view_mode' => 'default',
         ),
         'type' => 'multifield_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'above',
@@ -691,7 +682,7 @@ function uclalib_bookplates_field_default_field_instances() {
           'view_mode' => 'default',
         ),
         'type' => 'multifield_default',
-        'weight' => 0,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -727,13 +718,13 @@ function uclalib_bookplates_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 8,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -788,7 +779,7 @@ function uclalib_bookplates_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -799,9 +790,9 @@ function uclalib_bookplates_field_default_field_instances() {
   t('Bookplate Description');
   t('Bookplate Fund Purpose');
   t('Bookplate Image');
-  t('Bookplates Spak Code');
   t('Bookplates Subject Area');
   t('Donor(s)');
+  t('Spak Code');
   t('image link formatter');
 
   return $field_instances;

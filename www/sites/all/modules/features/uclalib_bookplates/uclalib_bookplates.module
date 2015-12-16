@@ -27,7 +27,7 @@ function uclalib_bookplates_ctools_plugin_directory($owner, $plugin_type) {
  * Implements hook_preprocess_node().
  */
 function uclalib_bookplates_preprocess_node(&$variables) {
-  if($variables['view_mode'] == 'landing_page') {
+  if($variables['view_mode'] == 'bookplates_landing_page') {
     $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__landing_page';
   }
 }
@@ -44,4 +44,9 @@ function uclalib_bookplates_theme($existing, $type, $theme, $path) {
     ),
   );
 }
-?>
+/*function uclalib_bookplates_node_view($node, $view_mode, $langcode) {
+  if ($view_mode == 'default') {
+    print $node->content['bookplate_image'][0];
+  }
+}
+?>*/
