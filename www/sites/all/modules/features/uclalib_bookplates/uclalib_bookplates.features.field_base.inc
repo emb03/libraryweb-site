@@ -307,7 +307,12 @@ function uclalib_bookplates_field_default_field_bases() {
     ),
     'locked' => 0,
     'module' => 'multifield',
-    'settings' => array(),
+    'settings' => array(
+      'entity_translation_sync' => array(
+        0 => 'id',
+      ),
+      'hide_blank_items' => TRUE,
+    ),
     'translatable' => 0,
     'type' => 'bookplates_donor_s_',
   );
