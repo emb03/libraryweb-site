@@ -10,7 +10,8 @@
 function uclalib_bookplates_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'multifield-bookplates_donor_s_-field_donor_first_name'
+  // Exported field_instance:
+  // 'multifield-bookplates_donor_s_-field_donor_first_name'.
   $field_instances['multifield-bookplates_donor_s_-field_donor_first_name'] = array(
     'bundle' => 'bookplates_donor_s_',
     'default_value' => NULL,
@@ -71,7 +72,8 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'multifield-bookplates_donor_s_-field_donor_last_name'
+  // Exported field_instance:
+  // 'multifield-bookplates_donor_s_-field_donor_last_name'.
   $field_instances['multifield-bookplates_donor_s_-field_donor_last_name'] = array(
     'bundle' => 'bookplates_donor_s_',
     'default_value' => NULL,
@@ -132,7 +134,8 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_bookplate_author_first_nam'
+  // Exported field_instance:
+  // 'node-bookplates-field_bookplate_author_first_nam'.
   $field_instances['node-bookplates-field_bookplate_author_first_nam'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,
@@ -218,7 +221,8 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_bookplate_author_last_name'
+  // Exported field_instance:
+  // 'node-bookplates-field_bookplate_author_last_name'.
   $field_instances['node-bookplates-field_bookplate_author_last_name'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,
@@ -304,7 +308,7 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_bookplate_description'
+  // Exported field_instance: 'node-bookplates-field_bookplate_description'.
   $field_instances['node-bookplates-field_bookplate_description'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,
@@ -394,7 +398,7 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_bookplate_fund_purpose'
+  // Exported field_instance: 'node-bookplates-field_bookplate_fund_purpose'.
   $field_instances['node-bookplates-field_bookplate_fund_purpose'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,
@@ -481,7 +485,7 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_bookplate_image'
+  // Exported field_instance: 'node-bookplates-field_bookplate_image'.
   $field_instances['node-bookplates-field_bookplate_image'] = array(
     'bundle' => 'bookplates',
     'deleted' => 0,
@@ -643,7 +647,7 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_bookplates_spak_code'
+  // Exported field_instance: 'node-bookplates-field_bookplates_spak_code'.
   $field_instances['node-bookplates-field_bookplates_spak_code'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,
@@ -717,7 +721,7 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_bookplates_subject_area'
+  // Exported field_instance: 'node-bookplates-field_bookplates_subject_area'.
   $field_instances['node-bookplates-field_bookplates_subject_area'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,
@@ -781,7 +785,7 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_donor_s_'
+  // Exported field_instance: 'node-bookplates-field_donor_s_'.
   $field_instances['node-bookplates-field_donor_s_'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,
@@ -829,7 +833,7 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_image_custom_link'
+  // Exported field_instance: 'node-bookplates-field_image_custom_link'.
   $field_instances['node-bookplates-field_image_custom_link'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,

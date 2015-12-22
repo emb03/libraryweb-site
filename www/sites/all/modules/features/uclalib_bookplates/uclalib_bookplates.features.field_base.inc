@@ -10,21 +10,13 @@
 function uclalib_bookplates_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_bookplate_author_first_nam'
+  // Exported field_base: 'field_bookplate_author_first_nam'.
   $field_bases['field_bookplate_author_first_nam'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_bookplate_author_first_nam',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -39,21 +31,13 @@ function uclalib_bookplates_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_bookplate_author_last_name'
+  // Exported field_base: 'field_bookplate_author_last_name'.
   $field_bases['field_bookplate_author_last_name'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_bookplate_author_last_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -68,21 +52,13 @@ function uclalib_bookplates_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_bookplate_description'
+  // Exported field_base: 'field_bookplate_description'.
   $field_bases['field_bookplate_description'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_bookplate_description',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -95,21 +71,13 @@ function uclalib_bookplates_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_bookplate_fund_purpose'
+  // Exported field_base: 'field_bookplate_fund_purpose'.
   $field_bases['field_bookplate_fund_purpose'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_bookplate_fund_purpose',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -122,21 +90,13 @@ function uclalib_bookplates_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_bookplate_image'
+  // Exported field_base: 'field_bookplate_image'.
   $field_bases['field_bookplate_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_bookplate_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -152,21 +112,13 @@ function uclalib_bookplates_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_bookplates_spak_code'
+  // Exported field_base: 'field_bookplates_spak_code'.
   $field_bases['field_bookplates_spak_code'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_bookplates_spak_code',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -181,21 +133,13 @@ function uclalib_bookplates_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_bookplates_subject_area'
+  // Exported field_base: 'field_bookplates_subject_area'.
   $field_bases['field_bookplates_subject_area'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_bookplates_subject_area',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -215,21 +159,13 @@ function uclalib_bookplates_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_donor_first_name'
+  // Exported field_base: 'field_donor_first_name'.
   $field_bases['field_donor_first_name'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_donor_first_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -244,21 +180,13 @@ function uclalib_bookplates_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_donor_last_name'
+  // Exported field_base: 'field_donor_last_name'.
   $field_bases['field_donor_last_name'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_donor_last_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -273,27 +201,13 @@ function uclalib_bookplates_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_donor_s_'
+  // Exported field_base: 'field_donor_s_'.
   $field_bases['field_donor_s_'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_donor_s_',
-    'foreign keys' => array(
-      'field_donor_first_name_format' => array(
-        'columns' => array(
-          'field_donor_first_name_format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-      'field_donor_last_name_format' => array(
-        'columns' => array(
-          'field_donor_last_name_format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'field_donor_first_name_format' => array(
         0 => 'field_donor_first_name_format',
@@ -317,14 +231,13 @@ function uclalib_bookplates_field_default_field_bases() {
     'type' => 'bookplates_donor_s_',
   );
 
-  // Exported field_base: 'field_image_custom_link'
+  // Exported field_base: 'field_image_custom_link'.
   $field_bases['field_image_custom_link'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_image_custom_link',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
