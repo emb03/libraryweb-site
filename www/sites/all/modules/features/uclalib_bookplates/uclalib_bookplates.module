@@ -65,9 +65,3 @@ function uclalib_bookplates_theme($existing, $type, $theme, $path) {
     ),
   );
 }
-/*function uclalib_bookplates_node_view($node, $view_mode, $langcode) {
-  if ($view_mode == 'default') {
-    print $node->content['bookplate_image'][0];
-  }
-}
-?>*/
