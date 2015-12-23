@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function uclalib_bookplates_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "facetapi" && $api == "facetapi_defaults") {
+    return array("version" => "1");
+  }
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -49,7 +52,6 @@ function uclalib_bookplates_node_info() {
       'help' => '',
     ),
   );
-  drupal_alter('node_info', $items);
   return $items;
 }
 

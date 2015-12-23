@@ -20,19 +20,20 @@ function uclalib_bookplates_field_group_info() {
   $field_group->mode = 'bookplates_landing_page';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Author',
-    'weight' => '4',
+    'label' => '',
+    'weight' => '2',
     'children' => array(
       0 => 'field_bookplate_author_first_nam',
       1 => 'field_bookplate_author_last_name',
     ),
-    'format_type' => 'hidden',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => '',
       'instance_settings' => array(
-        'wrapper' => '',
         'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'open',
     ),
   );
   $export['group_author|node|bookplates|bookplates_landing_page'] = $field_group;
@@ -47,22 +48,18 @@ function uclalib_bookplates_field_group_info() {
   $field_group->mode = 'default';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Author',
-    'weight' => '6',
+    'label' => '',
+    'weight' => '4',
     'children' => array(
       0 => 'field_bookplate_author_first_nam',
       1 => 'field_bookplate_author_last_name',
     ),
-    'format_type' => 'hidden',
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Author',
+      'label' => '',
       'instance_settings' => array(
         'classes' => '',
         'description' => '',
-        'show_label' => '1',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
       ),
       'formatter' => 'open',
     ),
@@ -85,14 +82,16 @@ function uclalib_bookplates_field_group_info() {
       0 => 'field_bookplate_author_first_nam',
       1 => 'field_bookplate_author_last_name',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'html-element',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Author',
       'instance_settings' => array(
-        'description' => '',
+        'required_fields' => 0,
         'classes' => '',
-        'required_fields' => 1,
+        'element' => 'div',
+        'attributes' => '',
       ),
+      'formatter' => '',
     ),
   );
   $export['group_author|node|bookplates|form'] = $field_group;

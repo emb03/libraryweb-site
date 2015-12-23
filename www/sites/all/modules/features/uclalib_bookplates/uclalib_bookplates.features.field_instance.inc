@@ -10,132 +10,7 @@
 function uclalib_bookplates_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance:
-  // 'multifield-bookplates_donor_s_-field_donor_first_name'.
-  $field_instances['multifield-bookplates_donor_s_-field_donor_first_name'] = array(
-    'bundle' => 'bookplates_donor_s_',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'multifield',
-    'field_name' => 'field_donor_first_name',
-    'label' => 'Donor First Name',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'full_html' => 'full_html',
-          'php_code' => 'php_code',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'full_html' => array(
-              'weight' => 0,
-            ),
-            'php_code' => array(
-              'weight' => 11,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-          ),
-        ),
-      ),
-      'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'multifield-bookplates_donor_s_-field_donor_last_name'.
-  $field_instances['multifield-bookplates_donor_s_-field_donor_last_name'] = array(
-    'bundle' => 'bookplates_donor_s_',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'multifield',
-    'field_name' => 'field_donor_last_name',
-    'label' => 'Donor Last Name',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'full_html' => 'full_html',
-          'php_code' => 'php_code',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'full_html' => array(
-              'weight' => 0,
-            ),
-            'php_code' => array(
-              'weight' => 11,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-          ),
-        ),
-      ),
-      'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-bookplates-field_bookplate_author_first_nam'.
+  // Exported field_instance: 'node-bookplates-field_bookplate_author_first_nam'
   $field_instances['node-bookplates-field_bookplate_author_first_nam'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,
@@ -144,14 +19,16 @@ function uclalib_bookplates_field_default_field_instances() {
     'display' => array(
       'bookplates_landing_page' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'text_default',
         'weight' => 0,
       ),
       'default' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'text_default',
         'weight' => 0,
       ),
       'search_index' => array(
@@ -221,8 +98,7 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-bookplates-field_bookplate_author_last_name'.
+  // Exported field_instance: 'node-bookplates-field_bookplate_author_last_name'
   $field_instances['node-bookplates-field_bookplate_author_last_name'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,
@@ -231,14 +107,16 @@ function uclalib_bookplates_field_default_field_instances() {
     'display' => array(
       'bookplates_landing_page' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'text_default',
         'weight' => 1,
       ),
       'default' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'text_default',
         'weight' => 1,
       ),
       'search_index' => array(
@@ -308,7 +186,7 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_bookplate_description'.
+  // Exported field_instance: 'node-bookplates-field_bookplate_description'
   $field_instances['node-bookplates-field_bookplate_description'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,
@@ -398,7 +276,7 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_bookplate_fund_purpose'.
+  // Exported field_instance: 'node-bookplates-field_bookplate_fund_purpose'
   $field_instances['node-bookplates-field_bookplate_fund_purpose'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,
@@ -485,7 +363,7 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_bookplate_image'.
+  // Exported field_instance: 'node-bookplates-field_bookplate_image'
   $field_instances['node-bookplates-field_bookplate_image'] = array(
     'bundle' => 'bookplates',
     'deleted' => 0,
@@ -647,7 +525,7 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_bookplates_spak_code'.
+  // Exported field_instance: 'node-bookplates-field_bookplates_spak_code'
   $field_instances['node-bookplates-field_bookplates_spak_code'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,
@@ -721,7 +599,7 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_bookplates_subject_area'.
+  // Exported field_instance: 'node-bookplates-field_bookplates_subject_area'
   $field_instances['node-bookplates-field_bookplates_subject_area'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,
@@ -785,30 +663,26 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_donor_s_'.
-  $field_instances['node-bookplates-field_donor_s_'] = array(
+  // Exported field_instance: 'node-bookplates-field_donor_name_bookplates'
+  $field_instances['node-bookplates-field_donor_name_bookplates'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'bookplates_landing_page' => array(
-        'label' => 'above',
-        'module' => 'multifield',
-        'settings' => array(
-          'view_mode' => 'default',
-        ),
-        'type' => 'multifield_default',
-        'weight' => 2,
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 1,
       ),
       'default' => array(
-        'label' => 'above',
-        'module' => 'multifield',
-        'settings' => array(
-          'view_mode' => 'default',
-        ),
-        'type' => 'multifield_default',
-        'weight' => 4,
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -818,22 +692,52 @@ function uclalib_bookplates_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_donor_s_',
-    'label' => 'Donor(s)',
+    'field_name' => 'field_donor_name_bookplates',
+    'label' => 'Donor(s) Name(s)',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'multifield',
-      'settings' => array(),
-      'type' => 'multifield_default',
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
       'weight' => 1,
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_image_custom_link'.
+  // Exported field_instance: 'node-bookplates-field_image_custom_link'
   $field_instances['node-bookplates-field_image_custom_link'] = array(
     'bundle' => 'bookplates',
     'default_value' => NULL,
@@ -917,9 +821,7 @@ function uclalib_bookplates_field_default_field_instances() {
   t('Bookplate Fund Purpose');
   t('Bookplate Image');
   t('Bookplates Subject Area');
-  t('Donor First Name');
-  t('Donor Last Name');
-  t('Donor(s)');
+  t('Donor(s) Name(s)');
   t('Spak Code');
   t('image link formatter');
 

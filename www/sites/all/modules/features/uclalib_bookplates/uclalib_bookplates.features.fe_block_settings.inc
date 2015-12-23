@@ -140,37 +140,5 @@ function uclalib_bookplates_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['views-nodequeue_6-block'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'nodequeue_6-block',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'uclalib_omega' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'uclalib_omega',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   return $export;
 }

@@ -45,12 +45,18 @@ table.views-view-grid tbody tr td.grid-3 article.node.node--bookplates.node--boo
     clear: left;
     line-height: 1;
     font-size: 13px;
+    border: 0 solid #c0c0c0;
+    margin: 0 2px;
+    padding: 10px 0;
 }
 .node--bookplates--full .node__content .field__items .field__item.even img{
     clear: left;
     float: left;
     margin: 0;
     padding-right: 10px;
+}
+.field.field--name-field-donor-name-bookplates.field--type-text.field--label-hidden .field__items .field__item.even {
+    clear: left;
 }
 .field--name-field-bookplate-description.field--type-text-long.field--label-hidden {
     padding-top: 6px;
@@ -72,4 +78,9 @@ table.views-view-grid tbody tr td.grid-3 article.node.node--bookplates.node--boo
 }
 .node--bookplates--bookplates-landing-page .node__content .spak-code a {
     display: none;
+}
+#node_bookplates_bookplates_landing_page_group_author.form-wrapper {
+    border: 0 solid #c0c0c0;
+    margin: 0 2px;
+    padding: 10px 0;
 }
