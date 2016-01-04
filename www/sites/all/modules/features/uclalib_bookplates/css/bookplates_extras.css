@@ -84,3 +84,23 @@ table.views-view-grid tbody tr td.grid-3 article.node.node--bookplates.node--boo
     margin: 0 2px;
     padding: 10px 0;
 }
+.views-widget .form-item.form-type-select.form-item-field-bookplates-subject-area-tid {
+    text-indent: -20px;
+}
+#edit-field-bookplates-subject-area-tid-wrapper.views-exposed-widget.views-widget-filter-field_bookplates_subject_area_tid {
+    padding-left: 40px;
+}
+.form-checkboxes.bef-select-as-checkboxes div.bef-checkboxes {
+    font-weight: 100 normal;
+}
+.views-field.views-field-field-donor-name-bookplates .field-content ul li {
+    list-style-type: none;
+    font-style: italic;
+    text-indent: -40px;
+}
+tbody tr td.grid-3 {
+    text-align: left;
+}
+article.node.node--bookplates.node-teaser.node--teaser.node--bookplates--teaser div.node__content div.spak-code a {
+    display: none;
+}

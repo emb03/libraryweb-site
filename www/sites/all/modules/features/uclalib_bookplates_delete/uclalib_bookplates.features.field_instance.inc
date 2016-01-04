@@ -17,6 +17,13 @@ function uclalib_bookplates_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'bookplates_landing_page' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -98,6 +105,13 @@ function uclalib_bookplates_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'bookplates_landing_page' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -179,6 +193,12 @@ function uclalib_bookplates_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'bookplates_landing_page' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -263,6 +283,12 @@ function uclalib_bookplates_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'bookplates_landing_page' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -343,6 +369,20 @@ function uclalib_bookplates_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'bookplates_landing_page' => array(
+        'label' => 'hidden',
+        'module' => 'fancybox',
+        'settings' => array(
+          'fancybox_caption' => 'auto',
+          'fancybox_caption_custom' => '',
+          'fancybox_gallery' => 'post',
+          'fancybox_gallery_custom' => '',
+          'fancybox_image_style_content' => 'medium',
+          'fancybox_image_style_fancybox' => 'large',
+        ),
+        'type' => 'fancybox',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'image_link_formatter',
@@ -492,6 +532,13 @@ function uclalib_bookplates_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'bookplates_landing_page' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -559,6 +606,13 @@ function uclalib_bookplates_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'bookplates_landing_page' => array(
+        'label' => 'hidden',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 1,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
@@ -616,6 +670,13 @@ function uclalib_bookplates_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'bookplates_landing_page' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 1,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -683,6 +744,12 @@ function uclalib_bookplates_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'bookplates_landing_page' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
