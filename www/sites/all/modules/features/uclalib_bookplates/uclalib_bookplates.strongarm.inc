@@ -95,6 +95,9 @@ function uclalib_bookplates_strongarm() {
       'landing_page' => array(
         'custom_settings' => FALSE,
       ),
+      'bookplates_landing_page' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
