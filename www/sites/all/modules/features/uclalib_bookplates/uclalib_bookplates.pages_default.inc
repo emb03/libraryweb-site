@@ -170,6 +170,8 @@ function uclalib_bookplates_default_page_manager_pages() {
   $page->path = 'bookplates';
   $page->access = array(
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array(
     'type' => 'none',
@@ -338,16 +340,14 @@ function uclalib_bookplates_default_page_manager_pages() {
     $display->content['new-cb453f78-d7b0-4208-a942-3be84ec96b8a'] = $pane;
     $display->panels['sidebar_left'][0] = 'new-cb453f78-d7b0-4208-a942-3be84ec96b8a';
     $pane = new stdClass();
-    $pane->pid = 'new-322faa3b-9f06-435a-a3e4-4eff556e8155';
+    $pane->pid = 'new-3c2cb5d8-ecbf-467b-962e-d13e769749ab';
     $pane->panel = 'sidebar_left';
     $pane->type = 'block';
-    $pane->subtype = 'facetapi-ODD10l2DVbGGI31FJH53mldPHHIIe9PC';
+    $pane->subtype = 'views-325a6df0a2b3efc28dd7107fef13cd64';
     $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(),
-      'logic' => 'or',
-    );
+    $pane->access = array();
     $pane->configuration = array(
+      'inherit_path' => 1,
       'override_title' => 1,
       'override_title_text' => 'Subject Areas',
       'override_title_heading' => 'h2',
@@ -366,9 +366,9 @@ function uclalib_bookplates_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '322faa3b-9f06-435a-a3e4-4eff556e8155';
-    $display->content['new-322faa3b-9f06-435a-a3e4-4eff556e8155'] = $pane;
-    $display->panels['sidebar_left'][1] = 'new-322faa3b-9f06-435a-a3e4-4eff556e8155';
+    $pane->uuid = '3c2cb5d8-ecbf-467b-962e-d13e769749ab';
+    $display->content['new-3c2cb5d8-ecbf-467b-962e-d13e769749ab'] = $pane;
+    $display->panels['sidebar_left'][1] = 'new-3c2cb5d8-ecbf-467b-962e-d13e769749ab';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

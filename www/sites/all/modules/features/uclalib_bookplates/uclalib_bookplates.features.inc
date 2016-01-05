@@ -70,6 +70,8 @@ function uclalib_bookplates_default_search_api_index() {
       "index_directly" : 1,
       "cron_limit" : "50",
       "fields" : {
+        "field_bookplate_description:value" : { "type" : "text" },
+        "field_bookplate_fund_purpose:value" : { "type" : "text" },
         "field_bookplates_subject_area" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "nid" : { "type" : "integer" },
         "search_api_language" : { "type" : "string" },
