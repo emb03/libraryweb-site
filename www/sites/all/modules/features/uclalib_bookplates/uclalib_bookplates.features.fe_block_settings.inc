@@ -40,8 +40,8 @@ function uclalib_bookplates_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Sort by Subject Area',
-    'visibility' => 1,
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['views-325a6df0a2b3efc28dd7107fef13cd64'] = array(
