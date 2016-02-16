@@ -65,3 +65,15 @@ function uclalib_bookplates_theme($existing, $type, $theme, $path) {
     ),
   );
 }
+
+function uclalib_bookplates_form_alter(&$form, &$form_state, $form_id) {
+
+  if ($form_id == "views_exposed_form") {// not to be changed form_id
+    if (isset($form['search_api_views_fulltext'])) { //title is name attribute value of input
+      $form['search_api_views_fulltext']['#attributes'] = array(
+        'placeholder'
+        => array(t('Search by Donor Name'))
+      );
+    }
+  }
+}
