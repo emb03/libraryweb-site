@@ -673,13 +673,13 @@ function uclalib_bookplates_views_default_views() {
   $handler->display->display_options['fields']['field_bookplates_subject_area_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_bookplates_subject_area_1']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_bookplates_subject_area_1']['multi_type'] = 'ul';
-  /* Field: Content: URL after spak code */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_url_after_spak_code']['id'] = 'field_url_after_spak_code';
   $handler->display->display_options['fields']['field_url_after_spak_code']['table'] = 'field_data_field_url_after_spak_code';
   $handler->display->display_options['fields']['field_url_after_spak_code']['field'] = 'field_url_after_spak_code';
   $handler->display->display_options['fields']['field_url_after_spak_code']['label'] = '';
   $handler->display->display_options['fields']['field_url_after_spak_code']['element_label_colon'] = FALSE;
-  /* Field: Content: URL before spak code */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_url_before_spak_code']['id'] = 'field_url_before_spak_code';
   $handler->display->display_options['fields']['field_url_before_spak_code']['table'] = 'field_data_field_url_before_spak_code';
   $handler->display->display_options['fields']['field_url_before_spak_code']['field'] = 'field_url_before_spak_code';
