@@ -1,11 +1,7 @@
 <?php
 /**
  * @file
-<<<<<<< Updated upstream
  * Code for the UCLALIB Bookplates feature.
-=======
- * Code for the uclalib_bookplates feature.
->>>>>>> Stashed changes
  */
 
 include_once 'uclalib_bookplates.features.inc';
@@ -43,7 +39,6 @@ function uclalib_bookplates_ctools_plugin_directory($owner, $plugin_type) {
   return NULL;
 }
 
-
 /**
  * Implements hook_preprocess_node().
  */
@@ -52,6 +47,18 @@ function uclalib_bookplates_preprocess_node(&$variables) {
     $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__landing_page';
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function uclalib_bookplates_preprocess_views_view_field(&$variables) {
+  // provide SPAK url
+  if ($variables['field']->field == 'field_bookplates_spak_code') {
+    $url = variable_get('uclalib_bookplates_spak_url') . $variables['output'] . variable_get('uclalib_bookplates_spak_args');
+    $variables['output'] = l(t("See all items purchased through this Endowment."), $url);
+  }
+}
+
 /**
  * Implements hook_theme().
  */
@@ -66,6 +73,9 @@ function uclalib_bookplates_theme($existing, $type, $theme, $path) {
   );
 }
 
+/**
+ * Implements hook_form_alter().
+ */
 function uclalib_bookplates_form_alter(&$form, &$form_state, $form_id) {
 
   if ($form_id == "views_exposed_form") {// not to be changed form_id
@@ -78,6 +88,9 @@ function uclalib_bookplates_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
+/**
+ * Callback function for Bookplates Admin form.
+ */
 function uclalib_bookplates_admin() {
   $form = array();
 
