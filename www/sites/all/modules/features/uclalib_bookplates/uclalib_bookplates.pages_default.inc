@@ -220,6 +220,159 @@ function uclalib_bookplates_default_page_manager_handlers() {
   $handler->conf['display'] = $display;
   $export['node_view__panel_context_51f84529-a3a2-4b4e-b6d8-31e6044daae0'] = $handler;
 
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'term_view__panel_context_106d1ac8-d0a0-46a9-a879-67d3e65c2b65';
+  $handler->task = 'term_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -98;
+  $handler->conf = array(
+    'title' => 'Bookplates Subject Area',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => '',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'term_vocabulary',
+          'settings' => array(
+            'machine_name' => array(
+              'collection_endowment_initiative' => 'collection_endowment_initiative',
+            ),
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'context_exists',
+          'settings' => array(
+            'exists' => '1',
+          ),
+          'context' => 'argument_term_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'or',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'sidebar-left-golden';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'top' => NULL,
+      'sidebar_left' => NULL,
+      'main' => NULL,
+      'below_main_left' => NULL,
+      'below_main_right' => NULL,
+      'secondary' => NULL,
+      'below_secondary_left' => NULL,
+      'below_secondary_right' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Collection Endowments';
+  $display->uuid = '8f7910d2-1e76-4f28-a45d-4619c4a47230';
+  $display->window_title = '';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-df7d44a8-a50e-4b4d-b90d-60f1455f85c0';
+    $pane->panel = 'main';
+    $pane->type = 'views';
+    $pane->subtype = 'bookplates_landing_page';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 1,
+      'nodes_per_page' => '10',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'default',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'df7d44a8-a50e-4b4d-b90d-60f1455f85c0';
+    $display->content['new-df7d44a8-a50e-4b4d-b90d-60f1455f85c0'] = $pane;
+    $display->panels['main'][0] = 'new-df7d44a8-a50e-4b4d-b90d-60f1455f85c0';
+    $pane = new stdClass();
+    $pane->pid = 'new-dab89867-e312-47cb-bc60-30803c0afc09';
+    $pane->panel = 'sidebar_left';
+    $pane->type = 'uclalib_nav';
+    $pane->subtype = 'uclalib_nav';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'dab89867-e312-47cb-bc60-30803c0afc09';
+    $display->content['new-dab89867-e312-47cb-bc60-30803c0afc09'] = $pane;
+    $display->panels['sidebar_left'][0] = 'new-dab89867-e312-47cb-bc60-30803c0afc09';
+    $pane = new stdClass();
+    $pane->pid = 'new-1d9d4c21-1d76-47a8-af9b-5d1871fa3879';
+    $pane->panel = 'top';
+    $pane->type = 'custom';
+    $pane->subtype = 'bookplates_breadcrumbs';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '1d9d4c21-1d76-47a8-af9b-5d1871fa3879';
+    $display->content['new-1d9d4c21-1d76-47a8-af9b-5d1871fa3879'] = $pane;
+    $display->panels['top'][0] = 'new-1d9d4c21-1d76-47a8-af9b-5d1871fa3879';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-dab89867-e312-47cb-bc60-30803c0afc09';
+  $handler->conf['display'] = $display;
+  $export['term_view__panel_context_106d1ac8-d0a0-46a9-a879-67d3e65c2b65'] = $handler;
+
   return $export;
 }
 
