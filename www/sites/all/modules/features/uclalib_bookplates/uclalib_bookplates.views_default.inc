@@ -678,13 +678,7 @@ function uclalib_bookplates_views_default_views() {
   $handler->display->display_options['fields']['field_bookplates_spak_code']['table'] = 'field_data_field_bookplates_spak_code';
   $handler->display->display_options['fields']['field_bookplates_spak_code']['field'] = 'field_bookplates_spak_code';
   $handler->display->display_options['fields']['field_bookplates_spak_code']['label'] = '';
-  $handler->display->display_options['fields']['field_bookplates_spak_code']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_bookplates_spak_code']['alter']['text'] = 'See all items purchased through this Endowment.';
-  $handler->display->display_options['fields']['field_bookplates_spak_code']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_bookplates_spak_code']['alter']['path'] = '[field_url_before_spak_code][field_bookplates_spak_code][field_url_after_spak_code]';
-  $handler->display->display_options['fields']['field_bookplates_spak_code']['alter']['external'] = TRUE;
-  $handler->display->display_options['fields']['field_bookplates_spak_code']['alter']['target'] = '_bla';
-  $handler->display->display_options['fields']['field_bookplates_spak_code']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_bookplates_spak_code']['element_label_colon'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
