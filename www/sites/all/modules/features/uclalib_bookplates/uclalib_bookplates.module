@@ -149,3 +149,20 @@ function uclalib_bookplates_menu() {
 
   return $items;
 }
+
+/**
+ * Implements hook_update_N() - removes unneeded bookplate fields
+ */
+function uclalib_bookplates_update_7000(&$sandbox) {
+  // fields to remove
+  $fields = array(
+    'field_bookplate_author_first_nam',
+    'field_bookplate_author_last_name',
+    'field_bookplate_fund_purpose',
+    'field_image_custom_link',
+  );
+  foreach ($fields as $field) {
+    field_delete_field($field);
+    field_purge_batch();
+  }
+} 
