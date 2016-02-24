@@ -55,7 +55,11 @@ function uclalib_bookplates_preprocess_views_view_field(&$variables) {
   // provide SPAK url
   if ($variables['field']->field == 'field_bookplates_spak_code') {
     $url = variable_get('uclalib_bookplates_spak_url') . $variables['output'] . variable_get('uclalib_bookplates_spak_args');
-    $variables['output'] = l(t("See all items purchased through this Endowment."), $url);
+    $variables['output'] = l(t("See all items purchased through this Endowment."), $url, array(
+      'attributes' => array(
+        'target' => '_blank',
+      )
+    ));
   }
 }
 
