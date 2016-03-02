@@ -163,7 +163,7 @@ can be changed via a pulldown search limit on the results screen. Many records c
 
   $form['articlesplus']['peer_review'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Limit to peer-reviewed journals'),
+    '#title' => t('Limit to peer-reviewed materials'),
   );
 
   $form['articlesplus']['articlesplus_search'] = $search_button;
@@ -181,15 +181,21 @@ can be changed via a pulldown search limit on the results screen. Many records c
       ),
     ),
   );
+  $markup = <<<EOD
+    <strong>What am I searching?</strong>
+    <ul>
+      <li>Journal articles</li>
+      <li>Newspaper articles</li>
+      <li>E-Books</li>
+      <li>Dissertations</li>
+      <li>Other (streaming media, magazine articles, etc.)</li>
+    </ul>
+    <a href="/about-articlesplus">About ArticlesPlus</a></br>
+    <a href="/search">Where else can I search?</a>
+EOD;
+
   $form['articlesplus']['articlesplus_container_mel']['description'] = array(
-    '#markup' => t('
-      <strong>What am I searching?</strong>
-      <img src="http://placehold.it/150x150"
-           alt="ArticlesPlus contains journal articles, newspaper articles, ebooks, other"
-      ></br>
-      <a href="/about-articlesplus">About ArticlesPlus</a></br>
-      <a href="/search">Where else can I search?</a>
-    '),
+    '#markup' => t($markup),
   );
 
   ////////////////////////////////////////////////////////////////////////////////
