@@ -159,26 +159,19 @@ function uclalib_bookplates_admin_reset_defaults($form, &$form_state) {
  * Implements hook_menu().
  */
 function uclalib_bookplates_menu() {
+
   $items = array();
+
   $items['admin/config/content/bookplates'] = array(
     'title' => 'Bookplates Spak Code URL',
     'description' => 'Spak URL and arguments',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('uclalib_bookplates_admin'),
-    'access callback' => 'check_user_has_role',
+    'access arguments' => array('administer site configuration'),
     'type' => MENU_NORMAL_ITEM,
   );
 
   return $items;
-}
-
-
-function check_user_has_role() {
-  global $user;
-  if (in_array('administrator', $user->roles)) {
-    return TRUE;
-  }
-  return FALSE;
 }
 
 /**
@@ -196,4 +189,4 @@ function uclalib_bookplates_update_7000(&$sandbox) {
     field_delete_field($field);
     field_purge_batch();
   }
-} 
+}
