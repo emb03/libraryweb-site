@@ -165,10 +165,20 @@ function uclalib_bookplates_menu() {
     'description' => 'Spak URL and arguments',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('uclalib_bookplates_admin'),
-    'access arguments' => array('access content'),
+    'access callback' => 'check_user_has_role',
     'type' => MENU_NORMAL_ITEM,
   );
+
   return $items;
+}
+
+
+function check_user_has_role() {
+  global $user;
+  if (in_array('administrator', $user->roles)) {
+    return TRUE;
+  }
+  return FALSE;
 }
 
 /**
