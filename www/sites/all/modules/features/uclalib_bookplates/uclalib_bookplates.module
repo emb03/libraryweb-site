@@ -159,18 +159,15 @@ function uclalib_bookplates_admin_reset_defaults($form, &$form_state) {
  * Implements hook_menu().
  */
 function uclalib_bookplates_menu() {
-
   $items = array();
-
   $items['admin/config/content/bookplates'] = array(
     'title' => 'Bookplates Spak Code URL',
     'description' => 'Spak URL and arguments',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('uclalib_bookplates_admin'),
-    'access arguments' => array('administer bookplates settings'),
+    'access arguments' => array('access content'),
     'type' => MENU_NORMAL_ITEM,
   );
-
   return $items;
 }
 
