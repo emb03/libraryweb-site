@@ -102,25 +102,25 @@ function uclalib_bookplates_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'default_opening_hours' => array(
-          'weight' => '9',
+          'weight' => '6',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '12',
+          'weight' => '9',
         ),
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '7',
         ),
         'xmlsitemap' => array(
-          'weight' => '11',
+          'weight' => '8',
         ),
       ),
       'display' => array(
         'default_opening_hours' => array(
           'teaser' => array(
-            'weight' => '5',
+            'weight' => '6',
             'visible' => FALSE,
           ),
           'default' => array(
