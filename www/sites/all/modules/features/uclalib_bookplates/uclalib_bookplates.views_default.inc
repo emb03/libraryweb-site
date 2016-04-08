@@ -446,7 +446,7 @@ function uclalib_bookplates_views_default_views() {
   $handler->display->display_options['fields']['field_donor_name_bookplates']['field'] = 'field_donor_name_bookplates';
   $handler->display->display_options['fields']['field_donor_name_bookplates']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Sort by (field_sort_by) */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['field_sort_by_value']['id'] = 'field_sort_by_value';
   $handler->display->display_options['sorts']['field_sort_by_value']['table'] = 'field_data_field_sort_by';
   $handler->display->display_options['sorts']['field_sort_by_value']['field'] = 'field_sort_by_value';

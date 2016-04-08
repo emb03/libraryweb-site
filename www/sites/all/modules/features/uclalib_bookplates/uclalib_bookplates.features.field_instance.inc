@@ -506,86 +506,14 @@ function uclalib_bookplates_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-bookplates-field_sort_by'
-  $field_instances['node-bookplates-field_sort_by'] = array(
-    'bundle' => 'bookplates',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Z Lastname, Z Firstname',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'This is a hidden field. Enter donor name (Lastname, Firstname) for sorting. IMPORTANT! If this field is left blank, it will appear at the beginning of your results (could be used as featured item in this way).',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_sort_by',
-    'label' => 'Sort by',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'full_html' => 'full_html',
-          'php_code' => 'php_code',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'full_html' => array(
-              'weight' => 0,
-            ),
-            'php_code' => array(
-              'weight' => 11,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-          ),
-        ),
-      ),
-      'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 10,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Bookplate Description');
   t('Bookplate Image');
   t('Donor');
   t('Last Name');
-  t('Sort by');
   t('Spak Code');
   t('Subject Area(s)');
-  t('This is a hidden field. Enter donor name (Lastname, Firstname) for sorting. IMPORTANT! If this field is left blank, it will appear at the beginning of your results (could be used as featured item in this way).');
 
   return $field_instances;
 }
