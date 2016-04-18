@@ -10,6 +10,67 @@
 function uclalib_bookplates_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_collection_donor-field_donor_name_first'
+  $field_instances['field_collection_item-field_collection_donor-field_donor_name_first'] = array(
+    'bundle' => 'field_collection_donor',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_donor_name_first',
+    'label' => 'First Name',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_collection_donor-field_donor_name_last'
   $field_instances['field_collection_item-field_collection_donor-field_donor_name_last'] = array(
     'bundle' => 'field_collection_donor',
@@ -18,7 +79,7 @@ function uclalib_bookplates_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -89,7 +150,7 @@ function uclalib_bookplates_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -187,7 +248,7 @@ function uclalib_bookplates_field_default_field_instances() {
           'image_style' => 'medium',
         ),
         'type' => 'image_link_formatter',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'event_listed_from_bean' => array(
         'label' => 'above',
@@ -243,7 +304,7 @@ function uclalib_bookplates_field_default_field_instances() {
           'image_style' => 'large',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -343,13 +404,13 @@ function uclalib_bookplates_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -417,7 +478,7 @@ function uclalib_bookplates_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'search_index' => array(
         'label' => 'hidden',
@@ -465,29 +526,22 @@ function uclalib_bookplates_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'field_collection',
         'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
           'view_mode' => 'full',
         ),
-        'type' => 'field_collection_view',
-        'weight' => 10,
+        'type' => 'field_collection_fields',
+        'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'field_collection',
         'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
+          'view_mode' => 'full',
         ),
-        'type' => 'field_collection_list',
-        'weight' => 1,
+        'type' => 'field_collection_fields',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -511,6 +565,7 @@ function uclalib_bookplates_field_default_field_instances() {
   t('Bookplate Description');
   t('Bookplate Image');
   t('Donor');
+  t('First Name');
   t('Last Name');
   t('Spak Code');
   t('Subject Area(s)');

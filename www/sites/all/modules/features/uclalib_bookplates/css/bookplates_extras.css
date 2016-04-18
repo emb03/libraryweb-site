@@ -1,4 +1,6 @@
-
+span.bookplates-donor-gift {
+    font-style: italic;
+}
 .node--bookplates--bookplates-landing-page header h2.node__title {
     font-size: 16px;
 }
@@ -10,16 +12,20 @@
 .page-bookplates.section-bookplates .l-region.l-region--main-column {
     padding-left: 0;
 }
-.views-view-grid {
+.page-bookplates.section-bookplates .views-view-grid {
     table-layout: fixed;
     border: none;
 }
-td.grid-3 {
+.page-bookplates.section-bookplates td.grid-3 {
     vertical-align: top;
     padding-top:20px;
 }
+.page-bookplates.section-bookplates .field.field--name-field-donor-name-first.field--type-text.field--label-hidden {
+    float: left;
+    padding: 0 5px 0 0;
+}
 
-table.views-view-grid tbody tr td.grid-3 article.node.node--bookplates.node--bookplates-landing-page.node--bookplates--bookplates-landing-page {
+.page-bookplates.section-bookplates table.views-view-grid tbody tr td.grid-3 article.node.node--bookplates.node--bookplates-landing-page.node--bookplates--bookplates-landing-page {
     text-align: left;
 }
 .field--name-field-bookplates-subject-area.field--type-taxonomy-term-reference.field--label-hidden.clearfix ul.links {
@@ -96,7 +102,7 @@ span.views-label.views-label-field-donor-name-bookplates {
     display: block;
 }
 .field--name-field-bookplates-subject-area.field--type-taxonomy-term-reference.field--label-above.clearfix ul.links {
-    margin: 0 !important;
+    margin: 0;
     padding:0;
 }
 .field.field--name-field-bookplates-subject-area.field--type-taxonomy-term-reference.field--label-above {
@@ -203,7 +209,7 @@ span.views-field.views-field-field-url-after-spak-code, span.views-field.views-f
     font-size: 15px;
 }
 .page-bookplates.section-bookplates table th + th, table td + td {
-     text-align: left !important;
+     text-align: left;
 }
 .view.view-bookplates-landing-page .view-header p {
     font-weight: 600;

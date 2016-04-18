@@ -42,8 +42,8 @@ function uclalib_bookplates_ctools_plugin_directory($owner, $plugin_type) {
 /**
  * Implements hook_preprocess_node().
  */
-function uclalib_bookplates_preprocess_node(&$variables) {
-  if($variables['view_mode'] == 'bookplates_landing_page') {
+function uclalib_bookplates_preprocess_node(&$variables, $hook) {
+  if ($variables['view_mode'] == 'bookplates_landing_page') {
     $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__landing_page';
   }
 }
@@ -61,24 +61,6 @@ function uclalib_bookplates_preprocess_views_view_field(&$variables) {
           'target' => '_blank',
         )
       ));
-    }
-  }
-  // Return a comma seperated list of donors
-  if ($variables['view']->current_display != 'bookplates_landing_page') {
-    if ($variables['field']->field == 'field_donor_name_bookplates') {
-      // render text for single donor
-      if (count($variables['row']->field_field_donor_name_bookplates) == 1) {
-        $variables['output'] = $variables['field']->last_render_text;
-      } else {
-        // get all the donors
-        $donors = array();
-        foreach($variables['row']->field_field_donor_name_bookplates as $donor) {
-          $donors[] = $donor['raw']['safe_value'];
-        }
-        // append the last donor with an "and" before it
-        $donor_last = array_pop($donors);
-        $variables['output'] = implode(', ', $donors) . " and " . $donor_last;
-      }
     }
   }
 }
@@ -127,14 +109,14 @@ function uclalib_bookplates_admin() {
     '#description' => t("The spak code URL"),
     '#required' => TRUE,
   );
-   $form['uclalib_bookplates_spak_args'] = array(
-     '#type' => 'textfield',
-     '#title' => t('Spak args'),
-     '#default_value' => variable_get('uclalib_bookplates_spak_args', '&argType1=all&searchCode1=SPAK&combine2=and&searchArg2=&argType2=all&searchCode2=SPAK&combine3=and&searchArg3=&argType3=all&searchCode3=GKEY&year=2014-2015&fromYear=&toYear=&location=all&place=all&type=all&status=all&medium=all&language=all&content=all&media=all&carrier=all&recCount=50&searchType=2&page.search.search.button=Search'),
-     '#size' => 100,
-     '#maxlength' => 1000,
-     '#description' => t("The spak code arguments to be passed"),
-     '#required' => TRUE,
+  $form['uclalib_bookplates_spak_args'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Spak args'),
+    '#default_value' => variable_get('uclalib_bookplates_spak_args', '&argType1=all&searchCode1=SPAK&combine2=and&searchArg2=&argType2=all&searchCode2=SPAK&combine3=and&searchArg3=&argType3=all&searchCode3=GKEY&year=2014-2015&fromYear=&toYear=&location=all&place=all&type=all&status=all&medium=all&language=all&content=all&media=all&carrier=all&recCount=50&searchType=2&page.search.search.button=Search'),
+    '#size' => 100,
+    '#maxlength' => 1000,
+    '#description' => t("The spak code arguments to be passed"),
+    '#required' => TRUE,
   );
   // Add the reset button.
   $form['actions']['reset'] = array(
@@ -184,9 +166,58 @@ function uclalib_bookplates_update_7000(&$sandbox) {
     'field_bookplate_author_last_name',
     'field_bookplate_fund_purpose',
     'field_image_custom_link',
+    'field_sort_by',
   );
   foreach ($fields as $field) {
     field_delete_field($field);
     field_purge_batch();
   }
 }
+
+/**
+ * Implements template_preprocess_entity().
+ */
+function uclalib_omega_preprocess_entity(&$variables, $hook) {
+
+  $function = 'uclalib_omega_preprocess_' . $variables['entity_type'];
+  if (function_exists($function)) {
+    $function($variables, $hook);
+  }
+}
+
+/**
+ * Field Collection-specific implementation of template_preprocess_entity().
+ */
+function uclalib_omega_preprocess_field_collection_item(&$variables) {
+  // testing to see in preprocess works
+  $variables['classes_array'][] = 'your-class-here';
+
+// Return a comma separated list of donors
+  if ($variables['view']->current_display != 'bookplates_landing_page') {
+    if ($variables['#field_name'] == 'field_collection_donor') {
+    }
+    dpm($variables);
+
+// nothing below here works
+    // render text for single donor
+    if (count($variables['row']->field_field_collection_donor) == 1) {
+
+
+      $variables['output'] = $variables['#field_name']->last_render_text;
+    }
+    else {
+      // get all the donors
+      $donors = array();
+      foreach ($variables['row']->field_field_collection_donor as $donor) {
+        $donors[] = $donor['raw']['safe_value'];
+      }
+      // append the last donor with an "and" before it
+      $donor_last = array_pop($donors);
+      $variables['output'] = implode(', ', $donors) . " and " . $donor_last;
+    }
+  }
+}
+
+
+
+

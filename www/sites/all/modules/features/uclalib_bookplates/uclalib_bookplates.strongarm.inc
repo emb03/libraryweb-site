@@ -120,11 +120,11 @@ function uclalib_bookplates_strongarm() {
       'display' => array(
         'default_opening_hours' => array(
           'teaser' => array(
-            'weight' => '6',
+            'weight' => '5',
             'visible' => FALSE,
           ),
           'default' => array(
-            'weight' => '8',
+            'weight' => '5',
             'visible' => FALSE,
           ),
           'landing_page' => array(
