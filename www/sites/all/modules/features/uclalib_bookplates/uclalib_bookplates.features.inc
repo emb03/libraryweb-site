@@ -70,6 +70,8 @@ function uclalib_bookplates_default_search_api_index() {
           "type" : "list\\u003Cinteger\\u003E",
           "entity_type" : "field_collection_item"
         },
+        "field_collection_donor:field_donor_name_first" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_collection_donor:field_donor_name_last" : { "type" : "list\\u003Ctext\\u003E" },
         "nid" : { "type" : "integer" },
         "search_api_language" : { "type" : "string" },
         "title" : { "type" : "text" },
