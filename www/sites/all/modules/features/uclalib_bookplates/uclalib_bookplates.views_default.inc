@@ -37,6 +37,10 @@ function uclalib_bookplates_views_default_views() {
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  /* Relationship: Indexed Content: Donor */
+  $handler->display->display_options['relationships']['field_collection_donor']['id'] = 'field_collection_donor';
+  $handler->display->display_options['relationships']['field_collection_donor']['table'] = 'search_api_index_bookplates';
+  $handler->display->display_options['relationships']['field_collection_donor']['field'] = 'field_collection_donor';
   /* Field: Indexed Content: Bookplate Description */
   $handler->display->display_options['fields']['field_bookplate_description']['id'] = 'field_bookplate_description';
   $handler->display->display_options['fields']['field_bookplate_description']['table'] = 'search_api_index_bookplates';
@@ -95,6 +99,7 @@ function uclalib_bookplates_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'No results found for this search.';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Indexed Content: Node ID */
   $handler->display->display_options['sorts']['nid']['id'] = 'nid';
