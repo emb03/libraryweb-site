@@ -204,10 +204,10 @@ function uclalib_bookplates_preprocess_views_view_field(&$variables) {
       //     dpm($variables);
 
 
-      // render text for single donor
+      // render text for single donor -- use 'output' works
       if (count($variables['row']->field_field_collection_donor) == 1) {
-        $variables['output_donors'] = $variables['field']->last_render_text;
-        dpm($variables['output_donors']);
+        $variables['output'] = $variables['field']->last_render_text;
+        dpm($variables['output']);
       }
       else {
         // get all the donors
