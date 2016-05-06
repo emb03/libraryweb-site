@@ -49,23 +49,6 @@ function uclalib_bookplates_preprocess_node(&$variables, $hook) {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
- */
-function uclalib_bookplates_preprocess_views_view_field(&$variables) {
-  // provide SPAK url
-  if ($variables['field']->field == 'field_bookplates_spak_code') {
-    if (!empty($variables['output'])) {
-      $url = variable_get('uclalib_bookplates_spak_url') . $variables['output'] . variable_get('uclalib_bookplates_spak_args');
-      $variables['output'] = l(t("See all items purchased through this Endowment."), $url, array(
-        'attributes' => array(
-          'target' => '_blank',
-        )
-      ));
-    }
-  }
-}
-
-/**
  * Implements hook_theme().
  */
 function uclalib_bookplates_theme($existing, $type, $theme, $path) {
@@ -76,8 +59,18 @@ function uclalib_bookplates_theme($existing, $type, $theme, $path) {
       'template' => 'node--bookplates',
       'path' => drupal_get_path('module', 'uclalib_bookplates') . '/templates',
     ),
+  //registering a theme function with a template copy views-view-fields
+  // template and call 'views-view-fields--bookplates--donor-names'
+    'views_view_field__bookplates_single_node__field_collection_donor' => array(
+      'render element' => 'content',
+      'variables' => array('view' => NULL, 'field' => NULL, 'row' => NULL),
+      'template' => 'views-view-field--bookplates-single-node--field-collection-donor',
+      'base hook' => 'views_view_field',
+      'path' => drupal_get_path('module', 'uclalib_bookplates') . '/templates',
+    ),
   );
 }
+
 
 /**
  * Implements hook_form_alter().
@@ -173,51 +166,60 @@ function uclalib_bookplates_update_7000(&$sandbox) {
     field_purge_batch();
   }
 }
-
 /**
- * Implements template_preprocess_entity().
+ * Implements hook_preprocess_HOOK().
  */
-function uclalib_omega_preprocess_entity(&$variables, $hook) {
-
-  $function = 'uclalib_omega_preprocess_' . $variables['entity_type'];
-  if (function_exists($function)) {
-    $function($variables, $hook);
+function uclalib_bookplates_preprocess_views_view_field(&$variables) {
+  // provide SPAK url
+  if ($variables['field']->field == 'field_bookplates_spak_code') {
+    if (!empty($variables['output'])) {
+      $url = variable_get('uclalib_bookplates_spak_url') . $variables['output'] . variable_get('uclalib_bookplates_spak_args');
+      $variables['output'] = l(t("See all items purchased through this Endowment."), $url, array(
+        'attributes' => array(
+          'target' => '_blank',
+        )
+      ));
+    }
   }
-}
 
-/**
- * Field Collection-specific implementation of template_preprocess_entity().
- */
-function uclalib_omega_preprocess_field_collection_item(&$variables) {
-  // testing to see in preprocess works
-  $variables['classes_array'][] = 'your-class-here';
-
-// Return a comma separated list of donors
+  //$variables['classes_array'][] = 'your-class-here';
   if ($variables['view']->current_display != 'bookplates_landing_page') {
-    if ($variables['#field_name'] == 'field_collection_donor') {
-    }
-    dpm($variables);
-
-// nothing below here works
-    // render text for single donor
-    if (count($variables['row']->field_field_collection_donor) == 1) {
-
-
-      $variables['output'] = $variables['#field_name']->last_render_text;
-    }
-    else {
-      // get all the donors
-      $donors = array();
-      foreach ($variables['row']->field_field_collection_donor as $donor) {
-        $donors[] = $donor['raw']['safe_value'];
+    if ($variables['field']->field == 'field_collection_donor') {
+      // dpm($variables);
+      // create array of donor names
+      $variables['donor_names'] = array();
+      $variables['output_donors'] = '';
+      foreach ($variables['row']->field_field_collection_donor as $key => $value) {
+//      dpm($variables['row']->field_field_collection_donor[$key]['raw']['value']);
+        // dpm($value);
+        $variables['donor_names'][] = $donor_name;
+        $value_raw = $value['raw']['value'];
+        $donor_name = $value['rendered']['entity']['field_collection_item'][$value_raw]['field_donor_name_first']['#items'][0]['safe_value'] . " " . $value['rendered']['entity']['field_collection_item'][$value_raw]['field_donor_name_last']['#items'][0]['safe_value'];
+        $variables['output_donors'];
+       dpm($donor_name);
       }
-      // append the last donor with an "and" before it
-      $donor_last = array_pop($donors);
-      $variables['output'] = implode(', ', $donors) . " and " . $donor_last;
+
+/*        // render text for single donor
+        if (count($variables['row']->field_field_collection_donor) == 1) {
+          $variables['output_donors'] = $variables['field']->last_render_text;
+        }
+        else {
+          // get all the donors
+          $donors = array();
+          foreach ($variables['row']->field_field_collection_donor as $donor_name){
+            $donors[] = $donor_name['raw']['safe_value'];
+          }
+        krumo($variables);
+          //   var_dump($array_var);
+
+          // append the last donor with an "and" before it
+          // $donor_last = array_pop($donors);
+          // $variables['output_donors'] = implode(', ', $donors) . " and" . $donor_last;
+
+          $donor_last = array_pop($donors);
+          $variables['output_donors'] = implode(', ', $donors) . ' and ' . $donor_last;
+          //var_dump($array_var);*/
+
+        }
+      }
     }
-  }
-}
-
-
-
-

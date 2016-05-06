@@ -88,6 +88,10 @@
         <h3><a href="<?php print $node_url ?>" title="<?php print $title
             ?>">
                 <?php print $title ?></a></h3>
+      <?php hide($content['field_donor_collection']); ?>
+      <div class="bookplate-donors">
+        <?php print render($content['field_donor_collection']); ?>
+      </div>
 
         <?php
         hide($content['field_bookplate_image']); ?>

@@ -1125,7 +1125,7 @@ function theme_views_container($variables) {
  * The default style for all views is views-view-unformatted.tpl.php
  *
  * Many styles will then farm out the actual display of each row to a row
- * style; the default row style is views-view-fields.tpl.php.
+ * style; the default row style is views-view-field--bookplates-single-node--field-collection-donor.tpl.php.
  *
  * Here is an example of all the templates that will be tried in the following
  * case:
@@ -1145,7 +1145,7 @@ function theme_views_container($variables) {
  * - views-view-fields--foobar--page.tpl.php
  * - views-view-fields--page.tpl.php
  * - views-view-fields--foobar.tpl.php
- * - views-view-fields.tpl.php
+ * - views-view-field--bookplates-single-node--field-collection-donor.tpl.php
  *
  * Important! When adding a new template to your theme, be sure to flush the
  * theme registry cache!
