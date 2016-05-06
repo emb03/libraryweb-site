@@ -627,6 +627,9 @@ function uclalib_bookplates_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['inline'] = array(
+    'field_donor_name_first' => 'field_donor_name_first',
+    'field_donor_name_last' => 'field_donor_name_last',
+    'field_collection_donor' => 'field_collection_donor',
     'field_bookplates_spak_code' => 'field_bookplates_spak_code',
   );
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
@@ -663,8 +666,7 @@ function uclalib_bookplates_views_default_views() {
   $handler->display->display_options['fields']['field_collection_donor']['id'] = 'field_collection_donor';
   $handler->display->display_options['fields']['field_collection_donor']['table'] = 'field_data_field_collection_donor';
   $handler->display->display_options['fields']['field_collection_donor']['field'] = 'field_collection_donor';
-  $handler->display->display_options['fields']['field_collection_donor']['label'] = '';
-  $handler->display->display_options['fields']['field_collection_donor']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_collection_donor']['label'] = 'Make possible by a gift from ';
   $handler->display->display_options['fields']['field_collection_donor']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_collection_donor']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['field_collection_donor']['element_wrapper_class'] = 'bookplates-donor-gift';

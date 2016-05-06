@@ -22,5 +22,5 @@
  * the view is modified.
  */
 ?>
-<!--<p class="bookplates-donor-gift">Made possible by a gift from&nbsp;--><?php //print $output_donors; ?><!--</p>-->
+<?php print $output_donors;?>
 

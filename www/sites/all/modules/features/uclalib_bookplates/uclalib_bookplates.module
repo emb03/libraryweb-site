@@ -183,43 +183,60 @@ function uclalib_bookplates_preprocess_views_view_field(&$variables) {
   }
 
   //$variables['classes_array'][] = 'your-class-here';
-  if ($variables['view']->current_display != 'bookplates_landing_page') {
-    if ($variables['field']->field == 'field_collection_donor') {
-      // dpm($variables);
-      // create array of donor names
-      $variables['donor_names'] = array();
-      $variables['output_donors'] = '';
-      foreach ($variables['row']->field_field_collection_donor as $key => $value) {
+
+  if ($variables['field']->field == 'field_collection_donor') {
+    // dpm($variables);
+    // create array of donor names
+    $variables['donor_names'] = array();
+    $variables['output_donors'] = '';
+    foreach ($variables['row']->field_field_collection_donor as $key => $value) {
 //      dpm($variables['row']->field_field_collection_donor[$key]['raw']['value']);
-        // dpm($value);
-        $variables['donor_names'][] = $donor_name;
-        $value_raw = $value['raw']['value'];
-        $donor_name = $value['rendered']['entity']['field_collection_item'][$value_raw]['field_donor_name_first']['#items'][0]['safe_value'] . " " . $value['rendered']['entity']['field_collection_item'][$value_raw]['field_donor_name_last']['#items'][0]['safe_value'];
-        $variables['output_donors'];
-       dpm($donor_name);
+      //    dpm($value);
+      $value_raw = $value['raw']['value'];
+      $donor_name = $value['rendered']['entity']['field_collection_item'][$value_raw]['field_donor_name_first']['#items'][0]['safe_value'] . " " . $value['rendered']['entity']['field_collection_item'][$value_raw]['field_donor_name_last']['#items'][0]['safe_value'];
+      //    $variables['output_donors'] .= '';
+
+      $variables['donor_names'][] = $donor_name;
+      //  dpm($variables['donor_names'], "\$variables['donor_names']");
+
+      $variables['output_donors'] = implode(' ', $variables['donor_names']);
+//      dpm($variables['output_donors']);
+      //     dpm($variables);
+
+
+      // render text for single donor
+      if (count($variables['row']->field_field_collection_donor) == 1) {
+        $variables['output_donors'] = $variables['field']->last_render_text;
+        dpm($variables['output_donors']);
       }
-
-/*        // render text for single donor
-        if (count($variables['row']->field_field_collection_donor) == 1) {
-          $variables['output_donors'] = $variables['field']->last_render_text;
+      else {
+        // get all the donors
+        $donors = array();
+        foreach ($variables['row']->field_field_collection_donor as $donor_name) {
+          $donors[] = $donor_name['raw']['safe_value'];
+     //     dpm($donors);
         }
-        else {
-          // get all the donors
-          $donors = array();
-          foreach ($variables['row']->field_field_collection_donor as $donor_name){
-            $donors[] = $donor_name['raw']['safe_value'];
-          }
-        krumo($variables);
-          //   var_dump($array_var);
 
-          // append the last donor with an "and" before it
-          // $donor_last = array_pop($donors);
-          // $variables['output_donors'] = implode(', ', $donors) . " and" . $donor_last;
+        //    dpm($variables);
+        //   var_dump($array_var);
 
-          $donor_last = array_pop($donors);
-          $variables['output_donors'] = implode(', ', $donors) . ' and ' . $donor_last;
-          //var_dump($array_var);*/
+        // append the last donor with an "and" before it
+        // $donor_last = array_pop($donors);
+        // $variables['output_donors'] = implode(', ', $donors) . " and" . $donor_last;
 
-        }
+        $donor_last = array_pop($donors);
+        $variables['output_donors'] = implode(', ', $variables['donor_names']) . ' and ' . $donor_last;
+        //var_dump($array_var);
+//        dpm($variables['output_donors']);
+
+        dpm($donor_last);
+
+
+
       }
     }
+  }
+}
+
+
+
