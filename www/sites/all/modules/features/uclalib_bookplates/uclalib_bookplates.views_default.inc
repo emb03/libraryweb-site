@@ -136,6 +136,10 @@ function uclalib_bookplates_views_default_views() {
     7 => 0,
     11 => 0,
   );
+  /* Filter criterion: Indexed Content: Donor */
+  $handler->display->display_options['filters']['field_collection_donor']['id'] = 'field_collection_donor';
+  $handler->display->display_options['filters']['field_collection_donor']['table'] = 'search_api_index_bookplates';
+  $handler->display->display_options['filters']['field_collection_donor']['field'] = 'field_collection_donor';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
