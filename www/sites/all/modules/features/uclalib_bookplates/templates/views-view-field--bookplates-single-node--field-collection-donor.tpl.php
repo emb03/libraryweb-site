@@ -23,4 +23,3 @@
  */
 ?>
 <?php print $output_donors;?>
-

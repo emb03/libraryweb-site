@@ -185,36 +185,32 @@ function uclalib_bookplates_preprocess_views_view_field(&$variables) {
   //$variables['classes_array'][] = 'your-class-here';
   if ($variables['view']->current_display != 'bookplates_landing_page') {
     if ($variables['field']->field == 'field_collection_donor') {
-      // dpm($variables);
       // create array of donor names
       $variables['donor_names'] = array();
       $variables['output_donors'] = '';
 
       foreach ($variables['row']->field_field_collection_donor as $key => $value) {
-      //dpm($variables['row']->field_field_collection_donor[$key]['raw']['value']);
-       // dpm($value);
         $variables['donor_names'][] = $donor_name;
         $value_raw = $value['raw']['value'];
         $donor_name = $value['rendered']['entity']['field_collection_item'][$value_raw]['field_donor_name_first']['#items'][0]['safe_value'] . " " . $value['rendered']['entity']['field_collection_item'][$value_raw]['field_donor_name_last']['#items'][0]['safe_value'];
-        dpm($donor_name);//this prints out the names of donors
-        //$variables['output_donors'] .= '';
+      }
 
-        // render text for single donor
-        if (count($variables['row']->field_field_collection_donor) == 1) {
-          $variables['output_donors'] = $variables['field']->last_render_text;
+      // render text for single donor
+      if (count($variables['row']->field_field_collection_donor) == 1) {
+        $variables['output_donors'] = $variables['field']->last_render_text;
+      }
+      else {
+        // get all the donors
+        $donors = array();
+        foreach ($variables['row']->field_field_collection_donor as $value) {
+          $variables['donor_names'][] = $donor_name;
+          $value_raw = $value['raw']['value'];
+          $donor_name = $value['rendered']['entity']['field_collection_item'][$value_raw]['field_donor_name_first']['#items'][0]['safe_value'] . " " . $value['rendered']['entity']['field_collection_item'][$value_raw]['field_donor_name_last']['#items'][0]['safe_value'];
+          $donors[] = $donor_name;//what goes here???
         }
-
-        else {
-          // get all the donors
-          $donors = array();
-          foreach ($variables['row']->field_field_collection_donor as $donor_name){
-            $donors[] = $donor_name;//what goes here???
-            dpm($donor_name); // this prints out the word 'array'
-          }
-          // append the last donor with an "and" before it
-         $donor_last = array_pop($donors);
-          $variables['output_donors'] = implode(', ', $donors) . ' and ' . $donor_last;
-        }
+        // append the last donor with an "and" before it
+        $donor_last = array_pop($donors);
+        $variables['output_donors'] = implode(', ', $donors) . ' and ' . $donor_last;
       }
     }
   }

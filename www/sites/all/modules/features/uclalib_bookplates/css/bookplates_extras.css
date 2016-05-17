@@ -1,3 +1,11 @@
+/* make all images the height of largest image*/
+.views-field.views-field-field-bookplate-image {
+    height: 331px;
+    overflow: hidden;
+}
+span.views-field.views-field-field-bookplates-spak-code {
+    line-height: 2;
+}
 span.bookplates-donor-gift {
     font-style: italic;
 }
@@ -20,9 +28,13 @@ span.bookplates-donor-gift {
     vertical-align: top;
     padding-top:20px;
 }
-.page-bookplates.section-bookplates .field.field--name-field-donor-name-first.field--type-text.field--label-hidden {
+.field.field--name-field-donor-name-first.field--type-text.field--label-hidden {
     float: left;
-    padding: 0 5px 0 0;
+    padding: 0 3px 0 0;
+}
+span.views-label.views-label-field-collection-donor {
+    float: left;
+    padding-right: 3px;
 }
 
 .page-bookplates.section-bookplates table.views-view-grid tbody tr td.grid-3 article.node.node--bookplates.node--bookplates-landing-page.node--bookplates--bookplates-landing-page {
