@@ -1,5 +1,5 @@
 /* make all images the height of largest image*/
-.views-field.views-field-field-bookplate-image {
+.view-bookplates-landing-page.view-id-bookplates_landing_page.view-display-id-bookplates_landing_page table.views-view-grid tbody tr td.grid-3 div.views-field.views-field-field-bookplate-image {
     height: 331px;
     overflow: hidden;
 }
