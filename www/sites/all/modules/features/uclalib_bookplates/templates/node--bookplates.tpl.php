@@ -78,17 +78,20 @@
  * @see template_process()
  */
 ?>
-<?php if ($teaser): ?>
+<?php if ($teaser):
+    ?>
+
     <!-- teaser template HTML here -->
+
     <div<?php print $content_attributes; ?>>
         <h3><a href="<?php print $node_url ?>" title="<?php print $title
-            ?>"><?php print $title ?></a></h3>
-        <?php
-        hide($content['field_donor_name_bookplates']); ?>
-        <div class="donors-name">
-            Made possible by a gift from
-            <?php print render ($content['field_donor_name_bookplates']); ?>
-        </div>
+            ?>">
+                <?php print $title ?></a></h3>
+      <?php hide($content['field_donor_collection']); ?>
+      <div class="bookplate-donors">
+        <?php print render($content['field_donor_collection']); ?>
+      </div>
+
         <?php
         hide($content['field_bookplate_image']); ?>
         <div class="bookplate-image">
@@ -105,17 +108,38 @@
 
 <?php else: ?>
     <!-- regular node view template HTML here -->
+<!--   <h1>Hello Node view template</h1>-->
+ <div class="donor-name">
+<!--Made possible by a gift from-->
+    <?php
+/*    dpm($variables);
 
+    hide($content['field_collection_donor']);
 
-        <?php if (!empty($title_prefix) || !empty($title_suffix) || !$page): ?>
+    $wrapper = entity_metadata_wrapper('node', $node);
+    $formtype = field_get_items('node', $node, 'field_collection_donor');
+    foreach($formtype as $itemid) {
+        $item = field_collection_field_get_entity($itemid);
+        print $item->field_donor_name_first['und'][0]['safe_value'];
+        print $item->field_donor_name_last['und'][0]['safe_value'];
+    }
+        */?>
+       <?php if (!empty($title_prefix) || !empty($title_suffix) || !$page):
+    ?>
         <header>
-            <?php print render($title_prefix); ?>
+
+            <?php print render($title_prefix);
+    ?>
             <?php if (!$page): ?>
                 <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>" rel="bookmark"><?php print $title; ?></a></h2>
             <?php endif; ?>
             <?php print render($title_suffix); ?>
         </header>
+
      </div>
+
+        </div>
     <?php endif; ?>
+
     </article>
 <?php endif; ?>
