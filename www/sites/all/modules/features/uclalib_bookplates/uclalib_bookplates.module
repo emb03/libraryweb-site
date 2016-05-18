@@ -40,15 +40,6 @@ function uclalib_bookplates_ctools_plugin_directory($owner, $plugin_type) {
 }
 
 /**
- * Implements hook_preprocess_node().
- */
-function uclalib_bookplates_preprocess_node(&$variables, $hook) {
-  if ($variables['view_mode'] == 'bookplates_landing_page') {
-    $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__landing_page';
-  }
-}
-
-/**
  * Implements hook_theme().
  */
 function uclalib_bookplates_theme($existing, $type, $theme, $path) {
@@ -221,4 +212,14 @@ function uclalib_bookplates_preprocess_views_view_field(&$variables) {
       $variables['output_donors'] = implode(', ', $donors) . ' and ' . $donor_last;
     }
   }
+}
+/**
+ * Implements hook_update_N() - removes unneeded bookplate fields
+ */
+function uclalib_bookplates_update_7200(&$sandbox) {
+  // fields to remove
+  $fields = array(
+    'field_donor_name_bookplates',
+    'field_sort_by',
+  );
 }
