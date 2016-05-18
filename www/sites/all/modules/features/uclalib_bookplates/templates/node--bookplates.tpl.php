@@ -80,8 +80,7 @@
 ?>
 <?php if ($teaser):
     ?>
-  <h1>Hello Teaser Template</h1>
-    <?php dpm($variables) ?>
+
     <!-- teaser template HTML here -->
 
     <div<?php print $content_attributes; ?>>

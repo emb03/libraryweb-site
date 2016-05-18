@@ -3,6 +3,12 @@
     height: 331px;
     overflow: hidden;
 }
+.section-collection-endowment-initiative .pane-bookplates-landing-page .view.view-bookplates-landing-page.view-id-bookplates_landing_page.view-display-id-default table.views-view-grid {
+    border: 0;
+}
+.views-view-grid tbody tr.row-1.row-first.row-last td.col-2, .col-3, .col-4 {
+    text-align: left;
+}
 span.views-field.views-field-field-bookplates-spak-code {
     line-height: 2;
 }
