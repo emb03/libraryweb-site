@@ -188,35 +188,32 @@ function uclalib_bookplates_default_page_manager_handlers() {
     $display->content['new-724bbc15-6ae2-4aac-86be-b4ea82ffc408'] = $pane;
     $display->panels['sidebar_left'][0] = 'new-724bbc15-6ae2-4aac-86be-b4ea82ffc408';
     $pane = new stdClass();
-    $pane->pid = 'new-3cb57e0e-d422-4efe-9e6a-e49ffbc08671';
+    $pane->pid = 'new-ce7faddb-97fc-4dfa-b755-55c42c6679c8';
     $pane->panel = 'top';
     $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->subtype = 'bookplates_breadcrumbs';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Back to Bookplates breadcrumbs',
+      'admin_title' => '',
       'title' => '',
-      'body' => '<p><a href="/bookplates">&lt; All Bookplates</a></p>
-',
+      'body' => '',
       'format' => 'full_html',
-      'substitute' => 1,
-      'name' => 'bookplates_breadcrumbs',
+      'substitute' => TRUE,
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
-      'style' => 'default',
     );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '3cb57e0e-d422-4efe-9e6a-e49ffbc08671';
-    $display->content['new-3cb57e0e-d422-4efe-9e6a-e49ffbc08671'] = $pane;
-    $display->panels['top'][0] = 'new-3cb57e0e-d422-4efe-9e6a-e49ffbc08671';
+    $pane->uuid = 'ce7faddb-97fc-4dfa-b755-55c42c6679c8';
+    $display->content['new-ce7faddb-97fc-4dfa-b755-55c42c6679c8'] = $pane;
+    $display->panels['top'][0] = 'new-ce7faddb-97fc-4dfa-b755-55c42c6679c8';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-3cb57e0e-d422-4efe-9e6a-e49ffbc08671';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view__panel_context_51f84529-a3a2-4b4e-b6d8-31e6044daae0'] = $handler;
 

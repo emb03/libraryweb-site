@@ -6,6 +6,10 @@
     float: left;
     padding-right: 3px;
 }
+.page-bookplates.section-content .field-collection-item-field-collection-donor.clearfix .field.field--name-field-donor-name-first.field--type-text.field--label-hidden div.field__items div.field__item.even {
+    float: left;
+    padding-right: 3px;
+}
 .section-collection-endowment-initiative table.views-view-grid {
     border: 0;
 }
@@ -35,7 +39,7 @@ span.bookplates-donor-gift {
     vertical-align: top;
     padding-top:20px;
 }
-span.views-label.views-label-field-collection-donor, .node-type-bookplates.section-content .field__item.even {
+span.views-label.views-label-field-collection-donor, .node-type-bookplates.section-bookplates .field__item.even {
     float: left;
     padding: 0 3px 0 0;
 }
@@ -180,6 +184,10 @@ span.views-label.views-label-field-donor-name-bookplates {
 .page-bookplates.section-bookplates hr {
      margin: 0 0 -50px;
  }
+.node-type-bookplates.section-bookplates .views-field.views-field-field-bookplate-image .field-content img {
+    float: left;
+    padding: 8px 20px 0 0;
+}
 .node-type-bookplates.section-content .views-field.views-field-field-bookplate-image .field-content img {
     float: left;
     padding: 8px 20px 0 0;
