@@ -6,7 +6,6 @@
 
 include_once 'uclalib_bookplates.features.inc';
 
-
 /**
  * Implements hook_ctools_plugin_directory()
  */
@@ -52,7 +51,6 @@ function uclalib_bookplates_theme($existing, $type, $theme, $path) {
     ),
   );
 }
-
 
 /**
  * Implements hook_form_alter().
@@ -129,8 +127,8 @@ function uclalib_bookplates_menu() {
     'access arguments' => array('administer site configuration'),
     'type' => MENU_NORMAL_ITEM,
   );
-
   return $items;
+
 }
 
 /**
