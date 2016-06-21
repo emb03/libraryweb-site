@@ -223,6 +223,15 @@ span.views-field.views-field-field-url-after-spak-code, span.views-field.views-f
 .page-bookplates.section-bookplates .view-header p {
     display: none;
 }
+.page-taxonomy.page-taxonomy-term .view-content table.views-view-grid tbody tr td.grid-3 {
+    vertical-align: top;
+    text-align: left;
+}
+.page-taxonomy.page-taxonomy-term span.views-label.views-label-field-collection-donor {
+    clear: none;
+    float: left;
+    padding-right: 3px;
+}
 /*tables on taxonomy results page*/
 .section-collection-endowment-initiative .view-content table.views-view-grid tbody {
     vertical-align: top;
