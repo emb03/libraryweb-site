@@ -416,13 +416,12 @@ function uclalib_search_views_default_views() {
   $handler->display->display_options['fields']['site_general_search']['display'] = 'view';
   $handler->display->display_options['fields']['site_general_search']['view_mode'] = 'teaser';
   $handler->display->display_options['fields']['site_general_search']['bypass_access'] = 0;
-  /* Field: Page manager pages: Title (indexed) */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['page_manager_pages_title']['id'] = 'page_manager_pages_title';
   $handler->display->display_options['fields']['page_manager_pages_title']['table'] = 'search_api_multi';
   $handler->display->display_options['fields']['page_manager_pages_title']['field'] = 'page_manager_pages_title';
   $handler->display->display_options['fields']['page_manager_pages_title']['label'] = '';
   $handler->display->display_options['fields']['page_manager_pages_title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['page_manager_pages_title']['link_to_entity'] = 1;
   /* Field: Site General Search: Title (indexed) */
   $handler->display->display_options['fields']['site_general_search_title']['id'] = 'site_general_search_title';
   $handler->display->display_options['fields']['site_general_search_title']['table'] = 'search_api_multi';
@@ -650,7 +649,7 @@ function uclalib_search_views_default_views() {
   $handler->display->display_options['fields']['field_staff_image_thumbnail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_staff_image_thumbnail']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_staff_image_thumbnail']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'staff_profile_photo_thumbnail',
     'image_link' => 'content',
   );
   /* Field: Indexed Content: Node ID */
