@@ -53,7 +53,7 @@
 .page-bookplates.section-bookplates table.views-view-grid tbody tr td.grid-3 div.views-field.views-field-field-bookplate-image div.field-content a img {
 
 }
-.page-bookplates.page-bookplates-donor-directory.page-bookplates-donor-directory-all table.views-view-grid tbody {
+.page-bookplates.page-bookplates-donor-directory .views-view-grid tbody {
     vertical-align: text-top;
 }
 .page-bookplates.section-bookplates .field-collection-item-field-collection-donor.clearfix .field.field--name-field-donor-name-first.field--type-text.field--label-hidden div.field__items div.field__item.even {
