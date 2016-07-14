@@ -31,7 +31,6 @@ dependencies[] = uclalib_staff_profile
 dependencies[] = view_unpublished
 dependencies[] = views
 dependencies[] = views_content
-stylesheets[all][] = css/bookplates_extras.css
 features[ctools][] = ctools_custom_content:ctools_content:1
 features[ctools][] = facetapi:facetapi_defaults:1
 features[ctools][] = field_group:field_group:1
