@@ -19,9 +19,15 @@ function panels_style_mobile_collapsible_ctools_plugin_directory($module, $plugi
  */
 function panels_style_mobile_collapsible_theme() {
   return array(
-    'panels_style_collapsible' => array(
+    'panels_style_mobile_collapsible' => array(
       'variables' => array('handle' => NULL, 'content' => NULL, 'collapsed' => FALSE),
       'file' => 'plugins/styles/mobile_collapsible.inc',
+    ),
+    'mobile_collapsible' => array(
+      'variables' => array('title' => NULL, 'content' => NULL, 'collapsed' => TRUE),
+      'path' => drupal_get_path('module', 'panels_style_mobile_collapsible') . '/templates',
+      'template' => 'mobile-collapsible',
     )
   );
 }
+

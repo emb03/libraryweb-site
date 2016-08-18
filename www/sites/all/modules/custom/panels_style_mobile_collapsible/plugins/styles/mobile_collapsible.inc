@@ -86,20 +86,12 @@ function theme_panels_style_mobile_collapsible_render_pane($vars) {
   if (empty($content->content)) {
     return;
   }
-  if (!empty($content->title) && $content->content != '') {
-    ctools_include('collapsible.theme');
+  if (empty($settings['pane_collapsed'])) {
+    $settings['pane_collapsed'] = TRUE;
+  }
 
-    if (empty($settings['pane_collapsed'])) {
-      $settings['pane_collapsed'] = FALSE;
-    }
-    if (is_array($content->content)) {
-      $content->content = drupal_render($content->content);
-    }
-    $output = theme('panels_style_mobile_collapsible', array('handle' => $content->title, 'content' => $content->content, 'collapsed' => $settings['pane_collapsed'], 'pane' => $pane));
-  }
-  else {
-    $output = theme('panels_pane', array('content' => $content, 'pane' => $pane, 'display' => $display));
-  }
+  $output = theme('mobile_collapsible', array('title' => $content->title, 'content' => $content->content, 'collapsed' => $settings['pane_collapsed']));
+
   return $output;
 }
 
