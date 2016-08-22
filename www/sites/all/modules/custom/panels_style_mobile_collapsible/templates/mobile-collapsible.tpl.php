@@ -17,17 +17,14 @@
  *   data including the contexts and all of the other panes being displayed.
  */
 ?>
-<div class="mobile-collapsible">
-  <?php if ($admin_links): ?>
-    <?php print $admin_links; ?>
-  <?php endif; ?>
+<div class="<?php print $classes; ?> mobile-collapsible">
 
   <?php if ($title): ?>
-    <h2 class="mobile-collapsible__title"><?php print $title; ?></h2>
+    <h2 class="mobile-collapsible__title<?php if($panel_pane_classes): ?> pane-title<?php endif; ?>"><?php print $title; ?></h2>
   <?php endif; ?>
 
 
-  <div class="mobile-collapsible__content">
+  <div class="mobile-collapsible__content<?php if($panel_pane_classes): ?> pane-content<?php endif; ?>">
     <?php print render($content); ?>
   </div>
 

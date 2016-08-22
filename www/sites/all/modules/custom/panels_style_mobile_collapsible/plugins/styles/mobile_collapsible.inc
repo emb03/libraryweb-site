@@ -90,38 +90,40 @@ function theme_panels_style_mobile_collapsible_render_pane($vars) {
     $settings['pane_collapsed'] = TRUE;
   }
 
-  $output = theme('mobile_collapsible', array('title' => $content->title, 'content' => $content->content, 'collapsed' => $settings['pane_collapsed']));
+  $classes_array = _panels_style_mobile_collapsible_classes($content);
+
+  $output = theme('mobile_collapsible', array(
+    'title' => $content->title,
+    'content' => $content->content,
+    'collapsed' => $settings['pane_collapsed'],
+    'custom_classes_array' => $classes_array,
+    'panel_pane_classes' => TRUE
+    )
+  );
 
   return $output;
 }
 
-/**
- * Render a collapsible div.
- *
- * @param $handle
- *   Text to put in the handle/title area of the div.
- * @param $content
- *   Text to put in the content area of the div, this is what will get
- *   collapsed
- * @param $collapsed = FALSE
- *   If true, this div will start out collapsed.
- */
-function theme_panels_style_mobile_collapsible($vars) {
-  ctools_add_js('collapsible-div');
-  ctools_add_css('collapsible-div');
 
-  $pane_css = $pane_id = '';
-  if (isset($vars['pane']) && is_object($vars['pane'])) {
-    $pane_css = $vars['pane']->css;
-    $pane_id = !empty($pane_css['css_id']) ? ' id="' . $pane_css['css_id'] . '"' : '';
-    $pane_css = !empty($pane_css['css_class']) ? ' ' . $pane_css['css_class'] : '';
+/**
+ * Support unique classes for panel panes as they are used for styling.
+ * Copied from template_preprocess_panels_pane.
+ */
+function _panels_style_mobile_collapsible_classes($content) {
+  $classes_array = array();
+
+  $classes_array[] = 'panel-pane';
+
+  // Add some usable classes based on type/subtype
+  ctools_include('cleanstring');
+  $type_class = $content->type ? 'pane-'. ctools_cleanstring($content->type, array('lower case' => TRUE)) : '';
+  $subtype_class = $content->subtype ? 'pane-'. ctools_cleanstring($content->subtype, array('lower case' => TRUE)) : '';
+
+  // Sometimes type and subtype are the same. Avoid redundant classes.
+  $classes_array[] = $type_class;
+  if ($type_class != $subtype_class) {
+    $classes_array[] = $subtype_class;
   }
 
-  $class = $vars['collapsed'] ? ' ctools-collapsed' : '';
-  $output = '<div' . $pane_id . ' class="ctools-collapsible-container' . $class . $pane_css . '">';
-  $output .= '<h2 class="pane-title ctools-collapsible-handle">' . check_plain($vars['handle']) . '</h2>';
-  $output .= '<div class="ctools-collapsible-content">' . $vars['content'] . '</div>';
-  $output .= '</div>';
-
-  return $output;
+  return $classes_array;
 }

@@ -19,15 +19,17 @@ function panels_style_mobile_collapsible_ctools_plugin_directory($module, $plugi
  */
 function panels_style_mobile_collapsible_theme() {
   return array(
-    'panels_style_mobile_collapsible' => array(
-      'variables' => array('handle' => NULL, 'content' => NULL, 'collapsed' => FALSE),
-      'file' => 'plugins/styles/mobile_collapsible.inc',
-    ),
     'mobile_collapsible' => array(
-      'variables' => array('title' => NULL, 'content' => NULL, 'collapsed' => TRUE),
+      'variables' => array('title' => NULL, 'content' => NULL, 'collapsed' => TRUE, 'custom_classes_array' => NULL, 'panel_pane_classes' => FALSE),
       'path' => drupal_get_path('module', 'panels_style_mobile_collapsible') . '/templates',
       'template' => 'mobile-collapsible',
     )
   );
 }
 
+/**
+ * Support unique classes for panel panes as they are used for styling.
+ */
+function template_preprocess_mobile_collapsible(&$vars) {
+  $vars['classes_array'] = array_merge($vars['classes_array'], $vars['custom_classes_array']);
+}
