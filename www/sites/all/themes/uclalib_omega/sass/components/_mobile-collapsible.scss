@@ -1,15 +1,29 @@
 .mobile-collapsible.is-mobile {
 
+  border: 1px solid $ucla-sky-blue;
+  box-sizing: border-box;
+  padding-right: 0!important;
+
   .mobile-collapsible__title {
-    background-color: $ucla-blue;
-    color: white;
+    background-color: $ucla-sky-blue;
+    color: $ucla-blue;
     cursor: pointer;
     font-weight: bold;
-    padding: 15px 8px 15px;
+    margin: 0;
+    padding: 20px 8px 20px;
+    font-size: 1em;
 
     &::after {
-      content: '👆';
       float: right;
+      content: '';
+      width: 0;
+      height: 0;
+      margin-top: .9em;
+      border-right: .9em solid transparent;
+      border-left: .9em solid transparent;
+      border-bottom: .9em solid transparent;
+      border-top: .9em solid $ucla-blue;
+      font-size: 0.9em;
     }
 
     a {
@@ -26,7 +40,11 @@
 .mobile-collapsible.is-mobile.is-open {
 
   .mobile-collapsible__title::after {
-    content: '👇';
+    margin-top: 0;
+    border-right: .9em solid transparent;
+    border-left: .9em solid transparent;
+    border-top: .9em solid transparent;
+    border-bottom: .9em solid $ucla-blue;
   }
   .mobile-collapsible__content {
     height: auto;
