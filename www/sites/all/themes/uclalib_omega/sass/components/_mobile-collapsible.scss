@@ -1,0 +1,34 @@
+.mobile-collapsible.is-mobile {
+
+  .mobile-collapsible__title {
+    background-color: $ucla-blue;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 15px 8px 15px;
+
+    &::after {
+      content: '👆';
+      float: right;
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .mobile-collapsible__content {
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+.mobile-collapsible.is-mobile.is-open {
+
+  .mobile-collapsible__title::after {
+    content: '👇';
+  }
+  .mobile-collapsible__content {
+    height: auto;
+  }
+}

@@ -31,7 +31,7 @@ function panels_style_mobile_collapsible_region_settings_form($style_settings) {
   $form['region_collapsed'] = array(
     '#type' => 'checkbox',
     '#title' => t('Collapsed by default'),
-    '#default_value' => (isset($style_settings['region_collapsed'])) ? $style_settings['region_collapsed'] : FALSE
+    '#default_value' => (isset($style_settings['region_collapsed'])) ? $style_settings['region_collapsed'] : 0
   );
   return $form;
 }
@@ -44,7 +44,7 @@ function panels_style_mobile_collapsible_pane_settings_form($style_settings) {
   $form['pane_collapsed'] = array(
     '#type' => 'checkbox',
     '#title' => t('Collapsed by default'),
-    '#default_value' => (isset($style_settings['pane_collapsed'])) ? $style_settings['pane_collapsed'] : FALSE
+    '#default_value' => (isset($style_settings['pane_collapsed'])) ? $style_settings['pane_collapsed'] : 0
   );
   return $form;
 }
@@ -87,7 +87,7 @@ function theme_panels_style_mobile_collapsible_render_pane($vars) {
     return;
   }
   if (empty($settings['pane_collapsed'])) {
-    $settings['pane_collapsed'] = TRUE;
+    $settings['pane_collapsed'] = 0;
   }
 
   $classes_array = _panels_style_mobile_collapsible_classes($content);

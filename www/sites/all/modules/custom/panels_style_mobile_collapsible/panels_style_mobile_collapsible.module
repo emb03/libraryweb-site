@@ -31,5 +31,8 @@ function panels_style_mobile_collapsible_theme() {
  * Support unique classes for panel panes as they are used for styling.
  */
 function template_preprocess_mobile_collapsible(&$vars) {
+  drupal_add_js(drupal_get_path('module', 'panels_style_mobile_collapsible') . '/javascript/mobile-collapsible.js');
+  drupal_add_js(drupal_get_path('module', 'panels_style_mobile_collapsible') . '/javascript/mobile-collapsible-init.js');
+
   $vars['classes_array'] = array_merge($vars['classes_array'], $vars['custom_classes_array']);
 }

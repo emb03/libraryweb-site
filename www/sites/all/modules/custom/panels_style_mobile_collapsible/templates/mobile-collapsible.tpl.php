@@ -17,7 +17,7 @@
  *   data including the contexts and all of the other panes being displayed.
  */
 ?>
-<div class="<?php print $classes; ?> mobile-collapsible">
+<div class="<?php print $classes; ?> js-mobile-collapsible<?php if(!$collapsed):?> is-open<?php endif; ?>">
 
   <?php if ($title): ?>
     <h2 class="mobile-collapsible__title<?php if($panel_pane_classes): ?> pane-title<?php endif; ?>"><?php print $title; ?></h2>

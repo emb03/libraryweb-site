@@ -1,3 +1,4 @@
+@charset "UTF-8";
 input[type=submit],
 input[type=text] {
   -webkit-border-radius: 0px;
@@ -1440,6 +1441,32 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   font-size: .85em;
 }
 
+.mobile-collapsible.is-mobile .mobile-collapsible__title {
+  background-color: #3283be;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 15px 8px 15px;
+}
+.mobile-collapsible.is-mobile .mobile-collapsible__title::after {
+  content: '👆';
+  float: right;
+}
+.mobile-collapsible.is-mobile .mobile-collapsible__title a {
+  color: inherit;
+}
+.mobile-collapsible.is-mobile .mobile-collapsible__content {
+  height: 0;
+  overflow: hidden;
+}
+
+.mobile-collapsible.is-mobile.is-open .mobile-collapsible__title::after {
+  content: '👇';
+}
+.mobile-collapsible.is-mobile.is-open .mobile-collapsible__content {
+  height: auto;
+}
+
 .more-link-triangle-after:after, div.more-link > a:after,
 a.more-link:after,
 .more-link-block a:after, .pane-bean-featured-content .field--name-field-featured-thumbnail-image a:after,
@@ -1632,7 +1659,7 @@ a.more-link,
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
-  background-image: url('../images/logo-colophon.png?1447171341');
+  background-image: url('../images/logo-colophon.png?1471426484');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   width: 150px;
