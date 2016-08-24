@@ -5,6 +5,7 @@
 }
 .l-colophon {
   font-size: 12px;
+  text-align: center;
   a, a:visited {
     color: $colophon-link-color;
     font-weight: bold;
@@ -18,7 +19,7 @@
     margin: 0;
     padding: 0;
     .leaf {
-      margin: 0.5em 0;
+      margin: 8px 0;
       list-style: none;
       list-style-image: none;
     }
@@ -29,10 +30,19 @@
     margin-top: 0;
   }
 }
-.l-region--colophon-first {
-  border-right: 1px solid $colophon-border-color;
-}
-.l-region--colophon-second,
-.l-region--colophon-third {
-  padding-top: 2.6em;
+
+@media (min-width: 768px) {
+  .l-colophon {
+    &,
+    & .menu {
+      text-align: left;
+    }
+  }
+  .l-region--colophon-first {
+    border-right: 1px solid $colophon-border-color;
+  }
+  .l-region--colophon-second,
+  .l-region--colophon-third {
+    padding-top: 2.6em;
+  }
 }
