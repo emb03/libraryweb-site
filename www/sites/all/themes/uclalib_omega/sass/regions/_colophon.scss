@@ -5,7 +5,6 @@
 }
 .l-colophon {
   font-size: 12px;
-  text-align: center;
   a, a:visited {
     color: $colophon-link-color;
     font-weight: bold;
@@ -29,15 +28,17 @@
   h3 {
     margin-top: 0;
   }
-}
 
-@media (min-width: 768px) {
-  .l-colophon {
-    &,
-    & .menu {
+  &,
+  & .menu {
+    text-align: center;
+    @media (min-width: 768px) {
       text-align: left;
     }
   }
+}
+
+@media (min-width: 768px) {
   .l-region--colophon-first {
     border-right: 1px solid $colophon-border-color;
   }
