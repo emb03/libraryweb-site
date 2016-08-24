@@ -1,7 +1,3 @@
-.l-page {
-  min-width: 768px;
-}
-
 .l-header,
 .l-navigation,
 .l-main,
@@ -29,45 +25,47 @@
   clear: both;
 }
 
-.l-region--branding {
-  width: 17.02128%;
-  float: left;
-  margin-right: 2.12766%;
-  display: inline;
-}
+@media all and (min-width: 768px) {
+  .l-region--branding {
+    width: 17.02128%;
+    float: left;
+    margin-right: 2.12766%;
+    display: inline;
+  }
 
-.l-region--header {
-  width: 80.85106%;
-  float: right;
-  margin-right: 0;
-  *margin-left: -20px;
-  display: inline;
-}
+  .l-region--header {
+    width: 80.85106%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -20px;
+    display: inline;
+  }
 
-.l-region--colophon-first {
-  width: 62.5%;
-  float: left;
-  margin-right: 0%;
-  display: inline;
-  padding-left: 0%;
-  padding-right: 6.25%;
-}
+  .l-region--colophon-first {
+    width: 62.5%;
+    float: left;
+    margin-right: 0%;
+    display: inline;
+    padding-left: 0%;
+    padding-right: 6.25%;
+  }
 
-.l-region--colophon-second {
-  width: 18.75%;
-  float: left;
-  margin-right: 0%;
-  display: inline;
-  padding-left: 3.75%;
-  padding-right: 0%;
-}
+  .l-region--colophon-second {
+    width: 18.75%;
+    float: left;
+    margin-right: 0%;
+    display: inline;
+    padding-left: 3.75%;
+    padding-right: 0%;
+  }
 
-.l-region--colophon-third {
-  width: 18.75%;
-  float: right;
-  margin-right: 0;
-  *margin-left: 0px;
-  display: inline;
-  padding-left: 3.75%;
-  padding-right: 0%;
+  .l-region--colophon-third {
+    width: 18.75%;
+    float: right;
+    margin-right: 0;
+    *margin-left: 0px;
+    display: inline;
+    padding-left: 3.75%;
+    padding-right: 0%;
+  }
 }

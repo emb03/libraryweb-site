@@ -2,10 +2,6 @@
 @import "compass";
 @import "variables/grid";
 
-.l-page {
-  min-width: 768px;
-}
-
 .l-header,
 .l-navigation,
 .l-main,
@@ -17,42 +13,46 @@
   _width: 1004px; // Override default width calculations.
 }
 
-.l-region--branding {
-  @include span-columns(3, 16);
-}
-.l-region--header {
-  @include span-columns(13 omega, 16);
-}
+@media all and (min-width: 768px) {
 
-// Save original susy grid values.
-$save-total-columns: $total-columns;
-$save-column-width: $column-width;
-$save-gutter-width: $gutter-width;
-$save-grid-padding: $grid-padding;
+  .l-region--branding {
+    @include span-columns(3, 16);
+  }
+  .l-region--header {
+    @include span-columns(13 omega, 16);
+  }
 
-// Custom susy grid values for colophon.
-$total-columns: 16;
-$column-width: 50px;
-$gutter-width: 0px;
-$grid-padding: 50px;
+  // Save original susy grid values.
+  $save-total-columns: $total-columns;
+  $save-column-width: $column-width;
+  $save-gutter-width: $gutter-width;
+  $save-grid-padding: $grid-padding;
 
-.l-region--colophon-first {
-  @include span-columns(10, 16);
-  @include pad(0, 1, 16);
-  // margin-right: 0;
-}
-.l-region--colophon-second {
-  @include span-columns(3, 16);
-  @include pad(.6, 0, 16);
-  // margin-right: 0;
-}
-.l-region--colophon-third {
-  @include span-columns(3 omega, 16);
-  @include pad(.6, 0, 16);
-}
+  // Custom susy grid values for colophon.
+  $total-columns: 16;
+  $column-width: 50px;
+  $gutter-width: 0px;
+  $grid-padding: 50px;
 
-// Replace original susy grid values.
-$total-columns: $save-total-columns;
-$column-width: $save-column-width;
-$gutter-width: $save-gutter-width;
-$grid-padding: $save-grid-padding;
+  .l-region--colophon-first {
+    @include span-columns(10, 16);
+    @include pad(0, 1, 16);
+    // margin-right: 0;
+  }
+  .l-region--colophon-second {
+    @include span-columns(3, 16);
+    @include pad(.6, 0, 16);
+    // margin-right: 0;
+  }
+  .l-region--colophon-third {
+    @include span-columns(3 omega, 16);
+    @include pad(.6, 0, 16);
+  }
+
+  // Replace original susy grid values.
+  $total-columns: $save-total-columns;
+  $column-width: $save-column-width;
+  $gutter-width: $save-gutter-width;
+  $grid-padding: $save-grid-padding;
+
+}
