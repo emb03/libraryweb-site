@@ -27,7 +27,7 @@
   clear: both;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 699px) {
   .l-header,
   .l-navigation {
     padding: 0;
