@@ -1,5 +1,9 @@
 .pane-search-form {
-
+  @media #{$mobile-header} {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 .header-search-form-label {
 

@@ -1,3 +1,5 @@
+$mobile-nav-trigger-width: 41px;
+
 .l-header-wrapper {
   background: $header-bg-color;
   font-size: 13px;
@@ -6,6 +8,7 @@
 }
 
 .l-header {
+  position: relative;
   a, a:visited {
     color: $header-link-color;
   }
@@ -45,7 +48,8 @@
       @include flex-direction(row);
       background-color: $nav-bg-color;
       padding-left: 20px;
-      margin-right: 60px;
+      margin: 0;
+      margin-right: $mobile-nav-trigger-width;
       li {
         @include display-flex('inline-flex');
         @include flex-grow(1);
@@ -90,6 +94,31 @@
     @media #{$mobile-header} {
       display: none;
     }
+  }
+}
+
+.mobile-nav-trigger {
+  @media #{$desktop-header} {
+    display: none;
+  }
+  @media #{$mobile-header} {
+    display: block;
+    height: $mobile-nav-trigger-width;
+    width: $mobile-nav-trigger-width;
+    padding: 10px;
+    background: $ucla-yellow;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font: 0/0 a;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+// Disable scrolling when the mobile nav is active.
+.has-mobile-nav {
+  @media #{$mobile-header} {
+    overflow: hidden;
   }
 }
 

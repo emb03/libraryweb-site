@@ -6,6 +6,7 @@ $nav-horiz-space: 8px;
   font-size: 18px;
 }
 
+@media #{$desktop-header} {
 .l-navigation {
   ul.primary-links {
     @include horizontal-list;
@@ -43,9 +44,10 @@ $nav-horiz-space: 8px;
       &.active-trail > a:hover {
         cursor: normal;
       }
+    }
 
-      // Special case for first link.
-      &.first {
+    // Special case for first link.
+    &.first {
         padding-right: 3px;
         a {
           text-indent: -999px;
@@ -77,12 +79,53 @@ $nav-horiz-space: 8px;
           color: $nav-link-active-color;
         }
       }
-      &.last {
-        padding-right: 6px;
-        @media #{$desktop-header} {
-          display: none;
-        }
-      }
+    }
+    &.last {
+      display: none;
+    }
+  }
+}
+
+@media #{$mobile-header} {
+  .l-navigation-wrapper {
+    position: relative;
+    overflow: visible;
+  }
+  .l-region--navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    @include transition(opacity 0.3s ease-out);
+    &.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  .primary-links {
+    @include display-flex;
+    @include flex-direction(column);
+    padding: 0;
+    margin: 0;
+
+    li {
+      @include display-flex('inline-flex');
+      @include flex-grow(1);
+      font-size: 18px;
+      line-height: 1.2em;
+      text-align: center;
+    }
+    a {
+      display: block;
+      width: 100%;
+      background: $ucla-yellow;
+      color: $nav-link-color;
+      font-weight: normal;
+      border-bottom: 1px solid white;
+      padding: 10px;
     }
   }
 }

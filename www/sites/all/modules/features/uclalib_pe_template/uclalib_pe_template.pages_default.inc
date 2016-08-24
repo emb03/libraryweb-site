@@ -211,6 +211,38 @@ function uclalib_pe_template_default_page_manager_handlers() {
     $display->content['new-d52f106c-80dc-40c8-8b35-a2af356390f0'] = $pane;
     $display->panels['header'][0] = 'new-d52f106c-80dc-40c8-8b35-a2af356390f0';
     $pane = new stdClass();
+    $pane->pid = 'new-dddf03fb-4405-4c1b-942f-fb4069efaaa8';
+    $pane->panel = 'header';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Mobile Navigation Trigger',
+      'title' => '',
+      'body' => '<a class="mobile-nav-trigger" href="#">
+Menu
+<span class="menu-icon">
+          <span class="menu-icon__line menu-icon__line--one"></span>
+          <span class="menu-icon__line menu-icon__line--two"></span>
+          <span class="menu-icon__line menu-icon__line--three"></span>
+        </span></a>
+',
+      'format' => 'php_code',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'dddf03fb-4405-4c1b-942f-fb4069efaaa8';
+    $display->content['new-dddf03fb-4405-4c1b-942f-fb4069efaaa8'] = $pane;
+    $display->panels['header'][1] = 'new-dddf03fb-4405-4c1b-942f-fb4069efaaa8';
+    $pane = new stdClass();
     $pane->pid = 'new-f97dc881-cfe4-40ea-8c77-f69d44039cb9';
     $pane->panel = 'header';
     $pane->type = 'custom';
@@ -233,11 +265,11 @@ function uclalib_pe_template_default_page_manager_handlers() {
       'css_class' => 'pane-ask-a-librarian',
     );
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'f97dc881-cfe4-40ea-8c77-f69d44039cb9';
     $display->content['new-f97dc881-cfe4-40ea-8c77-f69d44039cb9'] = $pane;
-    $display->panels['header'][1] = 'new-f97dc881-cfe4-40ea-8c77-f69d44039cb9';
+    $display->panels['header'][2] = 'new-f97dc881-cfe4-40ea-8c77-f69d44039cb9';
     $pane = new stdClass();
     $pane->pid = 'new-4a1d85b4-084b-45a5-b32e-785f8d118d46';
     $pane->panel = 'header';
@@ -255,11 +287,11 @@ function uclalib_pe_template_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '4a1d85b4-084b-45a5-b32e-785f8d118d46';
     $display->content['new-4a1d85b4-084b-45a5-b32e-785f8d118d46'] = $pane;
-    $display->panels['header'][2] = 'new-4a1d85b4-084b-45a5-b32e-785f8d118d46';
+    $display->panels['header'][3] = 'new-4a1d85b4-084b-45a5-b32e-785f8d118d46';
     $pane = new stdClass();
     $pane->pid = 'new-5396ef1e-5f47-46cf-a786-72d4ffad7281';
     $pane->panel = 'header';
@@ -283,11 +315,11 @@ function uclalib_pe_template_default_page_manager_handlers() {
       'css_class' => 'pane-give-now-button',
     );
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = '5396ef1e-5f47-46cf-a786-72d4ffad7281';
     $display->content['new-5396ef1e-5f47-46cf-a786-72d4ffad7281'] = $pane;
-    $display->panels['header'][3] = 'new-5396ef1e-5f47-46cf-a786-72d4ffad7281';
+    $display->panels['header'][4] = 'new-5396ef1e-5f47-46cf-a786-72d4ffad7281';
     $pane = new stdClass();
     $pane->pid = 'new-2ce2b75f-31cd-4af2-ad7d-7e4538bd5447';
     $pane->panel = 'help';
