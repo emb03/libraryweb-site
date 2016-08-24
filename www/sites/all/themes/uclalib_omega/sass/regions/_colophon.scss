@@ -32,13 +32,13 @@
   &,
   & .menu {
     text-align: center;
-    @media (min-width: 768px) {
+    @media #{$desktop-only} {
       text-align: left;
     }
   }
 }
 
-@media (min-width: 768px) {
+@media #{$desktop-only} {
   .l-region--colophon-first {
     border-right: 1px solid $colophon-border-color;
   }

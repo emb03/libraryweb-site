@@ -1,5 +1,7 @@
+@import "variables/breakpoints";
+
 // Hide the toolbar or admin menu on small screens.
-@media all and (max-width: 800px) {
+@media #{$mobile-only} {
   #toolbar, #admin-menu {
     display: none;
   }

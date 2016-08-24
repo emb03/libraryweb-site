@@ -224,7 +224,7 @@ a:hover, a:focus {
 .l-header a:hover, .l-header a:active, .l-header a:focus {
   text-decoration: underline;
 }
-@media only screen and (min-width: 699px) {
+@media (min-width: 699px) {
   .l-header .menu {
     margin: 0;
     padding: 0;
@@ -276,7 +276,7 @@ a:hover, a:focus {
     display: none;
   }
 }
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
   .l-header .menu {
     display: -webkit-flex;
     display: flex;
@@ -309,7 +309,7 @@ a:hover, a:focus {
 .l-region--branding {
   padding-top: 14px;
 }
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
   .l-region--branding {
     padding: 14px 20px 0;
   }
@@ -318,7 +318,7 @@ a:hover, a:focus {
 .l-region--header {
   text-align: right;
 }
-@media only screen and (min-width: 699px) {
+@media (min-width: 699px) {
   .l-region--header .panel-pane {
     display: inline-block;
     vertical-align: middle;
@@ -326,23 +326,23 @@ a:hover, a:focus {
     margin-right: -4px;
   }
 }
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
   .l-region--header .pane-give-now-button {
     display: none;
   }
 }
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
   .l-region--header .pane-ask-a-librarian {
     display: none;
   }
 }
 
-@media only screen and (min-width: 699px) {
+@media (min-width: 699px) {
   .mobile-nav-trigger {
     display: none;
   }
 }
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
   .mobile-nav-trigger {
     display: block;
     height: 41px;
@@ -362,7 +362,7 @@ a:hover, a:focus {
   bottom: -1px;
 }
 
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
   .has-mobile-nav {
     overflow: hidden;
   }
@@ -405,7 +405,7 @@ a[href="#main-content"] {
   font-size: 18px;
 }
 
-@media only screen and (min-width: 699px) {
+@media (min-width: 699px) {
   .l-navigation ul.primary-links {
     margin: 0;
     padding: 0;
@@ -503,7 +503,7 @@ a[href="#main-content"] {
     display: none;
   }
 }
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
   .l-navigation-wrapper {
     position: relative;
     overflow: visible;
@@ -2419,7 +2419,7 @@ a.next-week:after {
   padding-top: 5px;
 }
 
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
   .pane-search-form {
     position: absolute;
     top: 0;

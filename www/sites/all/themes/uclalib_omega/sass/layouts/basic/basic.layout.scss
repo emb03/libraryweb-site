@@ -1,5 +1,6 @@
 @import "susyone";
 @import "compass";
+@import "breakpoint";
 @import "variables/grid";
 @import "variables/breakpoints";
 
@@ -16,7 +17,7 @@
   }
 }
 
-@media all and (min-width: 768px) {
+@media #{$desktop-only} {
 
   .l-region--branding {
     @include span-columns(3, 16);

@@ -1,2 +1,7 @@
-$mobile-header: "only screen and (max-width : 700px)";
-$desktop-header: "only screen and (min-width : 699px)";
+$mobile-header: "(max-width : 700px)";
+$desktop-header: "(min-width : 699px)";
+
+
+// The site lump tablets and desktops into the same breakpoint.
+$desktop-only: "(min-width: 768px)";
+$mobile-only:  "(max-width: 767px)";
