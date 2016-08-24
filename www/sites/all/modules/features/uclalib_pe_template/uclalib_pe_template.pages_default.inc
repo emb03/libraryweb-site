@@ -59,10 +59,10 @@ function uclalib_pe_template_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-c3a5e57e-a7e1-4102-b02c-5fd6910a68ef';
+    $pane->pid = 'new-7cf9f566-d3da-4255-9dc6-4b81634ecf0a';
     $pane->panel = 'branding';
-    $pane->type = 'page_logo';
-    $pane->subtype = 'page_logo';
+    $pane->type = 'logo_branding';
+    $pane->subtype = 'logo_branding';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -74,9 +74,9 @@ function uclalib_pe_template_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'c3a5e57e-a7e1-4102-b02c-5fd6910a68ef';
-    $display->content['new-c3a5e57e-a7e1-4102-b02c-5fd6910a68ef'] = $pane;
-    $display->panels['branding'][0] = 'new-c3a5e57e-a7e1-4102-b02c-5fd6910a68ef';
+    $pane->uuid = '7cf9f566-d3da-4255-9dc6-4b81634ecf0a';
+    $display->content['new-7cf9f566-d3da-4255-9dc6-4b81634ecf0a'] = $pane;
+    $display->panels['branding'][0] = 'new-7cf9f566-d3da-4255-9dc6-4b81634ecf0a';
     $pane = new stdClass();
     $pane->pid = 'new-e600c591-723c-456c-b844-3bfab3078905';
     $pane->panel = 'colophon_first';
@@ -442,7 +442,7 @@ function uclalib_pe_template_default_page_manager_handlers() {
     $display->content['new-5e1687a8-0089-4fa2-96fd-299cfbc55346'] = $pane;
     $display->panels['navigation'][0] = 'new-5e1687a8-0089-4fa2-96fd-299cfbc55346';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-c3a5e57e-a7e1-4102-b02c-5fd6910a68ef';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['site_template_panel_context'] = $handler;
 
