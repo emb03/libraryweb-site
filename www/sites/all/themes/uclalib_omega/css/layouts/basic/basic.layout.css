@@ -15,7 +15,6 @@
   margin-left: auto;
   margin-right: auto;
   max-width: 1004px;
-  _width: 1004px;
 }
 .l-header:after,
 .l-navigation:after,
@@ -26,6 +25,16 @@
   content: "";
   display: table;
   clear: both;
+}
+@media only screen and (max-width: 700px) {
+  .l-header,
+  .l-navigation,
+  .l-main,
+  .l-highlighted,
+  .l-colophon,
+  .l-footer {
+    padding: 0;
+  }
 }
 
 @media all and (min-width: 768px) {
@@ -72,3 +81,5 @@
     padding-right: 0%;
   }
 }
+
+/*# sourceMappingURL=basic.layout.css.map */

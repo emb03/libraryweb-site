@@ -1,6 +1,7 @@
 @import "susyone";
 @import "compass";
 @import "variables/grid";
+@import "variables/breakpoints";
 
 .l-header,
 .l-navigation,
@@ -10,7 +11,9 @@
 .l-footer {
   @include container;
   max-width: 1004px; // Override default width calculations.
-  _width: 1004px; // Override default width calculations.
+  @media #{$mobile-header} {
+    padding: 0;
+  }
 }
 
 @media all and (min-width: 768px) {

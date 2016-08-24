@@ -79,6 +79,9 @@ $nav-horiz-space: 8px;
       }
       &.last {
         padding-right: 6px;
+        @media #{$desktop-header} {
+          display: none;
+        }
       }
     }
   }

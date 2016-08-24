@@ -46,6 +46,9 @@ relative_assets = true
 # Conditionally enable line comments when in development mode.
 line_comments = (environment == :production) ? false : true
 
+# Source maps in development mode.
+sourcemap = (environment == :production) ? :false : :true
+
 # Output debugging info in development mode.
 sass_options = (environment == :production) ? {} : {:debug_info => false}
 
