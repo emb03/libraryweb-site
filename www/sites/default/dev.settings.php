@@ -37,4 +37,4 @@ $conf['search_api_solr_overrides'] = array(
   ),
 );
 
-$conf['stage_file_proxy_origin'] = 'http://library.ucla.edu';
+$conf['stage_file_proxy_origin'] = 'http://www.library.ucla.edu';
