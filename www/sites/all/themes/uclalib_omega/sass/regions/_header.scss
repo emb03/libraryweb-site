@@ -112,6 +112,11 @@ $mobile-nav-trigger-width: 41px;
     bottom: 0;
     font: 0/0 a;
     -webkit-tap-highlight-color: transparent;
+    z-index: 100;
+  }
+  .has-mobile-nav & {
+    height: $mobile-nav-trigger-width+1;
+    bottom: -1px;
   }
 }
 

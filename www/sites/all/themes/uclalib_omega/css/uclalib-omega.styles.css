@@ -354,7 +354,12 @@ a:hover, a:focus {
     bottom: 0;
     font: 0/0 a;
     -webkit-tap-highlight-color: transparent;
+    z-index: 100;
   }
+}
+.has-mobile-nav .mobile-nav-trigger {
+  height: 42px;
+  bottom: -1px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -503,6 +508,39 @@ a[href="#main-content"] {
     position: relative;
     overflow: visible;
   }
+  .l-navigation-wrapper .pane-menu-menu-colophon-first,
+  .l-navigation-wrapper .pane-menu-menu-colophon-second {
+    float: left;
+    width: 50%;
+  }
+  .l-navigation-wrapper .pane-menu-menu-colophon-first ul,
+  .l-navigation-wrapper .pane-menu-menu-colophon-second ul {
+    margin: 0;
+  }
+  .l-navigation-wrapper .pane-menu-menu-colophon-first li,
+  .l-navigation-wrapper .pane-menu-menu-colophon-second li {
+    display: block;
+    background-color: #d7d9da;
+  }
+  .l-navigation-wrapper .pane-menu-menu-colophon-first a,
+  .l-navigation-wrapper .pane-menu-menu-colophon-second a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 18px;
+    line-height: 1.2em;
+    text-align: center;
+    border-top: 1px solid white;
+    color: #333333;
+  }
+  .l-navigation-wrapper .pane-menu-menu-colophon-first {
+    border-right: 1px solid white;
+  }
+  .l-navigation-wrapper .pane-menu-menu-colophon-first li:nth-child(2n) {
+    background-color: #bccbd7;
+  }
+  .l-navigation-wrapper .pane-menu-menu-colophon-second li:nth-child(2n-1) {
+    background-color: #bccbd7;
+  }
 
   .l-region--navigation {
     position: absolute;
@@ -516,6 +554,8 @@ a[href="#main-content"] {
     -o-transition: opacity 0.3s ease-out;
     -webkit-transition: opacity 0.3s ease-out;
     transition: opacity 0.3s ease-out;
+    min-height: 100vh;
+    background: white;
   }
   .l-region--navigation.is-open {
     opacity: 1;
@@ -538,14 +578,14 @@ a[href="#main-content"] {
     font-size: 18px;
     line-height: 1.2em;
     text-align: center;
+    font-weight: normal;
+    border-top: 1px solid white;
   }
   .primary-links a {
     display: block;
     width: 100%;
     background: #fdb930;
     color: #333333;
-    font-weight: normal;
-    border-bottom: 1px solid white;
     padding: 10px;
   }
 }
