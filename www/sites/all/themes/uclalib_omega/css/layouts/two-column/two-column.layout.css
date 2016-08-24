@@ -1,17 +1,14 @@
 .l-region {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 @media all and (min-width: 768px) {
   .panel-two-col {
+    overflow: hidden;
+    *zoom: 1;
     position: relative;
-  }
-  .panel-two-col:after {
-    content: "";
-    display: table;
-    clear: both;
   }
 
   .l-region--main,
@@ -21,8 +18,6 @@
     margin-left: 0;
     margin-right: 0;
     clear: none;
-    padding-left: 25px;
-    padding-right: 25px;
     padding-left: 0;
     padding-right: 0;
     clear: both;
@@ -31,13 +26,11 @@
 
   .l-region--left,
   .l-region--below-left {
-    width: 50%;
+    width: 44.44444%;
     float: left;
     margin-right: -100%;
-    margin-left: 0%;
+    margin-left: 0;
     clear: none;
-    padding-left: 25px;
-    padding-right: 25px;
     padding-left: 0;
     clear: left;
   }
@@ -47,21 +40,19 @@
     position: absolute;
     z-index: -1;
     top: 0;
-    left: 0%;
-    width: 50%;
+    left: -11.11111%;
+    width: 44.44444%;
     bottom: 0;
     background: "";
   }
 
   .l-region--right,
   .l-region--below-right {
-    width: 50%;
+    width: 44.44444%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
-    padding-left: 25px;
-    padding-right: 25px;
     padding-right: 0;
     clear: right;
   }
@@ -71,8 +62,8 @@
     position: absolute;
     z-index: -1;
     top: 0;
-    left: 50%;
-    width: 50%;
+    left: 44.44444%;
+    width: 44.44444%;
     bottom: 0;
     background: "";
   }

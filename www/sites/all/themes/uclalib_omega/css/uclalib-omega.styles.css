@@ -110,7 +110,7 @@ a {
   color: #3283be;
   text-decoration: none;
 }
-a:hover {
+a:hover, a:focus {
   text-decoration: underline;
 }
 
@@ -199,8 +199,8 @@ a:hover {
   list-style-type: none;
 }
 .l-footer ul.menu, .l-footer ul.menu li {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   display: inline;
 }
 
@@ -225,20 +225,12 @@ a:hover {
   margin: 0;
   padding: 0;
   border: 0;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
-  *zoom: 1;
   list-style: none;
   list-style-image: none;
 }
-.l-header .menu:before, .l-header .menu:after {
-  content: ".";
-  display: block;
-  height: 0;
-  overflow: hidden;
-}
 .l-header .menu:after {
+  content: "";
+  display: table;
   clear: both;
 }
 .l-header .menu li {
@@ -246,12 +238,11 @@ a:hover {
   list-style-type: none;
   margin-left: 0;
   white-space: nowrap;
-  display: inline;
   float: left;
   padding-left: 4px;
   padding-right: 4px;
 }
-.l-header .menu li:first-child, .l-header .menu li.first {
+.l-header .menu li:first-child {
   padding-left: 0;
 }
 .l-header .menu li:last-child {
@@ -336,22 +327,14 @@ a[href="#main-content"] {
   margin: 0;
   padding: 0;
   border: 0;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
-  *zoom: 1;
   list-style: none;
   list-style-image: none;
   display: table;
   width: 100%;
 }
-.l-navigation ul.primary-links:before, .l-navigation ul.primary-links:after {
-  content: ".";
-  display: block;
-  height: 0;
-  overflow: hidden;
-}
 .l-navigation ul.primary-links:after {
+  content: "";
+  display: table;
   clear: both;
 }
 .l-navigation ul.primary-links li {
@@ -359,12 +342,11 @@ a[href="#main-content"] {
   list-style-type: none;
   margin-left: 0;
   white-space: nowrap;
-  display: inline;
   float: left;
   padding-left: 4px;
   padding-right: 4px;
 }
-.l-navigation ul.primary-links li:first-child, .l-navigation ul.primary-links li.first {
+.l-navigation ul.primary-links li:first-child {
   padding-left: 0;
 }
 .l-navigation ul.primary-links li:last-child {
@@ -449,18 +431,10 @@ a[href="#main-content"] {
   position: relative;
   float: left;
   width: 100%;
-  /* for IE 6/7 */
-  *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif");
-  /* non-JS fallback */
-  *zoom: 1;
-}
-.l-region--top:before, .l-region--top:after {
-  content: ".";
-  display: block;
-  height: 0;
-  overflow: hidden;
 }
 .l-region--top:after {
+  content: "";
+  display: table;
   clear: both;
 }
 .l-region--top .panel-pane {
@@ -1332,10 +1306,8 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
 }
 
 .fancybox-skin {
-  -webkit-border-radius: 0;
   -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
+  -webkit-border-radius: 0;
   border-radius: 0;
   padding: 0 !important;
 }
@@ -1364,10 +1336,8 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
 .ui-corner-bottom,
 .ui-corner-left,
 .ui-corner-right {
-  -webkit-border-radius: 0;
   -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
+  -webkit-border-radius: 0;
   border-radius: 0;
 }
 
@@ -1695,7 +1665,7 @@ a.more-link,
   overflow: hidden;
   text-align: left;
   background: url("../images/logo-colophon.png") no-repeat 50% 50%;
-  background-image: url("../images/logo-colophon.svg"), linear-gradient(transparent, transparent);
+  background-image: url("../images/logo-colophon.svg"), linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
   width: 150px;
   height: 30px;
   vertical-align: bottom;
@@ -2260,9 +2230,8 @@ a.next-week:after {
 .header-search-form-wrapper .form-submit {
   background: none;
   border: none;
-  -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
+  -webkit-appearance: none;
   margin: 0;
   padding: .5em .6em .4em;
   background: white url(../images/icon-search.png) no-repeat 50% 50%;

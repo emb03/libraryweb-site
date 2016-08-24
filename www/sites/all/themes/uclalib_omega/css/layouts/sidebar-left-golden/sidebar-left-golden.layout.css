@@ -1,27 +1,22 @@
 .l-region {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 @media all and (min-width: 768px) {
   .panel-sidebar-left-golden {
+    overflow: hidden;
+    *zoom: 1;
     position: relative;
-  }
-  .panel-sidebar-left-golden:after {
-    content: "";
-    display: table;
-    clear: both;
   }
 
   .l-region--sidebar-left {
-    width: 23.80952%;
+    width: 23.25581%;
     float: left;
     margin-right: -100%;
-    margin-left: 0%;
+    margin-left: 0;
     clear: none;
-    padding-left: 20px;
-    padding-right: 20px;
     padding-left: 0;
     clear: left;
   }
@@ -30,8 +25,8 @@
     position: absolute;
     z-index: -1;
     top: 0;
-    left: 0%;
-    width: 23.80952%;
+    left: -1.16279%;
+    width: 23.25581%;
     bottom: 0;
     background: "";
   }
@@ -42,13 +37,11 @@
 
   .with-sidebar-left .l-region--main-column {
     max-width: none;
-    width: 76.19048%;
+    width: 75.5814%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
-    padding-left: 20px;
-    padding-right: 20px;
     padding-right: 0;
   }
   .with-sidebar-left .l-region--main-column:before {
@@ -56,8 +49,8 @@
     position: absolute;
     z-index: -1;
     top: 0;
-    left: 23.80952%;
-    width: 76.19048%;
+    left: 23.25581%;
+    width: 75.5814%;
     bottom: 0;
     background: "";
   }
@@ -69,8 +62,6 @@
     margin-left: 0;
     margin-right: 0;
     clear: none;
-    padding-left: 20px;
-    padding-right: 20px;
     padding-left: 0;
     padding-right: 0;
     clear: both;
@@ -79,26 +70,22 @@
 
   .l-region--below-main-left,
   .l-region--below-secondary-left {
-    width: 60%;
+    width: 57.14286%;
     float: left;
     margin-right: -100%;
-    margin-left: 0%;
+    margin-left: 0;
     clear: none;
-    padding-left: 20px;
-    padding-right: 20px;
     padding-left: 0;
     clear: left;
   }
 
   .l-region--below-main-right,
   .l-region--below-secondary-right {
-    width: 40%;
+    width: 38.09524%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
-    padding-left: 20px;
-    padding-right: 20px;
     padding-right: 0;
     clear: right;
   }
