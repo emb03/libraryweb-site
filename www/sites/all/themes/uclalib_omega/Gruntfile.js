@@ -29,7 +29,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['js/{,**/}*.js', '!js/{,**/}*.min.js'],
-        tasks: ['jshint', 'uglify:dev']
+        tasks: ['uglify:dev']
       }
     },
 
@@ -115,8 +115,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'uglify:dist',
-    'compass:dist',
-    'jshint'
+    'compass:dist'
   ]);
 
 };
