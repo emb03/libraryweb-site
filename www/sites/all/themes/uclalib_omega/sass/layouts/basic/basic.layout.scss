@@ -12,7 +12,11 @@
 .l-footer {
   @include container;
   max-width: 1004px; // Override default width calculations.
-  @media #{$mobile-header} {
+}
+
+@media #{$mobile-header} {
+  .l-header,
+  .l-navigation {
     padding: 0;
   }
 }
