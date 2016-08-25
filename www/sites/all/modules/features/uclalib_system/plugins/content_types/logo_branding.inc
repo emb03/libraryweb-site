@@ -2,8 +2,7 @@
 
 /**
  * @file
- * Provides the a horizontal rule page element that can be used as a horizontal
- * separator.
+ * Use logo.svg from the active theme, if present with logo.png fallback.
  */
 
 $plugin = array(
@@ -41,6 +40,11 @@ function logo_branding_content_type_render($subtype, $conf, $args, $context) {
   // The output.
   $block = new stdClass();
   $block->title = '';
-  $block->content = '<img src="' . $svg . '" onerror="this.src=\'' . $fallback . '\'; this.onerror=null;">';
+  $block->content = '<img alt="' . t('Home') . '" src="' . $svg . '" onerror="this.src=\'' . $fallback . '\'; this.onerror=null;">';
+
+  if (!drupal_is_front_page()) {
+    $url = url('<front>');
+    $block->content = '<a href="' . $url . '" rel="home"  title="' . t('Home') . '">' . $block->content . '</a>';
+  }
   return $block;
 }
