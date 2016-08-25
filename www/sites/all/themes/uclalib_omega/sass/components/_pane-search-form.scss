@@ -88,5 +88,37 @@
     font: 0/0 a;
     -webkit-tap-highlight-color: transparent;
     z-index: 100;
+    .has-search-open & {
+      background-image: none;
+    }
+  }
+  .mobile-search-trigger__close-left,
+  .mobile-search-trigger__close-right {
+    background: white;
+    display: inline-block;
+    height: 0;
+    opacity: 0;
+    padding-bottom: 80%;
+    position: absolute;
+    top: 0;
+    left: 45%;
+    transform: rotate(0deg);
+    transition: transform .25s ease-out .1s, opacity .2s ease;
+    width: 1px;
+    z-index: 1;
+  }
+
+  .mobile-search-trigger__close-left {
+    .has-search-open & {
+      opacity: 1;
+      transform: rotate(45deg);
+    }
+  }
+
+  .mobile-search-trigger__close-right {
+    .has-search-open & {
+      opacity: 1;
+      transform: rotate(-45deg);
+    }
   }
 }

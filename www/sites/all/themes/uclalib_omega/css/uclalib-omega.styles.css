@@ -2448,7 +2448,7 @@ a.next-week:after {
   margin: 1em -4px 1.3em 0;
   display: inline-block;
 }
-@media only screen and (max-width: 700px) {
+@media (max-width: 699px) {
   .header-search-form-wrapper .form-type-textfield {
     margin: 0;
     width: 100%;
@@ -2458,7 +2458,7 @@ a.next-week:after {
   margin: 1em 0 1.3em;
   display: inline-block;
 }
-@media only screen and (max-width: 700px) {
+@media (max-width: 699px) {
   .header-search-form-wrapper .form-actions {
     display: none;
   }
@@ -2469,7 +2469,7 @@ a.next-week:after {
   padding: .5em .6em .4em;
   font-weight: 100;
 }
-@media only screen and (max-width: 700px) {
+@media (max-width: 699px) {
   .header-search-form-wrapper .form-text {
     width: 100%;
     font-size: 18px;
@@ -2496,12 +2496,12 @@ a.next-week:after {
   background-image: url(../images/icon-search-hover.png);
 }
 
-@media only screen and (min-width: 699px) {
+@media (min-width: 700px) {
   .mobile-search-trigger {
     display: none;
   }
 }
-@media only screen and (max-width: 700px) {
+@media (max-width: 699px) {
   .mobile-search-trigger {
     display: block;
     height: 37px;
@@ -2520,6 +2520,32 @@ a.next-week:after {
     -webkit-tap-highlight-color: transparent;
     z-index: 100;
   }
+  .has-search-open .mobile-search-trigger {
+    background-image: none;
+  }
+}
+.mobile-search-trigger .mobile-search-trigger__close-left,
+.mobile-search-trigger .mobile-search-trigger__close-right {
+  background: white;
+  display: inline-block;
+  height: 0;
+  opacity: 0;
+  padding-bottom: 80%;
+  position: absolute;
+  top: 0;
+  left: 45%;
+  transform: rotate(0deg);
+  transition: transform .25s ease-out .1s, opacity .2s ease;
+  width: 1px;
+  z-index: 1;
+}
+.has-search-open .mobile-search-trigger .mobile-search-trigger__close-left {
+  opacity: 1;
+  transform: rotate(45deg);
+}
+.has-search-open .mobile-search-trigger .mobile-search-trigger__close-right {
+  opacity: 1;
+  transform: rotate(-45deg);
 }
 
 .pane-staff-directory-staff-directory-pane .view-staff-directory > .view-content > .views-row {
