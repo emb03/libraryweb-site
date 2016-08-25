@@ -467,10 +467,10 @@ a[href="#main-content"] {
   .l-navigation ul.primary-links > li.active-trail > a:hover {
     cursor: normal;
   }
-  .l-navigation ul.primary-links.first {
+  .l-navigation ul.primary-links > li.first {
     padding-right: 3px;
   }
-  .l-navigation ul.primary-links.first a {
+  .l-navigation ul.primary-links > li.first a {
     text-indent: -999px;
     width: 0;
     display: inline-block;
@@ -479,7 +479,7 @@ a[href="#main-content"] {
     overflow: hidden;
     padding: 0 28px 0 0;
   }
-  .l-navigation ul.primary-links.first a:after {
+  .l-navigation ul.primary-links > li.first a:after {
     font-family: icomoon;
     content: "\e60b";
     font-size: 20px;
@@ -490,11 +490,11 @@ a[href="#main-content"] {
     line-height: 1em;
     vertical-align: middle;
   }
-  .l-navigation ul.primary-links.first.active-trail a, .l-navigation ul.primary-links.first.active a,
-  .l-navigation ul.primary-links.first a.active,
-  .l-navigation ul.primary-links.first a:active,
-  .l-navigation ul.primary-links.first a:hover,
-  .l-navigation ul.primary-links.first a:focus {
+  .l-navigation ul.primary-links > li.first.active-trail a, .l-navigation ul.primary-links > li.first.active a,
+  .l-navigation ul.primary-links > li.first a.active,
+  .l-navigation ul.primary-links > li.first a:active,
+  .l-navigation ul.primary-links > li.first a:hover,
+  .l-navigation ul.primary-links > li.first a:focus {
     background: transparent;
     color: #3283be;
   }

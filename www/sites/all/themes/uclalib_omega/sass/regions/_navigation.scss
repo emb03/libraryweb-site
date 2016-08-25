@@ -44,10 +44,9 @@ $nav-horiz-space: 8px;
       &.active-trail > a:hover {
         cursor: normal;
       }
-    }
 
-    // Special case for first link.
-    &.first {
+      // Special case for first link.
+      &.first {
         padding-right: 3px;
         a {
           text-indent: -999px;
@@ -79,9 +78,9 @@ $nav-horiz-space: 8px;
           color: $nav-link-active-color;
         }
       }
-    }
-    &.last {
-      display: none;
+      &.last {
+        display: none;
+      }
     }
   }
 }
