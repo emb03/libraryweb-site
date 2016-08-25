@@ -33,6 +33,7 @@ stylesheets[all][] = css/uclalib-omega.no-query.css
 ; ========================================
 scripts[] = js/uclalib-omega.behaviors.js
 scripts[] = js/mobile-nav.js
+scripts[] = js/mobile-search.js
 
 ; ========================================
 ; Plugins

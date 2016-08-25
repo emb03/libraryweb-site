@@ -293,6 +293,31 @@ Menu
     $display->content['new-4a1d85b4-084b-45a5-b32e-785f8d118d46'] = $pane;
     $display->panels['header'][3] = 'new-4a1d85b4-084b-45a5-b32e-785f8d118d46';
     $pane = new stdClass();
+    $pane->pid = 'new-91f64db4-1348-4eb2-b1b7-9d0b7f4f06ca';
+    $pane->panel = 'header';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Mobile search trigger',
+      'title' => '',
+      'body' => '<a href="#" class="mobile-search-trigger">Search this site</a>',
+      'format' => 'php_code',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '91f64db4-1348-4eb2-b1b7-9d0b7f4f06ca';
+    $display->content['new-91f64db4-1348-4eb2-b1b7-9d0b7f4f06ca'] = $pane;
+    $display->panels['header'][4] = 'new-91f64db4-1348-4eb2-b1b7-9d0b7f4f06ca';
+    $pane = new stdClass();
     $pane->pid = 'new-5396ef1e-5f47-46cf-a786-72d4ffad7281';
     $pane->panel = 'header';
     $pane->type = 'custom';
@@ -315,11 +340,11 @@ Menu
       'css_class' => 'pane-give-now-button',
     );
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 5;
     $pane->locks = array();
     $pane->uuid = '5396ef1e-5f47-46cf-a786-72d4ffad7281';
     $display->content['new-5396ef1e-5f47-46cf-a786-72d4ffad7281'] = $pane;
-    $display->panels['header'][4] = 'new-5396ef1e-5f47-46cf-a786-72d4ffad7281';
+    $display->panels['header'][5] = 'new-5396ef1e-5f47-46cf-a786-72d4ffad7281';
     $pane = new stdClass();
     $pane->pid = 'new-2ce2b75f-31cd-4af2-ad7d-7e4538bd5447';
     $pane->panel = 'help';

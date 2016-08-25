@@ -86,6 +86,11 @@ $nav-horiz-space: 8px;
   }
 }
 
+.pane-menu-menu-colophon-first,
+.pane-menu-menu-colophon-second {
+  display: none;
+}
+
 @media #{$mobile-header} {
   .l-navigation-wrapper {
     position: relative;
@@ -93,6 +98,7 @@ $nav-horiz-space: 8px;
 
     .pane-menu-menu-colophon-first,
     .pane-menu-menu-colophon-second {
+      display: block;
       float: left;
       width: 50%;
       ul {

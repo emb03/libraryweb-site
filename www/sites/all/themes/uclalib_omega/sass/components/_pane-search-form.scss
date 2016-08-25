@@ -1,8 +1,16 @@
 .pane-search-form {
   @media #{$mobile-header} {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 12px;
+    left: 12px;
+    right: 41px;
+    opacity: 0;
+    @include transition(opacity 0.3s ease-out);
+    pointer-events: none;
+    &.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 }
 .header-search-form-label {
@@ -19,16 +27,29 @@
   .form-type-textfield {
     margin: 1em -4px 1.3em 0;
     display: inline-block;
+    @media #{$mobile-header} {
+      margin: 0;
+      width: 100%;
+    }
   }
   .form-actions {
     margin: 1em 0 1.3em;
     display: inline-block;
+    @media #{$mobile-header} {
+      display: none;
+    }
   }
   .form-text {
     border: none;
     background: #fff;
     padding: .5em .6em .4em;
     font-weight: 100;
+    @media #{$mobile-header} {
+      width: 100%;
+      font-size: 18px;
+      line-height: 1.3em;
+      padding: .4em .6em;
+    }
   }
   .form-submit {
     background: none;
@@ -46,5 +67,26 @@
   .form-submit:active,
   .form-submit:focus {
     background-image: url(../images/icon-search-hover.png);
+  }
+}
+
+.mobile-search-trigger {
+  @media #{$desktop-header} {
+    display: none;
+  }
+  @media #{$mobile-header} {
+    display: block;
+    height: 37px;
+    width: 40px;
+    padding: 8px 15px 8px 8px;
+    background: transparent url(../images/icon-mobile-search.svg) no-repeat;
+    @include background-size(auto 100%);
+    background-origin: content-box;
+    position: absolute;
+    right: 0;
+    top: 14px;
+    font: 0/0 a;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 100;
   }
 }
