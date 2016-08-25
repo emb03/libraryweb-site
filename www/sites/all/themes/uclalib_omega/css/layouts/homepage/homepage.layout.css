@@ -18,7 +18,7 @@
   clear: both;
 }
 
-@media all and (min-width: 768px) {
+@media (min-width: 768px) {
   /**
    * Main columns and separators.
    */

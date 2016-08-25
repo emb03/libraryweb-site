@@ -47,7 +47,7 @@ module.exports = function (grunt) {
       },
       dev: {
         options: {
-          environment: 'development'
+          environment: 'production'
         }
       },
       dist: {
@@ -88,7 +88,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           mangle: true,
-          compress: true
+          compress: {}
         },
         files: [{
           expand: true,
@@ -113,9 +113,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('build', [
+  grunt.registerTask('default', [
     'uglify:dist',
-    'compass:dist'
+    'compass:dist',
+    'watch'
   ]);
-
 };

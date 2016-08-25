@@ -1,7 +1,8 @@
-@import "compass/css3/box-sizing";
-@import "compass/utilities/general/clearfix";
+@import "compass";
+@import "breakpoint";
 @import "singularitygs";
 @import "abstractions/faux-columns";
+@import "variables/breakpoints";
 
 
 .l-region {
@@ -9,7 +10,7 @@
 }
 
 
-@media all and (min-width: 768px) {
+@media #{$desktop-only} {
 
   // 3-column assymetrical grid w/ fixed 30px gutters between columns.
   $grid: 5 8 8;

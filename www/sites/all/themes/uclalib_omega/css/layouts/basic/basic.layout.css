@@ -26,18 +26,14 @@
   display: table;
   clear: both;
 }
-@media only screen and (max-width: 700px) {
+
+@media (max-width: 699px) {
   .l-header,
-  .l-navigation,
-  .l-main,
-  .l-highlighted,
-  .l-colophon,
-  .l-footer {
+  .l-navigation {
     padding: 0;
   }
 }
-
-@media all and (min-width: 768px) {
+@media (min-width: 768px) {
   .l-region--branding {
     width: 17.02128%;
     float: left;

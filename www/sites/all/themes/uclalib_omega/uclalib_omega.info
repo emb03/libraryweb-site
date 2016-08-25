@@ -22,9 +22,11 @@ stylesheets[all][] = fonts/stylesheet.css
 ; Stylesheets
 ; ========================================
 stylesheets[all][] = css/uclalib-omega.normalize.css
-stylesheets[all][] = css/uclalib-omega.hacks.css
 stylesheets[all][] = css/uclalib-omega.styles.css
 stylesheets[all][] = css/uclalib-omega.no-query.css
+
+; Disabled stylesheets
+stylesheets[all][] = vertical-tabs.css
 
 
 

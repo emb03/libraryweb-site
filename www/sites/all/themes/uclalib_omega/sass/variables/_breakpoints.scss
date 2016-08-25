@@ -1,2 +1,10 @@
-$mobile-header: "only screen and (max-width : 700px)";
-$desktop-header: "only screen and (min-width : 699px)";
+$mobile-header: "(max-width : 699px)";
+$desktop-header: "(min-width : 700px)";
+
+$mobile-vertical-tabs: "(max-width: 469px)";
+$desktop-vertical-tabs: "(min-width: 470px)";
+
+
+// The site lump tablets and desktops into the same breakpoint.
+$desktop-only: "(min-width: 768px)";
+$mobile-only:  "(max-width: 767px)";

@@ -1,13 +1,14 @@
-@import "compass/css3/box-sizing";
-@import "compass/utilities/general/clearfix";
+@import "compass";
+@import "breakpoint";
 @import "singularitygs";
 @import "abstractions/faux-columns";
+@import "variables/breakpoints";
 
 .l-region {
   @include box-sizing(border-box);
 }
 
-@media all and (min-width: 768px) {
+@media #{$desktop-only} {
   // 2-column symetrical grid w/ fixed 50px gutters between columns.
   $grid: 1 1;
   $gutters: 50px;
