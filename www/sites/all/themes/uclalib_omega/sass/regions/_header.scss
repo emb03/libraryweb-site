@@ -47,7 +47,6 @@ $mobile-nav-trigger-width: 41px;
       @include display-flex;
       @include flex-direction(row);
       background-color: $nav-bg-color;
-      padding-left: 20px;
       margin: 0;
       margin-right: $mobile-nav-trigger-width;
       li {

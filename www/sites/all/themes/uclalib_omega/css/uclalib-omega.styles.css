@@ -283,7 +283,6 @@ a:hover, a:focus {
     -webkit-flex-direction: row;
     flex-direction: row;
     background-color: #d7d9da;
-    padding-left: 20px;
     margin: 0;
     margin-right: 41px;
   }
@@ -593,6 +592,10 @@ a[href="#main-content"] {
     background: #fdb930;
     color: #333333;
     padding: 10px;
+  }
+  .primary-links a.active {
+    background: white;
+    font-weight: bold;
   }
 }
 .l-page {

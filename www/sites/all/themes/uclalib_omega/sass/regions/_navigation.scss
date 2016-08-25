@@ -167,6 +167,10 @@ $nav-horiz-space: 8px;
       background: $ucla-yellow;
       color: $nav-link-color;
       padding: 10px;
+      &.active {
+        background: white;
+        font-weight: bold;
+      }
     }
   }
 }
