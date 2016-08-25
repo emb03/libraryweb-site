@@ -1639,43 +1639,50 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   box-sizing: border-box;
   padding-right: 0 !important;
 }
-.mobile-collapsible.is-mobile .mobile-collapsible__title {
+.mobile-collapsible.is-mobile .mobile-collapsible__title,
+.mobile-collapsible.is-mobile .pane-title {
   background-color: #bccbd7;
   color: #3283be;
   cursor: pointer;
   font-weight: bold;
   margin: 0;
-  padding: 20px 8px 20px;
+  padding: 8px;
   font-size: 1em;
 }
-.mobile-collapsible.is-mobile .mobile-collapsible__title::after {
+.mobile-collapsible.is-mobile .mobile-collapsible__title::after,
+.mobile-collapsible.is-mobile .pane-title::after {
   float: right;
   content: '';
   width: 0;
   height: 0;
-  margin-top: .9em;
-  border-right: .9em solid transparent;
-  border-left: .9em solid transparent;
-  border-bottom: .9em solid transparent;
-  border-top: 0.9em solid #3283be;
-  font-size: 0.9em;
+  margin-top: .7em;
+  border-right: .7em solid transparent;
+  border-left: .7em solid transparent;
+  border-bottom: .7em solid transparent;
+  border-top: 0.7em solid #3283be;
+  font-size: 0.7em;
 }
-.mobile-collapsible.is-mobile .mobile-collapsible__title a {
+.mobile-collapsible.is-mobile .mobile-collapsible__title a,
+.mobile-collapsible.is-mobile .pane-title a {
   color: inherit;
+  font-size: 1em;
 }
-.mobile-collapsible.is-mobile .mobile-collapsible__content {
+.mobile-collapsible.is-mobile .mobile-collapsible__content,
+.mobile-collapsible.is-mobile .pane-content {
   height: 0;
   overflow: hidden;
 }
 
-.mobile-collapsible.is-mobile.is-open .mobile-collapsible__title::after {
+.mobile-collapsible.is-mobile.is-open .mobile-collapsible__title::after,
+.mobile-collapsible.is-mobile.is-open .pane-title::after {
   margin-top: 0;
-  border-right: .9em solid transparent;
-  border-left: .9em solid transparent;
-  border-top: .9em solid transparent;
-  border-bottom: 0.9em solid #3283be;
+  border-right: .7em solid transparent;
+  border-left: .7em solid transparent;
+  border-top: .7em solid transparent;
+  border-bottom: 0.7em solid #3283be;
 }
-.mobile-collapsible.is-mobile.is-open .mobile-collapsible__content {
+.mobile-collapsible.is-mobile.is-open .mobile-collapsible__content,
+.mobile-collapsible.is-mobile.is-open .pane-content {
   height: auto;
 }
 
@@ -2533,10 +2540,10 @@ a.next-week:after {
   display: inline-block;
   height: 0;
   opacity: 0;
-  padding-bottom: 80%;
+  padding-bottom: 55%;
   position: absolute;
-  top: 0;
-  left: 45%;
+  top: 15%;
+  left: 50%;
   transform: rotate(0deg);
   transition: transform .25s ease-out .1s, opacity .2s ease;
   width: 1px;
