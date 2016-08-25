@@ -113,9 +113,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('build', [
+  grunt.registerTask('default', [
     'uglify:dist',
-    'compass:dist'
+    'compass:dist',
+    'watch'
   ]);
-
 };
