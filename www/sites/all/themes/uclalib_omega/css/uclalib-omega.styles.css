@@ -310,7 +310,7 @@ a:hover, a:focus {
 }
 @media (max-width: 699px) {
   .l-region--branding {
-    padding: 14px;
+    padding: 17px 14px 14px;
   }
 }
 

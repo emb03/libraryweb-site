@@ -71,7 +71,7 @@ $mobile-nav-trigger-width: 41px;
 .l-region--branding {
   padding-top: 14px;
   @media #{$mobile-header} {
-    padding: 14px;
+    padding: 17px 14px 14px;
   }
 }
 .l-region--header {
