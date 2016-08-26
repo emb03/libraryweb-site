@@ -1,7 +1,3 @@
-@import "susyone";
-@import "compass";
-@import "breakpoint";
-@import "variables/grid";
 @import "variables/breakpoints";
 
 .l-header,
@@ -10,8 +6,18 @@
 .l-highlighted,
 .l-colophon,
 .l-footer {
-  @include container;
   max-width: 1004px; // Override default width calculations.
+  padding-left: 20px;
+  padding-left: 1.25rem;
+  padding-right: 20px;
+  padding-right: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
 }
 
 @media #{$mobile-header} {
@@ -24,43 +30,37 @@
 @media #{$desk-only} {
 
   .l-region--branding {
-    @include span-columns(3, 16);
+    width: 17.02128%;
+    float: left;
+    margin-right: 2.12766%;
+    display: inline;
   }
+
   .l-region--header {
-    @include span-columns(13 omega, 16);
+    width: 80.85106%;
+    float: right;
+    margin-right: 0;
+    display: inline;
   }
-
-  // Save original susy grid values.
-  $save-total-columns: $total-columns;
-  $save-column-width: $column-width;
-  $save-gutter-width: $gutter-width;
-  $save-grid-padding: $grid-padding;
-
-  // Custom susy grid values for colophon.
-  $total-columns: 16;
-  $column-width: 50px;
-  $gutter-width: 0px;
-  $grid-padding: 50px;
 
   .l-region--colophon-first {
-    @include span-columns(10, 16);
-    @include pad(0, 1, 16);
-    // margin-right: 0;
+    width: 62.5%;
+    float: left;
+    display: inline;
+    padding-right: 6.25%;
   }
+
   .l-region--colophon-second {
-    @include span-columns(3, 16);
-    @include pad(.6, 0, 16);
-    // margin-right: 0;
+    width: 18.75%;
+    float: left;
+    display: inline;
+    padding-left: 3.75%;
   }
+
   .l-region--colophon-third {
-    @include span-columns(3 omega, 16);
-    @include pad(.6, 0, 16);
+    width: 18.75%;
+    float: right;
+    display: inline;
+    padding-left: 3.75%;
   }
-
-  // Replace original susy grid values.
-  $total-columns: $save-total-columns;
-  $column-width: $save-column-width;
-  $gutter-width: $save-gutter-width;
-  $grid-padding: $save-grid-padding;
-
 }
