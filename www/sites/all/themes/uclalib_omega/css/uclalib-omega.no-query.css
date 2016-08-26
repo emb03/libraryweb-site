@@ -407,8 +407,15 @@ a[href="#main-content"] {
   display: none;
 }
 
-.l-highlighted {
-  background: #eff3f4;
+@media (min-width: 768px) {
+  .l-highlighted {
+    background: #eff3f4;
+  }
+}
+@media (max-width: 767px) {
+  .l-highlighted {
+    text-align: center;
+  }
 }
 
 .l-main-wrapper {
@@ -622,10 +629,11 @@ a[href="#main-content"] {
     font-weight: bold;
   }
 }
-.l-page {
-  background: url(../images/mol-bg.jpg) 0 0;
+@media (min-width: 768px) {
+  .l-page {
+    background: url(../images/mol-bg.jpg) 0 0;
+  }
 }
-
 .l-region--top {
   background: #eff3f4;
   margin: 0;
@@ -2506,6 +2514,13 @@ a.next-week:after {
   font-weight: 100;
   color: #3283be;
   margin: 27px 0;
+}
+@media (max-width: 767px) {
+  .pane-page-title h1, .pane-page-title h2,
+  .pane-node-title h1,
+  .pane-node-title h2 {
+    font-size: 25px;
+  }
 }
 
 .panel-pane.pane-page-title {
