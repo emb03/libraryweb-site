@@ -7,79 +7,80 @@ $nav-horiz-space: 8px;
 }
 
 @media #{$desktop-header} {
-.l-navigation {
-  ul.primary-links {
-    @include horizontal-list;
-    list-style: none;
-    list-style-image: none;
-    display: table;
-    width: 100%;
-    > li {
-      display: table-cell;
-      float: none;
-      padding: $nav-vert-space $nav-horiz-space $nav-vert-space;
-      margin: 0 1px 0 0;
+  .l-navigation {
+    ul.primary-links {
+      @include horizontal-list;
+      list-style: none;
       list-style-image: none;
-      list-style-type: none;
-      text-align: center;
-      a {
-        line-height: 1.2em;
-      }
-      a,
-      a:visited {
-        color: $nav-link-color;
-      }
-      &.active-trail,
-      &.active-trail:hover {
-        background: $nav-bg-active-color;
-        color: $nav-link-active-color;
-        text-decoration: none;
-      }
-      a:hover,
-      a:active,
-      a:focus {
-        color: $nav-link-hover-color;
-        text-decoration: underline;
-      }
-      &.active-trail > a:hover {
-        cursor: normal;
-      }
-
-      // Special case for first link.
-      &.first {
-        padding-right: 3px;
+      display: table;
+      width: 100%;
+      > li {
+        display: table-cell;
+        float: none;
+        padding: $nav-vert-space $nav-horiz-space $nav-vert-space;
+        margin: 0 1px 0 0;
+        list-style-image: none;
+        list-style-type: none;
+        text-align: center;
         a {
-          text-indent: -999px;
-          width: 0;
-          display: inline-block;
-          float: left;
-          margin-bottom: -4px;
-          overflow: hidden;
-          padding: 0 $nav-horiz-space+20px 0 0;
-          &:after {
-            font-family: icomoon;
-            content: "\e60b";
-            font-size: 20px;
-            font-weight: normal;
-            font-style: normal;
-            text-indent: 954px;
+          line-height: 1.2em;
+        }
+        a,
+        a:visited {
+          color: $nav-link-color;
+        }
+        &.active-trail,
+        &.active-trail:hover {
+          background: $nav-bg-active-color;
+          color: $nav-link-active-color;
+          text-decoration: none;
+        }
+        a:hover,
+        a:active,
+        a:focus {
+          color: $nav-link-hover-color;
+          text-decoration: underline;
+        }
+        &.active-trail > a:hover {
+          cursor: normal;
+        }
+
+        // Special case for first link.
+        &.first {
+          padding-right: 3px;
+          a {
+            text-indent: -999px;
+            width: 0;
             display: inline-block;
-            line-height: 1em;
-            vertical-align: middle;
+            float: left;
+            margin-bottom: -4px;
+            overflow: hidden;
+            padding: 0 $nav-horiz-space+20px 0 0;
+            &:after {
+              font-family: icomoon;
+              content: "\e60b";
+              font-size: 20px;
+              font-weight: normal;
+              font-style: normal;
+              text-indent: 954px;
+              display: inline-block;
+              line-height: 1em;
+              vertical-align: middle;
+            }
+          }
+          &.active-trail a,
+          &.active a,
+          a.active,
+          a:active,
+          a:hover,
+          a:focus {
+            background: transparent;
+            color: $nav-link-active-color;
           }
         }
-        &.active-trail a,
-        &.active a,
-        a.active,
-        a:active,
-        a:hover,
-        a:focus {
-          background: transparent;
-          color: $nav-link-active-color;
+        &.last {
+          display: none;
         }
-      }
-      &.last {
-        display: none;
       }
     }
   }

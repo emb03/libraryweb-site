@@ -498,7 +498,7 @@ a[href="#main-content"] {
     background: transparent;
     color: #3283be;
   }
-  .l-navigation > li.last {
+  .l-navigation ul.primary-links > li.last {
     display: none;
   }
 }
