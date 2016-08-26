@@ -8,6 +8,12 @@
   @include box-sizing(border-box);
 }
 
+.l-region--main,
+.l-region--secondary {
+  clear: both;
+  float: left;
+}
+
 @media #{$desk-only} {
   // 2-column symetrical grid w/ fixed 50px gutters between columns.
   @include add-grid(1 1);

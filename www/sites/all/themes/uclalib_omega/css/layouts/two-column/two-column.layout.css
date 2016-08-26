@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.l-region--main,
+.l-region--secondary {
+  clear: both;
+  float: left;
+}
+
 @media (min-width: 768px) {
   .panel-two-col {
     overflow: hidden;
