@@ -1820,7 +1820,12 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   padding: 0 10px;
 }
 .mobile-collapsible.is-mobile.pane-style-border-blue.is-open .pane-content {
-  padding: 2px 10px;
+  padding: 0 10px;
+}
+.mobile-collapsible.is-mobile.pane-style-border-blue.is-open .pane-content::after, .mobile-collapsible.is-mobile.pane-style-border-blue.is-open .pane-content::before {
+  content: '';
+  display: block;
+  height: 10px;
 }
 
 .mobile-collapsible.is-mobile.pane-title-align-center .pane-title {
