@@ -23,7 +23,7 @@
   clear: both;
 }
 
-@media #{$desktop-only} {
+@media #{$desk-only} {
 
   // 2-column assymetrical grid w/ fixed 20px gutters between columns.
   @include add-grid(11 5);
@@ -64,7 +64,7 @@
 /**
  * Embedded regions inside columns.
  */
-@media #{$smallscreen-desktop} {
+@media #{$lap-desk-only} {
 
   .homepage-top-left {
     @include clearfix();

@@ -91,7 +91,7 @@ ul.vertical-tabs-list {
   @include box-sizing(border-box);
 }
 
-@media #{$mobile-vertical-tabs} {
+@media #{$palm-only} {
   .vertical-tabs-list {
     li {
       max-height: 0;
@@ -114,7 +114,7 @@ ul.vertical-tabs-list {
 }
 
 
-@media #{$desktop-vertical-tabs} {
+@media #{$lap-desk-only} {
   div.vertical-tabs {
     margin-left: $vertical-tab-width; // LTR
   }

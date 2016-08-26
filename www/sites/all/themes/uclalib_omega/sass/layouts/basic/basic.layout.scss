@@ -21,7 +21,7 @@
   }
 }
 
-@media #{$desktop-only} {
+@media #{$desk-only} {
 
   .l-region--branding {
     @include span-columns(3, 16);

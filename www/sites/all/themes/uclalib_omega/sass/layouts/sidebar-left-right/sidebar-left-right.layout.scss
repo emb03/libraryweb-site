@@ -8,7 +8,7 @@
   @include box-sizing(border-box);
 }
 
-@media #{$desktop-only} {
+@media #{$desk-only} {
   // 3-column assymetrical grid w/ fixed 40px gutters between columns.
   @include add-grid(5 6 6 6);
   @include add-gutter(40px);

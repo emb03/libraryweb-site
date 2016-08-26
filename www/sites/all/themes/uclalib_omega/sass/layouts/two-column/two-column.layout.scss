@@ -8,7 +8,7 @@
   @include box-sizing(border-box);
 }
 
-@media #{$desktop-only} {
+@media #{$desk-only} {
   // 2-column symetrical grid w/ fixed 50px gutters between columns.
   @include add-grid(1 1);
   @include add-gutter(50px);
