@@ -13,7 +13,7 @@
   // 3-column assymetrical grid w/ fixed 40px gutters between columns.
   @include add-grid(5 8 8);
   @include add-gutter(40px);
-  @include sgs-change('gutter styles', 'split'); // gutter is split between left and right of each col.
+  @include add-gutter-style('split'); // gutter is split between left and right of each col.
 
   @include layout(5 8 8) {
     .panel-sidebar-left-golden {

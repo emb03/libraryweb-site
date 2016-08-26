@@ -12,7 +12,7 @@
   // 2-column symetrical grid w/ fixed 50px gutters between columns.
   @include add-grid(1 1);
   @include add-gutter(50px);
-  @include sgs-change('gutter styles', 'split'); // gutter is split between left and right of each col.
+  @include add-gutter-style('split'); // gutter is split between left and right of each col.
 
   @include layout(1 1) {
     .panel-two-col {
