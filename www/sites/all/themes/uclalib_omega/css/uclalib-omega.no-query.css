@@ -1564,6 +1564,12 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   width: 38%;
 }
 
+@media (max-width: 480px) {
+  .pane-title [class^="icon-"],
+  .ui-tabs-nav [class^="icon-"] {
+    display: none;
+  }
+}
 /**
  * Override jQuery UI widget default font sizes.
  */
