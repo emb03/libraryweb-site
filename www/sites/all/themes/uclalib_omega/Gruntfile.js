@@ -29,7 +29,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['js/{,**/}*.js', '!js/{,**/}*.min.js'],
-        tasks: ['uglify:dev']
+        tasks: ['uglify:dist']
       }
     },
 
