@@ -61,7 +61,7 @@
   }
 
   $.fn.mobileCollapsible.defaults = {
-    breakpoint: '(max-width: 600px)',
+    breakpoint: '(max-width: 480px)',
     titleSelector: ".mobile-collapsible__title",
     contentSelector: ".mobile-collapsible__content",
     activeClass: 'is-mobile',

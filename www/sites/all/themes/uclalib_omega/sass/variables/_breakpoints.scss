@@ -1,9 +1,8 @@
-$mobile-header: "(max-width : 699px)";
-$desktop-header: "(min-width : 700px)";
+$mobile-header: "(max-width: 699px)";
+$desktop-header: "(min-width: 700px)";
 
-$mobile-vertical-tabs: "(max-width: 469px)";
-$desktop-vertical-tabs: "(min-width: 470px)";
-
+$mobile-vertical-tabs: "(max-width: 480px)";
+$desktop-vertical-tabs: "(min-width: 481px)";
 
 // The site lump tablets and desktops into the same breakpoint.
 $desktop-only: "(min-width: 768px)";
