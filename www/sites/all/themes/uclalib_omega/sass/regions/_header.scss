@@ -16,6 +16,11 @@ $mobile-nav-trigger-width: 41px;
     text-decoration: underline;
   }
   .menu {
+    .expanded {
+      .menu {
+        display: none;
+      }
+    }
     @media #{$desktop-header} {
       @include horizontal-list;
       list-style: none;
@@ -35,11 +40,6 @@ $mobile-nav-trigger-width: 41px;
           a {
             padding-right: 0;
           }
-        }
-      }
-      .expanded {
-        .menu {
-          display: none;
         }
       }
     }

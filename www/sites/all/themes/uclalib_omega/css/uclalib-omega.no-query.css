@@ -224,6 +224,9 @@ a:hover, a:focus {
 .l-header a:hover, .l-header a:active, .l-header a:focus {
   text-decoration: underline;
 }
+.l-header .menu .expanded .menu {
+  display: none;
+}
 @media (min-width: 700px) {
   .l-header .menu {
     margin: 0;
@@ -271,9 +274,6 @@ a:hover, a:focus {
   }
   .l-header .menu li.last:after a {
     padding-right: 0;
-  }
-  .l-header .menu .expanded .menu {
-    display: none;
   }
 }
 @media (max-width: 699px) {
