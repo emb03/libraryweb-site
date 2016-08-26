@@ -18,6 +18,10 @@
   clear: both;
 }
 
+.l-region--top-left-bottom-after {
+  margin-top: 25px;
+}
+
 @media (min-width: 768px) {
   /**
    * Main columns and separators.
