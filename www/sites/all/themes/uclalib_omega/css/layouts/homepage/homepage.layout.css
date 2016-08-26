@@ -66,10 +66,16 @@
     bottom: 0;
     background: "";
   }
+}
+/**
+ * Embedded regions inside columns.
+ */
+@media (min-width: 481px) {
+  .homepage-top-left {
+    overflow: hidden;
+    *zoom: 1;
+  }
 
-  /**
-   * Embedded regions inside columns.
-   */
   .l-region--top-left-bottom-left {
     width: 50%;
     float: left;

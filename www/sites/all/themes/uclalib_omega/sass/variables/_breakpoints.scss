@@ -7,3 +7,8 @@ $desktop-vertical-tabs: "(min-width: 481px)";
 // The site lump tablets and desktops into the same breakpoint.
 $desktop-only: "(min-width: 768px)";
 $mobile-only:  "(max-width: 767px)";
+
+// This is an intermediate breakpoint for certain pages like the homepage where
+// additional layouts are needed between small mobile and larger tablets.
+$smallscreen-only: "(min-width: 481px) and (max-width: 768px)";
+$smallscreen-desktop: "(min-width: 481px)";

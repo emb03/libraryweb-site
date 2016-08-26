@@ -59,12 +59,17 @@
       @include faux-column($left, $width/* , #ddd */);
     }
   }
+}
 
-  /**
-   * Embedded regions inside columns.
-   */
+/**
+ * Embedded regions inside columns.
+ */
+@media #{$smallscreen-desktop} {
 
-  // Adjust this nested grid for a two column layout.
+  .homepage-top-left {
+    @include clearfix();
+  }
+
   @include layout(2) {
     // Span 1 column, starting at the 1st column
     .l-region--top-left-bottom-left {
