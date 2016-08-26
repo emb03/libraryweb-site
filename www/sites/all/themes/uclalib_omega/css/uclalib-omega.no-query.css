@@ -1736,6 +1736,7 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
 }
 .mobile-collapsible.is-mobile .mobile-collapsible__content,
 .mobile-collapsible.is-mobile .pane-content {
+  position: relative;
   max-height: 0;
   overflow: hidden;
   transition: max-height .3s ease-in-out;

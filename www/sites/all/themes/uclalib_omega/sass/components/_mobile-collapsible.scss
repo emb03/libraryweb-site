@@ -35,6 +35,9 @@
 
   .mobile-collapsible__content,
   .pane-content {
+    // This stops positioned absilute elements from showing up when the element
+    // is closed.
+    position: relative;
     max-height: 0;
     overflow: hidden;
     transition: max-height .3s ease-in-out;
