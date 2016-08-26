@@ -36,4 +36,15 @@
   .views-row-last {
     border-bottom: none;
   }
+  .panels-flexible-region-first,
+  .panels-flexible-region-last {
+    @media #{$palm-lap-only} {
+      float: none;
+      width: 100%;
+      .inside {
+        padding: 0;
+      }
+    }
+  }
+
 }

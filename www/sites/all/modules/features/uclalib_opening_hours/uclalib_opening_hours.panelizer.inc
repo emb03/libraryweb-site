@@ -108,13 +108,17 @@ function uclalib_opening_hours_panelizer_defaults() {
     $pane->configuration = array(
       'context' => 'panelizer',
       'override_title' => 1,
-      'override_title_text' => '',
+      'override_title_text' => 'Hours',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'mobile-collapsible  mobile-collapsible--title-hidden-on-desktop',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();

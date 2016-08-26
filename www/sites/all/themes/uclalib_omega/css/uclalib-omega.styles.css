@@ -1742,6 +1742,12 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   transition: max-height .3s ease-in-out;
 }
 
+@media (min-width: 481px) {
+  .mobile-collapsible--title-hidden-on-desktop .mobile-collapsible__title,
+  .mobile-collapsible--title-hidden-on-desktop .pane-title {
+    display: none;
+  }
+}
 .mobile-collapsible.is-mobile.is-open .mobile-collapsible__title::after,
 .mobile-collapsible.is-mobile.is-open .pane-title::after {
   margin-top: 0;
@@ -2257,6 +2263,17 @@ a.more-link,
 }
 .pane-library-hours-panel-pane-1 .views-row-last {
   border-bottom: none;
+}
+@media (max-width: 767px) {
+  .pane-library-hours-panel-pane-1 .panels-flexible-region-first,
+  .pane-library-hours-panel-pane-1 .panels-flexible-region-last {
+    float: none;
+    width: 100%;
+  }
+  .pane-library-hours-panel-pane-1 .panels-flexible-region-first .inside,
+  .pane-library-hours-panel-pane-1 .panels-flexible-region-last .inside {
+    padding: 0;
+  }
 }
 
 .pane-location-destinations-panel-pane-1 .view-location-destinations > .view-content > .views-row {

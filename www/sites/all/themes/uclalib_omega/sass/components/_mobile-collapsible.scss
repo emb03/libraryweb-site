@@ -44,6 +44,16 @@
   }
 }
 
+@media #{$lap-desk-only} {
+  .mobile-collapsible--title-hidden-on-desktop {
+    .mobile-collapsible__title,
+    .pane-title {
+      display:none;
+    }
+  }
+}
+
+
 .mobile-collapsible.is-mobile.is-open {
 
   .mobile-collapsible__title::after,
