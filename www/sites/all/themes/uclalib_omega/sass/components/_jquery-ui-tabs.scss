@@ -59,6 +59,32 @@
   }
 }
 
+@media #{$palm-only} {
+  .ui-tabs .ui-tabs-nav {
+    @include display-flex;
+    li {
+      @include flex-grow(1);
+      @include align-self(stretch);
+      width: 50%;
+      float: none;
+      text-align: center;
+      font-size: 16px;
+      white-space: normal;
+      a {
+        float: none;
+        display: block;
+      }
+      &:nth-child(2n+2) {
+        margin-right: 0;
+      }
+    }
+    &::after {
+      content: '';
+      display: none;
+    }
+  }
+}
+
 @media (max-width: 840px) {
   .page-library,
   .section-location {

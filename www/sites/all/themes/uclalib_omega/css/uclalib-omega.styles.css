@@ -1634,6 +1634,34 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   border-color: #adcde5;
 }
 
+@media (max-width: 480px) {
+  .ui-tabs .ui-tabs-nav {
+    display: -webkit-flex;
+    display: flex;
+  }
+  .ui-tabs .ui-tabs-nav li {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    -webkit-align-self: stretch;
+    align-self: stretch;
+    width: 50%;
+    float: none;
+    text-align: center;
+    font-size: 16px;
+    white-space: normal;
+  }
+  .ui-tabs .ui-tabs-nav li a {
+    float: none;
+    display: block;
+  }
+  .ui-tabs .ui-tabs-nav li:nth-child(2n+2) {
+    margin-right: 0;
+  }
+  .ui-tabs .ui-tabs-nav::after {
+    content: '';
+    display: none;
+  }
+}
 @media (max-width: 840px) {
   .page-library .ui-tabs .ui-tabs-nav li:first-child,
   .section-location .ui-tabs .ui-tabs-nav li:first-child {
