@@ -2496,6 +2496,7 @@ a.next-week:after {
 
 .pane-page-messages {
   padding: 1em 0;
+  word-wrap: break-word;
 }
 
 .pane-page-title h1, .pane-page-title h2,
