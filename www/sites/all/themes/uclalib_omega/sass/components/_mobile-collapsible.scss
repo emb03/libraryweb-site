@@ -2,6 +2,7 @@
   border: 1px solid $ucla-sky-blue;
   box-sizing: border-box;
   padding-right: 0!important;
+  margin-bottom: 1px !important;
 
   .mobile-collapsible__title,
   .pane-title {
@@ -34,8 +35,9 @@
 
   .mobile-collapsible__content,
   .pane-content {
-    height: 0;
+    max-height: 0;
     overflow: hidden;
+    transition: max-height .3s ease-in-out;
   }
 }
 
@@ -51,6 +53,31 @@
   }
   .mobile-collapsible__content,
   .pane-content {
-    height: auto;
+    max-height: 900px;
+  }
+}
+
+
+ // Reset title alignment.
+.mobile-collapsible.is-mobile {
+  .pane-title-inline-wrapper .pane-title {
+    display: block;
+  }
+}
+
+ // Reset border style and whitespace.
+.mobile-collapsible.is-mobile.pane-style-border-blue {
+  border: 0;
+  margin: 0;
+  .pane-content {
+    border: 0;
+    padding: 0;
+  }
+}
+
+ // Reset pane title alignment.
+.mobile-collapsible.is-mobile.pane-title-align-center {
+  .pane-title {
+    text-align: left;
   }
 }

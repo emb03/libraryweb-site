@@ -1671,6 +1671,7 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   border: 1px solid #bccbd7;
   box-sizing: border-box;
   padding-right: 0 !important;
+  margin-bottom: 1px !important;
 }
 .mobile-collapsible.is-mobile .mobile-collapsible__title,
 .mobile-collapsible.is-mobile .pane-title {
@@ -1702,8 +1703,9 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
 }
 .mobile-collapsible.is-mobile .mobile-collapsible__content,
 .mobile-collapsible.is-mobile .pane-content {
-  height: 0;
+  max-height: 0;
   overflow: hidden;
+  transition: max-height .3s ease-in-out;
 }
 
 .mobile-collapsible.is-mobile.is-open .mobile-collapsible__title::after,
@@ -1716,7 +1718,24 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
 }
 .mobile-collapsible.is-mobile.is-open .mobile-collapsible__content,
 .mobile-collapsible.is-mobile.is-open .pane-content {
-  height: auto;
+  max-height: 900px;
+}
+
+.mobile-collapsible.is-mobile .pane-title-inline-wrapper .pane-title {
+  display: block;
+}
+
+.mobile-collapsible.is-mobile.pane-style-border-blue {
+  border: 0;
+  margin: 0;
+}
+.mobile-collapsible.is-mobile.pane-style-border-blue .pane-content {
+  border: 0;
+  padding: 0;
+}
+
+.mobile-collapsible.is-mobile.pane-title-align-center .pane-title {
+  text-align: left;
 }
 
 .more-link-triangle-after:after, div.more-link > a:after,
