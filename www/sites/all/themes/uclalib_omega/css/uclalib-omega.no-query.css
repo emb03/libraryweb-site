@@ -634,43 +634,44 @@ a[href="#main-content"] {
     background: url(../images/mol-bg.jpg) 0 0;
   }
 }
-.l-region--top {
-  background: #eff3f4;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  float: left;
-  width: 100%;
-}
-.l-region--top:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.l-region--top .panel-pane {
-  margin: 24px 0;
-}
+@media (min-width: 768px) {
+  .l-region--top {
+    background: #eff3f4;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    float: left;
+    width: 100%;
+  }
+  .l-region--top:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .l-region--top .panel-pane {
+    margin: 24px 0;
+  }
 
-.l-region--top:before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: 100%;
-  width: 20px;
-  height: 100%;
-  background: #eff3f4;
-}
+  .l-region--top:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 20px;
+    height: 100%;
+    background: #eff3f4;
+  }
 
-.l-region--top:after {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 20px;
-  height: 100%;
-  background: #eff3f4;
+  .l-region--top:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 20px;
+    height: 100%;
+    background: #eff3f4;
+  }
 }
-
 .bean-showcase .field--name-field-showcase-link {
   margin: 10px 0 0;
   font-weight: bold;
@@ -2520,6 +2521,7 @@ a.next-week:after {
   .pane-node-title h1,
   .pane-node-title h2 {
     font-size: 25px;
+    text-align: center;
   }
 }
 

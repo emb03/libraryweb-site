@@ -1,32 +1,34 @@
-.l-region--top {
-  background: $content-background-gray;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  float: left;
-  width: 100%;
-  @include clearfix;
-  .panel-pane {
-    margin: 24px 0;
+@media #{$desk-only} {
+  .l-region--top {
+    background: $content-background-gray;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    float: left;
+    width: 100%;
+    @include clearfix;
+    .panel-pane {
+      margin: 24px 0;
+    }
   }
-}
 
-.l-region--top:before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: 100%;
-  width: 20px;
-  height: 100%;
-  background: $content-background-gray;
-}
+  .l-region--top:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 20px;
+    height: 100%;
+    background: $content-background-gray;
+  }
 
-.l-region--top:after {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 20px;
-  height: 100%;
-  background: $content-background-gray;
+  .l-region--top:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 20px;
+    height: 100%;
+    background: $content-background-gray;
+  }
 }
