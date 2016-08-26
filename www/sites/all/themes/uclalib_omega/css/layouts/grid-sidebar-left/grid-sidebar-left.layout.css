@@ -16,11 +16,12 @@
   }
 
   .l-region--sidebar-left {
-    width: 23.25581%;
+    width: 23.80952%;
     float: left;
     margin-right: -100%;
-    margin-left: 0;
     clear: none;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-left: 0;
     clear: left;
   }
@@ -29,8 +30,8 @@
     position: absolute;
     z-index: -1;
     top: 0;
-    left: -1.16279%;
-    width: 23.25581%;
+    left: 0%;
+    width: 23.80952%;
     bottom: 0;
     background: "";
   }
@@ -41,11 +42,13 @@
 
   .with-sidebar-left .l-region--main-column {
     max-width: none;
-    width: 75.5814%;
+    width: 76.19048%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-right: 0;
   }
   .with-sidebar-left .l-region--main-column:before {
@@ -53,63 +56,72 @@
     position: absolute;
     z-index: -1;
     top: 0;
-    left: 23.25581%;
-    width: 75.5814%;
+    left: 23.80952%;
+    width: 76.19048%;
     bottom: 0;
     background: "";
   }
 
   .l-region--content-top-left {
-    width: 49.23077%;
+    width: 50%;
     float: left;
     margin-right: -100%;
-    margin-left: 0;
     clear: none;
+    padding-left: 20px;
+    padding-right: 20px;
     clear: left;
   }
 
   .l-region--content-top-right {
-    width: 49.23077%;
+    width: 50%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
+    padding-left: 20px;
+    padding-right: 20px;
     clear: right;
   }
 
   .l-region--content-middle-left {
-    width: 49.23077%;
+    width: 50%;
     float: left;
     margin-right: -100%;
-    margin-left: 0;
     clear: none;
+    padding-left: 20px;
+    padding-right: 20px;
     clear: left;
   }
 
   .l-region--content-middle-right {
-    width: 49.23077%;
+    width: 50%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
+    padding-left: 20px;
+    padding-right: 20px;
     clear: right;
   }
 
   .l-region--content-bottom-left {
-    width: 49.23077%;
+    width: 50%;
     float: left;
     margin-right: -100%;
-    margin-left: 0;
     clear: none;
+    padding-left: 20px;
+    padding-right: 20px;
     clear: left;
   }
 
   .l-region--content-bottom-right {
-    width: 49.23077%;
+    width: 50%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
+    padding-left: 20px;
+    padding-right: 20px;
     clear: right;
   }
 }

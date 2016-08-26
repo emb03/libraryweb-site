@@ -25,15 +25,15 @@
 
 @media #{$desktop-only} {
 
-  // 3-column assymetrical grid w/ fixed 30px gutters between columns.
-  $grid: 11 5;
-  $gutters: 40px;
-  $gutter-styles: 'split'; // gitter is split between left and right of each col.
+  // 2-column assymetrical grid w/ fixed 20px gutters between columns.
+  @include add-grid(11 5);
+  @include add-gutter(40px);
+  @include sgs-change('gutter styles', 'split'); // gutter is split between left and right of each col.
 
   /**
    * Main columns and separators.
    */
-  @include layout($grid) {
+  @include layout(11 5) {
 
     // Span 1 column, starting at the 1st column
     .homepage-top-left,

@@ -24,11 +24,12 @@
    */
   .homepage-top-left,
   .l-region--bottom-left {
-    width: 67.69231%;
+    width: 68.75%;
     float: left;
     margin-right: -100%;
-    margin-left: 0;
     clear: none;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-left: 0;
   }
   .homepage-top-left:before,
@@ -37,19 +38,21 @@
     position: absolute;
     z-index: -1;
     top: 0;
-    left: -1.53846%;
-    width: 67.69231%;
+    left: 0%;
+    width: 68.75%;
     bottom: 0;
     background: "";
   }
 
   .homepage-top-right-sidebar,
   .l-region--bottom-right {
-    width: 30.76923%;
+    width: 31.25%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-right: 0;
   }
   .homepage-top-right-sidebar:before,
@@ -58,8 +61,8 @@
     position: absolute;
     z-index: -1;
     top: 0;
-    left: 67.69231%;
-    width: 30.76923%;
+    left: 68.75%;
+    width: 31.25%;
     bottom: 0;
     background: "";
   }
@@ -68,20 +71,23 @@
    * Embedded regions inside columns.
    */
   .l-region--top-left-bottom-left {
-    width: 44.44444%;
+    width: 50%;
     float: left;
     margin-right: -100%;
-    margin-left: 0;
     clear: none;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-left: 0;
   }
 
   .l-region--top-left-bottom-right {
-    width: 44.44444%;
+    width: 50%;
     float: right;
     margin-left: 0;
     margin-right: 0;
     clear: none;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-right: 0;
   }
 }

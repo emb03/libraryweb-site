@@ -9,12 +9,12 @@
 }
 
 @media #{$desktop-only} {
-  // 4-column symetrical grid w/ fixed 40px gutters between columns.
-  $grid: 5 6 6 6;
-  $gutters: 60px;
-  $gutter-styles: 'split'; // gutter is split between left and right of each col.
+  // 3-column assymetrical grid w/ fixed 40px gutters between columns.
+  @include add-grid(5 6 6 6);
+  @include add-gutter(40px);
+  @include sgs-change('gutter styles', 'split'); // gutter is split between left and right of each col.
 
-  @include layout($grid) {
+  @include layout(5 6 6 6) {
     .panel-sidebar-left-right {
       //@include background-grid($color: blue);
       @include clearfix;
