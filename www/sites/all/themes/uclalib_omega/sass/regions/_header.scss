@@ -53,8 +53,12 @@ $mobile-nav-trigger-width: 41px;
         @include display-flex('inline-flex');
         @include flex-grow(1);
         font-size: 18px;
-        line-height: 1.2em;
+        line-height: 21px;
         text-align: center;
+        // Reduce the font size to accomodate the logged in items.
+        .logged-in & {
+          font-size: 13px;
+        }
       }
       a {
         display: block;
@@ -123,6 +127,25 @@ $mobile-nav-trigger-width: 41px;
 .has-mobile-nav {
   @media #{$mobile-header} {
     overflow: hidden;
+  }
+}
+
+@media #{$desktop-header} and (max-width: 884px) {
+  .logged-in .pane-block.pane-system-user-menu .pane-content ul.menu li {
+    width: 50%;
+    padding: 0;
+  }
+  .logged-in .pane-block.pane-system-user-menu .pane-content ul.menu {
+    width: 165px;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
+  .logged-in .l-header .menu li:after {
+    content: "";
+  }
+  .logged-in .l-header {
+    padding-left: 15px;
   }
 }
 
