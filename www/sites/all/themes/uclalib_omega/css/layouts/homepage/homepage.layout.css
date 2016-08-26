@@ -20,6 +20,7 @@
 
 .l-region--top-left-bottom-after {
   margin-top: 25px;
+  clear: both;
 }
 
 @media (min-width: 768px) {
