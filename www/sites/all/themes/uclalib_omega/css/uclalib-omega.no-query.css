@@ -2726,18 +2726,26 @@ a.next-week:after {
 }
 
 .pane-title--important-column-heading {
-  background-color: transparent;
-  background-image: url("../images/bg-heading-important-horiz.png"), url("../images/bg-heading-important-vert.png");
-  background-position: 0 50%, 100% 50%;
-  background-repeat: repeat-x, repeat-y;
+  text-align: center;
 }
 .pane-title--important-column-heading > h2 {
-  display: inline;
-  background: white;
-  padding-right: 10px;
   font-weight: 100;
   font-size: 30px;
   color: #3283be;
+}
+@media (min-width: 481px) {
+  .pane-title--important-column-heading {
+    text-align: left;
+    background-color: transparent;
+    background-image: url("../images/bg-heading-important-horiz.png"), url("../images/bg-heading-important-vert.png");
+    background-position: 0 50%, 100% 50%;
+    background-repeat: repeat-x, repeat-y;
+  }
+  .pane-title--important-column-heading > h2 {
+    display: inline;
+    background: white;
+    padding-right: 10px;
+  }
 }
 
 .sidebar-tier-1, .l-region--sidebar-left .pane-sibling-content, .l-region--sidebar-left .pane-sub-content, .l-region--sidebar-left .pane-uclalib-nav {
