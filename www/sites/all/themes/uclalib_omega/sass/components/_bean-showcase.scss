@@ -10,6 +10,7 @@
   }
   img {
     display: block;
+    margin: 0 auto;
   }
   .field-collection-view {
     margin: 0;
@@ -24,6 +25,28 @@
     margin: 0;
     padding: 0;
     border: none;
+  }
+  @media #{$lap-only} {
+    img {
+      float: left;
+      margin-right: 20px;
+      max-width: 50%;
+    }
+    .field-collection-view {
+      text-align: left;
+    }
+  }
+  @media #{$palm-lap-only} {
+    .field--name-field-showcase-caption {
+      font-size: 14px;
+      margin-top: 3px;
+    }
+  }
+  @media #{$palm-only} {
+    .field-collection-view {
+      max-width: 290px;
+      margin: 0 auto;
+    }
   }
 }
 

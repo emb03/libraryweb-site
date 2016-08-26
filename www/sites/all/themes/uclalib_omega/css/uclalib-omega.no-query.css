@@ -650,6 +650,7 @@ a[href="#main-content"] {
 }
 .bean-showcase img {
   display: block;
+  margin: 0 auto;
 }
 .bean-showcase .field-collection-view {
   margin: 0;
@@ -664,6 +665,28 @@ a[href="#main-content"] {
   margin: 0;
   padding: 0;
   border: none;
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .bean-showcase img {
+    float: left;
+    margin-right: 20px;
+    max-width: 50%;
+  }
+  .bean-showcase .field-collection-view {
+    text-align: left;
+  }
+}
+@media (max-width: 480px) {
+  .bean-showcase .field-collection-view {
+    max-width: 290px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 767px) {
+  .bean-showcase .field--name-field-showcase-caption {
+    font-size: 14px;
+    margin-top: 3px;
+  }
 }
 
 .l-region--top .bean-showcase .field--name-field-showcase > .field__items > .field__item {
