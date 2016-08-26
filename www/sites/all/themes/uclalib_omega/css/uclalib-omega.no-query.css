@@ -676,16 +676,16 @@ a[href="#main-content"] {
     text-align: left;
   }
 }
-@media (max-width: 480px) {
-  .bean-showcase .field-collection-view {
-    max-width: 290px;
-    margin: 0 auto;
-  }
-}
 @media (max-width: 767px) {
   .bean-showcase .field--name-field-showcase-caption {
     font-size: 14px;
     margin-top: 3px;
+  }
+}
+@media (max-width: 480px) {
+  .bean-showcase .field-collection-view {
+    max-width: 290px;
+    margin: 0 auto;
   }
 }
 
