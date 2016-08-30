@@ -63,6 +63,12 @@ a.next-week {
 @media #{$opening-hours-mobile-only} {
   .pane-opening-hours-table,
   .views-field-opening-hours-week {
+    &.mobile-collapsible.is-mobile {
+      border: 0;
+      .pane-title {
+        border: 1px solid $ucla-sky-blue;
+      }
+    }
     .sticky-header {
       z-index: 10;
     }

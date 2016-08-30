@@ -2305,8 +2305,10 @@ a.more-link,
     display: none;
   }
 }
-.pane-library-hours-panel-pane-1 .views-row .pane-node-field-location-building {
-  padding-top: 26px;
+@media (min-width: 768px) {
+  .pane-library-hours-panel-pane-1 .views-row .pane-node-field-location-building {
+    padding-top: 26px;
+  }
 }
 .pane-library-hours-panel-pane-1 .views-row .icon-telephone,
 .pane-library-hours-panel-pane-1 .views-row .icon-email {
@@ -2338,6 +2340,16 @@ a.more-link,
   }
   .pane-library-hours-panel-pane-1 .panels-flexible-region-first {
     text-align: center;
+  }
+  .pane-library-hours-panel-pane-1 .views-row {
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 }
 
@@ -2598,6 +2610,14 @@ a.next-week:after {
 }
 
 @media (max-width: 620px) {
+  .pane-opening-hours-table.mobile-collapsible.is-mobile,
+  .views-field-opening-hours-week.mobile-collapsible.is-mobile {
+    border: 0;
+  }
+  .pane-opening-hours-table.mobile-collapsible.is-mobile .pane-title,
+  .views-field-opening-hours-week.mobile-collapsible.is-mobile .pane-title {
+    border: 1px solid #b5d1e6;
+  }
   .pane-opening-hours-table .sticky-header,
   .views-field-opening-hours-week .sticky-header {
     z-index: 10;
