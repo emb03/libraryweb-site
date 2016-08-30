@@ -2296,9 +2296,16 @@ a.more-link,
   margin-top: 0;
 }
 @media (min-width: 900px) {
-  .pane-library-hours-panel-pane-1 .views-row .pane-linked-map {
+  .pane-library-hours-panel-pane-1 .views-row .pane-linked-map,
+  .pane-library-hours-panel-pane-1 .views-row .pane-node-field-location-map-image {
     float: left;
     margin-right: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .pane-library-hours-panel-pane-1 .views-row .pane-linked-map,
+  .pane-library-hours-panel-pane-1 .views-row .pane-node-field-location-map-image {
+    display: none;
   }
 }
 .pane-library-hours-panel-pane-1 .views-row .pane-node-field-location-building {
@@ -2331,6 +2338,9 @@ a.more-link,
   .pane-library-hours-panel-pane-1 .panels-flexible-region-first .inside,
   .pane-library-hours-panel-pane-1 .panels-flexible-region-last .inside {
     padding: 0;
+  }
+  .pane-library-hours-panel-pane-1 .panels-flexible-region-first {
+    text-align: center;
   }
 }
 

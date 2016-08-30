@@ -8,10 +8,14 @@
       font-weight: 100;
       margin-top: 0;
     }
-    @media (min-width: 900px) {
-      .pane-linked-map {
+    .pane-linked-map,
+    .pane-node-field-location-map-image {
+      @media (min-width: 900px) {
         float: left;
         margin-right: 16px;
+      }
+      @media #{$palm-lap-only} {
+        display: none;
       }
     }
     .pane-node-field-location-building {
@@ -36,15 +40,17 @@
   .views-row-last {
     border-bottom: none;
   }
-  .panels-flexible-region-first,
-  .panels-flexible-region-last {
-    @media #{$palm-lap-only} {
+  @media #{$palm-lap-only} {
+    .panels-flexible-region-first,
+    .panels-flexible-region-last {
       float: none;
       width: 100%;
       .inside {
         padding: 0;
       }
     }
+    .panels-flexible-region-first {
+      text-align: center;
+    }
   }
-
 }
