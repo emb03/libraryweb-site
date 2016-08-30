@@ -529,9 +529,6 @@ a[href="#main-content"] {
     background: transparent;
     color: #3283be;
   }
-  .l-navigation ul.primary-links > li.last {
-    display: none;
-  }
 }
 .pane-menu-menu-colophon-first,
 .pane-menu-menu-colophon-second {
