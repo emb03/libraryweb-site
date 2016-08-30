@@ -117,3 +117,14 @@
     text-align: left;
   }
 }
+
+.mobile-collapsible.is-mobile {
+  .sticky-header {
+    display: none;
+  }
+  &.is-open {
+    .sticky-header {
+      display: table;
+    }
+  }
+}

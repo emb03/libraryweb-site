@@ -1829,6 +1829,13 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   text-align: left;
 }
 
+.mobile-collapsible.is-mobile .sticky-header {
+  display: none;
+}
+.mobile-collapsible.is-mobile.is-open .sticky-header {
+  display: table;
+}
+
 .more-link-triangle-after:after, div.more-link > a:after,
 a.more-link:after,
 .more-link-block a:after, .pane-bean-featured-content .field--name-field-featured-thumbnail-image a:after,
