@@ -2529,23 +2529,34 @@ a.more-link,
   background: #fdb930;
 }
 
-.pane-opening-hours-table th, .pane-opening-hours-table td {
+.pane-opening-hours-table th, .pane-opening-hours-table td,
+.views-field-opening-hours-week th,
+.views-field-opening-hours-week td {
   text-align: center;
 }
-.pane-opening-hours-table th {
+.pane-opening-hours-table th,
+.views-field-opening-hours-week th {
   font-size: 14px;
   padding: 4px 5px;
   white-space: nowrap;
 }
-.pane-opening-hours-table td.current-day {
+.pane-opening-hours-table td.current-day,
+.views-field-opening-hours-week td.current-day {
   background: #ffefc4;
 }
 .pane-opening-hours-table td[class^='day'],
-.pane-opening-hours-table th[class^='day'] {
+.pane-opening-hours-table th[class^='day'],
+.views-field-opening-hours-week td[class^='day'],
+.views-field-opening-hours-week th[class^='day'] {
   width: 3.6em !important;
 }
-.pane-opening-hours-table .current-day {
+.pane-opening-hours-table .current-day,
+.views-field-opening-hours-week .current-day {
   color: #2d2f35;
+}
+
+.views-field-opening-hours-week .sticky-header {
+  display: none;
 }
 
 .week-selector {
@@ -2572,11 +2583,12 @@ a.next-week:after {
 }
 
 @media (max-width: 620px) {
-  .pane-opening-hours-table .sticky-header {
-    background: #fff;
+  .pane-opening-hours-table .sticky-header,
+  .views-field-opening-hours-week .sticky-header {
     z-index: 10;
   }
-  .pane-opening-hours-table th {
+  .pane-opening-hours-table th,
+  .views-field-opening-hours-week th {
     display: none;
     font-size: 18px;
     font-style: normal;
@@ -2588,47 +2600,65 @@ a.next-week:after {
   .pane-opening-hours-table tr.odd,
   .pane-opening-hours-table tr.even,
   .pane-opening-hours-table td,
-  .pane-opening-hours-table th.week-selector {
+  .views-field-opening-hours-week table,
+  .views-field-opening-hours-week tbody,
+  .views-field-opening-hours-week thead,
+  .views-field-opening-hours-week tr,
+  .views-field-opening-hours-week tr.odd,
+  .views-field-opening-hours-week tr.even,
+  .views-field-opening-hours-week td {
     background: none;
     border: 0;
     clear: both;
     display: block;
     padding: 0;
   }
-  .pane-opening-hours-table td {
+  .pane-opening-hours-table th.week-selector,
+  .views-field-opening-hours-week th.week-selector {
+    background: #fff;
+    display: block;
+    margin: 0 auto;
+    padding: .4em 0;
+    width: 100%;
+  }
+  .pane-opening-hours-table td,
+  .views-field-opening-hours-week td {
     border-bottom: 1px solid #a7a7a7;
     color: #767676;
     padding: .2em .3em;
     text-align: left;
   }
-  .pane-opening-hours-table td.title {
+  .pane-opening-hours-table td.title,
+  .views-field-opening-hours-week td.title {
     border-bottom: none;
     font-weight: bold;
     font-size: 16px;
     padding: .8em 0;
   }
-  .pane-opening-hours-table td[data-label]::before {
+  .pane-opening-hours-table td[data-label]::before,
+  .views-field-opening-hours-week td[data-label]::before {
     content: attr(data-label);
     display: block;
     float: left;
     margin-right: 1%;
     width: 39%;
   }
-  .pane-opening-hours-table td[data-label]::after {
+  .pane-opening-hours-table td[data-label]::after,
+  .views-field-opening-hours-week td[data-label]::after {
     content: '';
     display: table;
     clear: both;
     width: 100%;
   }
 
-  .week-selector {
+  th.week-selector {
     width: 100%;
     margin: 0 auto;
+    display: block;
     padding: .4em 0;
   }
-  .week-selector a {
+  th.week-selector a {
     background: #b5d1e6;
-    margin: 0;
   }
 
   a.previous-week {

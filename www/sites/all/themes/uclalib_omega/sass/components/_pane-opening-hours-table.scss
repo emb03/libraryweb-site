@@ -1,5 +1,6 @@
 // Opening Hours
-.pane-opening-hours-table {
+.pane-opening-hours-table,
+.views-field-opening-hours-week {
   th, td {
     text-align: center;
   }
@@ -19,6 +20,15 @@
     color: $ucla-dark-gray;
   }
 }
+
+// The sticky header is broken on the views field.
+// Eg on /arts/at-this-location
+.views-field-opening-hours-week {
+  .sticky-header {
+    display: none;
+  }
+}
+
 .week-selector {
   width: 146px;
   a {
@@ -47,9 +57,9 @@ a.next-week {
 }
 
 @media #{$opening-hours-mobile-only} {
-  .pane-opening-hours-table {
+  .pane-opening-hours-table,
+  .views-field-opening-hours-week {
     .sticky-header {
-      background: #fff;
       z-index: 10;
     }
     th {
@@ -63,13 +73,19 @@ a.next-week {
     tr,
     tr.odd,
     tr.even,
-    td,
-    th.week-selector {
+    td {
       background: none;
       border: 0;
       clear: both;
       display: block;
       padding: 0;
+    }
+    th.week-selector {
+      background: #fff;
+      display: block;
+      margin: 0 auto;
+      padding: .4em 0;
+      width: 100%;
     }
     td {
       border-bottom: 1px solid $opening-hours-mobile-border-color;
@@ -100,13 +116,13 @@ a.next-week {
     }
   }
 
-  .week-selector {
+  th.week-selector {
     width: 100%;
     margin: 0 auto;
+    display: block;
     padding: .4em 0;
     a {
       background: $ucla-sky-blue;
-      margin: 0;
     }
   }
 
