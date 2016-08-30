@@ -2529,22 +2529,22 @@ a.more-link,
   background: #fdb930;
 }
 
-.pane-opening-hours-table table th, .pane-opening-hours-table table td {
+.pane-opening-hours-table th, .pane-opening-hours-table td {
   text-align: center;
 }
-.pane-opening-hours-table table th {
+.pane-opening-hours-table th {
   font-size: 14px;
   padding: 4px 5px;
   white-space: nowrap;
 }
-.pane-opening-hours-table table td.current-day {
+.pane-opening-hours-table td.current-day {
   background: #ffefc4;
 }
-.pane-opening-hours-table table td[class^='day'],
-.pane-opening-hours-table table th[class^='day'] {
+.pane-opening-hours-table td[class^='day'],
+.pane-opening-hours-table th[class^='day'] {
   width: 3.6em !important;
 }
-.pane-opening-hours-table table .current-day {
+.pane-opening-hours-table .current-day {
   color: #2d2f35;
 }
 
@@ -2571,6 +2571,82 @@ a.next-week:after {
   margin-top: .15em !important;
 }
 
+@media (max-width: 620px) {
+  .pane-opening-hours-table .sticky-header {
+    background: #fff;
+    z-index: 10;
+  }
+  .pane-opening-hours-table th {
+    display: none;
+    font-size: 18px;
+    font-style: normal;
+  }
+  .pane-opening-hours-table table,
+  .pane-opening-hours-table tbody,
+  .pane-opening-hours-table thead,
+  .pane-opening-hours-table tr,
+  .pane-opening-hours-table tr.odd,
+  .pane-opening-hours-table tr.even,
+  .pane-opening-hours-table td,
+  .pane-opening-hours-table th.week-selector {
+    background: none;
+    border: 0;
+    clear: both;
+    display: block;
+    padding: 0;
+  }
+  .pane-opening-hours-table td {
+    border-bottom: 1px solid #a7a7a7;
+    color: #767676;
+    padding: .2em .3em;
+    text-align: left;
+  }
+  .pane-opening-hours-table td.title {
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: .8em 0;
+  }
+  .pane-opening-hours-table td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    float: left;
+    margin-right: 1%;
+    width: 39%;
+  }
+  .pane-opening-hours-table td[data-label]::after {
+    content: '';
+    display: table;
+    clear: both;
+    width: 100%;
+  }
+
+  .week-selector {
+    width: 100%;
+    margin: 0 auto;
+    padding: .4em 0;
+  }
+  .week-selector a {
+    background: #b5d1e6;
+    margin: 0;
+  }
+
+  a.previous-week {
+    margin-right: .4em;
+  }
+  a.previous-week::before {
+    border-right-color: #3283be !important;
+    left: .3em;
+  }
+
+  a.next-week {
+    margin-left: .4em;
+  }
+  a.next-week::after {
+    border-left-color: #3283be !important;
+    right: .3em;
+  }
+}
 .pane-page-content > .contextual-links-region > .contextual-links-wrapper {
   margin-right: 25px;
 }
