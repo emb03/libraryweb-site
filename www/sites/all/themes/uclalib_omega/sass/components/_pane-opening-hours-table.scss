@@ -12,6 +12,10 @@
   td.current-day {
     background: #ffefc4;
   }
+  tr.odd td.current-day {
+    background: #fed97e;
+  }
+
   td[class^='day'],
   th[class^='day'] {
     width: 3.6em !important;
@@ -87,6 +91,10 @@ a.next-week {
       padding: .4em 0;
       width: 100%;
     }
+    tr.odd td.current-day,
+    td.current-day {
+      background: #ffefc4;
+    }
     td {
       border-bottom: 1px solid $opening-hours-mobile-border-color;
       color: $opening-hours-mobile-font-color;
@@ -112,6 +120,10 @@ a.next-week {
         display: table;
         clear: both;
         width: 100%;
+        height: 0;
+        padding: 0;
+        margin: 0;
+        border-collapse: collapse;
       }
     }
   }

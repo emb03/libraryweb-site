@@ -47,9 +47,6 @@ table tr.even {
 table tr.odd {
   background: #eff3f4;
 }
-table tr.odd .current-day {
-  background: #fed97e;
-}
 table caption {
   background-color: #3283be;
   border: 1px solid #3283be;
@@ -2558,6 +2555,10 @@ a.more-link,
 .views-field-opening-hours-week td.current-day {
   background: #ffefc4;
 }
+.pane-opening-hours-table tr.odd td.current-day,
+.views-field-opening-hours-week tr.odd td.current-day {
+  background: #fed97e;
+}
 .pane-opening-hours-table td[class^='day'],
 .pane-opening-hours-table th[class^='day'],
 .views-field-opening-hours-week td[class^='day'],
@@ -2635,6 +2636,12 @@ a.next-week:after {
     padding: .4em 0;
     width: 100%;
   }
+  .pane-opening-hours-table tr.odd td.current-day,
+  .pane-opening-hours-table td.current-day,
+  .views-field-opening-hours-week tr.odd td.current-day,
+  .views-field-opening-hours-week td.current-day {
+    background: #ffefc4;
+  }
   .pane-opening-hours-table td,
   .views-field-opening-hours-week td {
     border-bottom: 1px solid #a7a7a7;
@@ -2663,6 +2670,10 @@ a.next-week:after {
     display: table;
     clear: both;
     width: 100%;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse;
   }
 
   th.week-selector {
