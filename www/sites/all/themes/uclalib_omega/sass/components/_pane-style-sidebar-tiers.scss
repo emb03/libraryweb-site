@@ -96,6 +96,14 @@
     }
   }
 }
+
+// Add spacing between sidebar blocks
+@media #{$palm-lap-only} {
+  .mobile-collapsible.is-mobile + .sidebar-tier-2 {
+    margin-top: 15px;
+  }
+}
+
 .sidebar-tier-3 {
   color: $ucla-dark-gray;
   font-size: 13px;

@@ -3186,6 +3186,11 @@ a.next-week:after {
   color: #3283be;
 }
 
+@media (max-width: 767px) {
+  .mobile-collapsible.is-mobile + .sidebar-tier-2, .l-region--sidebar-left .mobile-collapsible.is-mobile + .pane-quick-links {
+    margin-top: 15px;
+  }
+}
 .sidebar-tier-3 {
   color: #2d2f35;
   font-size: 13px;
