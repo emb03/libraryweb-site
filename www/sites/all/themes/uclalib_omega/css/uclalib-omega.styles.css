@@ -2142,6 +2142,12 @@ a.more-link,
   -ms-hyphens: auto;
   hyphens: auto;
 }
+.pane-bean-link-list.is-mobile .pane-content {
+  background: #eff3f4;
+}
+.pane-bean-link-list.is-mobile .bean-link-list {
+  padding: 0 10px;
+}
 
 .pane-bean-living-library-gallery {
   margin-bottom: 10px !important;
