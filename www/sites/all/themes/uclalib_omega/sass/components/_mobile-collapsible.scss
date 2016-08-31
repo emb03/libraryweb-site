@@ -1,7 +1,7 @@
 .mobile-collapsible.is-mobile {
   border: 1px solid $ucla-sky-blue;
   box-sizing: border-box;
-  padding-right: 0!important;
+  padding: 0 !important;
   margin-bottom: 1px !important;
 
   &.is-open {
@@ -13,18 +13,23 @@
     background-color: $ucla-sky-blue;
     color: $ucla-blue;
     cursor: pointer;
+    font-size: 16px !important;
     font-weight: bold;
     margin: 0;
-    padding: 8px;
-    font-size: 16px;
+    padding: 8px 32px 8px 8px !important;
+    position: relative;
 
     a {
       color: inherit;
       font-size: 1em;
+      margin: -8px 0 -8px -8px !important;
+      padding: 8px 0 8px 8px !important;
     }
 
     &::after {
-      float: right;
+      position: absolute;
+      right: 7px;
+      top: 7px;
       content: '';
       width: 0;
       height: 0;
@@ -82,6 +87,7 @@
 }
 
  // Reset border style and whitespace.
+.mobile-collapsible--blue.is-mobile,
 .mobile-collapsible.is-mobile.pane-style-border-blue {
   border: 1px solid $ucla-blue;
   margin: 0;

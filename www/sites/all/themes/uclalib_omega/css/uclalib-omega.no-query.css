@@ -1763,7 +1763,7 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
 .mobile-collapsible.is-mobile {
   border: 1px solid #b5d1e6;
   box-sizing: border-box;
-  padding-right: 0 !important;
+  padding: 0 !important;
   margin-bottom: 1px !important;
 }
 .mobile-collapsible.is-mobile.is-open {
@@ -1774,19 +1774,24 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   background-color: #b5d1e6;
   color: #3283be;
   cursor: pointer;
+  font-size: 16px !important;
   font-weight: bold;
   margin: 0;
-  padding: 8px;
-  font-size: 16px;
+  padding: 8px 32px 8px 8px !important;
+  position: relative;
 }
 .mobile-collapsible.is-mobile .mobile-collapsible__title a,
 .mobile-collapsible.is-mobile .pane-title a {
   color: inherit;
   font-size: 1em;
+  margin: -8px 0 -8px -8px !important;
+  padding: 8px 0 8px 8px !important;
 }
 .mobile-collapsible.is-mobile .mobile-collapsible__title::after,
 .mobile-collapsible.is-mobile .pane-title::after {
-  float: right;
+  position: absolute;
+  right: 7px;
+  top: 7px;
   content: '';
   width: 0;
   height: 0;
@@ -1827,28 +1832,37 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   display: block;
 }
 
+.mobile-collapsible--blue.is-mobile,
 .mobile-collapsible.is-mobile.pane-style-border-blue {
   border: 1px solid #3283be;
   margin: 0;
 }
+.mobile-collapsible--blue.is-mobile .mobile-collapsible__title,
+.mobile-collapsible--blue.is-mobile .pane-title,
 .mobile-collapsible.is-mobile.pane-style-border-blue .mobile-collapsible__title,
 .mobile-collapsible.is-mobile.pane-style-border-blue .pane-title {
   background-color: #3283be;
   color: white;
   font-weight: normal !important;
 }
+.mobile-collapsible--blue.is-mobile .mobile-collapsible__title::after,
+.mobile-collapsible--blue.is-mobile .pane-title::after,
 .mobile-collapsible.is-mobile.pane-style-border-blue .mobile-collapsible__title::after,
 .mobile-collapsible.is-mobile.pane-style-border-blue .pane-title::after {
   border-top-color: white;
 }
+.mobile-collapsible--blue.is-mobile .pane-content,
 .mobile-collapsible.is-mobile.pane-style-border-blue .pane-content {
   border: 0;
   padding: 0 10px;
 }
+.mobile-collapsible--blue.is-mobile.is-open .pane-content,
 .mobile-collapsible.is-mobile.pane-style-border-blue.is-open .pane-content {
   padding: 0 10px;
 }
-.mobile-collapsible.is-mobile.pane-style-border-blue.is-open .pane-content::after, .mobile-collapsible.is-mobile.pane-style-border-blue.is-open .pane-content::before {
+.mobile-collapsible--blue.is-mobile.is-open .pane-content::after, .mobile-collapsible--blue.is-mobile.is-open .pane-content::before,
+.mobile-collapsible.is-mobile.pane-style-border-blue.is-open .pane-content::after,
+.mobile-collapsible.is-mobile.pane-style-border-blue.is-open .pane-content::before {
   content: '';
   display: block;
   height: 10px;
