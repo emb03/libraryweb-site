@@ -32,6 +32,30 @@ img {
   display: inline-block;
 }
 
+.palm-only, .palm-lap-only, .desk-only, .lap-only {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .palm-only {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .palm-lap-only {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .desk-only {
+    display: none;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .lap-only {
+    display: none;
+  }
+}
 table {
   border: 1px solid #adcde5;
   border-collapse: separate;
