@@ -98,5 +98,12 @@
     clear: right;
   }
 }
+@media (max-width: 767px) {
+  .l-region--below-secondary-left,
+  .l-region--below-secondary-right {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
 
 /*# sourceMappingURL=sidebar-left-golden.layout.css.map */

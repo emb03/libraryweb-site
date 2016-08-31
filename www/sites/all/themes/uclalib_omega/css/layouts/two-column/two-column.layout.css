@@ -79,5 +79,12 @@
     background: "";
   }
 }
+@media (max-width: 767px) {
+  .l-region--below-left,
+  .l-region--below-right {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
 
 /*# sourceMappingURL=two-column.layout.css.map */

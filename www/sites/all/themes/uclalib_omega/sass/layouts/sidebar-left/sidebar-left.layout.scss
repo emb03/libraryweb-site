@@ -82,3 +82,11 @@
     }
   }
 }
+
+@media #{$palm-lap-only} {
+  .l-region--below-secondary-left,
+  .l-region--below-secondary-right {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
