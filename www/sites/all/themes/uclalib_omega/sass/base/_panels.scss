@@ -16,8 +16,9 @@
 // Utility classes to hide/show panes at specific breakpoints only
 $breakpoints: (palm-only, $palm-only),
 (palm-lap-only, $palm-lap-only),
-(desk-only, $desk-only),
-(lap-only, $lap-only);
+(lap-only, $lap-only),
+(lap-desk-only, $lap-desk-only),
+(desk-only, $desk-only);
 
 %hide-by-default {
   display: none;
@@ -28,7 +29,7 @@ $breakpoints: (palm-only, $palm-only),
   }
   @media #{$breakpoint} {
     .#{$classname} {
-      display: none;
+      display: block;
     }
   }
 }
