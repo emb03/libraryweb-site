@@ -67,6 +67,10 @@ $mobile-nav-trigger-width: 41px;
         font-weight: normal;
         border-right: 1px solid white;
         padding: 10px;
+        &.active-trail,
+        &.active {
+          background: white;
+        }
       }
     }
   }

@@ -303,6 +303,9 @@ a:hover, a:focus {
     border-right: 1px solid white;
     padding: 10px;
   }
+  .l-header .menu a.active-trail, .l-header .menu a.active {
+    background: white;
+  }
 }
 
 .l-region--branding {
