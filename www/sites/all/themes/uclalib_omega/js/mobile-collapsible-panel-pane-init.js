@@ -60,7 +60,7 @@
         $options.wrapAll($el);
 
         // Add a clickable title.
-        $('.js-sidebar-options-wrapper').prepend('<h2 class="js-pane-title pane-title">'+ Drupal.t('Search filters')+'</h2>');
+        $('.js-sidebar-options-wrapper').prepend('<h2 class="js-pane-title pane-title">'+ Drupal.t('Search Filters')+'</h2>');
 
         // Setup the collapsible js functionality.
         $('.js-sidebar-options-wrapper').addClass('mobile-collapsible mobile-collapsible--title-hidden-on-desktop').mobileCollapsible({
