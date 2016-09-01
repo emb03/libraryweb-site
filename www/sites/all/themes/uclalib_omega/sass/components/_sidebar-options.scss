@@ -1,0 +1,26 @@
+// sidebar facet options.
+.sidebar-options {
+  h2 {
+    color: $ucla-blue;
+    font-size: 1.071em;
+    font-weight: bold;
+  }
+  ul {
+    list-style: none;
+    padding-left: 5px;
+    .facetapi-checkbox {
+      vertical-align: text-bottom;
+    }
+    li {
+      padding-left: 20px;
+      text-indent: -20px;
+    }
+    a {
+      color: $ucla-dark-gray;
+      vertical-align: middle;
+    }
+  }
+  &.ctools-collapsible-container ul {
+    padding-left: 22px;
+  }
+}

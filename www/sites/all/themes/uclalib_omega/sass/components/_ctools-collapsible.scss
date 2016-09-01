@@ -1,0 +1,54 @@
+// Ctools Collapsibles
+.ctools-collapsible-container {
+  .ctools-toggle {
+    background: none; //url(../images/collapsible-expanded.png) 50% 50% no-repeat;
+    position: relative;
+    float: right;
+    @media #{$desk-only} {
+      float: left;
+    }
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      margin-top: -.4em;
+      left: .2em;
+      border-right: .8em solid transparent;
+      border-left: .8em solid transparent;
+      border-bottom: .8em solid #3283be;
+      border-top: .8em solid transparent;
+      font-size: .8em;
+      transform: scaleY(1);
+      transform-origin: center;
+      transition-property: margin-top, transform;
+      transition-duration: .3s, .3s;
+      transition-timing-function: ease-out;
+      position: absolute;
+      @media #{$desk-only} {
+        border-right: .8em solid transparent;
+        border-left: .8em solid #3283be;
+        border-bottom: .8em solid transparent;
+        border-top: .8em solid transparent;
+        transform: rotate(90deg);
+        transform-origin: center;
+        transition-property: margin-top, margin-left, transform;
+        margin-top: .7em;
+        margin-left: .1em;
+      }
+    }
+  }
+  .ctools-toggle-collapsed {
+    background: none; //url(../images/collapsible-collapsed.png) 50% 50% no-repeat;
+
+    &::before {
+      transform: scaleY(-1);
+      margin-top: .45em;
+
+      @media #{$desk-only} {
+        transform: rotate(0deg);
+        margin-top: .2em;
+        margin-left: .4em;
+      }
+    }
+  }
+}

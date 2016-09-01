@@ -1397,6 +1397,62 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   margin-top: 28px;
 }
 
+.ctools-collapsible-container .ctools-toggle {
+  background: none;
+  position: relative;
+  float: right;
+}
+@media (min-width: 768px) {
+  .ctools-collapsible-container .ctools-toggle {
+    float: left;
+  }
+}
+.ctools-collapsible-container .ctools-toggle::before {
+  content: '';
+  width: 0;
+  height: 0;
+  margin-top: -.4em;
+  left: .2em;
+  border-right: .8em solid transparent;
+  border-left: .8em solid transparent;
+  border-bottom: .8em solid #3283be;
+  border-top: .8em solid transparent;
+  font-size: .8em;
+  transform: scaleY(1);
+  transform-origin: center;
+  transition-property: margin-top, transform;
+  transition-duration: .3s, .3s;
+  transition-timing-function: ease-out;
+  position: absolute;
+}
+@media (min-width: 768px) {
+  .ctools-collapsible-container .ctools-toggle::before {
+    border-right: .8em solid transparent;
+    border-left: .8em solid #3283be;
+    border-bottom: .8em solid transparent;
+    border-top: .8em solid transparent;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition-property: margin-top, margin-left, transform;
+    margin-top: .7em;
+    margin-left: .1em;
+  }
+}
+.ctools-collapsible-container .ctools-toggle-collapsed {
+  background: none;
+}
+.ctools-collapsible-container .ctools-toggle-collapsed::before {
+  transform: scaleY(-1);
+  margin-top: .45em;
+}
+@media (min-width: 768px) {
+  .ctools-collapsible-container .ctools-toggle-collapsed::before {
+    transform: rotate(0deg);
+    margin-top: .2em;
+    margin-left: .4em;
+  }
+}
+
 .destination-icons-horiz li {
   margin-right: 2px;
 }
@@ -3480,6 +3536,30 @@ img[src="images/down.png"],
 img[src="images/up.png"] {
   vertical-align: top;
   margin: 0 4px 0 0;
+}
+
+.sidebar-options h2 {
+  color: #3283be;
+  font-size: 1.071em;
+  font-weight: bold;
+}
+.sidebar-options ul {
+  list-style: none;
+  padding-left: 5px;
+}
+.sidebar-options ul .facetapi-checkbox {
+  vertical-align: text-bottom;
+}
+.sidebar-options ul li {
+  padding-left: 20px;
+  text-indent: -20px;
+}
+.sidebar-options ul a {
+  color: #2d2f35;
+  vertical-align: middle;
+}
+.sidebar-options.ctools-collapsible-container ul {
+  padding-left: 22px;
 }
 
 /* CSS Document Elaine's Additions*/
