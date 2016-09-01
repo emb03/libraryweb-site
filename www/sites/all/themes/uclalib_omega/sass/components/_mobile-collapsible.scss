@@ -8,8 +8,8 @@
     margin-bottom: 2px;
   }
 
-  .mobile-collapsible__title,
-  .pane-title {
+  > .mobile-collapsible__title,
+  > .pane-title {
     background-color: $ucla-sky-blue;
     color: $ucla-blue;
     cursor: pointer;
@@ -46,8 +46,8 @@
       transition-timing-function: ease-out;
     }
   }
-  &.is-open .mobile-collapsible__title::after,
-  &.is-open .pane-title::after {
+  &.is-open > .mobile-collapsible__title::after,
+  &.is-open > .pane-title::after {
     transform: scaleY(-1);
     margin-top: 0;
   }
@@ -69,10 +69,10 @@
 
 // Sometimes the collapsible pane title should be hidden on desktop.
 // Eg, hours widget.
-@media #{$lap-desk-only} {
+@media #{$desk-only} {
   .mobile-collapsible--title-hidden-on-desktop {
-    .mobile-collapsible__title,
-    .pane-title {
+    > .mobile-collapsible__title,
+    > .pane-title {
       display:none;
     }
   }
@@ -81,7 +81,7 @@
 
  // Reset title alignment.
 .mobile-collapsible.is-mobile {
-  .pane-title-inline-wrapper .pane-title {
+  > .pane-title-inline-wrapper > .pane-title {
     display: block;
   }
 }
@@ -92,8 +92,8 @@
   border: 1px solid $ucla-blue;
   margin: 0;
 
-  .mobile-collapsible__title,
-  .pane-title {
+  > .mobile-collapsible__title,
+  > .pane-title {
     background-color: $ucla-blue;
     color: white;
     font-weight: normal !important;

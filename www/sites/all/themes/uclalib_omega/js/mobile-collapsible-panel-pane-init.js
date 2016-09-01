@@ -46,4 +46,30 @@
       });
     }
   };
+
+  // Group the multiple individually collapsible sidebar facets into a single
+  // collapsible "Search Facets" item for mobile.
+  Drupal.behaviors.mobileCollapsibleSearchFacets = {
+    attach: function (context, settings) {
+      $options = $(context).find('.l-region--sidebar-left .sidebar-options');
+
+      if ($options.length > 1) {
+        // prepend a wrapper before the first sidebar-option which will be used
+        // as the container to place all sidebar options in.
+        $el = '<div class="js-sidebar-options-wrapper"><div class="js-pane-content pane-content"></div></div>';
+        $options.wrapAll($el);
+
+        // Add a clickable title.
+        $('.js-sidebar-options-wrapper').prepend('<h2 class="js-pane-title pane-title">'+ Drupal.t('Search filters')+'</h2>');
+
+        // remove options from dom and move them inside the wrapper.
+        $('.js-sidebar-options-wrapper').addClass('mobile-collapsible mobile-collapsible--title-hidden-on-desktop').mobileCollapsible({
+          breakpoint: "(max-width: 767px)",
+          titleSelector: "> .pane-title",
+          contentSelector: "> .pane-content"
+        });
+      }
+    }
+  };
+
 }(jQuery));
