@@ -40,14 +40,6 @@
     border-bottom: none;
   }
   @media #{$palm-lap-only} {
-    .panels-flexible-region-first,
-    .panels-flexible-region-last {
-      float: none;
-      width: 100%;
-      .inside {
-        padding: 0;
-      }
-    }
     .panels-flexible-region-first {
       text-align: center;
     }
