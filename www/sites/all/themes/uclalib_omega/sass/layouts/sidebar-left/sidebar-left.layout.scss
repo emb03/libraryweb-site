@@ -89,4 +89,9 @@
     margin-top: 15px;
     margin-bottom: 15px;
   }
+  // Don't add padding on elements at the bottom of a region because the regions
+  // take care of spacing.
+  .l-region--sidebar-left .panel-pane:last-child p {
+    margin-bottom: 0;
+  }
 }

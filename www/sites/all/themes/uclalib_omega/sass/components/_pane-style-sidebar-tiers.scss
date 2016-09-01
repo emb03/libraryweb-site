@@ -5,6 +5,9 @@
   padding: 24px 0 15px;
   font-weight: bold;
   font-size: 15px;
+  @media #{$palm-lap-only} {
+    margin: 0;
+  }
   .no-gray-sidebar-left & {
     margin: 0;
   }
@@ -76,6 +79,12 @@
   padding: 10px 28px 11px;
   font-weight: bold;
   font-size: 13px;
+  @media #{$palm-lap-only} {
+    padding: 15px 8px;
+    margin: 0;
+    font-weight: normal;
+    font-size: 1em;
+  }
   .no-gray-sidebar-left & {
     margin: 0;
   }
@@ -83,6 +92,11 @@
     font-size: 14px;
     font-weight: bold;
     margin: 4px 0 0;
+    @media #{$palm-lap-only} {
+      color: $header-text-color;
+      font-size: 1.125em;
+      margin: 0 0 10px;
+    }
   }
   ul {
     margin: 0;
