@@ -1286,36 +1286,6 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   display: none;
 }
 
-.sidebar-options .ctools-toggle {
-  background: url(../images/collapsible-expanded.png) 50% 50% no-repeat;
-}
-.sidebar-options .ctools-toggle-collapsed {
-  background: url(../images/collapsible-collapsed.png) 50% 50% no-repeat;
-}
-.sidebar-options h2 {
-  color: #3283be;
-  font-size: 1.071em;
-  font-weight: bold;
-}
-.sidebar-options ul {
-  list-style: none;
-  padding-left: 5px;
-}
-.sidebar-options ul .facetapi-checkbox {
-  vertical-align: text-bottom;
-}
-.sidebar-options ul li {
-  padding-left: 20px;
-  text-indent: -20px;
-}
-.sidebar-options ul a {
-  color: #2d2f35;
-  vertical-align: middle;
-}
-.sidebar-options.ctools-collapsible-container ul {
-  padding-left: 22px;
-}
-
 .page-contact {
   /*Shift content on narrow screens to avoid overlapping iFrame*/
 }
