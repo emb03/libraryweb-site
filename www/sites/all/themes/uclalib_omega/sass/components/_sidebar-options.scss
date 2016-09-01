@@ -24,3 +24,21 @@
     padding-left: 22px;
   }
 }
+
+// Responsive mobile wrapper for sidebar facet options.
+.js-sidebar-options-wrapper.is-mobile {
+  background: $ucla-lt-gray;
+  .js-pane-content {
+    padding: 0 22px;
+  }
+  .sidebar-options {
+    margin: .6em auto;
+    h2 {
+      margin: 0;
+    }
+    + .sidebar-options {
+      padding-top: .6em;
+      border-top: 1px solid $ucla-sky-blue;
+    }
+  }
+}

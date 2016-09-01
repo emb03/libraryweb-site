@@ -3562,6 +3562,23 @@ img[src="images/up.png"] {
   padding-left: 22px;
 }
 
+.js-sidebar-options-wrapper.is-mobile {
+  background: #eff3f4;
+}
+.js-sidebar-options-wrapper.is-mobile .js-pane-content {
+  padding: 0 22px;
+}
+.js-sidebar-options-wrapper.is-mobile .sidebar-options {
+  margin: .6em auto;
+}
+.js-sidebar-options-wrapper.is-mobile .sidebar-options h2 {
+  margin: 0;
+}
+.js-sidebar-options-wrapper.is-mobile .sidebar-options + .sidebar-options {
+  padding-top: .6em;
+  border-top: 1px solid #b5d1e6;
+}
+
 /* CSS Document Elaine's Additions*/
 .node-type-staff-profile .contact {
   /*    clear: left;
