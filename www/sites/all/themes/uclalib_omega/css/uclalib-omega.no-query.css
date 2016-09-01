@@ -2379,12 +2379,6 @@ a.more-link,
     margin-right: 16px;
   }
 }
-@media (max-width: 767px) {
-  .pane-library-hours-panel-pane-1 .views-row .pane-linked-map,
-  .pane-library-hours-panel-pane-1 .views-row .pane-node-field-location-map-image {
-    display: none;
-  }
-}
 @media (min-width: 768px) {
   .pane-library-hours-panel-pane-1 .views-row .pane-node-field-location-building {
     padding-top: 26px;
@@ -2564,24 +2558,33 @@ a.more-link,
   }
 }
 
-.pane-location-search-panel-pane-1 .view-location-search > .view-content > .views-row {
-  border-bottom: 1px solid #adcde5;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-}
-.pane-location-search-panel-pane-1 .view-location-search > .view-content > .views-row h3 {
-  font-size: 1.500em;
-  font-weight: normal;
-  margin-bottom: 0;
-}
-.pane-location-search-panel-pane-1 .view-location-search > .view-content > .views-row .pane-todays-hours {
+.pane-location-search-panel-pane-1 .view-location-search > .view-content .pane-todays-hours {
   font-weight: bold;
-  margin-top: 17px;
+  margin-top: 10px;
 }
-.pane-location-search-panel-pane-1 .view-location-search > .view-content > .views-row-last {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
+.pane-location-search-panel-pane-1 .view-location-search > .view-content h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .pane-location-search-panel-pane-1 .view-location-search > .view-content h3 {
+    font-size: 1.500em;
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+  .pane-location-search-panel-pane-1 .view-location-search > .view-content .pane-todays-hours {
+    margin-top: 17px;
+  }
+  .pane-location-search-panel-pane-1 .view-location-search > .view-content > .views-row {
+    border-bottom: 1px solid #adcde5;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+  }
+  .pane-location-search-panel-pane-1 .view-location-search > .view-content > .views-row-last {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }
 
 .pane-news-search-news-search {
@@ -3325,6 +3328,38 @@ a.next-week:after {
   }
 }
 
+@media (max-width: 767px) {
+  .panelizer-view-mode.node-hours-page.node-location, .panelizer-view-mode.node-hours-page.node-destination,
+  .panelizer-view-mode.node-teaser.node-location,
+  .panelizer-view-mode.node-teaser.node-destination {
+    margin-bottom: 30px;
+  }
+  .panelizer-view-mode.node-hours-page.node-location .pane-linked-map,
+  .panelizer-view-mode.node-hours-page.node-location .pane-at-this-location-block-panel-pane-1,
+  .panelizer-view-mode.node-hours-page.node-location .pane-node-field-location-map-image, .panelizer-view-mode.node-hours-page.node-destination .pane-linked-map,
+  .panelizer-view-mode.node-hours-page.node-destination .pane-at-this-location-block-panel-pane-1,
+  .panelizer-view-mode.node-hours-page.node-destination .pane-node-field-location-map-image,
+  .panelizer-view-mode.node-teaser.node-location .pane-linked-map,
+  .panelizer-view-mode.node-teaser.node-location .pane-at-this-location-block-panel-pane-1,
+  .panelizer-view-mode.node-teaser.node-location .pane-node-field-location-map-image,
+  .panelizer-view-mode.node-teaser.node-destination .pane-linked-map,
+  .panelizer-view-mode.node-teaser.node-destination .pane-at-this-location-block-panel-pane-1,
+  .panelizer-view-mode.node-teaser.node-destination .pane-node-field-location-map-image {
+    display: none;
+  }
+  .panelizer-view-mode.node-hours-page.node-location .panels-flexible-region, .panelizer-view-mode.node-hours-page.node-destination .panels-flexible-region,
+  .panelizer-view-mode.node-teaser.node-location .panels-flexible-region,
+  .panelizer-view-mode.node-teaser.node-destination .panels-flexible-region {
+    width: 100%;
+    float: none;
+  }
+  .panelizer-view-mode.node-hours-page.node-location .panels-flexible-region .inside, .panelizer-view-mode.node-hours-page.node-destination .panels-flexible-region .inside,
+  .panelizer-view-mode.node-teaser.node-location .panels-flexible-region .inside,
+  .panelizer-view-mode.node-teaser.node-destination .panels-flexible-region .inside {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 .pane-node-field-resource-link h2, .pane-node-field-resource-other-links h2 {
   color: #2d2f35;
   font-size: 1.429em;

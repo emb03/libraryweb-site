@@ -14,9 +14,6 @@
         float: left;
         margin-right: 16px;
       }
-      @media #{$palm-lap-only} {
-        display: none;
-      }
     }
     @media #{$desk-only} {
       .pane-node-field-location-building {
