@@ -1933,12 +1933,6 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   display: table;
 }
 
-@media (min-width: 768px) {
-  .mobile-only {
-    display: none;
-  }
-}
-
 .more-link-triangle-after:after, div.more-link > a:after,
 a.more-link:after,
 .more-link-block a:after, .pane-bean-featured-content .field--name-field-featured-thumbnail-image a:after,
@@ -3442,6 +3436,35 @@ a.next-week:after {
   margin-top: 2em;
 }
 
+.palm-only, .palm-lap-only, .lap-only, .lap-desk-only, .desk-only {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .palm-only {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .palm-lap-only {
+    display: block;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .lap-only {
+    display: block;
+  }
+}
+@media (min-width: 481px) {
+  .lap-desk-only {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .desk-only {
+    display: block;
+  }
+}
 .page-search-research .l-region--highlighted h1 {
   margin-bottom: 0;
 }
