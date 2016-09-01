@@ -62,7 +62,7 @@
         // Add a clickable title.
         $('.js-sidebar-options-wrapper').prepend('<h2 class="js-pane-title pane-title">'+ Drupal.t('Search filters')+'</h2>');
 
-        // remove options from dom and move them inside the wrapper.
+        // Setup the collapsible js functionality.
         $('.js-sidebar-options-wrapper').addClass('mobile-collapsible mobile-collapsible--title-hidden-on-desktop').mobileCollapsible({
           breakpoint: "(max-width: 767px)",
           titleSelector: "> .pane-title",
