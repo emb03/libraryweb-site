@@ -559,8 +559,8 @@ a[href="#main-content"] {
     color: #3283be;
   }
 }
-.pane-menu-menu-colophon-first,
-.pane-menu-menu-colophon-second {
+.l-navigation-wrapper .pane-menu-menu-colophon-first,
+.l-navigation-wrapper .pane-menu-menu-colophon-second {
   display: none;
 }
 
