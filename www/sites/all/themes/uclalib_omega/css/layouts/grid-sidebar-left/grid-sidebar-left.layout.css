@@ -125,5 +125,10 @@
     clear: right;
   }
 }
+@media (max-width: 767px) {
+  .l-region--sidebar-left .panel-pane:last-child p {
+    margin-bottom: 0;
+  }
+}
 
 /*# sourceMappingURL=grid-sidebar-left.layout.css.map */

@@ -104,6 +104,10 @@
     margin-top: 15px;
     margin-bottom: 15px;
   }
+
+  .l-region--sidebar-left .panel-pane:last-child p {
+    margin-bottom: 0;
+  }
 }
 
 /*# sourceMappingURL=sidebar-left.layout.css.map */
