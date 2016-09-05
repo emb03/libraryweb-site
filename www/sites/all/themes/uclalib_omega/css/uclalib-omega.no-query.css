@@ -2205,6 +2205,12 @@ a.more-link,
 
 .pane-bean-living-library-gallery {
   margin-bottom: 10px !important;
+  display: none;
+}
+@media (min-width: 768px) {
+  .pane-bean-living-library-gallery {
+    display: block;
+  }
 }
 .pane-bean-living-library-gallery .field__item {
   float: left;
