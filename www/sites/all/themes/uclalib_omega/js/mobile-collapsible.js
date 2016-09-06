@@ -26,7 +26,15 @@
   }
 
   mobileCollapsible.prototype.init = function () {
-    var mc = this;
+    var mc = this,
+      $el = $(mc.element)
+
+    if ($el.hasClass('mobile-collapsible-processed')) {
+      return;
+    }
+    if (!$el.hasClass('mobile-collapsible')) {
+      $el.addClass('mobile-collapsible');
+    }
     mc.media = window.matchMedia( mc.options.breakpoint );
     mc.media.addListener(function(data) {
       mc.checkBreakpoint( data );
@@ -37,6 +45,7 @@
       e.preventDefault();
       mc.toggle();
     });
+    $el.addClass('mobile-collapsible-processed');
   }
 
   mobileCollapsible.prototype.checkBreakpoint = function( media ) {
