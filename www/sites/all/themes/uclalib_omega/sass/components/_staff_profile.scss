@@ -169,44 +169,4 @@ span {
     background: $ucla-blue;
     color: #fff;
   }
-
-  .sidebar-tier-2,
-  .l-region--sidebar-left .pane-quick-links {
-    background: $ucla-lt-gray;
-    font-size: 13px;
-    font-weight: bold;
-    line-height: 1.429em;
-    margin: 0 -25px;
-    padding: 10px 28px 11px;
-  }
-
-  .pane-bean-contact-quick-links {
-    background: $ucla-lt-gray;
-    line-height: 1.429em;
-    padding: 10px 28px 11px;
-    font-weight: bold;
-    font-size: 14px;
-  }
-
-  .pane-bean-at-a-glance-staff-profile {
-    background: $sidebar-bg-lt-blue;
-    padding: 24px 30px 15px;
-    font-weight: bold;
-    font-size: 15px;
-  }
-
-  .pane-bean-contact-quick-links,
-  .pane-bean-at-a-glance-staff-profile {
-    @media #{$desk-only} {
-      margin: 0 -25px;
-    }
-  }
-
-  .pane-bean-link-list,
-  .pane-bean-contact-quick-links {
-    .pane-title {
-      font-size: 14px;
-      font-weight: bold;
-    }
-  }
 }
