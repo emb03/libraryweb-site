@@ -3626,13 +3626,6 @@ img[src="images/up.png"] {
   display: inline-block;
 }
 
-p.space-below-title {
-  padding-bottom: 26px;
-}
-p.space-above-textbox {
-  margin-bottom: -12px;
-}
-
 .staff-profile__thumbnail {
   clear: left;
   margin: 10px 0 20px;
