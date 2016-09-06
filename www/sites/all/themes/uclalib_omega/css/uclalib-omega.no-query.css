@@ -612,16 +612,18 @@ a[href="#main-content"] {
     z-index: 50;
     opacity: 0;
     pointer-events: none;
-    -moz-transition: opacity 0.3s ease-out;
-    -o-transition: opacity 0.3s ease-out;
-    -webkit-transition: opacity 0.3s ease-out;
-    transition: opacity 0.3s ease-out;
     min-height: 100vh;
     background: white;
   }
   .l-region--navigation.is-open {
     opacity: 1;
     pointer-events: auto;
+  }
+  .l-region--navigation.is-animating {
+    -moz-transition: opacity 0.3s ease-out;
+    -o-transition: opacity 0.3s ease-out;
+    -webkit-transition: opacity 0.3s ease-out;
+    transition: opacity 0.3s ease-out;
   }
 
   .primary-links {

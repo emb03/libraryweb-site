@@ -26,12 +26,13 @@
       nav.$wrapper.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
           function(e) {
         nav.isAnimating = false;
+        nav.$wrapper.removeClass('is-animating');
       });
-
     },
     toggle: function () {
       var nav = this;
       nav.isAnimating = true;
+      nav.$wrapper.addClass('is-animating');
       if (nav.isOpen) {
         nav.$wrapper.removeClass('is-open');
         nav.$body.removeClass('has-mobile-nav');
