@@ -12,8 +12,9 @@
     text-decoration: none;
   }
   @media #{$palm-lap-only} {
-    float: right;
-    top: -51px;
+    position: absolute;
+    margin-top: -51px;
+    right: 1.25rem;
   }
 }
 

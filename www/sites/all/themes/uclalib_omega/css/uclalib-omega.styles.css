@@ -2584,8 +2584,9 @@ a.more-link,
 }
 @media (max-width: 767px) {
   .pane-facetapi-fs8j80opdxzsalawvlwgkithc61lc4sd {
-    float: right;
-    top: -51px;
+    position: absolute;
+    margin-top: -51px;
+    right: 1.25rem;
   }
 }
 
@@ -3590,7 +3591,8 @@ img[src="images/up.png"] {
   background: #eff3f4;
 }
 .js-sidebar-options-wrapper.is-mobile .js-pane-content {
-  padding: 0 22px;
+  padding: 0 20px;
+  padding: 0 1.25rem;
 }
 .js-sidebar-options-wrapper.is-mobile .sidebar-options {
   margin: .6em auto;
