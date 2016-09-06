@@ -1865,7 +1865,7 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   transition: max-height .3s ease-in-out;
 }
 .mobile-collapsible.is-mobile.is-open .mobile-collapsible__content, .mobile-collapsible.is-mobile.is-open .pane-content {
-  max-height: 900px;
+  max-height: 2000px;
 }
 
 @media (min-width: 768px) {
