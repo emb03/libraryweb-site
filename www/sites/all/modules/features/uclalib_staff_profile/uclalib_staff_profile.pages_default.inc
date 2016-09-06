@@ -124,6 +124,34 @@ function uclalib_staff_profile_default_page_manager_handlers() {
     $display->content['new-a1b7db7e-358b-4b17-ac3a-2ca1cf898578'] = $pane;
     $display->panels['secondary'][0] = 'new-a1b7db7e-358b-4b17-ac3a-2ca1cf898578';
     $pane = new stdClass();
+    $pane->pid = 'new-cf9942fc-f9a1-4ff8-8a4f-03cdcf9057fa';
+    $pane->panel = 'secondary';
+    $pane->type = 'custom';
+    $pane->subtype = 'questions_highlight';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'palm-lap-only',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'cf9942fc-f9a1-4ff8-8a4f-03cdcf9057fa';
+    $display->content['new-cf9942fc-f9a1-4ff8-8a4f-03cdcf9057fa'] = $pane;
+    $display->panels['secondary'][1] = 'new-cf9942fc-f9a1-4ff8-8a4f-03cdcf9057fa';
+    $pane = new stdClass();
     $pane->pid = 'new-313a0fc7-859e-47cb-abb2-6b51bc2d3b8f';
     $pane->panel = 'sidebar_left';
     $pane->type = 'block';
@@ -193,7 +221,10 @@ function uclalib_staff_profile_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'desk-only',
+    );
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
