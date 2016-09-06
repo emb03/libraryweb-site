@@ -35,9 +35,6 @@
   .form-actions {
     margin: 1em 0 1.3em;
     display: inline-block;
-    @media #{$mobile-header} {
-      display: none;
-    }
   }
   .form-text {
     border: none;

@@ -1,0 +1,43 @@
+@media #{$palm-only} {
+  .mobile-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 0;
+    table-layout: fixed;
+    th {
+      display: none;
+    }
+    tr {
+      background: none;
+    }
+    td {
+      display: block;
+      border-bottom: 1px solid $ucla-gray;
+      text-align: right;
+      padding: 0.4em 0;
+      color: $light-text-color;
+      &:before {
+        // Adds the original header title infront of each table cell
+        content: attr(data-th)" ";
+        float: left;
+        text-align: left;
+      }
+      &.views-field-title {
+        font-weight: bold;
+        text-align: left;
+        border: 0;
+        font-size: 16px;
+        padding: 1em 0;
+        &:before {
+          display: none;
+        }
+      }
+    }
+    .views-field-contextual-links {
+      display: none;
+    }
+    .mobile-table__empty-cell {
+      display: none;
+    }
+  }
+}
