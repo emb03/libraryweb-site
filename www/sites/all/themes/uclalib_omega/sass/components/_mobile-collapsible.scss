@@ -105,9 +105,7 @@
   .pane-content {
     border: 0;
     padding: 0 10px;
-  }
-  &.is-open .pane-content {
-    padding: 0 10px;
+
     &::after,
     &::before {
       content: '';

@@ -1897,13 +1897,9 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   border: 0;
   padding: 0 10px;
 }
-.mobile-collapsible--blue.is-mobile.is-open .pane-content,
-.mobile-collapsible.is-mobile.pane-style-border-blue.is-open .pane-content {
-  padding: 0 10px;
-}
-.mobile-collapsible--blue.is-mobile.is-open .pane-content::after, .mobile-collapsible--blue.is-mobile.is-open .pane-content::before,
-.mobile-collapsible.is-mobile.pane-style-border-blue.is-open .pane-content::after,
-.mobile-collapsible.is-mobile.pane-style-border-blue.is-open .pane-content::before {
+.mobile-collapsible--blue.is-mobile .pane-content::after, .mobile-collapsible--blue.is-mobile .pane-content::before,
+.mobile-collapsible.is-mobile.pane-style-border-blue .pane-content::after,
+.mobile-collapsible.is-mobile.pane-style-border-blue .pane-content::before {
   content: '';
   display: block;
   height: 10px;
