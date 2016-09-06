@@ -63,6 +63,23 @@
       margin-top: 10px;
     }
   }
+
+  // Staff profile (maybe others?) use link list as main sidebar-tier-1 nav
+  // These styles ensure settings from pane-bean-link-list do not
+  // supercede tier-1 styles.
+  &.pane-bean-link-list {
+    .menu {
+      li {
+        margin: 0;
+
+        .field--type-link-field,
+        .field__items,
+        .field__item {
+          display: inline-block;
+        }
+      }
+    }
+  }
 }
 
 // Make two adjoined sidebar tier 1s appear as connected, by removing whitespace
