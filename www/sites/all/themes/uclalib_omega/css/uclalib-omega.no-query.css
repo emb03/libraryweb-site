@@ -3626,7 +3626,6 @@ img[src="images/up.png"] {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: .3em;
-  color: #333;
 }
 .staff-profile .field-collection-container {
   list-style-type: none;
@@ -3645,8 +3644,21 @@ img[src="images/up.png"] {
 
 .staff-profile__phone,
 .staff-profile__email {
+  clear: both;
   margin: 20px 0;
-  font-size: 16px;
+  overflow: hidden;
+  padding-left: 1.8em;
+}
+.staff-profile__phone [class^="icon-"],
+.staff-profile__email [class^="icon-"] {
+  color: #2d2f35;
+  display: inline-block;
+  font-size: 1.1em;
+  text-align: center;
+  width: 1.5em;
+  display: inline-block;
+  float: left;
+  margin-left: -1.7em;
 }
 
 .staff-profile__location .field__item + .field__item {
@@ -3682,12 +3694,10 @@ img[src="images/up.png"] {
   font-size: 27px;
   line-height: 1;
   font-weight: 400;
-  color: #333;
 }
 
 .staff-profile__librarian-title {
   font-size: 17px;
-  color: #333;
 }
 
 .staff-profile__about:after {
