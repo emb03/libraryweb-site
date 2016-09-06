@@ -17,12 +17,22 @@
   font-size: 29px;
   font-weight: 100;
   line-height: 1em;
+  @media #{$palm-only} {
+    font-size: 23px;
+  }
 }
 .cal-time {
   font-size: 11px;
   text-transform: uppercase;
   font-weight: 600;
   line-height: 1em;
+}
+.date-range-separator {
+  @media #{$palm-only} {
+    font-size: 12px;
+    vertical-align: -6px;
+    font-weight: bold;
+  }
 }
 
 .ui-tabs .ui-tabs-panel,
