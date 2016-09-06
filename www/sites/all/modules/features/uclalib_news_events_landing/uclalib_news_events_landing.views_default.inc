@@ -243,7 +243,7 @@ function uclalib_news_events_landing_views_default_views() {
   $handler->display->display_options['fields']['field_event_thumbnail']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_event_thumbnail']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_event_thumbnail']['settings'] = array(
-    'image_style' => 'thumbnail_small',
+    'image_style' => 'widescreen_medium',
     'image_link' => 'content',
   );
   /* Field: Content: Title */
