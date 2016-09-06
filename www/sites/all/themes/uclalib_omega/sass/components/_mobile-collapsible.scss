@@ -8,6 +8,7 @@
     margin-bottom: 2px;
   }
 
+  > .pane-title-inline-wrapper > .pane-title,
   > .mobile-collapsible__title,
   > .pane-title {
     background-color: $ucla-sky-blue;
@@ -46,6 +47,7 @@
       transition-timing-function: ease-out;
     }
   }
+  &.is-open > .pane-title-inline-wrapper > .pane-title::after,
   &.is-open > .mobile-collapsible__title::after,
   &.is-open > .pane-title::after {
     transform: scaleY(-1);
@@ -71,6 +73,7 @@
 // Eg, hours widget.
 @media #{$desk-only} {
   .mobile-collapsible--title-hidden-on-desktop {
+    > .pane-title-inline-wrapper > .pane-title,
     > .mobile-collapsible__title,
     > .pane-title {
       display:none;
@@ -92,6 +95,7 @@
   border: 1px solid $ucla-blue;
   margin: 0;
 
+  > .pane-title-inline-wrapper > .pane-title,
   > .mobile-collapsible__title,
   > .pane-title {
     background-color: $ucla-blue;
@@ -117,7 +121,9 @@
 
  // Reset pane title alignment.
 .mobile-collapsible.is-mobile.pane-title-align-center {
-  .pane-title {
+  > .pane-title-inline-wrapper > .pane-title,
+  > .mobile-collapsible__title,
+  > .pane-title {
     text-align: left;
   }
 }
