@@ -1,13 +1,16 @@
 @media #{$palm-only} {
-  .mobile-table table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 0;
-    table-layout: fixed;
-    th {
+  .responsive-data-table {
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 0;
+      table-layout: fixed;
+    }
+    thead th {
       display: none;
     }
-    tr {
+    table tr,
+    table tr.odd {
       background: none;
     }
     td {
@@ -18,8 +21,9 @@
       color: $light-text-color;
       &:before {
         // Adds the original header title infront of each table cell
-        content: attr(data-th)" ";
+        content: attr(data-label);
         float: left;
+        margin-right: 1em;
         text-align: left;
       }
       &.views-field-title {
@@ -36,7 +40,7 @@
     .views-field-contextual-links {
       display: none;
     }
-    .mobile-table__empty-cell {
+    .responsive-data-table__empty-cell {
       display: none;
     }
   }

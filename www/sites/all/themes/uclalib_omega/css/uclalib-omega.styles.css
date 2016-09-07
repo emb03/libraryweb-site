@@ -1959,48 +1959,6 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   display: table;
 }
 
-@media (max-width: 480px) {
-  .mobile-table table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 0;
-    table-layout: fixed;
-  }
-  .mobile-table table th {
-    display: none;
-  }
-  .mobile-table table tr {
-    background: none;
-  }
-  .mobile-table table td {
-    display: block;
-    border-bottom: 1px solid #d7d9da;
-    text-align: right;
-    padding: 0.4em 0;
-    color: #999999;
-  }
-  .mobile-table table td:before {
-    content: attr(data-th) " ";
-    float: left;
-    text-align: left;
-  }
-  .mobile-table table td.views-field-title {
-    font-weight: bold;
-    text-align: left;
-    border: 0;
-    font-size: 16px;
-    padding: 1em 0;
-  }
-  .mobile-table table td.views-field-title:before {
-    display: none;
-  }
-  .mobile-table table .views-field-contextual-links {
-    display: none;
-  }
-  .mobile-table table .mobile-table__empty-cell {
-    display: none;
-  }
-}
 .more-link-triangle-after:after, div.more-link > a:after,
 a.more-link:after,
 .more-link-block a:after, .pane-bean-featured-content .field--name-field-featured-thumbnail-image a:after,
@@ -3550,6 +3508,50 @@ a.next-week:after {
   margin-top: 2em;
 }
 
+@media (max-width: 480px) {
+  .responsive-data-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 0;
+    table-layout: fixed;
+  }
+  .responsive-data-table thead th {
+    display: none;
+  }
+  .responsive-data-table table tr,
+  .responsive-data-table table tr.odd {
+    background: none;
+  }
+  .responsive-data-table td {
+    display: block;
+    border-bottom: 1px solid #d7d9da;
+    text-align: right;
+    padding: 0.4em 0;
+    color: #999999;
+  }
+  .responsive-data-table td:before {
+    content: attr(data-label);
+    float: left;
+    margin-right: 1em;
+    text-align: left;
+  }
+  .responsive-data-table td.views-field-title {
+    font-weight: bold;
+    text-align: left;
+    border: 0;
+    font-size: 16px;
+    padding: 1em 0;
+  }
+  .responsive-data-table td.views-field-title:before {
+    display: none;
+  }
+  .responsive-data-table .views-field-contextual-links {
+    display: none;
+  }
+  .responsive-data-table .responsive-data-table__empty-cell {
+    display: none;
+  }
+}
 .palm-only, .palm-lap-only, .lap-only, .lap-desk-only, .desk-only {
   display: none;
 }

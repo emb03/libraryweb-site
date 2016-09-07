@@ -636,7 +636,7 @@ function uclalib_staff_profile_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'mobile-table',
+      'css_class' => 'responsive-data-table',
     );
     $pane->extras = array();
     $pane->position = 6;

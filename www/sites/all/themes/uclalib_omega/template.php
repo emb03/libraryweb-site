@@ -50,10 +50,10 @@ function uclalib_preprocess_views_view_table(&$vars) {
   foreach ($columns as $field => $column) {
     foreach ($result as $num => $row) {
       if( empty($rows[$num][$field]) ) {
-        $vars['field_classes'][$field][$num] .= ' mobile-table__empty-cell';
+        $vars['field_classes'][$field][$num] .= ' responsive-data-table__empty-cell';
       }
       else {
-        $vars['field_attributes'][$field][$num]['data-th'] = check_plain(!empty($fields[$field]) ? $fields[$field]->label() : '');
+        $vars['field_attributes'][$field][$num]['data-label'] = filter_xss(!empty($fields[$field]) ? $fields[$field]->label() : '');
       }
     }
   }
