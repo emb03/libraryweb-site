@@ -120,12 +120,14 @@
     padding: 2px 4px;
   }
   .views-field-field-event-thumbnail {
+    max-width: 287px;
+    margin: 0 auto;
+    text-align: center;
     @media #{$lap-desk-only} {
       padding: 4px 0 4px 4px;
-      width: auto;
       display: table-cell;
       vertical-align: middle;
-      min-width: 80px;
+      width: 30%;
     }
     a, img {
       display: block

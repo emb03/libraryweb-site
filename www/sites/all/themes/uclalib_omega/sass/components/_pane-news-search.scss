@@ -25,7 +25,10 @@
     @media #{$lap-desk-only} {
       display: table-cell;
       vertical-align: middle;
-      width: 30%;
+      width: 40%;
+    }
+    a, img {
+      display: block
     }
   }
   .views-field-field-event-thumbnail + .views-field {
@@ -35,6 +38,12 @@
       display: table-cell;
       vertical-align: middle;
       text-align: left;
+    }
+    @media #{$palm-only} {
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      padding-top: 10px;
     }
   }
 }
