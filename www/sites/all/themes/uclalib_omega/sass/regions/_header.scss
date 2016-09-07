@@ -74,6 +74,11 @@ $mobile-nav-trigger-width: 41px;
       }
     }
   }
+  .header-search-form-wrapper .form-actions {
+    @media #{$mobile-header} {
+      display: none;
+    }
+  }
 }
 
 .l-region--branding {

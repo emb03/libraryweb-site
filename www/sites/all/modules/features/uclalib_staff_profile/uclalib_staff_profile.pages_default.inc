@@ -634,7 +634,10 @@ function uclalib_staff_profile_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'responsive-data-table',
+    );
     $pane->extras = array();
     $pane->position = 6;
     $pane->locks = array();
@@ -658,7 +661,7 @@ function uclalib_staff_profile_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'sidebar-tier-1',
+      'css_class' => 'sidebar-tier-1 mobile-collapsible mobile-collapsible--blue',
     );
     $pane->extras = array();
     $pane->position = 0;
