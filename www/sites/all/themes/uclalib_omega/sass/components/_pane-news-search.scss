@@ -6,16 +6,6 @@
     margin-bottom: 30px;
     padding-bottom: 27px;
     width: 100%;
-    .views-field-field-event-thumbnail {
-      width: 80px;
-      display: table-cell;
-      vertical-align: middle;
-    }
-    .views-field-field-event-thumbnail + .views-field {
-      display: table-cell;
-      vertical-align: middle;
-      padding: 4px 1em;
-    }
     h3 {
       margin: 0 0 0.4em;
     }
@@ -27,5 +17,24 @@
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
+  }
+  .views-field-field-event-thumbnail {
+    max-width: 287px;
+    margin: 0 auto;
+    text-align: center;
+    @media #{$lap-desk-only} {
+      display: table-cell;
+      vertical-align: middle;
+      width: 30%;
+    }
+  }
+  .views-field-field-event-thumbnail + .views-field {
+    padding: 4px 1em;
+    text-align: center;
+    @media #{$lap-desk-only} {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: left;
+    }
   }
 }
