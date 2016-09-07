@@ -2003,12 +2003,12 @@ a.more-link,
 }
 
 @media (min-width: 481px) {
-  .page-news-events .pane-page-title {
+  .page-hide-title .pane-page-title {
     display: none;
   }
 }
 @media (max-width: 480px) {
-  .page-news-events .l-region--main-column {
+  .page-hide-title .l-region--main-column {
     padding: 0;
   }
 }
