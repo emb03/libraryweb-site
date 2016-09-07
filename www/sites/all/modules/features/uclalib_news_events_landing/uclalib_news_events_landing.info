@@ -39,4 +39,5 @@ features[variable][] = panelizer_defaults_bean_news_and_events_bean
 features[variable][] = unlimitedfield_remove_field_events
 features[variable][] = unlimitedfield_remove_field_news
 features[views_view][] = news_events_landing_display
+mtime = 1473172748
 project path = sites/all/modules/features
