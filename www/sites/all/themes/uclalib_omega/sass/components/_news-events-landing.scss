@@ -112,7 +112,7 @@
     margin: 0 -12px 12px;
     padding: 12px;
     @media #{$palm-only} {
-      padding-bottom: 0;
+      margin-bottom: 20px;
     }
   }
   .views-field {
@@ -133,7 +133,7 @@
       display: block
     }
   }
-  .views-field-field-event-thumbnail + .views-field {
+  .views-field-nothing {
     @media #{$lap-desk-only} {
       display: table-cell;
       vertical-align: middle;

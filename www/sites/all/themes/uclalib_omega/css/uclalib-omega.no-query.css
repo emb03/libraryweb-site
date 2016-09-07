@@ -2114,7 +2114,7 @@ a.more-link,
 }
 @media (max-width: 480px) {
   .pane-news-events-landing-display-panel-pane-2 .views-row {
-    padding-bottom: 0;
+    margin-bottom: 20px;
   }
 }
 .pane-news-events-landing-display-panel-pane-2 .views-field {
@@ -2138,7 +2138,9 @@ a.more-link,
   display: block;
 }
 @media (min-width: 481px) {
-  .pane-news-events-landing-display-panel-pane-2 .views-field-field-event-thumbnail + .views-field {
+  .pane-news-events-landing-display-panel-pane-2 .views-field-nothing, .pane-news-events-landing-display-panel-pane-2 .pane-daterangepicker-results .views-row .views-field-field-event-date-3, .pane-daterangepicker-results .views-row .pane-news-events-landing-display-panel-pane-2 .views-field-field-event-date-3,
+  .pane-news-events-landing-display-panel-pane-2 .pane-daterangepicker-results .views-row .views-field-field-exhibition-end,
+  .pane-daterangepicker-results .views-row .pane-news-events-landing-display-panel-pane-2 .views-field-field-exhibition-end {
     display: table-cell;
     vertical-align: middle;
     padding: 10px 0 10px 22px;
@@ -2146,7 +2148,9 @@ a.more-link,
   }
 }
 @media (max-width: 480px) {
-  .pane-news-events-landing-display-panel-pane-2 .views-field-field-event-thumbnail + .views-field {
+  .pane-news-events-landing-display-panel-pane-2 .views-field-nothing, .pane-news-events-landing-display-panel-pane-2 .pane-daterangepicker-results .views-row .views-field-field-event-date-3, .pane-daterangepicker-results .views-row .pane-news-events-landing-display-panel-pane-2 .views-field-field-event-date-3,
+  .pane-news-events-landing-display-panel-pane-2 .pane-daterangepicker-results .views-row .views-field-field-exhibition-end,
+  .pane-daterangepicker-results .views-row .pane-news-events-landing-display-panel-pane-2 .views-field-field-exhibition-end {
     text-align: center;
     font-size: 16px;
     font-weight: bold;
