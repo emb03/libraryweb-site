@@ -22,6 +22,9 @@
 .ui-widget-content {
   color: $text-color;
 }
+.ui-widget-content a {
+  color: $link-color;
+}
 
 /**
  * Override jQuery UI tabs default styles.

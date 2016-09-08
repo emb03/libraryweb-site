@@ -755,23 +755,24 @@ a[href="#main-content"] {
   }
 }
 
-.l-region--top .bean-showcase .field--name-field-showcase > .field__items > .field__item {
-  float: left;
-  line-height: 1.1em;
-  margin: 24px 1.12% 0 0;
-  text-align: center;
-  width: 24.16%;
+@media (min-width: 768px) {
+  .l-region--top .bean-showcase .field--name-field-showcase > .field__items > .field__item {
+    float: left;
+    line-height: 1.1em;
+    margin: 24px 1.12% 0 0;
+    text-align: center;
+    width: 24.16%;
+  }
+  .l-region--top .bean-showcase .field--name-field-showcase > .field__items > .field__item:nth-child(4n+4) {
+    margin: 0;
+  }
+  .l-region--top .bean-showcase .field--name-field-showcase > .field__items > .field__item:nth-child(4n+5) {
+    clear: left;
+  }
+  .l-region--top .bean-showcase .field--name-field-showcase > .field__items > .field__item:nth-child(-n+4) {
+    margin-top: 0;
+  }
 }
-.l-region--top .bean-showcase .field--name-field-showcase > .field__items > .field__item:nth-child(4n+4) {
-  margin: 0;
-}
-.l-region--top .bean-showcase .field--name-field-showcase > .field__items > .field__item:nth-child(4n+5) {
-  clear: left;
-}
-.l-region--top .bean-showcase .field--name-field-showcase > .field__items > .field__item:nth-child(-n+4) {
-  margin-top: 0;
-}
-
 /*directory view*/
 .page-bookplates.page-bookplates-donor-directory .pane-bookplates-donor-directory .attachment.attachment-before {
   font-size: 18px;
@@ -1649,6 +1650,78 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   text-align: center;
 }
 
+.events-teaser {
+  clear: both;
+  display: table;
+  margin-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+}
+.events-teaser:hover {
+  background: #eff3f4;
+}
+.events-teaser > div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.events-teaser__thumbnail {
+  margin: 0 auto;
+  max-width: 287px;
+  text-align: center;
+}
+.not-front .events-teaser__thumbnail {
+  display: none !important;
+}
+@media (max-width: 480px) {
+  .events-teaser__thumbnail {
+    display: none;
+  }
+}
+@media (min-width: 481px) {
+  .events-teaser__thumbnail {
+    width: 30%;
+    margin-right: 14px;
+  }
+}
+.events-teaser__thumbnail a, .events-teaser__thumbnail img {
+  display: block;
+}
+
+.events-teaser__dates,
+.events-teaser__date {
+  margin-right: 14px;
+  text-align: center;
+}
+
+.events-teaser__dates {
+  min-width: 125px;
+}
+
+.events-teaser__date {
+  min-width: 72px;
+}
+
+.events-teaser__text-wrapper {
+  padding: 15px 0;
+  width: 100%;
+}
+
+.events-teaser__date {
+  margin-right: 14px;
+}
+
+@media (max-width: 480px) {
+  .events-teaser__title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
 .fancybox-skin {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
@@ -1696,6 +1769,10 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
  */
 .ui-widget-content {
   color: #666666;
+}
+
+.ui-widget-content a {
+  color: #3283be;
 }
 
 /**
@@ -2090,71 +2167,67 @@ a.more-link,
   text-align: left;
 }
 
-.pane-news-events-landing-display-panel-pane-1 .views-field {
-  padding: 15px 11px;
-  display: table-cell;
-  vertical-align: middle;
+.news-teaser {
+  clear: both;
+  margin-bottom: 12px;
+  padding: 10px 4px;
+  overflow: hidden;
+  width: 100%;
 }
-.pane-news-events-landing-display-panel-pane-1 .views-field-nothing, .pane-news-events-landing-display-panel-pane-1 .pane-daterangepicker-results .views-row .views-field-field-event-date-3, .pane-daterangepicker-results .views-row .pane-news-events-landing-display-panel-pane-1 .views-field-field-event-date-3,
-.pane-news-events-landing-display-panel-pane-1 .pane-daterangepicker-results .views-row .views-field-field-exhibition-end,
-.pane-daterangepicker-results .views-row .pane-news-events-landing-display-panel-pane-1 .views-field-field-exhibition-end {
-  padding: 15px 0;
+.news-teaser:hover {
+  background: #eff3f4;
 }
-.pane-news-events-landing-display-panel-pane-1 .views-field-field-exhibition-end {
-  margin-right: 10px;
-  min-width: 125px;
-}
-.pane-news-events-landing-display-panel-pane-1 .views-field-field-event-date {
-  margin-right: 14px;
-}
-
-.pane-news-events-landing-display-panel-pane-2 .views-row {
-  margin: 0 -12px 12px;
-  padding: 12px;
-}
-@media (max-width: 480px) {
-  .pane-news-events-landing-display-panel-pane-2 .views-row {
-    margin-bottom: 20px;
+@media (min-width: 481px) {
+  .news-teaser {
+    display: table;
+    padding: 0;
+  }
+  .news-teaser > div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: table-cell;
+    vertical-align: middle;
   }
 }
-.pane-news-events-landing-display-panel-pane-2 .views-field {
-  display: block;
-  padding: 2px 4px;
-}
-.pane-news-events-landing-display-panel-pane-2 .views-field-field-event-thumbnail {
+
+.news-teaser__thumbnail {
   max-width: 287px;
   margin: 0 auto;
   text-align: center;
-}
-@media (min-width: 481px) {
-  .pane-news-events-landing-display-panel-pane-2 .views-field-field-event-thumbnail {
-    padding: 4px 0 4px 4px;
-    display: table-cell;
-    vertical-align: middle;
-    width: 30%;
-  }
-}
-.pane-news-events-landing-display-panel-pane-2 .views-field-field-event-thumbnail a, .pane-news-events-landing-display-panel-pane-2 .views-field-field-event-thumbnail img {
   display: block;
 }
 @media (min-width: 481px) {
-  .pane-news-events-landing-display-panel-pane-2 .views-field-nothing, .pane-news-events-landing-display-panel-pane-2 .pane-daterangepicker-results .views-row .views-field-field-event-date-3, .pane-daterangepicker-results .views-row .pane-news-events-landing-display-panel-pane-2 .views-field-field-event-date-3,
-  .pane-news-events-landing-display-panel-pane-2 .pane-daterangepicker-results .views-row .views-field-field-exhibition-end,
-  .pane-daterangepicker-results .views-row .pane-news-events-landing-display-panel-pane-2 .views-field-field-exhibition-end {
+  .news-teaser__thumbnail {
+    width: 30%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.news-teaser__thumbnail a, .news-teaser__thumbnail img {
+  display: block;
+}
+
+@media (min-width: 481px) {
+  .news-teaser__text-wrapper {
     display: table-cell;
     vertical-align: middle;
-    padding: 10px 0 10px 22px;
-    width: auto;
+    padding-left: 12px;
+    text-align: left;
   }
 }
 @media (max-width: 480px) {
-  .pane-news-events-landing-display-panel-pane-2 .views-field-nothing, .pane-news-events-landing-display-panel-pane-2 .pane-daterangepicker-results .views-row .views-field-field-event-date-3, .pane-daterangepicker-results .views-row .pane-news-events-landing-display-panel-pane-2 .views-field-field-event-date-3,
-  .pane-news-events-landing-display-panel-pane-2 .pane-daterangepicker-results .views-row .views-field-field-exhibition-end,
-  .pane-daterangepicker-results .views-row .pane-news-events-landing-display-panel-pane-2 .views-field-field-exhibition-end {
+  .news-teaser__text-wrapper {
+    max-width: 290px;
     text-align: center;
+    padding-top: 10px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-teaser__title {
     font-size: 16px;
     font-weight: bold;
-    padding-top: 10px;
   }
 }
 
@@ -2732,64 +2805,6 @@ a.more-link,
 
 .pane-news-search-news-search {
   margin-top: 1em;
-}
-.pane-news-search-news-search .views-row {
-  border-bottom: 1px solid #adcde5;
-  display: table;
-  margin-bottom: 30px;
-  padding-bottom: 27px;
-  width: 100%;
-}
-.pane-news-search-news-search .views-row h3 {
-  margin: 0 0 0.4em;
-}
-.pane-news-search-news-search .views-row p {
-  margin: 0;
-}
-.pane-news-search-news-search .views-row-last {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-.pane-news-search-news-search .views-field-field-event-thumbnail {
-  max-width: 287px;
-  margin: 0 auto;
-  text-align: center;
-}
-@media (min-width: 481px) {
-  .pane-news-search-news-search .views-field-field-event-thumbnail {
-    display: table-cell;
-    vertical-align: middle;
-    width: 40%;
-  }
-}
-.pane-news-search-news-search .views-field-field-event-thumbnail a, .pane-news-search-news-search .views-field-field-event-thumbnail img {
-  display: block;
-}
-.pane-news-search-news-search .views-field-nothing, .pane-news-search-news-search .pane-daterangepicker-results .views-row .views-field-field-event-date-3, .pane-daterangepicker-results .views-row .pane-news-search-news-search .views-field-field-event-date-3,
-.pane-news-search-news-search .pane-daterangepicker-results .views-row .views-field-field-exhibition-end,
-.pane-daterangepicker-results .views-row .pane-news-search-news-search .views-field-field-exhibition-end {
-  padding: 4px 1em;
-  text-align: center;
-}
-@media (min-width: 481px) {
-  .pane-news-search-news-search .views-field-nothing, .pane-news-search-news-search .pane-daterangepicker-results .views-row .views-field-field-event-date-3, .pane-daterangepicker-results .views-row .pane-news-search-news-search .views-field-field-event-date-3,
-  .pane-news-search-news-search .pane-daterangepicker-results .views-row .views-field-field-exhibition-end,
-  .pane-daterangepicker-results .views-row .pane-news-search-news-search .views-field-field-exhibition-end {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: left;
-  }
-}
-@media (max-width: 480px) {
-  .pane-news-search-news-search .views-field-nothing, .pane-news-search-news-search .pane-daterangepicker-results .views-row .views-field-field-event-date-3, .pane-daterangepicker-results .views-row .pane-news-search-news-search .views-field-field-event-date-3,
-  .pane-news-search-news-search .pane-daterangepicker-results .views-row .views-field-field-exhibition-end,
-  .pane-daterangepicker-results .views-row .pane-news-search-news-search .views-field-field-exhibition-end {
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    padding-top: 10px;
-  }
 }
 
 .pane-node-field-icon .field__item {
@@ -3998,283 +4013,6 @@ span#expandAll.links.links, span#collapseAll.links.links.links {
 .pane-bean-upcoming-events h2 + .pane-content {
   padding: 6px;
 }
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content {
-  width: 100%;
-}
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-row,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-row,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-row,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-row {
-  clear: both;
-  overflow: hidden;
-  width: 100%;
-}
-@media (min-width: 481px) {
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-row,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-row,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-row,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-row {
-    display: table;
-  }
-}
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-row:hover,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-row:hover,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-row:hover,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-row:hover {
-  background: #eff3f4;
-}
-@media (min-width: 481px) {
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field {
-    padding: 10px 0 10px 22px;
-    display: table-cell;
-    vertical-align: middle;
-  }
-}
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-event-image,
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-exhibition-image,
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-event-thumbnail,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-event-image,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-exhibition-image,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-event-thumbnail,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-event-image,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-exhibition-image,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-event-thumbnail,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-event-image,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-exhibition-image,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-event-thumbnail {
-  padding: 4px 0 4px 11px;
-  margin: 0 auto;
-  text-align: center;
-}
-@media (min-width: 481px) {
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-event-image,
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-exhibition-image,
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-event-thumbnail,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-event-image,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-exhibition-image,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-event-thumbnail,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-event-image,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-exhibition-image,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-event-thumbnail,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-event-image,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-exhibition-image,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-event-thumbnail {
-    width: 30%;
-    max-width: 287px;
-  }
-}
-@media (max-width: 480px) {
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-event-image,
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-exhibition-image,
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-event-thumbnail,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-event-image,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-exhibition-image,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-event-thumbnail,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-event-image,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-exhibition-image,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-event-thumbnail,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-event-image,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-exhibition-image,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-event-thumbnail {
-    width: 50%;
-    float: left;
-  }
-}
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-event-image a, .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-event-image img,
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-exhibition-image a,
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-exhibition-image img,
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-event-thumbnail a,
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-event-thumbnail img,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-event-image a,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-event-image img,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-exhibition-image a,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-exhibition-image img,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-event-thumbnail a,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-event-thumbnail img,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-event-image a,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-event-image img,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-exhibition-image a,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-exhibition-image img,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-event-thumbnail a,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-event-thumbnail img,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-event-image a,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-event-image img,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-exhibition-image a,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-exhibition-image img,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-event-thumbnail a,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-event-thumbnail img {
-  display: block;
-}
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-exhibition-end,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-exhibition-end,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-exhibition-end,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-exhibition-end {
-  min-width: 120px;
-  text-align: center;
-}
-@media (max-width: 480px) {
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field-field-exhibition-end,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field-field-exhibition-end,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field-field-exhibition-end,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field-field-exhibition-end {
-    width: 50%;
-    float: left;
-  }
-}
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field.views-field-nothing, .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-event-date-3, .pane-daterangepicker-results .views-row .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field.views-field-field-event-date-3,
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-exhibition-end,
-.pane-daterangepicker-results .views-row .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field.views-field-field-exhibition-end,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field.views-field-nothing,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-event-date-3,
-.pane-daterangepicker-results .views-row .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field.views-field-field-event-date-3,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-exhibition-end,
-.pane-daterangepicker-results .views-row .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field.views-field-field-exhibition-end,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field.views-field-nothing,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-event-date-3,
-.pane-daterangepicker-results .views-row .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field.views-field-field-event-date-3,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-exhibition-end,
-.pane-daterangepicker-results .views-row .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field.views-field-field-exhibition-end,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field.views-field-nothing,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-event-date-3,
-.pane-daterangepicker-results .views-row .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field.views-field-field-event-date-3,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-exhibition-end,
-.pane-daterangepicker-results .views-row .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field.views-field-field-exhibition-end {
-  width: 100%;
-}
-@media (max-width: 480px) {
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field.views-field-nothing, .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-event-date-3, .pane-daterangepicker-results .views-row .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field.views-field-field-event-date-3,
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-exhibition-end,
-  .pane-daterangepicker-results .views-row .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field.views-field-field-exhibition-end,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field.views-field-nothing,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-event-date-3,
-  .pane-daterangepicker-results .views-row .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field.views-field-field-event-date-3,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-exhibition-end,
-  .pane-daterangepicker-results .views-row .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field.views-field-field-exhibition-end,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field.views-field-nothing,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-event-date-3,
-  .pane-daterangepicker-results .views-row .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field.views-field-field-event-date-3,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-exhibition-end,
-  .pane-daterangepicker-results .views-row .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field.views-field-field-exhibition-end,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field.views-field-nothing,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-event-date-3,
-  .pane-daterangepicker-results .views-row .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field.views-field-field-event-date-3,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-exhibition-end,
-  .pane-daterangepicker-results .views-row .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field.views-field-field-exhibition-end {
-    float: left;
-    clear: both;
-  }
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field.views-field-nothing > div:nth-child(2), .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-event-date-3 > div:nth-child(2), .pane-daterangepicker-results .views-row .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field.views-field-field-event-date-3 > div:nth-child(2),
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-exhibition-end > div:nth-child(2),
-  .pane-daterangepicker-results .views-row .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .views-field.views-field-field-exhibition-end > div:nth-child(2),
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field.views-field-nothing > div:nth-child(2),
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-event-date-3 > div:nth-child(2),
-  .pane-daterangepicker-results .views-row .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field.views-field-field-event-date-3 > div:nth-child(2),
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-exhibition-end > div:nth-child(2),
-  .pane-daterangepicker-results .views-row .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .views-field.views-field-field-exhibition-end > div:nth-child(2),
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field.views-field-nothing > div:nth-child(2),
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-event-date-3 > div:nth-child(2),
-  .pane-daterangepicker-results .views-row .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field.views-field-field-event-date-3 > div:nth-child(2),
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-exhibition-end > div:nth-child(2),
-  .pane-daterangepicker-results .views-row .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .views-field.views-field-field-exhibition-end > div:nth-child(2),
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field.views-field-nothing > div:nth-child(2),
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-event-date-3 > div:nth-child(2),
-  .pane-daterangepicker-results .views-row .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field.views-field-field-event-date-3 > div:nth-child(2),
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .pane-daterangepicker-results .views-row .views-field.views-field-field-exhibition-end > div:nth-child(2),
-  .pane-daterangepicker-results .views-row .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .views-field.views-field-field-exhibition-end > div:nth-child(2) {
-    font-weight: bold;
-    font-size: 16px;
-  }
-}
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .text-news,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .text-news,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .text-news,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .text-news {
-  padding: 8px;
-}
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .text-news .views-field,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .text-news .views-field,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .text-news .views-field,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .text-news .views-field {
-  display: block;
-  padding: 2px 4px;
-}
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail {
-  padding: 4px 0 4px 4px;
-  text-align: center;
-  max-width: 287px;
-  margin: 0 auto;
-}
-@media (min-width: 481px) {
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail {
-    display: table-cell;
-  }
-}
-@media (max-width: 480px) {
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail {
-    width: auto;
-    float: none;
-  }
-}
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail + .views-field,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail + .views-field,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail + .views-field,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail + .views-field {
-  padding: 10px 0 10px 22px;
-  text-align: center;
-  width: auto;
-}
-@media (min-width: 481px) {
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail + .views-field,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail + .views-field,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail + .views-field,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail + .views-field {
-    display: table-cell;
-    text-align: left;
-  }
-}
-@media (max-width: 480px) {
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail + .views-field,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail + .views-field,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail + .views-field,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail + .views-field {
-    width: 100%;
-  }
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail + .views-field > div:first-child,
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail + .views-field > div:first-child,
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail + .views-field > div:first-child,
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail + .views-field > div:first-child {
-    font-weight: bold;
-    font-size: 16px;
-  }
-  .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail + .views-field > div:nth-child(2),
-  .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail + .views-field > div:nth-child(2),
-  .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-content .text-news .views-field-field-event-thumbnail + .views-field > div:nth-child(2),
-  .pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-content .text-news .views-field-field-event-thumbnail + .views-field > div:nth-child(2) {
-    font-weight: normal;
-    font-size: 14px;
-  }
-}
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight a,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display a,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight a,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display a {
-  color: #3283be;
-}
 .ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-footer,
 .ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-footer,
 .pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-footer,
@@ -4283,30 +4021,6 @@ span#expandAll.links.links, span#collapseAll.links.links.links {
   text-align: right;
 }
 
-/* Images only shown on homepage */
-.not-front .view-upcoming-events-display .views-field-field-event-image,
-.not-front .view-upcoming-events-display .views-field-field-event-thumbnail,
-.not-front .view-upcoming-events-display .views-field-field-exhibition-image {
-  display: none !important;
-}
-
-/* Reduce padding in narrow views */
-@media (max-width: 816px) {
-  .ui-tabs .ui-tabs-panel .views-field-field-event-thumbnail + .views-field,
-  .ui-tabs .ui-tabs-panel .views-field,
-  .pane-bean-upcoming-events .views-field-field-event-thumbnail + .views-field,
-  .pane-bean-upcoming-events .views-field {
-    padding: 10px 0 10px 7px !important;
-  }
-  .ui-tabs .ui-tabs-panel .views-field-field-event-image,
-  .ui-tabs .ui-tabs-panel .views-field-field-exhibition-image,
-  .ui-tabs .ui-tabs-panel .views-field-field-event-thumbnail,
-  .pane-bean-upcoming-events .views-field-field-event-image,
-  .pane-bean-upcoming-events .views-field-field-exhibition-image,
-  .pane-bean-upcoming-events .views-field-field-event-thumbnail {
-    padding: 4px 0 4px 7px !important;
-  }
-}
 .view-related-events .view-content {
   clear: both;
   overflow: hidden;
