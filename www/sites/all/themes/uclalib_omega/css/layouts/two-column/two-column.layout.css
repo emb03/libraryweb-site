@@ -11,10 +11,13 @@
 }
 
 @media (min-width: 768px) {
-  .panel-two-col {
-    overflow: hidden;
-    *zoom: 1;
+  .panel-two-column {
     position: relative;
+  }
+  .panel-two-column:after {
+    content: "";
+    display: table;
+    clear: both;
   }
 
   .l-region--main,
@@ -46,6 +49,7 @@
   .l-region--left:before,
   .l-region--below-left:before {
     content: " ";
+    display: block;
     position: absolute;
     z-index: -1;
     top: 0;
@@ -70,6 +74,7 @@
   .l-region--right:before,
   .l-region--below-right:before {
     content: " ";
+    display: block;
     position: absolute;
     z-index: -1;
     top: 0;

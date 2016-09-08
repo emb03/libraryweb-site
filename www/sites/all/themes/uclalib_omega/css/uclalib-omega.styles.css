@@ -8,6 +8,12 @@ input[type=text] {
   vertical-align: middle;
 }
 
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /* Responsive images */
 img {
   max-width: 100%;
@@ -685,24 +691,23 @@ a[href="#main-content"] {
     margin: 24px 0;
   }
 
-  .l-region--top:before {
+  .l-region--top:before,
+  .l-region--top:after {
     content: " ";
+    display: block;
     position: absolute;
     top: 0;
-    right: 100%;
     width: 20px;
     height: 100%;
     background: #eff3f4;
   }
 
+  .l-region--top:before {
+    right: 100%;
+  }
+
   .l-region--top:after {
-    content: " ";
-    position: absolute;
-    top: 0;
     left: 100%;
-    width: 20px;
-    height: 100%;
-    background: #eff3f4;
   }
 }
 .bean-showcase .field--name-field-showcase-link {
@@ -789,12 +794,6 @@ a[href="#main-content"] {
 .page-bookplates.page-bookplates-donor-directory tr > td {
   padding-bottom: 20px;
   padding-right: 30px;
-}
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 .node-type-bookplates.section-bookplates .views-field-field-collection-donor.bookplates-donor-gift span.field-content {

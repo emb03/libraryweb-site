@@ -5,9 +5,12 @@
 }
 
 .panel-homepage {
-  overflow: hidden;
-  *zoom: 1;
   position: relative;
+}
+.panel-homepage:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .homepage-top {
@@ -40,6 +43,7 @@
   .homepage-top-left:before,
   .l-region--bottom-left:before {
     content: " ";
+    display: block;
     position: absolute;
     z-index: -1;
     top: 0;
@@ -63,6 +67,7 @@
   .homepage-top-right-sidebar:before,
   .l-region--bottom-right:before {
     content: " ";
+    display: block;
     position: absolute;
     z-index: -1;
     top: 0;
@@ -76,9 +81,10 @@
  * Embedded regions inside columns.
  */
 @media (min-width: 481px) {
-  .homepage-top-left {
-    overflow: hidden;
-    *zoom: 1;
+  .homepage-top-left:after {
+    content: "";
+    display: table;
+    clear: both;
   }
 
   .l-region--top-left-bottom-left {

@@ -12,23 +12,23 @@
     }
   }
 
-  .l-region--top:before {
+  // Extend background color into the gutters.
+  .l-region--top:before,
+  .l-region--top:after {
     content: " ";
+    display: block;
     position: absolute;
     top: 0;
-    right: 100%;
     width: 20px;
     height: 100%;
     background: $content-background-gray;
   }
 
+  .l-region--top:before {
+    right: 100%;
+  }
+
   .l-region--top:after {
-    content: " ";
-    position: absolute;
-    top: 0;
     left: 100%;
-    width: 20px;
-    height: 100%;
-    background: $content-background-gray;
   }
 }

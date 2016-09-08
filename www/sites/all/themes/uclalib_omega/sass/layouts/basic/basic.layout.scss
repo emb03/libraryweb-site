@@ -1,4 +1,5 @@
 @import "variables/breakpoints";
+@import "abstractions/clearfix";
 
 .l-header,
 .l-navigation,
@@ -13,11 +14,7 @@
   padding-right: 1.25rem;
   margin-left: auto;
   margin-right: auto;
-  &:after {
-    content: '';
-    display: table;
-    clear: both;
-  }
+  @include clearfix;
 }
 
 @media #{$mobile-header} {

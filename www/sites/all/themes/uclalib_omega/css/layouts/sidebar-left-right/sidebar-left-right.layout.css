@@ -6,9 +6,12 @@
 
 @media (min-width: 768px) {
   .panel-sidebar-left-right {
-    overflow: hidden;
-    *zoom: 1;
     position: relative;
+  }
+  .panel-sidebar-left-right:after {
+    content: "";
+    display: table;
+    clear: both;
   }
 
   .l-region--sidebar-left {
@@ -23,6 +26,7 @@
   }
   .l-region--sidebar-left:before {
     content: " ";
+    display: block;
     position: absolute;
     z-index: -1;
     top: 0;
@@ -49,6 +53,7 @@
   }
   .with-both-sidebars .l-region--main-column:before {
     content: " ";
+    display: block;
     position: absolute;
     z-index: -1;
     top: 0;
@@ -71,6 +76,7 @@
   }
   .with-sidebar-left .l-region--main-column:before {
     content: " ";
+    display: block;
     position: absolute;
     z-index: -1;
     top: 0;
@@ -93,6 +99,7 @@
   }
   .with-sidebar-right .l-region--main-column:before {
     content: " ";
+    display: block;
     position: absolute;
     z-index: -1;
     top: 0;
@@ -112,6 +119,7 @@
   }
   .l-region--sidebar-right:before {
     content: " ";
+    display: block;
     position: absolute;
     z-index: -1;
     top: 0;
