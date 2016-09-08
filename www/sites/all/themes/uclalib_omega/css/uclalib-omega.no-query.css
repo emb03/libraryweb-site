@@ -3041,15 +3041,17 @@ a.next-week:after {
     left: 12px;
     right: 41px;
     opacity: 0;
-    -moz-transition: opacity 0.3s ease-out;
-    -o-transition: opacity 0.3s ease-out;
-    -webkit-transition: opacity 0.3s ease-out;
-    transition: opacity 0.3s ease-out;
     pointer-events: none;
   }
   .pane-search-form.is-open {
     opacity: 1;
     pointer-events: auto;
+  }
+  .pane-search-form.is-animating {
+    -moz-transition: opacity 0.3s ease-out;
+    -o-transition: opacity 0.3s ease-out;
+    -webkit-transition: opacity 0.3s ease-out;
+    transition: opacity 0.3s ease-out;
   }
 }
 

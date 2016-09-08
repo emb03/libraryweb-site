@@ -14,9 +14,17 @@
       bar.$top.on("click", ".mobile-search-trigger", function() {
         bar.toggle();
       });
+
+      bar.$search.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
+          function(e) {
+        bar.isAnimating = false;
+        bar.$search.removeClass('is-animating');
+      });
     },
     toggle: function (context) {
       var bar = this;
+      bar.isAnimating = true;
+      bar.$search.addClass('is-animating');
       if (bar.isOpen) {
         bar.$search.removeClass('is-open');
         bar.$body.removeClass('has-search-open');

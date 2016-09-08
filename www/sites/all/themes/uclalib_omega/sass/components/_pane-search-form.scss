@@ -5,11 +5,13 @@
     left: 12px;
     right: 41px;
     opacity: 0;
-    @include transition(opacity 0.3s ease-out);
     pointer-events: none;
     &.is-open {
       opacity: 1;
       pointer-events: auto;
+    }
+    &.is-animating {
+      @include transition(opacity 0.3s ease-out);
     }
   }
 }
