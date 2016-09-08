@@ -2547,7 +2547,7 @@ a.more-link,
     margin-right: 0;
   }
 }
-@media only screen and (max-width: 884px) {
+@media only screen and (min-width: 700px) and (max-width: 910px) {
   .logged-in .pane-block.pane-system-user-menu .pane-content ul.menu li {
     width: 50%;
     padding: 0;
