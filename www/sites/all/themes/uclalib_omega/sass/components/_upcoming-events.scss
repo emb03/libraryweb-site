@@ -40,136 +40,14 @@
   padding: 6px;
   .view-recent-news-highlight,
   .view-upcoming-events-display {
-    .view-content {
-      width: 100%;
-      .views-row {
-        clear: both;
-        overflow: hidden;
-        width: 100%;
-        @media #{$lap-desk-only} {
-          display: table;
-        }
-        &:hover {
-          background: $ucla-lt-gray;
-        }
-      }
-      .views-field {
-        @media #{$lap-desk-only} {
-          padding: 10px 0 10px 22px;
-          display: table-cell;
-          vertical-align: middle;
-        }
-      }
-      .views-field-field-event-image,
-      .views-field-field-exhibition-image,
-      .views-field-field-event-thumbnail {
-        padding: 4px 0 4px 11px;
-        margin: 0 auto;
-        text-align: center;
-        @media #{$lap-desk-only} {
-          width: 30%;
-          max-width: 287px;
-        }
-        @media #{$palm-only} {
-          width: 50%;
-          float: left;
-        }
-        a, img {
-          display: block;
-        }
-      }
-      .views-field-field-exhibition-end {
-        min-width: 120px;
-        text-align: center;
-        @media #{$palm-only} {
-          width: 50%;
-          float: left;
-        }
-      }
-      .views-field.views-field-nothing {
-        width: 100%;
-        @media #{$palm-only} {
-          float: left;
-          clear: both;
-          > div:nth-child(2) {
-            font-weight: bold;
-            font-size: 16px;
-          }
-        }
-      }
-      .text-news {
-        padding: 8px;
-        .views-field {
-          display: block;
-          padding: 2px 4px;
-        }
-        .views-field-field-event-thumbnail {
-          padding: 4px 0 4px 4px;
-          text-align: center;
-          max-width: 287px;
-          margin: 0 auto;
-          @media #{$lap-desk-only} {
-            display: table-cell;
-          }
-          @media #{$palm-only} {
-            width: auto;
-            float: none;
-          }
-        }
-        .views-field-field-event-thumbnail + .views-field {
-          padding: 10px 0 10px 22px;
-          text-align: center;
-          width: auto;
-          @media #{$lap-desk-only} {
-            display: table-cell;
-            text-align: left;
-          }
-          @media #{$palm-only} {
-            width: 100%;
-            > div:first-child {
-              font-weight: bold;
-              font-size: 16px;
-            }
-            > div:nth-child(2) {
-              font-weight: normal;
-              font-size: 14px;
-            }
-          }
-        }
-      }
-    }
-    a {
-      color: $ucla-blue;
-    }
     .view-footer {
       padding-right: 14px;
       text-align: right;
     }
   }
 }
-/* Images only shown on homepage */
-.not-front .view-upcoming-events-display .views-field-field-event-image,
-.not-front .view-upcoming-events-display .views-field-field-event-thumbnail,
-.not-front .view-upcoming-events-display .views-field-field-exhibition-image {
-  display: none !important;
-}
 
-/* Reduce padding in narrow views */
-@media (max-width: 816px) {
-  .ui-tabs .ui-tabs-panel,
-  .pane-bean-upcoming-events {
-    .views-field-field-event-thumbnail + .views-field,
-    .views-field {
-      padding: 10px 0 10px 7px !important;
-    }
-    .views-field-field-event-image,
-    .views-field-field-exhibition-image,
-    .views-field-field-event-thumbnail {
-      padding: 4px 0 4px 7px !important;
-    }
-  }
-}
-
+// @todo: switch this view's style to .events-teaser custom classes
 .view-related-events {
   .view-content {
     clear: both;
