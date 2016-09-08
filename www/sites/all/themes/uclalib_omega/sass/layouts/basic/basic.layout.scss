@@ -24,6 +24,10 @@
   }
 }
 
+// This output was produced by susy 1, but we've removed susy from the project
+// because it was only used here.  I was unable to achieve the same grid layout
+// for these elements with either susy 2 nor singularity, so opted to leave the
+// generated code with percentages from susy 1 and remove the dependency bloat.
 @media #{$desk-only} {
 
   .l-region--branding {
