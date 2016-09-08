@@ -31,6 +31,9 @@
       float: left;
       font-size: 1.429em;
       margin-right: 3px;
+      @media #{$palm-only} {
+        content: none;
+      }
     }
     .panels-flexible-region-last {
       padding-top: 24px;
