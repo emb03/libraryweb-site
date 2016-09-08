@@ -1,4 +1,7 @@
 (function ($) {
+
+  // Default behavior registers all panel panes with the mobile-collapsible
+  // class added via Panels' CSS Properties dialog.
   Drupal.behaviors.mobileCollapsiblePanelPane = {
     attach: function (context, settings) {
       $(context).find('.panel-pane.mobile-collapsible').mobileCollapsible({
@@ -27,7 +30,10 @@
     }
   };
 
-  // Make link list panes in main content column collapsible on mobile.
+  // Make link list panes in main content column collapsible on mobile. Since
+  // these panes may be added dynamically by content editors via panelizer, the
+  // mobile collapsible functionality on these panes must be added here via
+  // Javascript.
   Drupal.behaviors.mobileCollapsibleLinkList = {
     attach: function (context, settings) {
       $(context).find('.pane-bean-link-list:not(.sidebar-tier-2)').mobileCollapsible({
@@ -38,10 +44,25 @@
     }
   };
 
-  // Make quick find panes collapsible on mobile.
+  // Make quick find panes collapsible on mobile. Since these panes may be
+  // added dynamically by content editors via panelizer, the mobile collapsible
+  // functionality on these panes must be added here via Javascript.
   Drupal.behaviors.mobileCollapsibleQuickFind = {
     attach: function (context, settings) {
       $(context).find('.pane-bean-quick-find').addClass('mobile-collapsible--blue').mobileCollapsible({
+        breakpoint: "(max-width: 480px)",
+        titleSelector: ".pane-title",
+        contentSelector: ".pane-content"
+      });
+    }
+  };
+
+  // Adding the mobile-collapsible class to the news-events landing page is
+  // unpredictable because it is overridden with panelizer, thus we add the
+  // mobile collapsible functionality via Javascript.
+  Drupal.behaviors.mobileCollapsibleNewsEventsLanding = {
+    attach: function (context, settings) {
+      $options = $(context).find('.pane-news-events-landing-display-panel-pane-1, .pane-news-events-landing-display-panel-pane-2').addClass('mobile-collapsible--blue').mobileCollapsible({
         breakpoint: "(max-width: 480px)",
         titleSelector: ".pane-title",
         contentSelector: ".pane-content"

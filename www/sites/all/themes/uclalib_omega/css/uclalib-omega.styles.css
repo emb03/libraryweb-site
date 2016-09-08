@@ -1973,7 +1973,7 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   transition: max-height .3s ease-in-out;
 }
 .mobile-collapsible.is-mobile.is-open .mobile-collapsible__content, .mobile-collapsible.is-mobile.is-open .pane-content {
-  max-height: 2000px;
+  max-height: 4000px;
 }
 
 @media (min-width: 768px) {
@@ -3577,6 +3577,13 @@ a.next-week:after {
   .panelizer-view-mode.node-teaser.node-destination .panels-flexible-region .inside {
     padding-left: 0;
     padding-right: 0;
+  }
+}
+@media (max-width: 480px) {
+  .panel-display--grid-2 .grid-item:nth-child(odd),
+  .panel-display--grid-2 .grid-item:nth-child(even) {
+    float: none;
+    width: 100%;
   }
 }
 .pane-node-field-resource-link h2, .pane-node-field-resource-other-links h2 {
