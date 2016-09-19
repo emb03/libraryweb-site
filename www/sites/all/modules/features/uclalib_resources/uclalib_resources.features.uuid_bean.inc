@@ -918,7 +918,7 @@ function uclalib_resources_uuid_features_default_beans() {
     'view_mode' => 'default',
     'created' => 1398722406,
     'log' => 'updated link',
-    'uid' => 42,
+    'uid' => 0,
     'default_revision' => 1,
     'revisions' => array(),
     'vuuid' => '106e9ea0-ca4e-4c3c-9350-1e6bf3691027',
