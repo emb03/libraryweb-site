@@ -41,11 +41,13 @@
     });
     mc.checkBreakpoint( mc.media );
 
-    $(mc.element).find(mc.options.titleSelector).on('click', function(e) {
-      e.preventDefault();
-      mc.toggle();
-    });
-    $el.addClass('mobile-collapsible-processed');
+    if (mc.media.matches) {
+      $(mc.element).find(mc.options.titleSelector).on('click', function (e) {
+        e.preventDefault();
+        mc.toggle();
+      });
+      $el.addClass('mobile-collapsible-processed');
+    }
   }
 
   mobileCollapsible.prototype.checkBreakpoint = function( media ) {
