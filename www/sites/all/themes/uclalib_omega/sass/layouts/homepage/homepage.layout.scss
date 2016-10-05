@@ -44,6 +44,15 @@
     padding-bottom: 13px;
   }
 }
+.page-homepage.homepage {
+  .icon.icomoon.icon-clicc-computer, .icon.icomoon.icon-collaboration-pod, .icon.icomoon.icon-copy, .icon.icomoon.icon-more {
+    float: left;
+    padding-right: 5px;
+    font-size: 21px;
+    margin-top: -5px;
+  }
+}
+
 @media #{$desk-only} {
 
   // 2-column assymetrical grid w/ fixed 20px gutters between columns.
@@ -103,5 +112,8 @@
       @include grid-span(1, 2);
       padding-right: 0;
     }
+  }
+  .page-homepage.homepage .icon.icomoon.icon-collaboration-pod {
+    margin-top:0;
   }
 }

@@ -42,7 +42,15 @@ function uclalib_homepage_default_page_manager_pages() {
     'body_classes_to_add' => 'homepage',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Block',
+        'keyword' => 'bean',
+        'name' => 'entity:bean',
+        'entity_id' => '438',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(),
   );
   $display = new panels_display();
@@ -171,54 +179,13 @@ function uclalib_homepage_default_page_manager_pages() {
     $display->content['new-54cf3e3c-a95f-484d-8bc8-0a72e3c0e3d2'] = $pane;
     $display->panels['top_left_bottom_right'][0] = 'new-54cf3e3c-a95f-484d-8bc8-0a72e3c0e3d2';
     $pane = new stdClass();
-    $pane->pid = 'new-517ce809-7026-47c4-ad9c-2eb1f800d2fd';
+    $pane->pid = 'new-14f0f28c-2273-4ba2-a8bc-8d96ed7ba854';
     $pane->panel = 'top_left_bottom_right';
     $pane->type = 'block';
     $pane->subtype = 'bean-homepage-equipment-block';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'title_alignment' => 'left',
-      ),
-      'style' => 'border-blue',
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'mobile-collapsible',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '517ce809-7026-47c4-ad9c-2eb1f800d2fd';
-    $display->content['new-517ce809-7026-47c4-ad9c-2eb1f800d2fd'] = $pane;
-    $display->panels['top_left_bottom_right'][1] = 'new-517ce809-7026-47c4-ad9c-2eb1f800d2fd';
-    $pane = new stdClass();
-    $pane->pid = 'new-2e1fe2dd-919b-4f07-8924-8216471fc9d8';
-    $pane->panel = 'top_left_bottom_right';
-    $pane->type = 'views';
-    $pane->subtype = 'equipment_block_hp_block';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '5',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => '',
-      'display' => 'default',
       'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
@@ -232,11 +199,11 @@ function uclalib_homepage_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '2e1fe2dd-919b-4f07-8924-8216471fc9d8';
-    $display->content['new-2e1fe2dd-919b-4f07-8924-8216471fc9d8'] = $pane;
-    $display->panels['top_left_bottom_right'][2] = 'new-2e1fe2dd-919b-4f07-8924-8216471fc9d8';
+    $pane->uuid = '14f0f28c-2273-4ba2-a8bc-8d96ed7ba854';
+    $display->content['new-14f0f28c-2273-4ba2-a8bc-8d96ed7ba854'] = $pane;
+    $display->panels['top_left_bottom_right'][1] = 'new-14f0f28c-2273-4ba2-a8bc-8d96ed7ba854';
     $pane = new stdClass();
     $pane->pid = 'new-768d72ca-cc3f-49d5-9995-d55c357ef337';
     $pane->panel = 'top_left_main';
