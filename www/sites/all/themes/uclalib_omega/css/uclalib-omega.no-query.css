@@ -3789,6 +3789,19 @@ a.next-week:after {
 .pane-ucla-tab-search-ucla-tab-search-tabs #edit-books-captcha {
   display: none;
 }
+.pane-ucla-tab-search-ucla-tab-search-tabs .form-item.form-type-select.form-item-books-ucla-catalog-search-index {
+  margin-bottom: -0.6em;
+  visibility: hidden;
+  display: block !important;
+}
+.pane-ucla-tab-search-ucla-tab-search-tabs .form-item.form-type-checkbox.form-item-articlesplus-peer-review {
+  margin-bottom: 0;
+  padding-top: 3em;
+}
+.pane-ucla-tab-search-ucla-tab-search-tabs .form-item.form-type-radio.form-item-journals-catalog:first-child {
+  margin-bottom: 0;
+  padding-top: 3em;
+}
 
 @media (max-width: 767px) {
   .panelizer-view-mode.node-hours-page.node-location, .panelizer-view-mode.node-hours-page.node-destination,
