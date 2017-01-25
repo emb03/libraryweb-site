@@ -133,7 +133,7 @@ ul.vertical-tabs-list {
     }
     .selected {
       position: relative;
-      background: #fae301;
+      background: $ucla-accent_color;
       background: url(../images/arr-right-yell.png) 100% 50% no-repeat;
       a {
         background: $ucla-accent_color;
