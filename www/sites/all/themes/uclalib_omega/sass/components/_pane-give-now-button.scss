@@ -1,3 +1,6 @@
+a.give_now_sprites {
+  margin-left: 10px;
+}
 .give_now_sprites {
   background: url(../images/sprites.png) no-repeat 0 1px;
   overflow: hidden;
@@ -24,8 +27,8 @@
     color: #fff;
     text-shadow: none !important;
     background-position: left -50px !important;
+    }
   }
-}
 .pane-give-now-button p {
   // text-shadow: 0 0.04em 0.02em #8d6e2d;
   font-size: 16px;
