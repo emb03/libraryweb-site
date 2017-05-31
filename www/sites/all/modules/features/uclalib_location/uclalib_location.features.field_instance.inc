@@ -73,6 +73,12 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'text_summary_or_trimmed',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
@@ -140,6 +146,12 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_address',
@@ -205,6 +217,12 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_amenities',
@@ -249,6 +267,12 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_equipment',
@@ -263,6 +287,65 @@ function uclalib_location_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_buttons',
       'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-location-field_hours'
+  $field_instances['node-location-field_hours'] = array(
+    'bundle' => 'location',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Until a better id selector UI element is build, please use the <a href="https://webservices.library.ucla.edu/calendar/units" target="_blank">calendar/units</a> webservice manually.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 24,
+      ),
+      'hours_page' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'module' => 'ucla_libhours',
+        'settings' => array(),
+        'type' => 'library_hours_today',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_hours',
+    'label' => 'Hours',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 9,
     ),
   );
 
@@ -292,6 +375,12 @@ function uclalib_location_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
       ),
     ),
     'entity_type' => 'node',
@@ -357,6 +446,12 @@ function uclalib_location_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
       ),
     ),
     'entity_type' => 'node',
@@ -427,6 +522,12 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_location_destinations',
@@ -479,6 +580,12 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_location_email',
@@ -522,6 +629,12 @@ function uclalib_location_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -583,6 +696,12 @@ function uclalib_location_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -688,6 +807,12 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_location_map_file',
@@ -752,6 +877,12 @@ function uclalib_location_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'node',
@@ -864,6 +995,12 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_location_map_link',
@@ -923,6 +1060,12 @@ function uclalib_location_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -990,6 +1133,12 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_location_nickname',
@@ -1028,79 +1177,6 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_oh_name'
-  $field_instances['node-location-field_location_oh_name'] = array(
-    'bundle' => 'location',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Library',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'This is the name that will be used in the tables that display these opening hours.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 15,
-      ),
-      'hours_page' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 15,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_location_oh_name',
-    'label' => 'Opening Hours alternate short name',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'full_html' => 'full_html',
-          'php_code' => 'php_code',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'full_html' => array(
-              'weight' => 0,
-            ),
-            'php_code' => array(
-              'weight' => 11,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-          ),
-        ),
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 40,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'node-location-field_location_phone'
   $field_instances['node-location-field_location_phone'] = array(
     'bundle' => 'location',
@@ -1127,6 +1203,12 @@ function uclalib_location_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -1178,6 +1260,12 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_location_social_links',
@@ -1191,7 +1279,7 @@ function uclalib_location_field_default_field_instances() {
       'module' => 'multifield',
       'settings' => array(),
       'type' => 'multifield_default',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -1220,6 +1308,12 @@ function uclalib_location_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -1287,6 +1381,12 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_study_areas',
@@ -1316,19 +1416,19 @@ function uclalib_location_field_default_field_instances() {
   t('Email');
   t('Equipment');
   t('Floor Plan');
+  t('Hours');
   t('Location Map');
   t('Location image');
   t('Map Link');
   t('Map thumbnail image');
   t('Mobile Map Link');
   t('Nickname');
-  t('Opening Hours alternate short name');
   t('Phone Number');
   t('Please enter the corresponding URL to the mobile version of the map. Use <a href="http://maps.ucla.edu/m/campus" target="_blank">http://maps.ucla.edu/m/campus</a> to search for the desired URL.');
   t('Quick Links');
   t('Social Links');
   t('Study areas');
-  t('This is the name that will be used in the tables that display these opening hours.');
+  t('Until a better id selector UI element is build, please use the <a href="https://webservices.library.ucla.edu/calendar/units" target="_blank">calendar/units</a> webservice manually.');
   t('Upload an image which represents the location.');
 
   return $field_instances;

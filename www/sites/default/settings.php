@@ -580,6 +580,7 @@ $env_include = array(
   'www-prod1.library.ucla.edu' => 'prod.settings.php',
   'www-prod2.library.ucla.edu' => 'prod.settings.php',
   'www-prod3.library.ucla.edu' => 'prod.settings.php',
+  'uclalib-www.docksal' => 'uclalib-www.docksal.settings.php',
 );
 
 if (isset($env_include[$_SERVER['HTTP_HOST']])) {

@@ -383,31 +383,35 @@ function uclalib_location_panelizer_defaults() {
     $display->content['new-665a8ad1-61ad-4340-833c-359cbb6f57a1'] = $pane;
     $display->panels['main'][0] = 'new-665a8ad1-61ad-4340-833c-359cbb6f57a1';
     $pane = new stdClass();
-    $pane->pid = 'new-04116a50-5279-4343-88bb-5a0067e72626';
+    $pane->pid = 'new-9e53fdf0-9df4-407a-a069-1deb949848c4';
     $pane->panel = 'main';
-    $pane->type = 'opening_hours_table';
-    $pane->subtype = 'opening_hours_table';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_hours';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'library_hours_table',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
       'context' => 'panelizer',
-      'override_title' => 1,
-      'override_title_text' => 'Hours',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'mobile-collapsible mobile-collapsible--title-hidden-on-desktop',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '04116a50-5279-4343-88bb-5a0067e72626';
-    $display->content['new-04116a50-5279-4343-88bb-5a0067e72626'] = $pane;
-    $display->panels['main'][1] = 'new-04116a50-5279-4343-88bb-5a0067e72626';
+    $pane->uuid = '9e53fdf0-9df4-407a-a069-1deb949848c4';
+    $display->content['new-9e53fdf0-9df4-407a-a069-1deb949848c4'] = $pane;
+    $display->panels['main'][1] = 'new-9e53fdf0-9df4-407a-a069-1deb949848c4';
     $pane = new stdClass();
     $pane->pid = 'new-012ea686-9f07-489f-a902-787035559e8d';
     $pane->panel = 'sidebar_left';

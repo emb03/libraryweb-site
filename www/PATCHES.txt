@@ -19,6 +19,10 @@ Ctools - ctools calling missing file
 https://www.drupal.org/node/1775612
 https://www.drupal.org/files/plugin-load-use-include-1775612-3.patch
 
+Entity View Modes - Features Module Support
+https://www.drupal.org/node/1425620
+https://www.drupal.org/files/1425620-features-support_3.patch
+
 Facetapi_bonus - add plugin filter to hide facet count.
 https://drupal.org/node/2266717
 https://drupal.org/files/issues/facetapi-bonus-hide-count-2266717-1.patch
