@@ -25,7 +25,6 @@ function ucla_libhours_get_hours($library, $length) {
   $weeks = $element['hours']['locations'][0]['weeks'];
 
   // put header day values in a keyed array
-  // TODO: use ucla_libhours_format_week_header_days() in a nested fashion
   foreach($weeks as $week => $days) {
     foreach ($weeks[$week] as $day => $value) {
       $weeks[$week]['days'][$day] = $weeks[$week][$day];
@@ -36,28 +35,9 @@ function ucla_libhours_get_hours($library, $length) {
     $weeks[$week]['week_range'] = ucla_libhours_format_date_range($weeks[$week]['Sunday']['date'], $weeks[$week]['Saturday']['date']);
   }
 
-  // format table headers with Day + date like: Su 30
+  // format table headers for each fetched week
   foreach($weeks as $week => $days) {
-    foreach($weeks[$week]['days'] as $day => $date) {
-      $element['hours']['week'][$day]['abrv'] = strtolower(substr($day, 0, 3));
-      $weeks[$week]['days'][$day]['abrv'] = strtolower(substr($day, 0, 3));
-      // for Sat, Sun & Tues, Thurs use 2 characters else use 1
-      if (substr($day, 0, 1) === 'S' || substr($day, 0, 1) === 'T') {
-        $element['hours']['week'][$day]['label'] = substr($day, 0, 2) ." ". format_date(strtotime($weeks[$week][$day]['date']), 'custom', "j");
-        $weeks[$week]['days'][$day]['label'] = substr($day, 0, 2) ." ". format_date(strtotime($weeks[$week][$day]['date']), 'custom', "j");
-      } else {
-        $element['hours']['week'][$day]['label'] = substr($day, 0, 1) ." ". format_date(strtotime($weeks[$week][$day]['date']), 'custom', "j");
-        $weeks[$week]['days'][$day]['label'] = substr($day, 0, 1) ." ". format_date(strtotime($weeks[$week][$day]['date']), 'custom', "j");
-      }
-      // signify current day in header (week data logic in template)
-      if ($date['date'] == date("Y-m-d")) {
-        $element['hours']['week'][$day]['current_day'] = TRUE;
-        $weeks[$week]['days'][$day]['current_day'] = TRUE;
-      } else {
-        $element['hours']['week'][$day]['current_day'] = FALSE;
-        $weeks[$week]['days'][$day]['current_day'] = FALSE;
-      }
-    }
+    ucla_libhours_format_week_header_days($weeks[$week]['days'], $element['hours']['locations'], $week);
   }
   // put $weeks back into the $element
   $element['hours']['locations'][0]['weeks'] = $weeks;
@@ -107,9 +87,7 @@ function ucla_libhours_field_formatter_view($entity_type, $entity, $field, $inst
       '#theme' => 'ucla_libhours_hours_today',
       '#pre_render' => array('ucla_libhours_pre_render_today'),
     );
-    
     return $hours;
-
   } else if ($display['type'] == 'library_hours_table') {
     $hours = array(
       '#theme' => 'ucla_libhours_hours',
@@ -192,7 +170,7 @@ function ucla_libhours_pre_render_today($element) {
   if (!empty($element['#items'])) {
     $element['hours']['lid'] = $element['#items'][0]['value'];
     // call hours service
-    $library_hours = ucla_libhours_get_library_hours('hours', 'today', $element['hours']['lid'], null);
+    $library_hours = ucla_libhours_get_library_hours('hours', 'today', $element['hours']['lid']);
     $element['hours']['today'] = $library_hours['locations'][0]['rendered'];
     return $element;
   }
@@ -280,7 +258,7 @@ function ucla_libhours_default_wsclient_service() {
   return $services;
 }
 
-function ucla_libhours_get_library_hours($endpoint, $period, $library, $length) {
+function ucla_libhours_get_library_hours($endpoint, $period, $library, $length = null) {
   $service_hours = wsclient_service_load('service_library_hours');
   try {
     if ($period == 'weekly') {
@@ -316,13 +294,12 @@ function ucla_libhours_format_date_range($start_date, $end_date) {
 /**
  * Utility function that adds formatted day values to arrays
  */
-function ucla_libhours_format_week_header_days(&$days, &$locations) {
+function ucla_libhours_format_week_header_days(&$days, $locations, $week = 0) {
   foreach($days as $day => $date) {
     // add an abbreviation to the $day array
     $days[$day]['abrv'] = strtolower(substr($day, 0, 3));
     // add a day label like "Su 1" to the $day array
-    $days[$day]['label'] = ucla_libhours_format_as_daydate($day, $locations[0]['weeks'][0][$day]['date']);
-
+    $days[$day]['label'] = ucla_libhours_format_as_daydate($day, $locations[0]['weeks'][$week][$day]['date']);
     // signify current day in header (week data logic in template)
     if ($date['date'] == date("Y-m-d")) {
       $days[$day]['current_day'] = TRUE;

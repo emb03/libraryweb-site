@@ -78,6 +78,9 @@ function uclalib_location_strongarm() {
       'event_listed_from_bean' => array(
         'custom_settings' => FALSE,
       ),
+      'weeks_hours' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

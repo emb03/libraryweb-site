@@ -48,8 +48,8 @@ var libHoursApp = libHoursApp || {};
           this.collection.options.next_week = this.current_week + 1;
           this.collection.fetch({
             success: function(collection, response, options) {
-              // set the week range
-              $(this.Drupal.libHoursAppViews[0].$el.selector +' th.week-selector .week-range').text(response.hours.locations["0"].weeks["0"].week_range );
+              // set the new week range of the fetched week
+              $(self.$el.selector +' th.week-selector .week-range').text(response.hours.locations["0"].weeks["0"].week_range );
             },
             error: function (error, response) {
             }
