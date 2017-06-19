@@ -733,31 +733,35 @@ function uclalib_location_panelizer_defaults() {
     $display->content['new-e848d85f-0b60-4345-9d33-d0192e2ba19e'] = $pane;
     $display->panels['center_'][1] = 'new-e848d85f-0b60-4345-9d33-d0192e2ba19e';
     $pane = new stdClass();
-    $pane->pid = 'new-ed79bfc1-dcc2-42fa-b6c0-a2286e899f2d';
+    $pane->pid = 'new-19522056-a9df-47aa-bfc3-2948274eff76';
     $pane->panel = 'center_';
-    $pane->type = 'todays_hours';
-    $pane->subtype = 'todays_hours';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_hours';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
+      'label' => 'inline',
+      'formatter' => 'library_hours_today',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
       'context' => 'panelizer',
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '',
+      'override_title_heading' => 'span',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = 'ed79bfc1-dcc2-42fa-b6c0-a2286e899f2d';
-    $display->content['new-ed79bfc1-dcc2-42fa-b6c0-a2286e899f2d'] = $pane;
-    $display->panels['center_'][2] = 'new-ed79bfc1-dcc2-42fa-b6c0-a2286e899f2d';
+    $pane->uuid = '19522056-a9df-47aa-bfc3-2948274eff76';
+    $display->content['new-19522056-a9df-47aa-bfc3-2948274eff76'] = $pane;
+    $display->panels['center_'][2] = 'new-19522056-a9df-47aa-bfc3-2948274eff76';
     $pane = new stdClass();
     $pane->pid = 'new-e6bea458-e646-4034-942a-dcb17cbcf6e9';
     $pane->panel = 'center_';

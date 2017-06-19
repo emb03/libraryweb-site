@@ -258,6 +258,15 @@ function ucla_libhours_default_wsclient_service() {
   return $services;
 }
 
+/**
+ * Implements hook_views_api().
+ */
+function ucla_libhours_views_api() {
+  return array(
+    'api' => 3,
+  );
+}
+
 function ucla_libhours_get_library_hours($endpoint, $period, $library, $length = null) {
   $service_hours = wsclient_service_load('service_library_hours');
   try {
