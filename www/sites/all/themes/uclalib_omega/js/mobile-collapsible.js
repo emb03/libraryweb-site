@@ -43,6 +43,7 @@
 
     if (mc.media.matches) {
       $(mc.element).find(mc.options.titleSelector).on('click', function (e) {
+      if (mc.media.matches) {
         e.preventDefault();
         mc.toggle();
       });
