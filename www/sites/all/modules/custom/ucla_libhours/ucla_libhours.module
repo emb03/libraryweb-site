@@ -11,6 +11,13 @@ function ucla_libhours_menu() {
     'page callback' => 'ucla_libhours_get_hours',
     'page arguments' => array(2, 4),
   );
+  # open now endpoint
+  $items['ajax/libhours/hours/today/%'] = array(
+    'title' => 'libhours open now',
+    'access callback' => true,
+    'page callback' => 'ucla_libhours_get_open_now',
+    'page arguments' => array(4),
+  );
   return $items;
 }
 
@@ -44,6 +51,19 @@ function ucla_libhours_get_hours($library, $length) {
 
   // return $element as json
   drupal_json_output($element);
+}
+
+function ucla_libhours_get_open_now($library) {
+  $service_hours = wsclient_service_load('service_library_hours');
+  try {
+    // call UCLA Library service to get hours by week
+    $library_hours = $service_hours->getToday('hours', 'today', $library);
+    drupal_json_output($library_hours);
+  }
+  catch (WSClientException $exception) {
+    // TODO: log exception to watchdog and maybe to screen (or even #slack)
+    return false;
+  }
 }
 
 // TODO: make a widget to grab integers for library's from a select list

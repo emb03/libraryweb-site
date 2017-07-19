@@ -33,40 +33,55 @@ function open_now_content_type_render($subtype, $conf, $args, $context) {
   $block->content = '';
 
   if (isset($node->nid)) {
+    if (!empty($node->field_hours)) {
+      $block->content = '<div class="open-now-pane"><span class="location-open-now"><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></span></div>';
+      # TODO: move this to a css file, not inline :-P
+      drupal_add_css(
+        '.spinner {
+          height: 17px;
+          text-align: left;
+        }
 
-    // Add the js ***disabled***
-    // drupal_add_js(drupal_get_path('module', 'uclalib_location') . '/uclalib_location.js');
-    // drupal_add_js(array('locationNid' => array('nid' => $node->nid)), 'setting');
+        .spinner > div {
+          width: 12px;
+          height: 12px;
+          background-color: #1e4b87;
+          margin: 0 0.5em;
+          border-radius: 100%;
+          display: inline-block;
+          -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+          animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        }
 
-    $block->content = '<div class="open-now-pane"></div>';
-  }
+        .spinner .bounce1 {
+          -webkit-animation-delay: -0.32s;
+          animation-delay: -0.32s;
+        }
 
-  if ($block->content) {
-    $service_hours = wsclient_service_load('service_library_hours');
-    try {
-      // call UCLA Library service to get hours by week
-      $library_hours = $service_hours->getToday(
-        'hours',
-        'today',
-        // $element['hours']['lid']
-        $context->data->field_hours[LANGUAGE_NONE][0]['value']
+        .spinner .bounce2 {
+          -webkit-animation-delay: -0.16s;
+          animation-delay: -0.16s;
+        }
+
+        @-webkit-keyframes sk-bouncedelay {
+          0%, 80%, 100% { -webkit-transform: scale(0) }
+          40% { -webkit-transform: scale(1.0) }
+        }
+
+        @keyframes sk-bouncedelay {
+          0%, 80%, 100% { 
+            -webkit-transform: scale(0);
+            transform: scale(0);
+          } 40% { 
+            -webkit-transform: scale(1.0);
+            transform: scale(1.0);
+          }
+        }', 
+        'inline'
       );
-      // $element['hours']['today'] = $library_hours['locations'][0]['rendered'];
-      // return $element;
-      if ($library_hours['locations'][0]['times']['currently_open']) {
-        $block->content .= '<div class="open-now-pane"><span class="location-open-now">Open Now</span></div>';
-      } else {
-        $block->content .= '<div class="open-now-pane"><span class="location-closed">Closed</span></div>';
-      }
     }
-    catch (WSClientException $exception) {
-      // TODO: log exception to watchdog and maybe to screen (or even #slack)
-      return false;
-    }
-     
-    return $block;
   }
-
+  return $block;
 }
 
 /**
