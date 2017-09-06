@@ -1,0 +1,134 @@
+<?php
+//=============================================================================
+/**
+ * Implements hook_menu().
+ */
+function statsform_menu() {
+  $items = array();
+  
+  $items['statsform/form'] = array(
+    'title' => 'Stats Form',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('statsform_page_one'),
+    'access callback' => TRUE,
+    'description' => 'For statsform use',
+  );
+
+  // Create a path for the AJAX request
+  $items['statsform/ajax'] = array(
+    'title' => 'Ajax Request',
+    'page callback' => 'ajax_request_callback2',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+ 
+  return $items;
+}
+
+
+//=============================================================================
+/**
+ * Implements hook_page_alter().
+ */
+function statsform_page_alter(&$page) {
+    if (arg(0) == 'statsform') {
+        $page['variables'] = drupal_get_token();
+        $page['sf_path'] = drupal_get_path('module', 'statsform');
+        $page['#theme'] = 'hijack'; 
+  }
+}
+
+
+//=============================================================================
+/**
+ * Implements hook_theme().
+ */
+function statsform_theme($existing, $type, $theme, $path) {
+    return array(
+        'hijack' => array(
+#            'variables' => array('output' => 'test21'), // limited scope
+            'template' => 'page--hijacked',
+            'render element' => 'page',
+            'path' => drupal_get_path('module', 'statsform') . '/templates',
+            ),
+    );
+}
+
+
+//=============================================================================
+/**
+ * Implements hook_form_alter().
+ */
+//function statsform_form_alter(&$form, &$form_state, $form_id) {
+//    //print_r($form_id);
+////    print_r("asd".$form['actions']['submit']['#attributes']['class']);
+//  if ($form_id = 'statsform_page_one') {
+//    //$form['actions']['submit']['#attributes']['class'][] = 'hidden';
+//    //$form['actions']['submit']['#attributes'] = array('class' => 'my_class'); 
+//    
+//    
+//    $form['actions']['submit']['#attributes']['class'][] = 'hidden';
+//    $form['#attributes']['class'][] = 'hidden';
+//    
+//    
+//    
+//    
+////    print_r($form['actions']['submit']['#attributes']);
+//  }
+//}
+
+
+//=============================================================================
+/**
+ * Callback function for /statsform/ajax.
+ */
+function ajax_request_callback2() {
+  if (isset($_POST['statsformToken'])) {
+    if (isset($_POST['sfLogout']) && $_POST['sfLogout']) {
+      // Return the Logged Out flag and exit
+      $response = array(
+        'message' => 'sfLoggedOut',
+      );
+      drupal_json_output($response);
+      session_destroy();
+//      drupal_goto('user');
+      exit;
+    } else {
+      // Pass the JSON on to the WS and Return the response
+      // 1. Set up the JSON here (if needed)
+
+      // 2. Send to WS here
+
+      // 3. Return the response
+      $sf_response = array(
+//        'message' => t($_POST['statsformToken']),
+//        'message' => $_POST['statsformInputDatetime'],
+//        'message' => $_POST['statsformInputTime'],
+//        'message' => $_POST['statsformInputLocation'],
+//        'message' => $_POST['statsformInputServicePoint'],
+        'message' => $_POST['statsformUserName'],
+//        'message' => $_POST['statsformUserMenu'],
+      );
+      drupal_json_output($sf_response);
+      exit;
+    }
+  } else {
+    // Return Missing Token message
+    $response = array(
+      'message' => t('Error #asdf90g: Missing token.'),
+    );
+    drupal_json_output($response);
+    exit;
+  }
+}
+
+
+//=============================================================================
+/**
+ * Callback function for /statsform/form for testing
+ */
+function statsform_page_one() {
+  $sf_path = drupal_get_path('module', 'statsform');
+  print_r("===>".$sf_path);
+}
+
