@@ -92,6 +92,12 @@ function uclalib_staff_profile_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'todays_hours' => array(
+        'custom_settings' => FALSE,
+      ),
+      'weeks_hours' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
