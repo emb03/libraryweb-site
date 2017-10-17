@@ -31,15 +31,7 @@ function uclalib_staff_directory_default_page_manager_handlers() {
     'name' => '',
     'access' => array(
       'plugins' => array(
-        0 => array(
-          'name' => 'context_exists',
-          'settings' => array(
-            'exists' => '1',
-          ),
-          'context' => 'argument_term_1',
-          'not' => FALSE,
-        ),
-        1 => array(
+        2 => array(
           'name' => 'term_vocabulary',
           'settings' => array(
             'machine_name' => array(
@@ -76,10 +68,10 @@ function uclalib_staff_directory_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-c9d3dece-a69f-4ecc-96ef-b28ce2cbf23f';
+    $pane->pid = 'new-67bd1395-b920-4f35-b57f-4de2490a6319';
     $pane->panel = 'main';
     $pane->type = 'views_panes';
-    $pane->subtype = 'staff_profiles-panel_pane_1';
+    $pane->subtype = 'staff_profiles-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -91,10 +83,10 @@ function uclalib_staff_directory_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'c9d3dece-a69f-4ecc-96ef-b28ce2cbf23f';
-    $display->content['new-c9d3dece-a69f-4ecc-96ef-b28ce2cbf23f'] = $pane;
-    $display->panels['main'][0] = 'new-c9d3dece-a69f-4ecc-96ef-b28ce2cbf23f';
-  $display->hide_title = PANELS_TITLE_NONE;
+    $pane->uuid = '67bd1395-b920-4f35-b57f-4de2490a6319';
+    $display->content['new-67bd1395-b920-4f35-b57f-4de2490a6319'] = $pane;
+    $display->panels['main'][0] = 'new-67bd1395-b920-4f35-b57f-4de2490a6319';
+  $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['term_view__panel_context_6b5a6cde-9951-4b7d-b338-77c91239311e'] = $handler;

@@ -369,13 +369,13 @@ function uclalib_staff_profile_views_default_views() {
   $handler->display->display_options['fields']['delta']['label'] = '';
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['delta']['separator'] = '';
-  /* Field: Field: Text Block */
+  /* Field: Field: Biography */
   $handler->display->display_options['fields']['field_text_block']['id'] = 'field_text_block';
   $handler->display->display_options['fields']['field_text_block']['table'] = 'field_data_field_text_block';
   $handler->display->display_options['fields']['field_text_block']['field'] = 'field_text_block';
   $handler->display->display_options['fields']['field_text_block']['label'] = '';
   $handler->display->display_options['fields']['field_text_block']['element_label_colon'] = FALSE;
-  /* Field: Field: Text Block */
+  /* Field: Field: Biography */
   $handler->display->display_options['fields']['field_text_block_1']['id'] = 'field_text_block_1';
   $handler->display->display_options['fields']['field_text_block_1']['table'] = 'field_data_field_text_block';
   $handler->display->display_options['fields']['field_text_block_1']['field'] = 'field_text_block';
@@ -562,6 +562,194 @@ function uclalib_staff_profile_views_default_views() {
   $handler->display->display_options['filters']['field_staff_is_subject_librarian_value']['value'] = array(
     1 => '1',
   );
+
+  /* Display: Department View Content Pane */
+  $handler = $view->new_display('panel_pane', 'Department View Content Pane', 'panel_pane_3');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  /* Field: Content: Staff First Name */
+  $handler->display->display_options['fields']['field_staff_first_name']['id'] = 'field_staff_first_name';
+  $handler->display->display_options['fields']['field_staff_first_name']['table'] = 'field_data_field_staff_first_name';
+  $handler->display->display_options['fields']['field_staff_first_name']['field'] = 'field_staff_first_name';
+  $handler->display->display_options['fields']['field_staff_first_name']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_first_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_staff_first_name']['element_label_colon'] = FALSE;
+  /* Field: Content: Staff Last Name */
+  $handler->display->display_options['fields']['field_staff_last_name']['id'] = 'field_staff_last_name';
+  $handler->display->display_options['fields']['field_staff_last_name']['table'] = 'field_data_field_staff_last_name';
+  $handler->display->display_options['fields']['field_staff_last_name']['field'] = 'field_staff_last_name';
+  $handler->display->display_options['fields']['field_staff_last_name']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_last_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_staff_last_name']['element_label_colon'] = FALSE;
+  /* Field: Content: Staff Image Thumbnail */
+  $handler->display->display_options['fields']['field_staff_image_thumbnail']['id'] = 'field_staff_image_thumbnail';
+  $handler->display->display_options['fields']['field_staff_image_thumbnail']['table'] = 'field_data_field_staff_image_thumbnail';
+  $handler->display->display_options['fields']['field_staff_image_thumbnail']['field'] = 'field_staff_image_thumbnail';
+  $handler->display->display_options['fields']['field_staff_image_thumbnail']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_image_thumbnail']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_staff_image_thumbnail']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_staff_image_thumbnail']['settings'] = array(
+    'image_style' => '',
+    'image_link' => 'content',
+  );
+  /* Field: Staff Full Name (First Last) */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Staff Full Name (First Last)';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="[path]">[field_staff_first_name] [field_staff_last_name]</a>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Content: Staff Location */
+  $handler->display->display_options['fields']['field_staff_location']['id'] = 'field_staff_location';
+  $handler->display->display_options['fields']['field_staff_location']['table'] = 'field_data_field_staff_location';
+  $handler->display->display_options['fields']['field_staff_location']['field'] = 'field_staff_location';
+  $handler->display->display_options['fields']['field_staff_location']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_staff_location']['settings'] = array(
+    'link' => 1,
+  );
+  /* Field: Content: Staff Phone */
+  $handler->display->display_options['fields']['field_staff_phone']['id'] = 'field_staff_phone';
+  $handler->display->display_options['fields']['field_staff_phone']['table'] = 'field_data_field_staff_phone';
+  $handler->display->display_options['fields']['field_staff_phone']['field'] = 'field_staff_phone';
+  $handler->display->display_options['fields']['field_staff_phone']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_phone']['element_label_colon'] = FALSE;
+  /* Field: Content: Staff Email */
+  $handler->display->display_options['fields']['field_staff_email']['id'] = 'field_staff_email';
+  $handler->display->display_options['fields']['field_staff_email']['table'] = 'field_data_field_staff_email';
+  $handler->display->display_options['fields']['field_staff_email']['field'] = 'field_staff_email';
+  $handler->display->display_options['fields']['field_staff_email']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['title'] = 'Showing all Staff in %1';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
+    'staff_departments' => 'staff_departments',
+  );
+  $handler->display->display_options['arguments']['tid']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'empty';
+  $handler->display->display_options['argument_input'] = array(
+    'tid' => array(
+      'type' => 'panel',
+      'context' => 'entity:taxonomy_term.tid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Has taxonomy term ID',
+    ),
+  );
+  $handler->display->display_options['inherit_panels_path'] = '1';
+
+  /* Display: Department View Page */
+  $handler = $view->new_display('page', 'Department View Page', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Department View Test';
+  $handler->display->display_options['enabled'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  /* Field: Content: Staff First Name */
+  $handler->display->display_options['fields']['field_staff_first_name']['id'] = 'field_staff_first_name';
+  $handler->display->display_options['fields']['field_staff_first_name']['table'] = 'field_data_field_staff_first_name';
+  $handler->display->display_options['fields']['field_staff_first_name']['field'] = 'field_staff_first_name';
+  $handler->display->display_options['fields']['field_staff_first_name']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_first_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_staff_first_name']['element_label_colon'] = FALSE;
+  /* Field: Content: Staff Last Name */
+  $handler->display->display_options['fields']['field_staff_last_name']['id'] = 'field_staff_last_name';
+  $handler->display->display_options['fields']['field_staff_last_name']['table'] = 'field_data_field_staff_last_name';
+  $handler->display->display_options['fields']['field_staff_last_name']['field'] = 'field_staff_last_name';
+  $handler->display->display_options['fields']['field_staff_last_name']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_last_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_staff_last_name']['element_label_colon'] = FALSE;
+  /* Field: Content: Staff Image Thumbnail */
+  $handler->display->display_options['fields']['field_staff_image_thumbnail']['id'] = 'field_staff_image_thumbnail';
+  $handler->display->display_options['fields']['field_staff_image_thumbnail']['table'] = 'field_data_field_staff_image_thumbnail';
+  $handler->display->display_options['fields']['field_staff_image_thumbnail']['field'] = 'field_staff_image_thumbnail';
+  $handler->display->display_options['fields']['field_staff_image_thumbnail']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_image_thumbnail']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_staff_image_thumbnail']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_staff_image_thumbnail']['settings'] = array(
+    'image_style' => '',
+    'image_link' => 'content',
+  );
+  /* Field: Staff Full Name (First Last) */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Staff Full Name (First Last)';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="[path]">[field_staff_first_name] [field_staff_last_name]</a>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Content: Staff Location */
+  $handler->display->display_options['fields']['field_staff_location']['id'] = 'field_staff_location';
+  $handler->display->display_options['fields']['field_staff_location']['table'] = 'field_data_field_staff_location';
+  $handler->display->display_options['fields']['field_staff_location']['field'] = 'field_staff_location';
+  $handler->display->display_options['fields']['field_staff_location']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_staff_location']['settings'] = array(
+    'link' => 1,
+  );
+  /* Field: Content: Staff Phone */
+  $handler->display->display_options['fields']['field_staff_phone']['id'] = 'field_staff_phone';
+  $handler->display->display_options['fields']['field_staff_phone']['table'] = 'field_data_field_staff_phone';
+  $handler->display->display_options['fields']['field_staff_phone']['field'] = 'field_staff_phone';
+  $handler->display->display_options['fields']['field_staff_phone']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_phone']['element_label_colon'] = FALSE;
+  /* Field: Content: Staff Email */
+  $handler->display->display_options['fields']['field_staff_email']['id'] = 'field_staff_email';
+  $handler->display->display_options['fields']['field_staff_email']['table'] = 'field_data_field_staff_email';
+  $handler->display->display_options['fields']['field_staff_email']['field'] = 'field_staff_email';
+  $handler->display->display_options['fields']['field_staff_email']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_email']['element_label_colon'] = FALSE;
+  /* Field: Content: Staff Academic Dept Liaison */
+  $handler->display->display_options['fields']['field_staff_acad_dept_liaison']['id'] = 'field_staff_acad_dept_liaison';
+  $handler->display->display_options['fields']['field_staff_acad_dept_liaison']['table'] = 'field_data_field_staff_acad_dept_liaison';
+  $handler->display->display_options['fields']['field_staff_acad_dept_liaison']['field'] = 'field_staff_acad_dept_liaison';
+  $handler->display->display_options['fields']['field_staff_acad_dept_liaison']['label'] = '';
+  $handler->display->display_options['fields']['field_staff_acad_dept_liaison']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_staff_acad_dept_liaison']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
+    'staff_departments' => 'staff_departments',
+  );
+  $handler->display->display_options['arguments']['tid']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'empty';
+  $handler->display->display_options['path'] = 'staff-department/%';
   $export['staff_profiles'] = $view;
 
   return $export;

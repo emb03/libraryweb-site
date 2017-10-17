@@ -468,7 +468,7 @@ function uclalib_search_views_default_views() {
   $handler->display->display_options['fields']['site_general_search']['display'] = 'view';
   $handler->display->display_options['fields']['site_general_search']['view_mode'] = 'teaser';
   $handler->display->display_options['fields']['site_general_search']['bypass_access'] = 0;
-  /* Field: Broken/missing handler */
+  /* Field: Page manager pages: Title (indexed) */
   $handler->display->display_options['fields']['page_manager_pages_title']['id'] = 'page_manager_pages_title';
   $handler->display->display_options['fields']['page_manager_pages_title']['table'] = 'search_api_multi';
   $handler->display->display_options['fields']['page_manager_pages_title']['field'] = 'page_manager_pages_title';
@@ -691,6 +691,7 @@ function uclalib_search_views_default_views() {
 
   /* Display: Staff DIrectory */
   $handler = $view->new_display('panel_pane', 'Staff DIrectory', 'staff_directory_pane');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Content: Staff Image Thumbnail */
@@ -843,6 +844,49 @@ function uclalib_search_views_default_views() {
     3 => 0,
   );
   $handler->display->display_options['inherit_panels_path'] = '1';
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1_v1');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Indexed Content: Staff Departments */
+  $handler->display->display_options['arguments']['field_staff_departments']['id'] = 'field_staff_departments';
+  $handler->display->display_options['arguments']['field_staff_departments']['table'] = 'search_api_index_site_general_search';
+  $handler->display->display_options['arguments']['field_staff_departments']['field'] = 'field_staff_departments';
+  $handler->display->display_options['arguments']['field_staff_departments']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_staff_departments']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_staff_departments']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_staff_departments']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_staff_departments']['validate_options']['vocabularies'] = array(
+    'staff_departments' => 'staff_departments',
+  );
+  $handler->display->display_options['arguments']['field_staff_departments']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['field_staff_departments']['not'] = 0;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Indexed Content: Content type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_site_general_search';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'staff_profile' => 'staff_profile',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_site_general_search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['operator'] = 'OR';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['group'] = 1;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Fulltext search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
   $export['staff_directory'] = $view;
 
   return $export;

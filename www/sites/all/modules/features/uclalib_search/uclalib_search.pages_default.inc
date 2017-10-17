@@ -290,21 +290,17 @@ function uclalib_search_default_page_manager_pages() {
   $display->cache = array();
   $display->title = '';
   $display->uuid = 'b6845ffe-955f-4c42-9a20-5cd2a00c4bd4';
-  $display->window_title = '';
+  $display->window_title = 'UCLA Library Staff Directory | %node:title';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-375bdd1d-729b-4a1c-b2bb-d25fb16bf155';
+    $pane->pid = 'new-ba65443f-af8e-4ffa-8e91-1d84ee2386ba';
     $pane->panel = 'main';
-    $pane->type = 'block';
-    $pane->subtype = 'views-b954de8eb7d4895146983e3ae88f258e';
-    $pane->shown = TRUE;
+    $pane->type = 'views_panes';
+    $pane->subtype = 'staff_directory-staff_directory_pane';
+    $pane->shown = FALSE;
     $pane->access = array();
-    $pane->configuration = array(
-      'inherit_path' => 1,
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -313,15 +309,15 @@ function uclalib_search_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '375bdd1d-729b-4a1c-b2bb-d25fb16bf155';
-    $display->content['new-375bdd1d-729b-4a1c-b2bb-d25fb16bf155'] = $pane;
-    $display->panels['main'][0] = 'new-375bdd1d-729b-4a1c-b2bb-d25fb16bf155';
+    $pane->uuid = 'ba65443f-af8e-4ffa-8e91-1d84ee2386ba';
+    $display->content['new-ba65443f-af8e-4ffa-8e91-1d84ee2386ba'] = $pane;
+    $display->panels['main'][0] = 'new-ba65443f-af8e-4ffa-8e91-1d84ee2386ba';
     $pane = new stdClass();
     $pane->pid = 'new-cf471339-4187-4349-83cc-f5c416d0a404';
     $pane->panel = 'main';
     $pane->type = 'block';
     $pane->subtype = 'facetapi-9k0PbQn7YbXameeSFmsep1kBuJNmwPBh';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
@@ -339,10 +335,80 @@ function uclalib_search_default_page_manager_pages() {
     $display->content['new-cf471339-4187-4349-83cc-f5c416d0a404'] = $pane;
     $display->panels['main'][1] = 'new-cf471339-4187-4349-83cc-f5c416d0a404';
     $pane = new stdClass();
-    $pane->pid = 'new-251d59ee-b320-47d9-b8d3-c7d5f7c27388';
+    $pane->pid = 'new-8eeb1139-de7f-405e-8cd1-f3c87f2a8a29';
+    $pane->panel = 'main';
+    $pane->type = 'views';
+    $pane->subtype = 'browse_departments';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'default',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '8eeb1139-de7f-405e-8cd1-f3c87f2a8a29';
+    $display->content['new-8eeb1139-de7f-405e-8cd1-f3c87f2a8a29'] = $pane;
+    $display->panels['main'][2] = 'new-8eeb1139-de7f-405e-8cd1-f3c87f2a8a29';
+    $pane = new stdClass();
+    $pane->pid = 'new-4e83821e-b5c9-460e-9e9f-ad361df396ef';
+    $pane->panel = 'main';
+    $pane->type = 'views';
+    $pane->subtype = 'browse_libraries_departments';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 1,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'attachment_3',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '4e83821e-b5c9-460e-9e9f-ad361df396ef';
+    $display->content['new-4e83821e-b5c9-460e-9e9f-ad361df396ef'] = $pane;
+    $display->panels['main'][3] = 'new-4e83821e-b5c9-460e-9e9f-ad361df396ef';
+    $pane = new stdClass();
+    $pane->pid = 'new-ce891a91-594f-4247-96aa-a58a3e80058d';
     $pane->panel = 'main';
     $pane->type = 'views_panes';
-    $pane->subtype = 'staff_directory-staff_directory_pane';
+    $pane->subtype = 'browse_libraries_departments-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -352,178 +418,12 @@ function uclalib_search_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '251d59ee-b320-47d9-b8d3-c7d5f7c27388';
-    $display->content['new-251d59ee-b320-47d9-b8d3-c7d5f7c27388'] = $pane;
-    $display->panels['main'][2] = 'new-251d59ee-b320-47d9-b8d3-c7d5f7c27388';
-    $pane = new stdClass();
-    $pane->pid = 'new-ab677b28-aa68-4f1a-9904-ebdaeb094ca0';
-    $pane->panel = 'sidebar_left';
-    $pane->type = 'block';
-    $pane->subtype = 'views-b954de8eb7d4895146983e3ae88f258e';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'inherit_path' => 1,
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'sidebar-search',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'ab677b28-aa68-4f1a-9904-ebdaeb094ca0';
-    $display->content['new-ab677b28-aa68-4f1a-9904-ebdaeb094ca0'] = $pane;
-    $display->panels['sidebar_left'][0] = 'new-ab677b28-aa68-4f1a-9904-ebdaeb094ca0';
-    $pane = new stdClass();
-    $pane->pid = 'new-7c8429c3-c5d5-4c8f-b303-6eb4028c03d7';
-    $pane->panel = 'sidebar_left';
-    $pane->type = 'block';
-    $pane->subtype = 'facetapi-eHmiAu6inS0J9BZInG6i7Jz491bUt5jF';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Location',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'pane_collapsed' => 1,
-      ),
-      'style' => 'collapsible',
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'sidebar-options',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '7c8429c3-c5d5-4c8f-b303-6eb4028c03d7';
-    $display->content['new-7c8429c3-c5d5-4c8f-b303-6eb4028c03d7'] = $pane;
-    $display->panels['sidebar_left'][1] = 'new-7c8429c3-c5d5-4c8f-b303-6eb4028c03d7';
-    $pane = new stdClass();
-    $pane->pid = 'new-613a98a0-0005-4f74-abc2-01eb91ecb5ce';
-    $pane->panel = 'sidebar_left';
-    $pane->type = 'block';
-    $pane->subtype = 'facetapi-etN9FMi71niirmBeUcao1phAvnBLjCQW';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Department',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'pane_collapsed' => 1,
-      ),
-      'style' => 'collapsible',
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'sidebar-options',
-    );
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '613a98a0-0005-4f74-abc2-01eb91ecb5ce';
-    $display->content['new-613a98a0-0005-4f74-abc2-01eb91ecb5ce'] = $pane;
-    $display->panels['sidebar_left'][2] = 'new-613a98a0-0005-4f74-abc2-01eb91ecb5ce';
-    $pane = new stdClass();
-    $pane->pid = 'new-71193235-d727-44a3-aafe-464ac8eb7707';
-    $pane->panel = 'sidebar_left';
-    $pane->type = 'block';
-    $pane->subtype = 'facetapi-Y1SOi2G1SWX1CoJJcGmI4kExO4iaw9cV';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Subject Areas',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'pane_collapsed' => 1,
-      ),
-      'style' => 'collapsible',
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'sidebar-options',
-    );
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '71193235-d727-44a3-aafe-464ac8eb7707';
-    $display->content['new-71193235-d727-44a3-aafe-464ac8eb7707'] = $pane;
-    $display->panels['sidebar_left'][3] = 'new-71193235-d727-44a3-aafe-464ac8eb7707';
-    $pane = new stdClass();
-    $pane->pid = 'new-5eaadf49-3251-495b-824e-e0893a0fa2ea';
-    $pane->panel = 'sidebar_left';
-    $pane->type = 'block';
-    $pane->subtype = 'facetapi-K1N5DOgzt82fqucZ01oYceT169vcUjCE';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Area of Expertise',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'pane_collapsed' => 1,
-      ),
-      'style' => 'collapsible',
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'sidebar-options',
-    );
-    $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
-    $pane->uuid = '5eaadf49-3251-495b-824e-e0893a0fa2ea';
-    $display->content['new-5eaadf49-3251-495b-824e-e0893a0fa2ea'] = $pane;
-    $display->panels['sidebar_left'][4] = 'new-5eaadf49-3251-495b-824e-e0893a0fa2ea';
-    $pane = new stdClass();
-    $pane->pid = 'new-6f73b118-a04a-4a98-b850-55b8223e2acf';
-    $pane->panel = 'sidebar_left';
-    $pane->type = 'block';
-    $pane->subtype = 'facetapi-0QT9szhBtDxA28U3xxye4AmGG1H0HU6Y';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'Departmental Liaison',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'pane_collapsed' => 1,
-      ),
-      'style' => 'collapsible',
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'sidebar-options',
-    );
-    $pane->extras = array();
-    $pane->position = 5;
-    $pane->locks = array();
-    $pane->uuid = '6f73b118-a04a-4a98-b850-55b8223e2acf';
-    $display->content['new-6f73b118-a04a-4a98-b850-55b8223e2acf'] = $pane;
-    $display->panels['sidebar_left'][5] = 'new-6f73b118-a04a-4a98-b850-55b8223e2acf';
-  $display->hide_title = PANELS_TITLE_FIXED;
+    $pane->uuid = 'ce891a91-594f-4247-96aa-a58a3e80058d';
+    $display->content['new-ce891a91-594f-4247-96aa-a58a3e80058d'] = $pane;
+    $display->panels['main'][4] = 'new-ce891a91-594f-4247-96aa-a58a3e80058d';
+  $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
