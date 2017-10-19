@@ -77,7 +77,7 @@ function uclalib_taxonomies_taxonomy_default_vocabularies() {
       'name' => 'Staff Departments',
       'machine_name' => 'staff_departments',
       'description' => '',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
     ),
