@@ -1,8 +1,9 @@
 name = UCLALIB Architecture
 description = Global architecture configs for the UCLA Library site.
 core = 7.x
-version = 7.x-1.1-beta1
 package = UCLALIB
+version = 7.x-1.2-beta1
+project = uclalib_arch
 dependencies[] = better_formats
 dependencies[] = ckeditor
 dependencies[] = ctools
@@ -51,3 +52,5 @@ features[variable][] = date_format_uclalib_event_date_time
 features[variable][] = date_format_year
 features[variable][] = page_manager_node_view_disabled
 features[variable][] = page_manager_term_view_disabled
+features[variable][] = pathauto_taxonomy_term_staff_departments_pattern
+mtime = 1498677984
