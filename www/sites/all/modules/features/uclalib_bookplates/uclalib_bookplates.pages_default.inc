@@ -199,7 +199,7 @@ function uclalib_bookplates_default_page_manager_handlers() {
           'not' => FALSE,
         ),
       ),
-      'logic' => 'or',
+      'logic' => 'and',
     ),
   );
   $display = new panels_display();

@@ -68,9 +68,6 @@ function uclalib_bookplates_strongarm() {
       'teaser' => array(
         'custom_settings' => TRUE,
       ),
-      'hours_page' => array(
-        'custom_settings' => FALSE,
-      ),
       'event_listed_from_bean' => array(
         'custom_settings' => FALSE,
       ),
@@ -97,6 +94,15 @@ function uclalib_bookplates_strongarm() {
       ),
       'bookplates_landing_page' => array(
         'custom_settings' => TRUE,
+      ),
+      'todays_hours' => array(
+        'custom_settings' => FALSE,
+      ),
+      'hours_page' => array(
+        'custom_settings' => FALSE,
+      ),
+      'weeks_hours' => array(
+        'custom_settings' => FALSE,
       ),
     ),
     'extra_fields' => array(
