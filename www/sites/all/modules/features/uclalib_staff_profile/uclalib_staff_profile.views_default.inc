@@ -369,13 +369,13 @@ function uclalib_staff_profile_views_default_views() {
   $handler->display->display_options['fields']['delta']['label'] = '';
   $handler->display->display_options['fields']['delta']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['delta']['separator'] = '';
-  /* Field: Field: Biography */
+  /* Field: Field: Text Block */
   $handler->display->display_options['fields']['field_text_block']['id'] = 'field_text_block';
   $handler->display->display_options['fields']['field_text_block']['table'] = 'field_data_field_text_block';
   $handler->display->display_options['fields']['field_text_block']['field'] = 'field_text_block';
   $handler->display->display_options['fields']['field_text_block']['label'] = '';
   $handler->display->display_options['fields']['field_text_block']['element_label_colon'] = FALSE;
-  /* Field: Field: Biography */
+  /* Field: Field: Text Block */
   $handler->display->display_options['fields']['field_text_block_1']['id'] = 'field_text_block_1';
   $handler->display->display_options['fields']['field_text_block_1']['table'] = 'field_data_field_text_block';
   $handler->display->display_options['fields']['field_text_block_1']['field'] = 'field_text_block';
@@ -595,7 +595,7 @@ function uclalib_staff_profile_views_default_views() {
   $handler->display->display_options['fields']['field_staff_image_thumbnail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_staff_image_thumbnail']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_staff_image_thumbnail']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'medium',
     'image_link' => 'content',
   );
   /* Field: Staff Full Name (First Last) */
