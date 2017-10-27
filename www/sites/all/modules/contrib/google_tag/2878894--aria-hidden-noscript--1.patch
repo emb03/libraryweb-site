@@ -1,0 +1,13 @@
+diff --git a/includes/snippet.inc b/includes/snippet.inc
+index 828d48e..1061fea 100644
+--- a/includes/snippet.inc
++++ b/includes/snippet.inc
+@@ -81,7 +81,7 @@ function _google_tag_noscript_snippet() {
+ 
+   // Build noscript snippet.
+   $noscript = <<<EOS
+-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=$container_id$query"
++<noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=$container_id$query"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ EOS;
+   if ($compact) {

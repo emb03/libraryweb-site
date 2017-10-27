@@ -210,7 +210,21 @@
  *   );
  * @endcode
  */
-$databases = array();
+$databases = array (
+  'default' => 
+  array (
+    'default' => 
+    array (
+      'database' => 'uclalib',
+      'username' => 'UCLA_Library',
+      'password' => '',
+      'host' => 'localhost',
+      'port' => '',
+      'driver' => 'mysql',
+      'prefix' => '',
+    ),
+  ),
+);
 
 /**
  * Access control for update.php script.
@@ -242,7 +256,7 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = '';
+$drupal_hash_salt = 'kPuvDHYgj93RCySX6w1L71rGOiYn78oIsZ3jHPTNeF4';
 
 /**
  * Base URL (optional).
@@ -271,7 +285,7 @@ $drupal_hash_salt = '';
  *
  * To see what PHP settings are possible, including whether they can be set at
  * runtime (by using ini_set()), read the PHP documentation:
- * http://www.php.net/manual/en/ini.list.php
+ * http://www.php.net/manual/ini.list.php
  * See drupal_environment_initialize() in includes/bootstrap.inc for required
  * runtime settings and the .htaccess file for non-runtime settings. Settings
  * defined there should not be duplicated here so as to avoid conflict issues.
@@ -285,6 +299,7 @@ $drupal_hash_salt = '';
  */
 ini_set('session.gc_probability', 1);
 ini_set('session.gc_divisor', 100);
+ini_set('memory_limit', '1024M');
 
 /**
  * Set session lifetime (in seconds), i.e. the time from the user's last visit
@@ -292,14 +307,14 @@ ini_set('session.gc_divisor', 100);
  * a session is deleted, authenticated users are logged out, and the contents
  * of the user's $_SESSION variable is discarded.
  */
-ini_set('session.gc_maxlifetime', 86400);
+ini_set('session.gc_maxlifetime', 200000);
 
 /**
  * Set session cookie lifetime (in seconds), i.e. the time from the session is
  * created to the cookie expires, i.e. when the browser is expected to discard
  * the cookie. The value 0 means "until the browser is closed".
  */
-ini_set('session.cookie_lifetime', 86400);
+ini_set('session.cookie_lifetime', 2000000);
 
 /**
  * If you encounter a situation where users post a large amount of text, and
@@ -307,7 +322,7 @@ ini_set('session.cookie_lifetime', 86400);
  * output filter may not have sufficient memory to process it.  If you
  * experience this issue, you may wish to uncomment the following two lines
  * and increase the limits of these variables.  For more information, see
- * http://php.net/manual/en/pcre.configuration.php.
+ * http://php.net/manual/pcre.configuration.php.
  */
 # ini_set('pcre.backtrack_limit', 200000);
 # ini_set('pcre.recursion_limit', 200000);
@@ -551,38 +566,3 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  * Remove the leading hash signs to disable.
  */
 # $conf['allow_authorize_operations'] = FALSE;
-
-/**
- * Memcached configuration
- * All sites have memcache module installed, but dev machines may not have
- * relevant PHP PECL memcache/memcached extension.
-*  Memcache info is in site-specific settings files.
- */
-
-// Cache forms in drupal database, not memcache; see
-// http://drupal.org/node/1214536#comment-4748042
-// Fix for UCLA issue https://jira.library.ucla.edu/browse/DRUP-27
-$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
-
-$env_include = array(
-  'uclalib.dev.gobsp.com' => 'dev.settings.php',
-  'uclalib.stage.gobsp.com' => 'stage.settings.php',
-  'uclalib.local' => 'local.settings.php',
-  // UCLA domains and settings: top-level (varnish) and individual webheads
-  'www-test.library.ucla.edu' => 'test.settings.php',
-  'www-test1.library.ucla.edu' => 'test.settings.php',
-  'www-test2.library.ucla.edu' => 'test.settings.php',
-  'www-stage.library.ucla.edu' => 'stage.settings.php',
-  'www-stage1.library.ucla.edu' => 'stage.settings.php',
-  'www-stage2.library.ucla.edu' => 'stage.settings.php',
-  'www.library.ucla.edu' => 'prod.settings.php',
-  'library.ucla.edu' => 'prod.settings.php',
-  'www-prod1.library.ucla.edu' => 'prod.settings.php',
-  'www-prod2.library.ucla.edu' => 'prod.settings.php',
-  'www-prod3.library.ucla.edu' => 'prod.settings.php',
-  'uclalib-www.docksal' => 'uclalib-www.docksal.settings.php',
-);
-
-if (isset($env_include[$_SERVER['HTTP_HOST']])) {
-  require_once($env_include[$_SERVER['HTTP_HOST']]);
-}
