@@ -99,13 +99,13 @@ function uclalib_navigation_ctools_content_types_uclalib_nav_render($subtype, $c
   // This is a sub-section or below, the title should link to the parent.
   if (count($menu_trail) > 2) {
     if ($has_children) {
-      $block->title = l(t('At a Glance'), $current['nolink']);
+      $block->title = l(t('At a Glance'), $current['link_path']);
     } else {
-      $block->title = l(t('At a Glance'), $parent['nolink']);
+      unset($block->title);
     }
   }
   else {
-    $block->title = l(t('At a Glance'), $current['nolink']);
+    $block->title = l(t('At a Glance'), $current['link_path']);
   }
 
 
