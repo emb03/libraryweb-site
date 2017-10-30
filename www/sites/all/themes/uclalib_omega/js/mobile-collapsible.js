@@ -41,9 +41,11 @@
     });
     mc.checkBreakpoint( mc.media );
 
-    $(mc.element).find(mc.options.titleSelector).on('click', function(e) {
-      e.preventDefault();
-      mc.toggle();
+    $(mc.element).find(mc.options.titleSelector).on('click', function (e) {
+      if (mc.media.matches) {
+        e.preventDefault();
+        mc.toggle();
+      }
     });
     $el.addClass('mobile-collapsible-processed');
   }
