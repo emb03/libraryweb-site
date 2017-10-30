@@ -101,7 +101,7 @@ function uclalib_navigation_ctools_content_types_uclalib_nav_render($subtype, $c
     if ($has_children) {
       $block->title = l(t('At a Glance'), $current['link_path']);
     } else {
-      $block->title = l(t('At a Glance'), $parent['link_path']);
+      unset($block->title);
     }
   }
   else {
