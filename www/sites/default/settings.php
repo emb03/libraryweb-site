@@ -210,21 +210,6 @@
  *   );
  * @endcode
  */
-$databases = array (
-  'default' => 
-  array (
-    'default' => 
-    array (
-      'database' => 'uclalib',
-      'username' => 'UCLA_Library',
-      'password' => '',
-      'host' => 'localhost',
-      'port' => '',
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
-);
 
 /**
  * Access control for update.php script.
@@ -256,7 +241,6 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = 'kPuvDHYgj93RCySX6w1L71rGOiYn78oIsZ3jHPTNeF4';
 
 /**
  * Base URL (optional).
@@ -299,7 +283,6 @@ $drupal_hash_salt = 'kPuvDHYgj93RCySX6w1L71rGOiYn78oIsZ3jHPTNeF4';
  */
 ini_set('session.gc_probability', 1);
 ini_set('session.gc_divisor', 100);
-ini_set('memory_limit', '1024M');
 
 /**
  * Set session lifetime (in seconds), i.e. the time from the user's last visit
