@@ -27,6 +27,10 @@ Facetapi_bonus - add plugin filter to hide facet count.
 https://drupal.org/node/2266717
 https://drupal.org/files/issues/facetapi-bonus-hide-count-2266717-1.patch
 
+Google Tag Manager - Add aria-hidden state to GTM noscript snippet
+https://www.drupal.org/node/2878894
+https://www.drupal.org/files/issues/2878894--aria-hidden-noscript--1.patch
+
 Media - Blank WYSWIG with existing multiple Media content
 https://www.drupal.org/node/2317519
 https://www.drupal.org/files/issues/blank_wyswig_with-2317519-12.patch
