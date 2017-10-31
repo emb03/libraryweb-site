@@ -242,7 +242,7 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = '';		
+$drupal_hash_salt = '';
 
 /**
  * Base URL (optional).
@@ -581,7 +581,8 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
   'www-prod1.library.ucla.edu' => 'prod.settings.php',		
   'www-prod2.library.ucla.edu' => 'prod.settings.php',		
   'www-prod3.library.ucla.edu' => 'prod.settings.php',		
- );		
+ );
+
  if (isset($env_include[$_SERVER['HTTP_HOST']])) {		
   require_once($env_include[$_SERVER['HTTP_HOST']]);		
  }
