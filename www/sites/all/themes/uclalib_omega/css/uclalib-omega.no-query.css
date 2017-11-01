@@ -140,7 +140,7 @@ table[border="1"] td {
 html {
   font-family: "ProximaNova";
   font-size: 0.875em;
-  color: #666666;
+  color: #666;
 }
 
 a {
@@ -173,7 +173,7 @@ a:hover, a:focus {
 
 .l-colophon-wrapper {
   background: #ececec;
-  color: #333333;
+  color: #333;
   padding: 50px 0;
 }
 
@@ -337,7 +337,7 @@ a:hover, a:focus {
   .l-header .menu a {
     display: block;
     width: 100%;
-    color: #333333;
+    color: #333;
     font-weight: normal;
     border-right: 1px solid white;
     padding: 10px;
@@ -535,7 +535,7 @@ a[href="#main-content"] {
   }
   .l-navigation ul.primary-links > li a,
   .l-navigation ul.primary-links > li a:visited {
-    color: #333333;
+    color: #333;
   }
   .l-navigation ul.primary-links > li.active-trail, .l-navigation ul.primary-links > li.active-trail:hover {
     background: #eff3f4;
@@ -622,7 +622,7 @@ a[href="#main-content"] {
     line-height: 1.2em;
     text-align: center;
     border-top: 1px solid white;
-    color: #333333;
+    color: #333;
   }
   .l-navigation-wrapper .pane-menu-menu-colophon-first {
     border-right: 1px solid white;
@@ -680,7 +680,7 @@ a[href="#main-content"] {
     display: block;
     width: 100%;
     background: #fdb930;
-    color: #333333;
+    color: #333;
     padding: 10px;
   }
   .primary-links a.active {
@@ -739,7 +739,7 @@ a[href="#main-content"] {
 }
 .bean-showcase .field--name-field-showcase-caption {
   font-size: 14px;
-  color: #666666;
+  color: #666;
 }
 .bean-showcase img {
   display: block;
@@ -1311,7 +1311,7 @@ td.grid-3:nth-last-child(-n+3) {
   margin: 2px !important;
 }
 .sidebar-search .form-submit {
-  background: white url(../images/icon-search.png) 50% 55% no-repeat;
+  background: #fff url(../images/icon-search.png) 50% 55% no-repeat;
   width: 24px;
   text-indent: -99999em;
   border: none;
@@ -1810,7 +1810,7 @@ td.grid-3:nth-last-child(-n+3) {
  * Use the site-wide content color in jquery ui widgets.
  */
 .ui-widget-content {
-  color: #666666;
+  color: #666;
 }
 
 .ui-widget-content a {
@@ -1926,7 +1926,7 @@ td.grid-3:nth-last-child(-n+3) {
 }
 
 .menu-icon__line {
-  background: #333333;
+  background: #333;
   border-radius: 1px;
   position: absolute;
   margin-top: 12px;
@@ -2163,7 +2163,7 @@ a.more-link,
   padding-right: 4.6875em;
 }
 .bean-news-and-events-bean .pane-title a {
-  color: #333333;
+  color: #333;
   font-size: 1.625em;
   text-decoration: none;
 }
@@ -2536,7 +2536,7 @@ a.more-link,
 }
 
 .uclalib-nav-breadcrumb, .uclalib-nav-breadcrumb a {
-  color: #666666;
+  color: #666;
 }
 
 .uclalib-nav-breadcrumb + h1 {
@@ -2586,7 +2586,7 @@ a.more-link,
   margin: 6px 0 3px;
 }
 .pane-daterangepicker .date-input {
-  color: #666666;
+  color: #666;
   font-family: "ProximaNova";
   font-size: 1.143em;
   padding: 10px 23px 8px 1px;
@@ -2815,7 +2815,7 @@ a.give_now_sprites {
     padding: 0 .4em;
   }
   .pane-location-contact--inline a {
-    color: #666666;
+    color: #666;
     transition: color .3s ease-out;
   }
   .pane-location-contact--inline a:hover, .pane-location-contact--inline a:active, .pane-location-contact--inline a:focus {
@@ -3380,7 +3380,7 @@ td.title {
   -webkit-appearance: none;
   margin: 0;
   padding: .5em .6em .4em;
-  background: white url(../images/icon-search.png) no-repeat 50% 50%;
+  background: #fff url(../images/icon-search.png) no-repeat 50% 50%;
   text-decoration: none;
   font-weight: 100;
   text-indent: -999em;
@@ -3849,7 +3849,7 @@ td.title {
   -moz-appearance: none;
   -webkit-appearance: none;
   padding: .5em .6em 0;
-  background: white url(../images/icon-search.png) no-repeat 50% 50%;
+  background: #fff url(../images/icon-search.png) no-repeat 50% 50%;
   text-decoration: none;
   font-weight: 100;
   text-indent: -999em;
@@ -3886,6 +3886,10 @@ td.title {
 }
 .pane-ucla-tab-search-ucla-tab-search-tabs .fieldset-wrapper input#edit-books-books-search.form-submit {
   margin-top: -47px;
+}
+
+.panel-pane.pane-uclalib-nav.mobile-collapsible.mobile-collapsible-processed.mobile-collapsible--blue > h2 > a {
+  cursor: default;
 }
 
 @media (max-width: 767px) {
@@ -3997,7 +4001,7 @@ td.title {
     border-bottom: 1px solid #d7d9da;
     text-align: right;
     padding: 0.4em 0;
-    color: #666666;
+    color: #666;
   }
   .responsive-data-table td:before {
     content: attr(data-label);

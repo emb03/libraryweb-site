@@ -1,3 +1,7 @@
 .l-region--sidebar-left .pane-uclalib-nav {
   @extend .sidebar-tier-1;
 }
+
+.panel-pane.pane-uclalib-nav.mobile-collapsible.mobile-collapsible-processed.mobile-collapsible--blue > h2 > a {
+  cursor: default;
+}
