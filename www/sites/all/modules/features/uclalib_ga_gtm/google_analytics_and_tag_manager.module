@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Google Analytics and Tag Manager feature.
+ */
+
+include_once 'google_analytics_and_tag_manager.features.inc';
