@@ -691,7 +691,6 @@ function uclalib_search_views_default_views() {
 
   /* Display: Staff DIrectory */
   $handler = $view->new_display('panel_pane', 'Staff DIrectory', 'staff_directory_pane');
-  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Content: Staff Image Thumbnail */
@@ -845,8 +844,8 @@ function uclalib_search_views_default_views() {
   );
   $handler->display->display_options['inherit_panels_path'] = '1';
 
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1_v1');
+  /* Display: Search the Staff Directory Content pane */
+  $handler = $view->new_display('panel_pane', 'Search the Staff Directory Content pane', 'panel_pane_1_v1');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Indexed Content: Staff Departments */
   $handler->display->display_options['arguments']['field_staff_departments']['id'] = 'field_staff_departments';
@@ -879,13 +878,82 @@ function uclalib_search_views_default_views() {
   $handler->display->display_options['filters']['search_api_views_fulltext']['group'] = 1;
   $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Fulltext search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search the Staff Directory';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
+    4 => 0,
+    8 => 0,
+    5 => 0,
+    9 => 0,
+    10 => 0,
     3 => 0,
+    6 => 0,
+    7 => 0,
+    11 => 0,
+    12 => 0,
+  );
+  $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
+    'field_staff_email' => 'field_staff_email',
+    'field_staff_first_name' => 'field_staff_first_name',
+    'field_staff_job_title' => 'field_staff_job_title',
+    'field_staff_last_name' => 'field_staff_last_name',
+    'field_staff_phone' => 'field_staff_phone',
+  );
+  /* Filter criterion: Indexed Content: Staff Departments */
+  $handler->display->display_options['filters']['field_staff_departments']['id'] = 'field_staff_departments';
+  $handler->display->display_options['filters']['field_staff_departments']['table'] = 'search_api_index_site_general_search';
+  $handler->display->display_options['filters']['field_staff_departments']['field'] = 'field_staff_departments';
+  $handler->display->display_options['filters']['field_staff_departments']['value'] = array(
+    116 => '116',
+    71 => '71',
+    111 => '111',
+    124 => '124',
+    122 => '122',
+    951 => '951',
+    127 => '127',
+    985 => '985',
+    984 => '984',
+    109 => '109',
+    72 => '72',
+    1051 => '1051',
+    387 => '387',
+    110 => '110',
+    1073 => '1073',
+    388 => '388',
+    117 => '117',
+    961 => '961',
+    112 => '112',
+    115 => '115',
+    395 => '395',
+    130 => '130',
+    114 => '114',
+    916 => '916',
+    923 => '923',
+    128 => '128',
+    125 => '125',
+    129 => '129',
+    119 => '119',
+    919 => '919',
+    120 => '120',
+    126 => '126',
+    1068 => '1068',
+    121 => '121',
+    123 => '123',
+    1050 => '1050',
+    118 => '118',
+  );
+  $handler->display->display_options['argument_input'] = array(
+    'field_staff_departments' => array(
+      'type' => 'none',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indexed Content: Staff Departments',
+    ),
   );
   $export['staff_directory'] = $view;
 

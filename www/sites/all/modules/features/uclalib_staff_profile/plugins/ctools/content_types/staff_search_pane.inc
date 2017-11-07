@@ -29,7 +29,7 @@ function uclalib_staff_ctools_content_types_edit_form($form, &$form_state) {
 function uclalib_staff_ctools_content_types_render($subtype, $conf, $args, $contexts) {
   $block = new stdClass();
   $block->content['url'] = url('staff');
-  $block->content['placeholder'] = t('search');
+  $block->content['placeholder'] = t('Search by name, title, department, email, or phone number');
   $block->content['submit'] = t('Go');
   $block->content['#theme'] = 'uclalib_staff_profile_staff_search_pane';
   $block->title = t('Search the Staff Directory');
