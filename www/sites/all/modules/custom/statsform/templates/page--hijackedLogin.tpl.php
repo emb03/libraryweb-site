@@ -3,7 +3,7 @@
     <head>
 
       <meta charset="utf-8">
-      <title>JS Bin</title>
+      <title>JS Binn</title>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js" charset="utf-8"></script>
       <script type="text/javascript" src="http://amsul.ca/pickadate.js/vendor/pickadate/lib/picker.js"></script>
@@ -13,26 +13,15 @@
 <!--
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
 -->
-      <script type="text/javascript" src="/<?php print( $page['sf_path'] ); ?>/templates/accordion.js"></script>
       <script type="text/javascript" src="/<?php print( $page['sf_path'] ); ?>/templates/custom.tap.js"></script>
-      <script type="text/javascript" src="/<?php print( $page['sf_path'] ); ?>/templates/jquery-taphold.js"></script>
-<!--
-      <script type="text/javascript" src="/<?php print( $page['sf_path'] ); ?>/templates/custom.accordion.js"></script>
--->
-<!--
-      <script type="text/javascript" src="/<?php print( $page['sf_path'] ); ?>/templates/jquery.touchSwipe.min.js"></script>
--->
 
       <link rel="stylesheet" type="text/css" href="http://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.css">
       <link rel="stylesheet" type="text/css" href="http://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.date.css">
       <link rel="stylesheet" type="text/css" href="http://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.time.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.css">
-<!--
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.css">
--->
-      <link rel="stylesheet" type="text/css" src="/<?php print( $page['sf_path'] ); ?>/templates/custom.tap.css">
 
-      <link rel="stylesheet" type="text/css" src="/<?php print( $page['sf_path'] ); ?>/templates/custom.accordion.css">
+      <link rel="stylesheet" type="text/css" src="/<?php print( $page['sf_path'] ); ?>/templates/custom.tap.css">
 
       <link rel="stylesheet" type="text/css" href="/<?php print( $page['sf_path'] ); ?>/templates/responsive-full-background-image.css">
     
@@ -40,6 +29,26 @@
         $(window).load(function(){
           var bcolor = "show huge ui blue button";
 
+          $('#inputTime2').pickatime({
+            editable: false,
+            interval: 1
+          });
+
+          $('#inputTime').pickatime({
+            format: 'h:i a',
+            formatSubmit: 'HH:i',
+            hiddenName: true,
+            editable: false,
+            interval: 1
+          });
+
+          $('#inputDatetime').pickadate({
+            format: 'mm/dd/yy',
+            formatSubmit: 'dd-yyyy-mm',
+            hiddenName: true,
+            selectYears: 2,
+            selectMonths: true
+          });
         });
       </script>
 
@@ -142,13 +151,6 @@
           font-family: Palatino;
           font-size: 18px;
         }
-        .huge.loginText {
-          margin: 4px;
-          padding-bottom: 0px;
-          font-family: Palatino;
-          font-size: 10px;
-          font-weight: bold;
-        }
         .show.ui.positive.button.label {
           margin: 0px;
           padding-left: 34px;
@@ -212,11 +214,6 @@
               And Buttons
         --------------------*/
 
-        .ui.huge.fitted.checkbox {
-          position: relative;
-          vertical-align: middle;
-        }
-
         .ui.buttons .and {
           position: relative;
           width: 0.3em;
@@ -242,7 +239,7 @@
           font-style: normal;
           font-weight: bold;
           box-shadow: 0px 0px 0px 1px transparent inset;
-          z-index: 4444;
+          z-index: 8888;
         }
 
         .ui.buttons .and[data-text]:before {
@@ -265,66 +262,27 @@
           border: 1px;
           margin-bottom: 15px;
         }
-        .ui.input.right.cc1.icon {
-          background-color: rgba(255, 255, 255, 0.0);
-          border-color: black;
-          border-radius: 8px;
-          border: 1px;
-          top: -50%;
-          left: 20%;
-        }
-        .ui.input.right.cc2.icon {
-          background-color: rgba(255, 255, 255, 0.0);
-          border-color: black;
-          border-radius: 8px;
-          border: 1px;
-          top: -50%;
-          left: 22%;
-        }
         .ui.message {
           background-color: rgba(255, 255, 255, 0.0);
           border-style: none;
           border-style: hidden;
           border-radius: 8px;
         }
-        .ui.sfWhite.button {
-          background-color: rgba(255, 255, 255, 1.0);
-        }
-        .ui.combo.sfWhite.button {
-          background-color: rgba(244, 244, 244, 1.0);
-        }
         .ui.buttons {
-          background-color: rgba(255, 255, 255, 0.7);
+          background-color: rgba(255, 255, 255, 1.0);
+          border-color: black;
           border-radius: 8px;
-        }
-        .ui.tb.buttons {
-          background-color: rgba(255, 255, 255, 0.01);
-          border-radius: 8px;
+          border: 1px;
         }
         .ui.button:hover {
           font-weight: bold;
-          font-color: #ffffff;
+          color: rgba(255, 255, 255, 0.8);
+          font-color: #1122ff;
         }
-        .ui.tabular.menu {
-          border-style: hidden;
-        }
-        #grid1 {
-          border: 2px solid rgba(242, 242, 242, 0.3);
-        }
-        #grid2 {
-border: 2px solid rgba(255, 255, 255, 0.9);
-border-radius: 0px;
-        }
-        #grid3 {
-font-weight: lighter;
-        }
-
-.dimmable.dimmed > .dimmer {
-  overflow: auto !important;
-}
       </style>
 
     </head>
+
     <body>
 
       <!-- MODALS START --------------------------------------------------------------------------------------- -->
@@ -2104,6 +2062,7 @@ font-weight: lighter;
       </div>
       <!-- MODAL #19 - Individual Login - END -->
 
+
       <!-- MODAL #20 - Group Login -->
       <!-- MODAL #20 - Group Login -->
       <!-- MODAL #20 - Group Login -->
@@ -2177,47 +2136,6 @@ font-weight: lighter;
 
       </div>
       <!-- MODAL #21 - logoutModal -->
-
-      <!-- MODAL #21b - reLoginHereModal -->
-      <!-- MODAL #21b - reLoginHereModal -->
-      <!-- MODAL #21b - reLoginHereModal -->
-      <div class="ui united large reLoginHereModal modal" id="reLoginHereModal">
-
-        <div class="header">
-          <center>Data saved?<br>Tap on "cancel" to go back and save your data.</center>
-        </div>
-
-        <div class="content">
-          <div id="libraryChoice">
-            <div class="ui one centered stackable link cards" name="usersGroups" id="albums1">
-      
-              <div class="actions">
-                <div class="ui centered approve button" data-value="reLoginHere">
-                  <div class="ui card">
-                    <div class="blurring dimmable image">
-                      <div class="ui center">
-                        <i class="massive power icon"></i>
-                      </div>
-                      <div class="ui fluid large label">
-                        <center>Re-Login</center>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-            </div>
-          </div>
-        </div>
-
-        <div class="actions">
-          <div class="ui black deny button">
-            Cancel
-          </div>
-        </div>
-
-      </div>
-      <!-- MODAL #21b - reLoginHereModal -->
 
       <!-- MODAL #22 - changeLoginModal  -->
       <!-- MODAL #22 - changeLoginModal  -->
@@ -2636,19 +2554,19 @@ font-weight: lighter;
       <!-- MODALS END --------------------------------------------------------------------------------------- -->
 
 
-      <!-- HEADER -->
-      <!-- HEADER -->
-      <!-- HEADER -->
-
-      <!-- SPACER -->
+      <!-- HEADER -------------------------------------------------------------------------------------------------------------------------------------------------- -->
+      <!-- HEADER -------------------------------------------------------------------------------------------------------------------------------------------------- -->
+      <!-- HEADER -------------------------------------------------------------------------------------------------------------------------------------------------- -->
       <div class="ui stackable grid container">
         <div class="row">
           <div class="column">&nbsp;
           </div>
         </div>
+        <div class="row">
+          <div class="column">&nbsp;
+          </div>
+        </div>
       </div>
-
-
 
       <!-- GRID CONTAINER 0 -->
       <div class="ui main stackable middle aligned grid container">
@@ -2751,19 +2669,26 @@ font-weight: lighter;
       </div>
       <!-- GRID CONTAINER 1 -->
 
-
       <!-- GRID CONTAINER 2 -->
       <div class="ui main stackable grid container">
 
         <!-- BOTTOM ROW - BUTTONS -->
         <div class="three column row">
 
-
-
-
-
           <!-- OUTER LEFT COLUMN -->
           <div class="ui column">
+
+            <!-- TOP -->
+            <div class="ui icon message">
+              <i class="map pin icon"></i>
+              <div class="content">
+                <div class="header" align="left">
+                  1. Set Unit <br>
+                  2. Set Service Point
+                </div>
+              </div>
+            </div>
+            <!-- TOP -->
 
             <!-- BOTTOM -->
             <div class="content">
@@ -2787,12 +2712,20 @@ font-weight: lighter;
           </div>
           <!-- OUTER LEFT COLUMN -->
 
-
-
-
-
           <!-- OUTER MIDDLE COLUMN -->
           <div class="column">
+
+            <!-- TOP -->
+            <div class="ui icon message">
+              <i class="users icon"></i>
+              <div class="content">
+                <div class="header" align="left">
+                  Choose Login:<br>
+                  Single or Group
+                </div>
+              </div>
+            </div>
+            <!-- TOP -->
 
             <!-- BOTTOM -->
             <div class="column">
@@ -2815,31 +2748,27 @@ font-weight: lighter;
           </div>
           <!-- OUTER MIDDLE COLUMN -->
 
-
-
-
-
           <!-- OUTER RIGHT COLUMN -->
-          <div class="ui column">
+          <div class="column">
+
+            <!-- TOP -->
+            <div class="ui icon message">
+              <i class="lock icon"></i>
+              <div class="content">
+                <div class="header">
+                  Go to the single or<br>
+                  group login page<br>
+                </div>
+              </div>
+            </div>
+            <!-- TOP -->
 
             <!-- BOTTOM -->
             <div class="content">
               <div class="ui stackable grid container">
                 <div class="one column row">
-                  <div class="ui center aligned column">
-
-                    <div class="ui massive teal buttons">
-                      <div class="ui fluid button"><?php print( $page['sfUserName'] ); ?></div>
-                      <div class="ui floating logout dropdown icon button">
-                        <i class="dropdown icon"></i>
-                        <div class="menu">
-                          <div class="item disabled" data-value="darrowco" id="userName" name="userName"><i class="user icon"></i><?php print( $page['sfUserFirst'] ); ?> <?php print( $page['sfUserLast'] ); ?></div>
-                          <div class="item" data-value="1" id="reLoginHere"><i class="edit icon"></i> Change User (logs out curent user)</div>
-                          <div class="item" data-value="1" id="logout"><i class="edit icon"></i> Logout</div>
-                        </div>
-                      </div>
-                    </div>
-
+                  <div class="ui massive fluid buttons">
+                    <button class="show ui basic green button" id="submit0" name="submit0">Go to Login</button>
                   </div>
                 </div>
               </div>
@@ -2849,17 +2778,16 @@ font-weight: lighter;
           </div>
           <!-- OUTER RIGHT COLUMN -->
 
-        </div> <!-- 16 column row -->
-      </div> <!-- grid container -->
-      <!-- HEADER CONTENT END -->
+        </div>
+        <!-- BOTTOM ROW - BUTTONS -->
 
-      <!-- HEADER END -->
-      <!-- HEADER END -->
-      <!-- HEADER END -->
+      </div>
+      <!-- GRID CONTAINER 2 -->
+      <!-- HEADER -------------------------------------------------------------------------------------------------------------------------------------------------- -->
+      <!-- HEADER -------------------------------------------------------------------------------------------------------------------------------------------------- -->
+      <!-- HEADER -------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
       <!-- these are set here on the FORM page and not set on the other pages -->
-      <div id="testrr" data-value="<?php print( $page['testrr'] ); ?>"></div>
-      <div id="sfResearchTabValue" data-value="<?php print( $page['sfResearchTabValue'] ); ?>"></div>
       <div id="sfToken" data-value="<?php print( $page['variables'] ); ?>"></div>
       <div id="sfSession" data-value="<?php print( $page['sfSession'] ); ?>"></div>
       <div id="sfUserName" data-value="<?php print( $page['sfUserName'] ); ?>"></div>
@@ -2871,765 +2799,8 @@ font-weight: lighter;
       <div id="sfServicePoint" data-value="<?php print( $page['sfServicePoint'] ); ?>"></div>
       <div id="sfServicePointID" data-value="<?php print( $page['sfServicePointID'] ); ?>"></div>
       <div id="sfServicePointColor" data-value="<?php print( $page['sfServicePointColor'] ); ?>"></div>
-      <div id="sfUnitIndividualID" data-value="<?php print( $page['sfUnitIndividualID'] ); ?>"></div>
-      <div id="sfUnitIndividualLabel" data-value="<?php print( $page['sfUnitIndividualLabel'] ); ?>"></div>
-      <div id="sfUnitIndividualColor" data-value="<?php print( $page['sfUnitIndividualColor'] ); ?>"></div>
-      <div id="sfUnitGroupLabel" data-value="<?php print( $page['sfUnitGroupLabel'] ); ?>"></div>
-      <div id="sfUnitGroupID" data-value="<?php print( $page['sfUnitGroupID'] ); ?>"></div>
-      <div id="sfUnitGroupColor" data-value="<?php print( $page['sfUnitGroupColor'] ); ?>"></div>
       <div id="sfPath" data-value="<?php print( $page['sf_path'] ); ?>"></div>
       <div id="sf_depts" data-value="<?php print( $page['sf_depts'] ); ?>"></div>
-
-
-
-<!--
-document.getElementById('unitGroup').value = sfGroupVals[1];
-document.getElementById('sfUnitGroupID').value
--->
-
-      <!-- BODY -->
-      <!-- BODY -->
-      <!-- BODY -->
-
-      <div class="ui stackable grid container">
-        <div class="row">
-          <div class="column">&nbsp;
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-      <!-------------------------- TAB 1 - Quick Questions -------------------------->
-      <!-------------------------- TAB 1 - Quick Questions -------------------------->
-      <!-------------------------- TAB 1 - Quick Questions -------------------------->
-      <div class="ui bottom attached active tab" id="tabQuickQuestions" data-tab="quickQuestionsTab">
-
-        <!-- PAGE TOP CONTENT -->
-        <div class="ui stackable bottom aligned bottom aligned grid container">
-          <div class="ui top attached tabular menu" id="tabTabular">
-            <a class="active item" id="tabQuick" data-tab="quickQuestionsTab">Quick Questions</a>
-            <a class="active grey item" id="tabResearch" data-tab="researchAssistance">Research Assistance</a>
-            <a class="active disabled grey item" data-tab="reportsTabOFF">Reports</a>
-
-
-
-
-          </div>
-
-
-        </div>
-        <!-- PAGE TOP CONTENT - END -->
-
-        <!-- MAIN PAGE CONTENT - Quick Questions -->
-        <div id="grid1" class="ui main stackable grid container"> <!-- Outer Grid1 -->
-          <div class="sixteen column row">
-
-            <div class="ui sixteen wide column"> <!-- 16 wide column1 -->
-              <div class="content">
-                <div class="active content">
-
-                  <div class="ui equal width aligned grid"> <!-- Inner Grid1 -->
-
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card withCount">
-                        <div class="content"> 
-                          <div class="ui inverted segment left floated" id="directions">
-
-                            <div class="ui tiny inverted statistics left floated"> 
-                              <div class="statistic">
-                                <div class="value" id="directional">0</div> 
-                                <div class="label"> Count </div>
-                              </div>
-                            </div>
-
-                          </div>
-                          <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/directions.png">
-                          <div class="ui left aligned">
-                            <div class="header"> Directions </div> 
-                            <div class="meta"> Location or directions provided. E.G. rooms, events, contact info, etc. </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card withCount">
-                        <div class="content">
-                          <div class="ui inverted segment left floated" id="lookup">
-                            <div class="ui tiny inverted statistics left floated"> 
-                              <div class="statistic">
-                                <div class="value" id="lookUp">0</div> 
-                                <div class="label"> Count </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="ui left aligned">
-                            <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/lookup.png"> 
-                            <div class="header"> Look Up Known Item </div>
-                          </div>
-                          <div class="meta"> Find call numbers, books, articles, locations, etc. for known items requested by patron. </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card withCount">
-                        <div class="content">
-                          <div class="ui inverted segment left floated" id="policy">
-                            <div class="ui tiny inverted statistics left floated"> 
-                              <div class="statistic">
-                                <div class="value" id="policyVal">0</div> 
-                                <div class="label"> Count </div>
-                              </div>
-                            </div>
-                          </div>
-                          <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/policy.png"> 
-                          <div class="ui left aligned">
-                            <div class="header"> Policy & Operations</div>
-                            <div class="meta"> Hours, access privileges, borrowing, reservations, other policies. </div>
-                          </div>
-                        </div> 
-                      </div>
-                    </div>
-
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card withCount">
-                        <div class="content">
-                          <div class="ui inverted segment left floated" id="research">
-                            <div class="ui tiny inverted statistics left floated"> 
-                              <div class="statistic">
-                                <div class="value" id="referralCount">0</div> 
-                                <div class="label"> Count </div>
-                              </div>
-                            </div>
-                          </div>
-                          <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/research.png">
-                          <div class="ui left aligned">
-                            <div class="header"> Referral </div>
-                            <div class="meta"> Referral to advance research support, library location, campus support, etc. </div>
-                          </div>
-                        </div> 
-                      </div>
-                    </div>
-
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card withCount">
-                        <div class="content">
-                          <div class="ui inverted segment left floated" id="technical">
-                            <div class="ui tiny inverted statistics left floated"> 
-                              <div class="statistic">
-                                <div class="value" id="technicalVal">0</div> 
-                                <div class="label"> Count </div>
-                              </div>
-                            </div>
-                          </div>
-                          <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/technical.png"> 
-                          <div class="ui left aligned">
-                            <div class="header"> Technical Assistance </div>
-                            <div class="meta"> Help with printers, computers, software, scanners, etc. </div>
-                          </div>
-                        </div> 
-                      </div>
-                    </div>
-
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card ">
-                        <button style = "height: 120px" class=" ui button" id="submitQuickQuestions"> <h1 style = "font-size:70px"> SUBMIT </h1> </button>
-                      </div>
-                    </div>
-
-                  </div> <!-- Inner Grid 1 - END -->
-
-                </div>
-              </div>
-            </div> <!-- 16 wide column 1 - END -->
-
-          </div>
-        </div> <!-- Outer Grid 1 - END -->
-        <!-- MAIN PAGE CONTENT - Quick Questions  - END -->
-
-      </div>
-      <!-------------------------- TAB 1 - Quick Questions - END -------------------------->
-
-
-      <!-------------------------- TAB 2 - Research Assistance -------------------------->
-      <!-------------------------- TAB 2 - Research Assistance -------------------------->
-      <!-------------------------- TAB 2 - Research Assistance -------------------------->
-      <div class="ui bottom attached tab" id="tabResearchAssistance" data-tab="researchAssistance">
-
-        <!-- PAGE TOP CONTENT -->
-        <div class="ui stackable bottom aligned bottom aligned grid container">
-          <div class="ui top attached tabular menu">
-            <a class="active grey item" data-tab="quickQuestionsTab">Quick Questions</a>
-            <a class="active item" data-tab="researchAssistance">Research Assistance</a>
-            <a class="active disabled grey item" data-tab="reportsTabOFF">Reports</a>
-          </div>
-        </div>
-        <!-- PAGE TOP CONTENT - END -->
-
-
-        <!-- MAIN PAGE CONTENT - Research Assistance -->
-        <div class="ui main stackable grid container"> <!-- grid container1 -->
-          <div class="three column row"> <!-- three column row -->
-            <div class="ui main stackable center aligned middle aligned grid container"> <!-- grid container2 -->
-              <div class="sixteen column row"> <!-- 16 column row -->
-
-                <div class="ui eight wide floated column">
-                    <div class="content">
-
-                      <div class="ui huge fluid input">
-                        <div class="ui big label">
-                          Question <br>/ Topic
-                        </div>
-                        <input id="questionTopic" placeholder="Enter here..." type="text">
-                      </div>
-
-                    </div>
-                </div>
-
-                <div class="ui four wide column">
-                  <div class="content">
-                    <div class="ui left aligned">
-                      <div id="patronStatus" name="status" class="ui fluid selection status dropdown">
-                        <input id="patronStatusInput" name="patronStatusInput" value="default" type="hidden">
-                        <i class="dropdown icon"></i>
-                        <div class="text">Patron Status</div>
-                        <div class="menu">
-                          <div class="item" data-value="7">Patron Status</div>
-                          <div class="item" data-value="7">Unknown</div>
-                          <div class="item" data-value="1">UCLA undergrad</div>
-                          <div class="item" data-value="2">UCLA graduate student</div>
-                          <div class="item" data-value="3">UCLA faculty</div>
-                          <div class="item" data-value="4">UCLA researcher/other</div>
-                          <div class="item" data-value="6">UCLA alumnus/a</div>
-                          <div class="item" data-value="5">non-UCLA</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="ui four wide column">
-                  <div class="content">
-                    <div class="ui left aligned">
-
-
-
-
-                      <div id="interactionMode" name="method" class="ui fluid selection mode dropdown">
-                        <input id="interactionModeInput" name="interactionModeInput" value="default" type="hidden">
-                        <i class="dropdown icon"></i>
-                        <div class="text">Assistance Method</div>
-                        <div class="menu">
-                          <div class="item" data-value="01">Assistance Method</div>
-                          <div class="item" data-value="01">In-Person</div>
-                          <div class="item" data-value="03">E-mail</div>
-                          <div class="item" data-value="02">Telephone</div>
-                        </div>
-                      </div>
-
-
-
-                    </div>
-                  </div>
-                </div>
-
-              </div> <!-- 16 column row2 - END -->
-            </div> <!-- grid container -->
-          </div> <!-- three column row - END -->
-        </div> <!-- grid container1 -->
-        <!-- PAGE TOP CONTENT - END -->
-
-        <!-- PAGE TOP CONTENT -->
-        <div class="ui main stackable grid container"> <!-- grid container1 -->
-          <div class="three column row"> <!-- three column row -->
-            <div class="ui main stackable center aligned middle aligned grid container"> <!-- grid container2 -->
-              <div class="sixteen column row"> <!-- 16 column row -->
-
-                <div class="ui four wide floated column">
-                    <div class="content">
-                      <div class="ui left aligned">
-                        <select name="deptWs" id="deptWs" class="ui fluid search dropdown">
-                          <option value="0">Dept or Unit</option>
-                          <!-- the departments are auto generated in js with data from WS -->
-                        </select>
-                      </div>
-                    </div>
-                </div>
-
-                <div class="ui eight wide floated column">
-                    <div class="content">
-
-                      <div class="ui huge fluid input">
-                        <div class="ui big label">
-                          Course <br>/ Section
-                        </div>
-                        <input id="courseSection" placeholder="Enter here..." type="text">
-                      </div>
-
-                    </div>
-                </div>
-
-                <div class="ui three wide test column">
-                  <div class="ui main stackable middle aligned grid container">
-                    <div class="sixteen column row">
-                      <div class="ui sixteen wide left floated column">
-
-                        <div class="ui test content">
-                          <div class="ui left aligned">
-                            <div class="ui test checkbox">
-                              <input type="checkbox" id="referralCheckbox">
-                              <label>Referral?</label> 
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div> <!-- 16 column row2 - END -->
-            </div> <!-- grid container -->
-          </div> <!-- three column row - END -->
-        </div> <!-- grid container1 -->
-        <!-- PAGE TOP CONTENT - END -->
-
-        <!-- MAIN PAGE CONTENT -->
-        <div class="ui main stackable grid container"> <!-- Outer Grid2 -->
-          <div class="sixteen column row">
-
-            <div class="ui sixteen wide column"> <!-- 16 wide column2 -->
-              <div class="content">
-                <div class="active content">
-                  <div class="ui equal width aligned grid"> <!-- Inner Grid2 -->
-
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card withCheckDiv"> <!-- withCheck is in custom.tap.js -->
-                        <div class="content middle aligned">
-
-                          <div class="ui padded inverted segment left floated"> <!-- positions the black box -->
-                            <div class="ui huge fitted withCheckBox checkbox">
-                              <input type="checkbox" id="researchCheckbox" name="researchCheckbox">
-                              <label></label>
-                            </div>
-                          </div>
-
-                          <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/research.png">
-
-                          <div class="ui left aligned">
-                            <div class="header"> Research Assistance </div>
-                            <div class="meta"> Help patron with research strategy, advice, overview of resources (drop-in). </div>
-                          </div>
-
-                        </div> 
-                      </div>
-                    </div>
-
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card withCheckDiv">
-                        <div class="content middle aligned">
-                          <div class="ui padded inverted segment left floated">
-                            <div class="ui huge fitted withCheckBox checkbox">
-                              <input type="checkbox" id="technicalCheckbox" name="researchCheckbox">
-                              <label></label>
-                            </div>
-                          </div>
-                          <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/technical.png"> 
-                          <div class="ui left aligned">
-                            <div class="header"> Technical Assistance </div>
-                            <div class="meta"> Help with printers, computers, software, scanners, etc. </div>
-                          </div>
-                        </div> 
-                      </div>
-                    </div>
-
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card withCheckDiv">
-                        <div class="content middle aligned">
-                          <div class="ui padded inverted segment left floated">
-                            <div class="ui huge fitted withCheckBox checkbox">
-                              <input type="checkbox" id="lookupCheckbox" name="researchCheckbox">
-                              <label></label>
-                            </div>
-                          </div>
-                          <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/lookup.png"> 
-                          <div class="ui left aligned">
-                            <div class="header"> Look Up Known Item </div>
-                            <div class="meta"> Find call numbers, books, articles, locations, etc. for known items requested by patron. </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card withCheckDiv">
-                        <div class="content middle aligned"> 
-                          <div class="ui padded inverted segment left floated">
-                            <div class="ui huge fitted withCheckBox checkbox">
-                              <input type="checkbox" id="directionalCheckbox" name="researchCheckbox">
-                              <label></label>
-                            </div>
-                          </div>
-                          <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/directions.png">
-                          <div class="ui left aligned">
-                            <div class="header"> Directions2 </div> 
-                            <div class="meta"> Location or directions provided. E.G. rooms, events, contact info, etc. </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card withCheckDiv">
-                        <div class="content middle aligned">
-                          <div class="ui padded inverted segment left floated">
-                            <div class="ui huge fitted withCheckBox checkbox">
-                              <input type="checkbox" id="policyCheckbox" name="researchCheckbox">
-                              <label></label>
-                            </div>
-                          </div>
-                          <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/policy.png"> 
-                          <div class="ui left aligned">
-                            <div class="header"> Policy & Operations</div>
-                            <div class="meta"> Hours, access privileges, borrowing, reservations, other policies. </div>
-                          </div>
-                        </div> 
-                      </div>
-                    </div>
-
-                    <div class="four wide column"> 
-                      <div class="ui fluid card withCount">
-                        <div class="content middle aligned">
-                          <div class="ui inverted segment left floated" id="peopleResearch">
-                            <div class="ui tiny inverted statistics left floated"> 
-                              <div class="statistic">
-                                <div class="value" id="patronCount">0</div> 
-                                <div class="label">Count</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="ui left aligned">
-                            <div class="header">People</div>
-                            <div class="meta"> Number of people served </div>
-                          </div>
-                        </div> 
-                      </div>
-                    </div>
-
-                    <div class="four wide column"> 
-                      <div class="ui fluid card withCount">
-                        <div class="content middle aligned">
-                          <div class="ui inverted segment left floated" id="minutesResearch">
-                            <div class="ui tiny inverted statistics left floated"> 
-                              <div class="statistic">
-                                <div class="value" id="minuteCount">0</div> 
-                                <div class="label">Count</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="ui left aligned">
-                            <div class="header">Minutes</div>
-                            <div class="meta"> Session in minutes </div>
-                          </div> 
-                        </div> 
-                      </div>
-                    </div>
-
-                    <div class="eight wide right floated column"> 
-                      <div class="ui fluid card ">
-                        <button style = "height: 120px" class=" ui button" id="submitResearchAssistance"> <h1 style = "font-size:70px"> SUBMIT </h1> </button>
-                      </div>
-                    </div>
-
-                  </div> <!-- Inner Grid2 - END -->
-
-                </div>
-              </div>
-            </div> <!-- 16 wide column2 - END -->
-
-          </div>
-        </div> <!-- Outer Grid2 - END -->
-        <!-- MAIN PAGE CONTENT - Research Assistance - END -->
-
-
-      </div>
-      <!-------------------------- TAB 2 - Research Assistance - END -------------------------->
-
-
-
-
-
-
-      <!-------------------------- REFERENCE ---------------------------->
-      <!-- Save for data to set up reportsTab, above  -->
-      <div class="ui bottom attached tab" data-tab="reportsTab">
-
-        <!-- PAGE TOP CONTENT -->
-        <div class="ui stackable bottom aligned bottom aligned grid container">
-          <div class="ui top attached tabular menu">
-            <a class="active grey item" data-tab="quickQuestionsTab">Quick Questions</a>
-            <a class="active grey item" data-tab="researchAssistance">Research Assistance</a>
-            <a class="active disabled grey item" data-tab="reportsTabOFF">Reports</a>
-          </div>
-        </div>
-        <!-- PAGE TOP CONTENT - END -->
-
-
-
-        <!-------------------------- HELP Tab page ---------------------------->
-        <div class="content">
-
-          <div class="ui equal width aligned grid"> <!-- grid container -->
-
-            <div class="eight wide column">
-              <div class="ui fluid card">
-                <div class="content">
-                  <img class="ui tiny image left floated" src="../../img/research.png"> 
-                  <div class="header"> Research Assistance </div>
-                  <div class="meta"> Help patron with research strategy, advice, overview of resources (drop-in). </div>
-                </div> 
-              </div>
-            </div>
-
-            <div class="eight wide column">
-              <div class="ui fluid card">
-                <div class="content">
-                  <img class="ui tiny image left floated" src="../../img/technical.png"> 
-                  <div class="header"> Technical Assistance </div>
-                  <div class="meta"> Help with printers, computers, software, scanners, etc. </div>
-                </div> 
-              </div>
-            </div>
-
-            <div class="eight wide column">
-              <div class="ui fluid card">
-                <div class="content">
-                  <img class="ui tiny image left floated" src="../../img/lookup.png"> 
-                  <div class="header"> Look up Known Item </div>
-                  <div class="meta"> Find call numbers, books, articles, locations, etc. for known items requested by patron. </div>
-                </div> 
-              </div>
-            </div>
-
-            <div class="eight wide column">
-              <div class="ui fluid card">
-                <div class="content">
-                  <img class="ui tiny image left floated" src="../../img/directions.png"> 
-                  <div class="header"> Directions3 </div>
-                  <div class="meta"> Location or directions provided e.g. rooms, events, contact information, etc. </div>
-                </div> 
-              </div>
-            </div>
-
-            <div class="eight wide column">
-              <div class="ui fluid card">
-                <div class="content">
-                  <img class="ui tiny image left floated" src="../../img/policy.png"> 
-                  <div class="header"> Policy & Operations </div>
-                  <div class="meta"> Hours, access privileges, borrowing, space reservations, other policies. </div>
-                </div> 
-              </div>
-            </div>
-
-            <div class="eight wide column"> <!-- eight wide column -->
-              <form class="ui form"> <!-- Form -->
-
-                <div class="field">
-                  <label>
-                    Question Topic
-                  </label>
-                  <input type="text" name="topic" placeholder="Add topic here." height="200">
-                </div>
-
-                <div class="grouped fields">
-                  <label for="referralOFF">Referral?</label>
-                  <div class="field">
-                    <div class="ui radio checkbox">
-                      <input type="radio" name="referralOFF" tabindex="0" class="hidden">
-                      <label>Yes</label>
-                    </div>
-                  </div>
-                  <div class="field">
-                    <div class="ui radio checkbox">
-                      <input type="radio" name="referralOFF" tabindex="0" class="hidden">
-                      <label>No</label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="field">
-                  <label>
-                    Department / Unit
-                  </label>
-                  <div class="ui selection dropdown">
-                    <input type="hidden" name="department">
-                    <i class="dropdown icon"></i>
-                    <div class="default text">
-                      Choose your department
-                    </div>
-                    <div class="menu">
-                      <div class="item" data-value="none">N/A</div>
-                      <div class="item" data-value="linguistics">Linguistics</div>
-                      <div class="item" data-value="cs">Computer Science</div>
-                      <div class="item" data-value="commstudies">Communications</div>
-                      <div class="item" data-value="arts">Fine Arts</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="field">
-                  <label>Course / Section</label>
-                  <input type="text" name="course" placeholder="CRS###/SEC###">
-                </div>
-              </form> <!-- Form - END -->
-            </div> <!-- eight wide column -->
-
-          </div> <!-- grid container - END -->
-
-          <div class="ui equal width aligned grid"> <!-- grid container2 -->
-
-            <div class="eight wide column">
-              <div class="ui equal width aligned grid">
-
-                <div class="four wide column">
-                  <div class="ui inverted segment">
-                    <div class="ui tiny inverted statistics">
-                      <div class="statistic">
-                        <div class="value">
-                          0
-                        </div>
-                        <div class="label">
-                          People
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="four wide column">
-                  <div class="ui inverted segment">
-                    <div class="ui tiny inverted statistics">
-                      <div class="statistic">
-                        <div class="value">
-                          0
-                        </div>
-                        <div class="label">
-                          Minutes
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="ui form">
-                  <div class="inline fields">
-                    <label>How did you help the patron?</label>
-                    <div class="field">
-                      <div class="ui radio checkbox">
-                        <input type="radio" name="frequency" checked="checked">
-                        <label>In-Person</label>
-                      </div>
-                    </div>
-                    <div class="field">
-                      <div class="ui radio checkbox">
-                        <input type="radio" name="frequency">
-                        <label>E-mail</label>
-                      </div>
-                    </div>
-                    <div class="field">
-                      <div class="ui radio checkbox">
-                        <input type="radio" name="frequency">
-                        <label>Telephone</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="eight wide column"> <!-- Eight Wide Column -->
-                  <form class="ui form"> <!-- Form2 -->
-
-                    <div class="grouped fields">
-                      <label for="status" style = "font-size: 30px">Patron Status</label>
-
-                      <div class="field">
-                        <div class="ui radio checkbox">
-                          <input type="radio" name="status" tabindex="0" checked="" class="hidden">
-                          <label>Unknown</label>
-                        </div>
-                      </div>
-
-                      <div class="field">
-                        <div class="ui radio checkbox">
-                          <input type="radio" name="status" tabindex="0" class="hidden">
-                          <label>UCLA undergrad</label>
-                        </div>
-                      </div>
-
-                      <div class="field">
-                        <div class="ui radio checkbox">
-                          <input type="radio" name="status" tabindex="0" class="hidden">
-                          <label>UCLA graduate student</label>
-                        </div>
-                      </div>
-
-                      <div class="field">
-                        <div class="ui radio checkbox">
-                          <input type="radio" name="status" tabindex="0" class="hidden">
-                          <label>UCLA faculty</label>
-                        </div>
-                      </div>
-
-                      <div class="field">
-                        <div class="ui radio checkbox">
-                          <input type="radio" name="status" tabindex="0" class="hidden">
-                          <label>UCLA researcher/other</label>
-                        </div>
-                      </div>
-
-                      <div class="field">
-                        <div class="ui radio checkbox">
-                          <input type="radio" name="status" tabindex="0" class="hidden">
-                          <label>UCLA alumnus/a</label>
-                        </div>
-                      </div>
-
-                      <div class="field">
-                        <div class="ui radio checkbox">
-                          <input type="radio" name="status" tabindex="0" class="hidden">
-                          <label>non-UCLA</label>
-                        </div>
-                      </div>
-
-                    </div>
-
-                  </form> <!-- Form2 -->
-                </div> <!-- Eight Wide Column - END -->
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-      <!-- BODY END -->
-      <!-- BODY END -->
-      <!-- BODY END -->
-
-
-
 
       <!--
       // STATSFORM SCRIPTS
@@ -3828,18 +2999,15 @@ document.getElementById('sfUnitGroupID').value
 
             // set Individual Login button and Group button
             if( "<?php print( $page['sfUnitIndividualID'] ); ?>" == 'individual'){
-              sfUnitIndividualID = 'individual';
               $("#unitIndividual").html( 'Set to use <br>UCLA <br>Login' );
               document.getElementById('unitIndividual').className = 'show ui positive button';
               $("#unitGroup").html( 'Choose <br>Group <br>Login' );
               document.getElementById('unitGroup').className = 'show ui basic rgba(255, 255, 255, 0.15) button label';
             } else if( "<?php print( $page['sfUnitIndividualID'] ); ?>" == 'notIndividual'){
-              sfUnitIndividualID = 'notIndividual';
               $("#unitIndividual").html( 'Choose <br>UCLA <br>Login' );
               document.getElementById('unitIndividual').className = 'show ui basic rgba(255, 255, 255, 0.15) button label';
               $sfUnitGroupLabel = "<?php print( $page['sfUnitGroupLabel'] ); ?>";
               $("#unitGroup").html( $sfUnitGroupLabel );
-              document.getElementById('unitGroup').value = document.getElementById("sfUnitGroupID").dataset.value;
               document.getElementById('unitGroup').className = 'show ui positive button';
             }
             // apply the user selections OBTAINED from the preLogin page
@@ -3864,23 +3032,12 @@ document.getElementById('sfUnitGroupID').value
                 'onVisible':function(){
                   fromTab = 1;
 
-                  resetForms();
+//                  resetForms();
                   document.getElementById("submitQuickQuestions").disabled = true;
                   document.getElementById("servicePoint").click();
                 }
               }
             );
-
-            // focus the tab when reLogin
-            if( document.getElementById('sfResearchTabValue').dataset.value == 1 ){
-              document.getElementById('tabResearchAssistance').className = 'ui bottom attached tab active';
-              document.getElementById('tabQuickQuestions').className = 'ui bottom attached tab';
-              resetForms();
-            } else {  
-              document.getElementById('tabResearchAssistance').className = 'ui bottom attached tab';
-              document.getElementById('tabQuickQuestions').className = 'ui bottom attached active tab';
-            }
-
 
             // disable submissionbuttons on load of FORM page
             document.getElementById("submitQuickQuestions").disabled = true;
@@ -4035,7 +3192,7 @@ document.getElementById('sfUnitGroupID').value
               // else if Individual Login was tapped
               } else if( $(this).attr('id') == "unitIndividual" ) {
                 //////////// the following section applies to the FORM pages
-                if( <?php print( $page['sf_page_name'] ); ?> == 222 ) {
+                if( <?php print( $page['sf_page_name'] ); ?> == 2 ) {
                   modal = 'changeLoginModal';
                 } else {
                   modal = 'individualLogin';
@@ -4043,7 +3200,7 @@ document.getElementById('sfUnitGroupID').value
 
               // else if Group Login was tapped
               } else if( $(this).attr('id') == "unitGroup" ) {
-                if( <?php print( $page['sf_page_name'] ); ?> == 222 ) {
+                if( <?php print( $page['sf_page_name'] ); ?> == 2 ) {
                   modal = 'changeLoginModal';
                 } else {
                   modal = 'groupLogin';
@@ -4702,14 +3859,8 @@ document.getElementById('sfUnitGroupID').value
                   document.getElementById('unitGroup').className = 'show ui positive button label';
                   document.getElementById('unitIndividual').className = 'show ui basic rgba(255, 255, 255, 0.15) button';
                   $("#unitIndividual").html("Choose <br>Single <br>Login");
-
                   sfUnitGroupID = sfGroupVals[1];
-                  document.getElementById('unitGroup').value = sfGroupVals[1];
-                  document.getElementById('sfUnitGroupID').value = sfGroupVals[1];
-
                   sfUnitGroupLabel = sfGroupVals[2].wrap(20);
-                  document.getElementById('sfUnitGroupLabel').dataset.value = sfGroupVals[2].wrap(20);
-
                   sfUnitGroupColor = 'show ui positive button label';
                   sfUnitIndividualID = 'notIndividual';
                   sfUnitIndividualLabel = 'Choose <br>Single <br>Login';
@@ -4726,55 +3877,7 @@ document.getElementById('sfUnitGroupID').value
                   $(".ui.modal").modal("hide");
                   document.getElementById("submit0").disabled = false;
                   break;
-
-
-
-                // Re-login here
-                //
-                case ($(this).data("value").match(/^reLoginHere/) || {}).input:
-
-                  // detect active tab
-                  var sfResearchTabValueFlag = "0";
-                  var isActive = 0;
-
-                  if ( document.getElementById('tabResearchAssistance').className.match(/active$/) ) {
-                    isActive = document.getElementById('tabResearchAssistance').className.match(/active$/);
-                    if ( isActive[0] == 'active' ) {
-                      sfResearchTabValueFlag = "1";
-                    }
-                  } else {
-                    sfResearchTabValueFlag = "0";
-                  }
-                  // if not null and "active"
-
-                  // collect user choices
-                  var sfUnitColor = document.getElementById('result').className;
-                  var sfServicePointColor = document.getElementById('servicePoint').className;
-                  var sfUnitColorArray = sfUnitColor.split(" ");
-                  var sfServicePointColorArray = sfServicePointColor.split(" ");
-                  sfUnitColor = sfUnitColorArray[2];
-                  sfServicePointColor = sfServicePointColorArray[2];
-    //            var sfGroupLogonID = groupLogonID;
-                  var reloginhereflag = 1;
-
-                  // normal: a new group was chosen
-                  if (typeof document.getElementById('sfUnitGroupID').value !== 'undefined') {
-                  // create and make request with query string
-                  location.href = '/statsform/login?sfUnit='+document.getElementById('sfUnit').dataset.value+'&sfUnitPointID='+document.getElementById('sfUnitPointID').dataset.value+'&sfServicePointID='+document.getElementById('sfServicePointID').dataset.value+'&sfServicePoint='+servicePoint.textContent+'&sfUnitColor='+sfUnitColor+'&sfServicePointColor='+sfServicePointColor+'&sfUnitIndividualID='+sfUnitIndividualID+'&sfUnitIndividualLabel='+document.getElementById('sfUnitIndividualLabel').dataset.value+'&sfUnitIndividualColor='+document.getElementById('sfUnitIndividualColor').dataset.value+'&sfUnitGroupID='+document.getElementById('sfUnitGroupID').value+'&sfUnitGroupLabel='+document.getElementById('sfUnitGroupLabel').dataset.value+'&sfUnitGroupColor='+document.getElementById('sfUnitGroupColor').dataset.value+'&sfSession=false'+'&reloginhereflag='+reloginhereflag+'&sfResearchTabValue='+sfResearchTabValueFlag;
     
-                  // unusual: a new group was NOT chosen
-                  } else {
-                  // create and make request with query string
-                  location.href = '/statsform/login?sfUnit='+document.getElementById('sfUnit').dataset.value+'&sfUnitPointID='+document.getElementById('sfUnitPointID').dataset.value+'&sfServicePointID='+document.getElementById('sfServicePointID').dataset.value+'&sfServicePoint='+servicePoint.textContent+'&sfUnitColor='+sfUnitColor+'&sfServicePointColor='+sfServicePointColor+'&sfUnitIndividualID='+sfUnitIndividualID+'&sfUnitIndividualLabel='+document.getElementById('sfUnitIndividualLabel').dataset.value+'&sfUnitIndividualColor='+document.getElementById('sfUnitIndividualColor').dataset.value+'&sfUnitGroupID='+document.getElementById('sfUnitGroupID').dataset.value+'&sfUnitGroupLabel='+document.getElementById('sfUnitGroupLabel').dataset.value+'&sfUnitGroupColor='+document.getElementById('sfUnitGroupColor').dataset.value+'&sfSession=false'+'&reloginhereflag='+reloginhereflag+'&sfResearchTabValue='+sfResearchTabValueFlag;
-                  }
-
-                  $('.ui.united.large.reLoginConfSpinner.modal')
-                    .modal('setting', 'closable', false)
-                    $('#reLoginConfSpinner').modal('show')
-                  ;
-                  // $(".ui.modal").modal("hide");
-                  break;
-
                 // Login, reLogin
                 //
                 case ($(this).data("value").match(/^reLogin/) || {}).input:
@@ -4944,7 +4047,7 @@ document.getElementById('sfUnitGroupID').value
   ///                    'sfInputDatetime': document.getElementsByName("inputDatetime")[0].value, // simo checkboxes
                       'sfInputTime': ' '+document.getElementById("inputTime").value,
   ///                    'sfInputTime': ' '+document.getElementsByName("inputTime")[0].value,
-                      'sfOperator': document.getElementById("sfUserName").dataset.value,
+                      'sfOperator': document.getElementById("userName").dataset.value,
                       'sfTimeSpent': '1',
                       'sfDetailed': 'false', // always false for the Quick Questions session
                       'sfTypeID001': '01',
@@ -4967,7 +4070,7 @@ document.getElementById('sfUnitGroupID').value
                     success: function (data) {
                       // Display the time from successful response
                       if( data.wsResponse.code == 200 ) {
-                        alert("Data saved:\n  "+$("#result")[0].textContent.trim()+"\n  "+$("#servicePoint")[0].textContent.trim()+"\n  "+document.getElementById("sfUserName").dataset.value+"\n  "+document.getElementsByName("inputDatetime")[0].value+"\n  "+document.getElementById("inputTime").value);
+                        alert("Data saved:\n  "+$("#result")[0].textContent.trim()+"\n  "+$("#servicePoint")[0].textContent.trim()+"\n  "+document.getElementById("userName").dataset.value+"\n  "+document.getElementsByName("inputDatetime")[0].value+"\n  "+document.getElementById("inputTime").value);
                         resetForms();
                         document.getElementById("submitQuickQuestions").disabled = true;
                       } else if( data.wsResponse.code == 500 ) {
@@ -5012,7 +4115,7 @@ document.getElementById('sfUnitGroupID').value
 ///                    'sfInputDatetime': document.getElementsByName("inputDatetime")[0].value, // simo checkboxes
                     'sfInputTime': ' '+document.getElementById("inputTime").value,
 ///                    'sfInputTime': ' '+document.getElementsByName("inputTime")[0].value,
-                    'sfOperator': document.getElementById("sfUserName").dataset.value,
+                    'sfOperator': document.getElementById("userName").dataset.value,
                     'sfDetailed': 'true', // always true for the Research Assistant session
                     'sfTopic': document.getElementById("questionTopic").value,
                     'sfPatronType': document.getElementById("patronStatusInput").value,
@@ -5043,7 +4146,7 @@ document.getElementById('sfUnitGroupID').value
                   success: function (data) {
                     // Display the time from successful response
                       if( data.wsResponse.code == 200 ) {
-                        alert("Data saved:\n  "+$("#result")[0].textContent.trim()+"\n  "+$("#servicePoint")[0].textContent.trim()+"\n  "+document.getElementById("sfUserName").dataset.value+"\n  "+document.getElementsByName("inputDatetime")[0].value+"\n  "+document.getElementById("inputTime").value);
+                        alert("Data saved:\n  "+$("#result")[0].textContent.trim()+"\n  "+$("#servicePoint")[0].textContent.trim()+"\n  "+document.getElementById("userName").dataset.value+"\n  "+document.getElementsByName("inputDatetime")[0].value+"\n  "+document.getElementById("inputTime").value);
                         resetForms();
                         document.getElementById("submitQuickQuestions").disabled = true;
                       } else if( data.wsResponse.code == 500 ) {
@@ -5068,19 +4171,10 @@ document.getElementById('sfUnitGroupID').value
                   {
                     // use action in place of onchange to avoid popping up on for reset after the submits
                     action: function(value) {
-                      if( value.match(/Logout$/) ){
-                        $('.ui.united.large.logoutModal.modal')
-                          .modal('setting', 'closable', false)
-                          $('#logoutModal').modal('show')
-                        ;
-                      } else if( value.match(/user\)$/) ){
-                        $('.ui.united.large.reLoginHereModal.modal')
-                          .modal('setting', 'closable', false)
-                          $('#reLoginHereModal').modal('show')
-                        ;
-                      }
-
-
+                      $('.ui.united.large.logoutModal.modal')
+                        .modal('setting', 'closable', false)
+                        $('#logoutModal').modal('show')
+                      ;
                     }
                   });
               // LOGOUT section .........................................................................................
@@ -5112,4 +4206,3 @@ document.getElementById('sfUnitGroupID').value
 
     </body>
   </html>
-</div>

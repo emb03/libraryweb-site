@@ -6,6 +6,14 @@
 function statsform_menu() {
   $items = array();
   
+  $items['services/statsformLogin'] = array(
+    'title' => 'Stats Form Login Chooser',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('statsform_page_one'),
+    'access callback' => TRUE,
+    'description' => 'For statsform use',
+  );
+
   $items['statsform/form'] = array(
     'title' => 'Stats Form',
     'page callback' => 'drupal_get_form',
@@ -14,15 +22,62 @@ function statsform_menu() {
     'description' => 'For statsform use',
   );
 
-  // Create a path for the AJAX request
+  $items['statsform/login'] = array(
+    'title' => 'Stats Form Login Drupal',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('statsform_page_one'),
+    'access callback' => TRUE,
+    'description' => 'For statsform use',
+  );
+ 
+  $items['statsform/logout'] = array(
+    'title' => 'Stats Form Logout Drupal',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('logout_request_callback'),
+    'access callback' => TRUE,
+    'description' => 'For statsform use',
+  );
+ 
   $items['statsform/ajax'] = array(
     'title' => 'Ajax Request',
-    'page callback' => 'ajax_request_callback2',
+    'page callback' => 'ajax_request_callback',
     'access callback' => TRUE,
     'type' => MENU_CALLBACK,
   );
  
+ 
   return $items;
+}
+
+
+//=============================================================================
+/**
+ * Implements hook_permission().
+ */
+function statsform_permission() {
+  return array(
+    'Use statsform' => array(
+      'title' => t('Use statsform'),
+      'description' => t('Access the statsform web app and enter/save data'),
+    )
+  );
+}
+
+
+//=============================================================================
+/**
+ * Implements hook_user_login().
+ */
+function statsform_user_login(&$edit, $account) {
+  if (!isset($_POST['form_id']) || $_POST['form_id'] != 'user_pass_reset' || variable_get('login_destination_immediate_redirect', FALSE)) {
+    if( $_GET['q'] == 'statsform/login' ) {
+      if(in_array('statsform',$account->roles)) {
+        drupal_goto('statsform/form');
+      } else {
+        drupal_goto('services/statsformLogin');
+      }
+    }
+  }
 }
 
 
@@ -31,10 +86,234 @@ function statsform_menu() {
  * Implements hook_page_alter().
  */
 function statsform_page_alter(&$page) {
-    if (arg(0) == 'statsform') {
+  global $user;
+  global $sf_user_name;
+  global $sf_user_first;
+  global $sf_user_last;
+  global $sf_groupList;
+  global $sfUnitColor;
+
+  // set page name: 0=pre, 1=login, 2=form
+  $sf_page_name = 0;
+
+  // get any user info (available if the user is logged in)
+  $sf_user_login = 0;
+  $sf_user_role = 0;
+  if (!empty($user->uid) && ($user->uid >= 0) ){
+    $sf_user = user_load($user->uid, $reset = TRUE);
+    $sf_user_name = $sf_user->name;
+    $sf_user_first = $sf_user->field_first_name['und'][0]['safe_value'];
+    $sf_user_last = $sf_user->field_last_name['und'][0]['safe_value'];
+
+    // check to see if the user is logged in
+    if (!empty($sf_user->uid) && ($sf_user->uid >= 0) ){
+      $sf_user_login = 1;
+
+      // the user is logged in so check for statsform role membership
+      if ( !empty($sf_user->roles) ){
+        foreach($sf_user->roles as $sf_user_roles){
+          if( $sf_user_roles == 'statsform' ){
+            $sf_user_role = 1;
+          }
+        }
+      }
+    }
+  }
+
+  // Retrieve a list of Departments/units from web services to be used on the web app pages
+  $sf_dept_url = "https://webservices-test.library.ucla.edu/pss/lookup/departments";
+  $sf_depts = drupal_http_request($sf_dept_url, array(
+    'method' => 'GET',
+    ///'headers' => array('Content-Type' => 'text/xml; charset=UTF-8'),
+    'headers' => array('Content-Type' => 'application/json')
+  ));
+
+  // Retrieve a list of users/groups from web services to populate the Groups modal
+  $sf_groupList_url = "https://webservices-test.library.ucla.edu/pss/lookup/users";
+  $sf_groupList = drupal_http_request($sf_groupList_url, array(
+    'method' => 'GET',
+    'headers' => array('Content-Type' => 'application/json')
+  ));
+
+  // verify existence of path/page
+  if ( request_uri() !== null && request_uri() ) {
+    $page['sf_path'] = drupal_get_path('module', 'statsform');
+    $query_parameters = drupal_get_query_parameters();
+
+    if (arg(0) == 'services') {
+
+      // PreLogin
+      // PreLogin
+      // PreLogin
+      if (arg(1) == 'statsformLogin') {
+
+        // set page name: 0=pre, 1=login, 2=form
+        $sf_page_name = 0;
+
+        if ( $query_parameters[reLogin] !== null && $query_parameters[reLogin] == 1 ) {
+          session_destroy();
+//        drupal_goto(variable_get('shib_auth_full_logout_url'));
+          drupal_goto('/services/statsformLogin');
+//        } else if ( $query_parameters[missingParm] !== null && $query_parameters[missingParm] == 1 ) {
+//          // create error message here: missing parameters, please start over and try again - pass flag to modal to trigger extra line of message: missing parameters...
+        } else {
+          // set the theme that corresponds to the path that led to here
+          $page['#theme'] = 'hijackLogin';
+          $page['sfTemplate'] = 'page--hijackedLogin';
+
+          // send the data to the theme page
+          $page['sf_groupList'] = $sf_groupList->data;
+          $page['sf_user_first'] = $sf_user_first;
+          $page['sf_user_last'] = $sf_user_last;
+          $page['sf_user_login'] = $sf_user_login;
+          $page['sf_user_role'] = $sf_user_role;
+          $page['sf_depts'] = $sf_depts->data;
+          $page['sf_users'] = $sf_users->data;
+          $page['sf_page_name'] = $sf_page_name;
+        }
+      }
+    } else if (arg(0) == 'statsform') {
+
+      // Login
+      // Login
+      // Login
+      if (arg(1) == 'login') {
+        // set page name: 0=pre, 1=login, 2=form
+        $sf_page_name = 1;
+
         $page['variables'] = drupal_get_token();
         $page['sf_path'] = drupal_get_path('module', 'statsform');
-        $page['#theme'] = 'hijack'; 
+        $page['#theme'] = 'hijackLoginDrupal';
+        $page['sfTemplate'] = 'page--hijackedLoginDrupal';
+
+        if ( request_uri() !== null && request_uri() && $query_parameters[reloginhereflag] != 1 ) {
+
+          // Retrieve values from the querystring passed in from the preLogin OR from the form page
+          $query_parameters = drupal_get_query_parameters();
+          $sfUnitColor = $query_parameters[sfUnitColor];
+
+// old, remove after confirming not needed
+          // insert vals into .../form template here
+          $page['sfUnit'] = $query_parameters[sfUnit];
+          $page['sfUnitPointID'] = $query_parameters[sfUnitPointID];
+          $page['sfUnitColor'] = $query_parameters[sfUnitColor];
+          $page['sfServicePoint'] = $query_parameters[sfServicePoint];
+          $page['sfServicePointID'] = $query_parameters[sfServicePointID];
+          $page['sfServicePointColor'] = $query_parameters[sfServicePointColor];
+          $page['sfUnitGroupID'] = $query_parameters[sfUnitGroupID];
+          $page['sfSession'] = $query_parameters[sfSession];
+          $page['sfResearchTabValue'] = $query_parameters[sfResearchTabValue];
+          $page['sf_depts'] = $sf_depts->data;
+          $page['sf_users'] = $sf_users->data;
+
+          // save vals to use in the .../form page
+          $_SESSION['statsform']['sfUnit'] = $query_parameters[sfUnit];
+          $_SESSION['statsform']['sfUnitPointID'] = $query_parameters[sfUnitPointID];
+          $_SESSION['statsform']['sfUnitColor'] = $query_parameters[sfUnitColor];
+          $_SESSION['statsform']['sfServicePoint'] = $query_parameters[sfServicePoint];
+          $_SESSION['statsform']['sfServicePointID'] = $query_parameters[sfServicePointID];
+          $_SESSION['statsform']['sfServicePointColor'] = $query_parameters[sfServicePointColor];
+          $_SESSION['statsform']['sfUnitIndividualID'] = $query_parameters[sfUnitIndividualID];
+          $_SESSION['statsform']['sfUnitIndividualLabel'] = $query_parameters[sfUnitIndividualLabel];
+          $_SESSION['statsform']['sfUnitIndividualColor'] = $query_parameters[sfUnitIndividualColor];
+          $_SESSION['statsform']['sfUnitGroupID'] = $query_parameters[sfUnitGroupID];
+          $_SESSION['statsform']['sfUnitGroupLabel'] = $query_parameters[sfUnitGroupLabel];
+          $_SESSION['statsform']['sfUnitGroupColor'] = $query_parameters[sfUnitGroupColor];
+          $_SESSION['statsform']['sfSession'] = $query_parameters[sfSession];
+          $_SESSION['statsform']['sfResearchTabValue'] = $query_parameters[sfResearchTabValue];
+          $page['sf_page_name'] = $sf_page_name;
+        }
+
+        if( $query_parameters[reloginhereflag] == 1 ) {
+          module_load_include('pages.inc', 'user');
+
+          $_GET['destination'] = '/statsform/login?sfUnit='.$query_parameters[sfUnit].'&sfUnitPointID='.$query_parameters[sfUnitPointID].'&sfServicePointID='.$query_parameters[sfServicePointID].'&sfServicePoint='.$query_parameters[sfServicePoint].'&sfUnitColor='.$query_parameters[sfUnitColor].'&sfServicePointColor='.$query_parameters[sfServicePointColor].'&sfUnitIndividualID='.$query_parameters[sfUnitIndividualID].'&sfUnitIndividualLabel='.$query_parameters[sfUnitIndividualLabel].'&sfUnitIndividualColor='.$query_parameters[sfUnitIndividualColor].'&sfUnitGroupID='.$query_parameters[sfUnitGroupID].'&sfUnitGroupLabel='.$query_parameters[sfUnitGroupLabel].'&sfUnitGroupColor='.$query_parameters[sfUnitGroupColor].'&sfResearchTabValue='.$query_parameters[sfResearchTabValue].'&sfSession=false&reloginhereflag=2';
+
+//        $_GET['destination'] = drupal_get_destination();
+          $sfsd = user_logout();
+        } else if( $sf_user_login == 1  && $query_parameters[reloginhereflag] != 2 ) {
+          drupal_goto( "http://138.68.31.221:32770/services/statsformLogin?missingParm=1" );
+        }
+
+
+      // Form
+      // Form
+      // Form
+      } else if (arg(1) == 'form') {
+
+        // set page name: 0=pre, 1=login, 2=form
+        $sf_page_name = 2;
+        // verify that the user is logged in and is a member of the Drupal role called statsform
+        if (!empty($sf_user->uid) && ($sf_user->uid >= 0) && $sf_user_role == 1 ){
+          // logged in and member of role
+          $page['variables'] = drupal_get_token();
+          $page['sf_path'] = drupal_get_path('module', 'statsform');
+          $page['#theme'] = 'hijack';
+          $page['sfTemplate'] = 'page--hijacked';
+
+          // go back to the start if user is not logged in (bad) or parameters are missing from the preLogin page
+          if (
+            ( $sf_user_login == 0 )
+            ) {
+
+
+
+              // go back to the start with an error message: missing parameters (prevents direct loading without parameters)
+              drupal_goto( "http://138.68.31.221:32770/services/statsformLogin?missingParm=1" );
+
+          // looks good, build out the Form page
+          } else {
+
+
+
+
+
+            // Retrieve values passed in from the Login page
+            $query_parameters = drupal_get_query_parameters();
+
+            // insert vals into .../form template here
+            // these are supplied by Drupal
+            $page['sf_user_login'] = $sf_user_login;
+            $page['sf_user_role'] = $sf_user_role;
+            $page['sfUserName'] = $sf_user_name;
+            $page['sfUserFirst'] = $sf_user_first;
+            $page['sfUserLast'] = $sf_user_last;
+            $page['sf_groupList'] = $sf_groupList->data;
+
+            // these are passed in on the query string
+            $page['sfResearchTabValue'] = $_SESSION['statsform']['sfResearchTabValue'];
+            $page['sfUnit'] = $_SESSION['statsform']['sfUnit'];
+            $page['sfUnitPointID'] = $_SESSION['statsform']['sfUnitPointID'];
+            $page['sfUnitColor'] = $_SESSION['statsform']['sfUnitColor'];
+            $page['sfServicePoint'] = $_SESSION['statsform']['sfServicePoint'];
+            $page['sfServicePointID'] = $_SESSION['statsform']['sfServicePointID'];
+            $page['sfServicePointColor'] = $_SESSION['statsform']['sfServicePointColor'];
+            $page['sfUnitIndividualID'] = $_SESSION['statsform']['sfUnitIndividualID'];
+            $page['sfUnitIndividualLabel'] = $_SESSION['statsform']['sfUnitIndividualLabel'];
+            $page['sfUnitIndividualColor'] = $_SESSION['statsform']['sfUnitIndividualColor'];
+            $page['sfUnitGroupID'] = $_SESSION['statsform']['sfUnitGroupID'];
+            $page['sfUnitGroupLabel'] = $_SESSION['statsform']['sfUnitGroupLabel'];
+            $page['sfUnitGroupColor'] = $_SESSION['statsform']['sfUnitGroupColor'];
+            $page['sfSession'] = $_SESSION['statsform']['sfSession'];
+            $page['sf_depts'] = $sf_depts->data;
+            $page['sf_users'] = $sf_users->data;
+            $page['sf_page_name'] = $sf_page_name;
+          }
+
+          // else, the user may already be logged in but not in group
+          //  send user to help page with directions to ask supervisor to add user to the Drupal statsform role
+        } else if (!empty($sf_user->uid) && ($sf_user->uid >= 0) && $roleFlag == 0 ){
+          drupal_goto('services/statsformLogin'); // temp until help page is available
+
+        // else, user is not logged; send user to web app pre-login page
+        } else {
+          drupal_goto('services/statsformLogin');
+        }
+      }
+
+///    } else {
+///      drupal_goto('services/statsformLogin'); /// redirects all of the time???
+    }
   }
 }
 
@@ -43,47 +322,48 @@ function statsform_page_alter(&$page) {
 /**
  * Implements hook_theme().
  */
-function statsform_theme($existing, $type, $theme, $path) {
-    return array(
-        'hijack' => array(
-#            'variables' => array('output' => 'test21'), // limited scope
-            'template' => 'page--hijacked',
-            'render element' => 'page',
-            'path' => drupal_get_path('module', 'statsform') . '/templates',
-            ),
-    );
+function statsform_theme($existing, $type, $theme, $path, $sfTemplate) {
+  return array(
+    'hijack' => array(
+#     'variables' => array('output' => 'test21'), // limited scope
+      'template' => 'page--hijacked',
+      'render element' => 'page',
+      'path' => drupal_get_path('module', 'statsform') . '/templates',
+    ),
+    'hijackLogin' => array(
+#     'variables' => array('output' => 'test21'), // limited scope
+      'template' => 'page--hijackedLogin',
+      'render element' => 'page',
+      'path' => drupal_get_path('module', 'statsform') . '/templates',
+    ),
+    'hijackLoginDrupal' => array(
+#     'variables' => array('output' => 'test21'), // limited scope
+      'template' => 'page--hijackedLoginDrupal',
+      'render element' => 'page',
+      'path' => drupal_get_path('module', 'statsform') . '/templates',
+    ),
+  );
 }
 
 
 //=============================================================================
 /**
- * Implements hook_form_alter().
+ * Callback function for /statsform/logout
  */
-//function statsform_form_alter(&$form, &$form_state, $form_id) {
-//    //print_r($form_id);
-////    print_r("asd".$form['actions']['submit']['#attributes']['class']);
-//  if ($form_id = 'statsform_page_one') {
-//    //$form['actions']['submit']['#attributes']['class'][] = 'hidden';
-//    //$form['actions']['submit']['#attributes'] = array('class' => 'my_class'); 
-//    
-//    
-//    $form['actions']['submit']['#attributes']['class'][] = 'hidden';
-//    $form['#attributes']['class'][] = 'hidden';
-//    
-//    
-//    
-//    
-////    print_r($form['actions']['submit']['#attributes']);
-//  }
-//}
+function logout_request_callback() {
+  session_destroy();
+  // drupal_goto(variable_get('shib_auth_full_logout_url'));
+  drupal_goto('services/statsformLogin');
+  exit;
+}
 
 
 //=============================================================================
 /**
  * Callback function for /statsform/ajax.
  */
-function ajax_request_callback2() {
-  if (isset($_POST['statsformToken'])) {
+function ajax_request_callback() {
+  if (isset($_POST['sfToken']) && $_POST['sfToken'] == drupal_get_token()) {
     if (isset($_POST['sfLogout']) && $_POST['sfLogout']) {
       // Return the Logged Out flag and exit
       $response = array(
@@ -91,31 +371,181 @@ function ajax_request_callback2() {
       );
       drupal_json_output($response);
       session_destroy();
+//      drupal_goto(variable_get('shib_auth_full_logout_url'));
 //      drupal_goto('user');
       exit;
+
     } else {
       // Pass the JSON on to the WS and Return the response
-      // 1. Set up the JSON here (if needed)
 
+      // Set up the XML (normally, JSON is used)
+      $sf_xmlTEST = "
+<Submission>
+<unitPointID>COL0002</unitPointID>
+<dateTime>2018-01-19 17:08</dateTime>
+<operator>drickard1967</operator>
+<timeSpent>15</timeSpent>
+<detailed>true</detailed>
+<stats>
+<typeID>01</typeID>
+<modeID>01</modeID>
+<count>1</count>
+</stats>
+<stats>
+<typeID>01</typeID>
+<modeID>02</modeID>
+<count>2</count>
+</stats>
+<stats>
+<typeID>01</typeID>
+<modeID>03</modeID>
+<count>3</count>
+</stats>
+<referral>
+<text>sent to Professor X for more info</text>
+</referral>
+<interaction>
+<topic>linear differential equations</topic>
+<departmentID>79</departmentID>
+<course>Math 305</course>
+<staffFeedback/>
+<patronType>2</patronType>
+<patronFeedback>thanks</patronFeedback>
+</interaction>
+</Submission>
+";
+      $sf_xml = "
+<Submission>
+<unitPointID>".$_POST['sfUnitPointID'].$_POST['sfServicePointID']."</unitPointID>
+<dateTime>".$_POST['sfInputDatetime'].$_POST['sfInputTime']."</dateTime>
+<operator>".$_POST['sfOperator']."</operator>
+<patronCount>".$_POST['sfPatronCount']."</patronCount>
+<timeSpent>".$_POST['sfTimeSpent']."</timeSpent>
+<detailed>".$_POST['sfDetailed']."</detailed>
+<stats>
+<typeID>".$_POST['sfTypeID004']."</typeID>
+<modeID>".$_POST['sfModeID004']."</modeID>
+<count>".$_POST['sfReferralCount']."</count>
+</stats>
+<stats>
+<typeID>".$_POST['sfTypeID006']."</typeID>
+<modeID>".$_POST['sfModeID006']."</modeID>
+<count>".$_POST['sfResearchAsst']."</count>
+</stats>
+<stats>
+<typeID>".$_POST['sfTypeID005']."</typeID>
+<modeID>".$_POST['sfModeID005']."</modeID>
+<count>".$_POST['sfTechnicalVal']."</count>
+</stats>
+<stats>
+<typeID>".$_POST['sfTypeID002']."</typeID>
+<modeID>".$_POST['sfModeID002']."</modeID>
+<count>".$_POST['sfLookUp']."</count>
+</stats>
+<stats>
+<typeID>".$_POST['sfTypeID001']."</typeID>
+<modeID>".$_POST['sfModeID001']."</modeID>
+<count>".$_POST['sfDirectional']."</count>
+</stats>
+<stats>
+<typeID>".$_POST['sfTypeID003']."</typeID>
+<modeID>".$_POST['sfModeID003']."</modeID>
+<count>".$_POST['sfPolicyVal']."</count>
+</stats>
+<referral>
+<text>".$_POST['sfReferralVal']."</text>
+</referral>
+<interaction>
+<topic>".$_POST['sfTopic']."</topic>
+<departmentID>".$_POST['sfDeptID']."</departmentID>
+<course>".$_POST['sfCourse']."</course>
+<staffFeedback></staffFeedback>
+<patronType>".$_POST['sfPatronType']."</patronType>
+<patronFeedback>thanks</patronFeedback>
+</interaction>
+</Submission>
+      ";
+
+
+
+
+
+
+
+
+      $sf_json = array (
+        'Submission' => 
+        array (
+          'unitID' => 'YRL03',
+          'pointID' => '01',
+          'dateTime' => '2017-09-01 14:15:00',
+          'operator' => 'drickard1967',
+          'timeSpent' => 5,
+          'detailed' => true,
+          'stats' => 
+          array (
+            0 => 
+            array (
+              'typeID' => '02',
+              'modeID' => '03',
+              'count' => 3,
+            ),
+          ),
+          'Referral' => 
+          array (
+            'text' => 'sent to Professor X for more info',
+          ),
+          'Interaction' => 
+          array (
+            'topic' => 'linear differential equations',
+            'departmentID' => 79,
+            'course' => 'Math 305',
+            'staffFeedback' => '',
+            'patronType' => 2,
+            'patronFeedback' => 'thanks',
+          ),
+        ),
+      );
+      $sf_params = json_encode($sf_json);
       // 2. Send to WS here
+      $sf_url = "https://webservices-test.library.ucla.edu/pss/stats/submit";
+      $wsResponse = drupal_http_request($sf_url, array(
+        'method' => 'PUT',
+        'data' => $sf_xml,
+        'headers' => array('Content-Type' => 'text/xml; charset=UTF-8'),
+        ///'headers' => array('Content-Type' => 'application/json')
+      ));
 
-      // 3. Return the response
-      $sf_response = array(
-//        'message' => t($_POST['statsformToken']),
+      // 3. Return the response and echo data submitted in a confirmation to the user
+      $ajaxResponse = array(
+//        'message' => t($_POST['sfToken']),
 //        'message' => $_POST['statsformInputDatetime'],
 //        'message' => $_POST['statsformInputTime'],
 //        'message' => $_POST['statsformInputLocation'],
 //        'message' => $_POST['statsformInputServicePoint'],
-        'message' => $_POST['statsformUserName'],
+        'wsResponse' => $wsResponse,
+        'message1' => ' <<<',
 //        'message' => $_POST['statsformUserMenu'],
       );
-      drupal_json_output($sf_response);
+
+///      drupal_json_output($sf_response2->data);
+
+///      $sf_response = array(
+/////        'message' => t($_POST['sfToken']),
+/////        'message' => $_POST['statsformInputDatetime'],
+/////        'message' => $_POST['statsformInputTime'],
+/////        'message' => $_POST['statsformInputLocation'],
+/////        'message' => $_POST['statsformInputServicePoint'],
+///        'message' => $_POST['sfUserName'],
+/////        'message' => $_POST['statsformUserMenu'],
+//////      );
+      drupal_json_output($ajaxResponse);
       exit;
     }
   } else {
     // Return Missing Token message
     $response = array(
-      'message' => t('Error #asdf90g: Missing token.'),
+      'message' => t('Error #asdf90g: Missing token.'.$_POST['sfToken'].'  '.drupal_get_token()),
     );
     drupal_json_output($response);
     exit;
@@ -127,8 +557,8 @@ function ajax_request_callback2() {
 /**
  * Callback function for /statsform/form for testing
  */
+
 function statsform_page_one() {
   $sf_path = drupal_get_path('module', 'statsform');
-  print_r("===>".$sf_path);
 }
 
