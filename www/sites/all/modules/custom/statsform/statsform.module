@@ -1,4 +1,12 @@
 <?php
+
+//=============================================================================
+/**
+ * Implements global variables.
+ */
+global $base_url;
+
+
 //=============================================================================
 /**
  * Implements hook_menu().
@@ -72,9 +80,9 @@ function statsform_user_login(&$edit, $account) {
   if (!isset($_POST['form_id']) || $_POST['form_id'] != 'user_pass_reset' || variable_get('login_destination_immediate_redirect', FALSE)) {
     if( $_GET['q'] == 'statsform/login' ) {
       if(in_array('statsform',$account->roles)) {
-        drupal_goto('statsform/form');
+        drupal_goto( $base_url.'statsform/form' );
       } else {
-        drupal_goto('services/statsformLogin');
+        drupal_goto( $base_url.'services/statsformLogin' );
       }
     }
   }
@@ -152,8 +160,8 @@ function statsform_page_alter(&$page) {
 
         if ( $query_parameters[reLogin] !== null && $query_parameters[reLogin] == 1 ) {
           session_destroy();
-//        drupal_goto(variable_get('shib_auth_full_logout_url'));
-          drupal_goto('/services/statsformLogin');
+//        drupal_goto( variable_get('shib_auth_full_logout_url') );
+          drupal_goto( $base_url.'services/statsformLogin' );
 //        } else if ( $query_parameters[missingParm] !== null && $query_parameters[missingParm] == 1 ) {
 //          // create error message here: missing parameters, please start over and try again - pass flag to modal to trigger extra line of message: missing parameters...
         } else {
@@ -232,7 +240,7 @@ function statsform_page_alter(&$page) {
 //        $_GET['destination'] = drupal_get_destination();
           $sfsd = user_logout();
         } else if( $sf_user_login == 1  && $query_parameters[reloginhereflag] != 2 ) {
-          drupal_goto( "http://138.68.31.221:32770/services/statsformLogin?missingParm=1" );
+          drupal_goto( $base_url.'services/statsformLogin?missingParm=1' );
         }
 
 
@@ -259,7 +267,7 @@ function statsform_page_alter(&$page) {
 
 
               // go back to the start with an error message: missing parameters (prevents direct loading without parameters)
-              drupal_goto( "http://138.68.31.221:32770/services/statsformLogin?missingParm=1" );
+              drupal_goto( $base_url.'services/statsformLogin?missingParm=1' );
 
           // looks good, build out the Form page
           } else {
@@ -303,16 +311,16 @@ function statsform_page_alter(&$page) {
           // else, the user may already be logged in but not in group
           //  send user to help page with directions to ask supervisor to add user to the Drupal statsform role
         } else if (!empty($sf_user->uid) && ($sf_user->uid >= 0) && $roleFlag == 0 ){
-          drupal_goto('services/statsformLogin'); // temp until help page is available
+          drupal_goto( $base_url.'services/statsformLogin' ); // temp until help page is available
 
         // else, user is not logged; send user to web app pre-login page
         } else {
-          drupal_goto('services/statsformLogin');
+          drupal_goto( $base_url.'services/statsformLogin' );
         }
       }
 
 ///    } else {
-///      drupal_goto('services/statsformLogin'); /// redirects all of the time???
+///      drupal_goto( $base_url.'services/statsformLogin' ); /// redirects all of the time???
     }
   }
 }
@@ -353,7 +361,7 @@ function statsform_theme($existing, $type, $theme, $path, $sfTemplate) {
 function logout_request_callback() {
   session_destroy();
   // drupal_goto(variable_get('shib_auth_full_logout_url'));
-  drupal_goto('services/statsformLogin');
+  drupal_goto( $base_url.'services/statsformLogin' );
   exit;
 }
 
@@ -372,7 +380,7 @@ function ajax_request_callback() {
       drupal_json_output($response);
       session_destroy();
 //      drupal_goto(variable_get('shib_auth_full_logout_url'));
-//      drupal_goto('user');
+//      drupal_goto( $base_url.'user' );
       exit;
 
     } else {

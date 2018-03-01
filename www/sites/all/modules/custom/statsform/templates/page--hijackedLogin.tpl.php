@@ -5,24 +5,19 @@
       <meta charset="utf-8">
       <title>JS Binn</title>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js" charset="utf-8"></script>
-      <script type="text/javascript" src="http://amsul.ca/pickadate.js/vendor/pickadate/lib/picker.js"></script>
-      <script type="text/javascript" src="http://amsul.ca/pickadate.js/vendor/pickadate/lib/picker.date.js"></script>
-      <script type="text/javascript" src="http://amsul.ca/pickadate.js/vendor/pickadate/lib/picker.time.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.js"></script>
-<!--
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
--->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js" charset="utf-8"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/picker.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/picker.date.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/picker.time.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/semantic.min.js"></script>
       <script type="text/javascript" src="/<?php print( $page['sf_path'] ); ?>/templates/custom.tap.js"></script>
 
-      <link rel="stylesheet" type="text/css" href="http://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.css">
-      <link rel="stylesheet" type="text/css" href="http://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.date.css">
-      <link rel="stylesheet" type="text/css" href="http://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.time.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.css">
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/themes/default.min.css">
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/themes/default.date.min.css">
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/themes/default.time.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/semantic.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.css">
-
       <link rel="stylesheet" type="text/css" src="/<?php print( $page['sf_path'] ); ?>/templates/custom.tap.css">
-
       <link rel="stylesheet" type="text/css" href="/<?php print( $page['sf_path'] ); ?>/templates/responsive-full-background-image.css">
     
       <script type='text/javascript'>
@@ -100,26 +95,12 @@
           background-color: #CF322D;
         }
 
-        .ui.styled.accordion {
-          width: 100%;
-        }
-
         .shift {
           width: 100%;
           height: 50%;
           background-color: #68863F;
           font-size: 30px;
           vertical-align: middle;
-        }
-
-        .ui.styled.accordion .title, .ui.styled.accordion .title:hover {
-          background-color: grey;
-          color: white;
-        }
-
-        .ui.styled.accordion .active.title, .ui.styled.accordion .active.title:hover {
-          background-color: pink;
-          color: black;
         }
 
         .actions {
@@ -774,15 +755,15 @@
               </div>
       
               <div class="actions">
-                <div class="ui approve button" data-value="The Reference Desk">
+                <div class="ui approve button" data-value="Reference Desk">
                   <div class="ui card">
                     <div class="blurring dimmable image">
                       <div class="ui inverted dimmer">
-                        <h2 class="ui aligned inverted header">The Reference Desk</h2>
+                        <h2 class="ui aligned inverted header">Reference Desk</h2>
                       </div>
                       <img class="ui small image" src="/<?php print( $page['sf_path'] ); ?>/img/Arts-Reference.jpg">
                       <div class="ui large label">
-                        <center>The Reference Desk</center>
+                        <center>Reference Desk</center>
                       </div>
                       <div class="meta">
                         <span class="right"><i></i>&nbsp;</span>
@@ -870,11 +851,11 @@
                   <div class="ui card">
                     <div class="blurring dimmable image">
                       <div class="ui inverted dimmer">
-                        <h2 class="ui aligned inverted header">The Reference Desk</h2>
+                        <h2 class="ui aligned inverted header">Reference Desk</h2>
                       </div>
                       <img class="ui small image" src="/<?php print( $page['sf_path'] ); ?>/img/Ref-Desk.jpg">
                       <div class="ui large label">
-                        <center>The Reference Desk</center>
+                        <center>Reference Desk</center>
                       </div>
                       <div class="meta">
                         <span class="right"><i></i>&nbsp;</span>
@@ -1031,15 +1012,15 @@
               </div>
       
               <div class="actions">
-                <div class="ui approve button" data-value="The Reference Desk">
+                <div class="ui approve button" data-value="Reference Desk">
                   <div class="ui card">
                     <div class="blurring dimmable image">
                       <div class="ui inverted dimmer">
-                        <h2 class="ui aligned inverted header">The Reference Desk</h2>
+                        <h2 class="ui aligned inverted header">Reference Desk</h2>
                       </div>
                       <img class="ui small image" src="/<?php print( $page['sf_path'] ); ?>/img/Clark-ReferenceDesk.jpg">
                       <div class="ui large label">
-                        <center>The Reference Desk</center>
+                        <center>Reference Desk</center>
                       </div>
                       <div class="meta">
                         <span class="right"><i></i>&nbsp;</span>
@@ -1346,11 +1327,11 @@
                   <div class="ui card">
                     <div class="blurring dimmable image">
                       <div class="ui inverted dimmer">
-                        <h2 class="ui aligned inverted header">The Reference Desk</h2>
+                        <h2 class="ui aligned inverted header">Reference Desk</h2>
                       </div>
                       <img class="ui small image" src="/<?php print( $page['sf_path'] ); ?>/img/Ref-Desk.jpg">
                       <div class="ui large label">
-                        <center>The Reference Desk</center>
+                        <center>Reference Desk</center>
                       </div>
                       <div class="meta">
                         <span class="right"><i></i>&nbsp;</span>
@@ -1438,11 +1419,11 @@
                   <div class="ui card">
                     <div class="blurring dimmable image">
                       <div class="ui inverted dimmer">
-                        <h2 class="ui aligned inverted header">The Reference Desk</h2>
+                        <h2 class="ui aligned inverted header">Reference Desk</h2>
                       </div>
                       <img class="ui small image" src="/<?php print( $page['sf_path'] ); ?>/img/Ref-Desk.jpg">
                       <div class="ui large label">
-                        <center>The Reference Desk</center>
+                        <center>Reference Desk</center>
                       </div>
                       <div class="meta">
                         <span class="right"><i></i>&nbsp;</span>
@@ -1530,11 +1511,11 @@
                   <div class="ui card">
                     <div class="blurring dimmable image">
                       <div class="ui inverted dimmer">
-                        <h2 class="ui aligned inverted header">The Reference Desk</h2>
+                        <h2 class="ui aligned inverted header">Reference Desk</h2>
                       </div>
                       <img class="ui small image" src="/<?php print( $page['sf_path'] ); ?>/img/Ref-Desk.jpg">
                       <div class="ui large label">
-                        <center>The Reference Desk</center>
+                        <center>Reference Desk</center>
                       </div>
                       <div class="meta">
                         <span class="right"><i></i>&nbsp;</span>
@@ -1676,7 +1657,7 @@
                   <div class="ui card">
                     <div class="blurring dimmable image">
                       <div class="ui inverted dimmer">
-                        <h2 class="ui aligned inverted header">The Reference Desk</h2>
+                        <h2 class="ui aligned inverted header">Reference Desk</h2>
                       </div>
                       <img class="ui small image" src="/<?php print( $page['sf_path'] ); ?>/img/Ref-Desk.jpg">
                       <div class="ui large label">
@@ -3692,10 +3673,10 @@
                   break;
     
                 //
-                case 'The Reference Desk':
+                case 'Reference Desk':
                   document.getElementById('sfServicePointID').dataset.value = sfServicePointID = "01";
-                  $("#servicePoint").html("The <br>Reference <br>Desk");
-                  document.getElementById('servicePoint').className = 'show ui black button';
+                  $("#servicePoint").html("Reference <br>Desk <br>&nbsp;");
+                  document.getElementById('servicePoint').className = 'show ui basic black button';
                   $(".ui.modal").modal("hide");
                   document.getElementById("unitIndividual").disabled = false;
                   document.getElementById("unitGroup").disabled = false;
@@ -3705,7 +3686,7 @@
                 case 'Biomed Reference Desk':
                   document.getElementById('sfUnitPointID').dataset.value = sfUnitPointID = 'BIO04';
                   document.getElementById('sfServicePointID').dataset.value = sfServicePointID = "01";
-                  $("#servicePoint").html("The <br>Reference <br>Desk");
+                  $("#servicePoint").html("Reference <br>Desk <br>&nbsp;");
                   document.getElementById('servicePoint').className = 'show ui black button';
                   $(".ui.modal").modal("hide");
                   document.getElementById("unitIndividual").disabled = false;
@@ -3727,7 +3708,7 @@
                 case 'Law Reference Desk':
                   document.getElementById('sfUnitPointID').dataset.value = sfUnitPointID = 'LAW00';
                   document.getElementById('sfServicePointID').dataset.value = sfServicePointID = "01";
-                  $("#servicePoint").html("The <br>Reference <br>Desk");
+                  $("#servicePoint").html("Reference <br>Desk <br>&nbsp;");
                   document.getElementById('servicePoint').className = 'show ui black button';
                   $(".ui.modal").modal("hide");
                   document.getElementById("unitIndividual").disabled = false;
@@ -3738,7 +3719,7 @@
                 case 'Management Reference Desk':
                   document.getElementById('sfUnitPointID').dataset.value = sfUnitPointID = 'MAN00';
                   document.getElementById('sfServicePointID').dataset.value = sfServicePointID = "01";
-                  $("#servicePoint").html("The <br>Reference <br>Desk");
+                  $("#servicePoint").html("Reference <br>Desk <br>&nbsp;");
                   document.getElementById('servicePoint').className = 'show ui black button';
                   $(".ui.modal").modal("hide");
                   document.getElementById("unitIndividual").disabled = false;
@@ -3749,7 +3730,7 @@
                 case 'Music Reference Desk':
                   document.getElementById('sfUnitPointID').dataset.value = sfUnitPointID = 'MUS00';
                   document.getElementById('sfServicePointID').dataset.value = sfServicePointID = "01";
-                  $("#servicePoint").html("The <br>Reference <br>Desk");
+                  $("#servicePoint").html("Reference <br>Desk <br>&nbsp;");
                   document.getElementById('servicePoint').className = 'show ui black button';
                   $(".ui.modal").modal("hide");
                   document.getElementById("unitIndividual").disabled = false;
@@ -3837,7 +3818,7 @@
                 //
                 case 'UCLA Login':
                   $("#unitIndividual").html("Set to use <br>UCLA <br>Login");
-                  document.getElementById('unitIndividual').className = 'show ui positive button';
+                  document.getElementById('unitIndividual').className = 'show ui green button';
                   document.getElementById('unitGroup').className = 'show ui basic rgba(255, 255, 255, 0.15) button label';
                   $("#unitGroup").html("Choose <br>Group <br>Login");
                   sfUnitIndividualID = 'individual';
@@ -3856,7 +3837,7 @@
                 case ($(this).data("value").match(/^sfGroup/) || {}).input:
                   sfGroupVals = $(this).data("value").split("_");
                   $("#unitGroup").html(sfGroupVals[2].wrap(20));
-                  document.getElementById('unitGroup').className = 'show ui positive button label';
+                  document.getElementById('unitGroup').className = 'show ui green button label';
                   document.getElementById('unitIndividual').className = 'show ui basic rgba(255, 255, 255, 0.15) button';
                   $("#unitIndividual").html("Choose <br>Single <br>Login");
                   sfUnitGroupID = sfGroupVals[1];
@@ -3917,7 +3898,7 @@
             var semanticIcons = [ 
 "search","mail outline","external","signal","setting","home","inbox","browser","tag","tags","calendar","comment","comments","shop","privacy","settings","trophy","payment","feed","alarm outline","tasks","cloud","lab","mail","idea","dashboard","sitemap","alarm","terminal","code","protect","calendar outline","ticket","external square","map","bug","mail square","history","options","comment outline","comments outline","text telephone","find","wifi","alarm slash","alarm slash outline","copyright","at","eyedropper","paint brush","heartbeat","download","repeat","refresh","lock","bookmark","print","write","theme","adjust","edit","external share","ban","mail forward","share","expand","compress","unhide","hide","random","retweet","sign out","pin","sign in","upload","call","call square","remove bookmark","unlock","configure","filter","wizard","undo","exchange","cloud download","cloud upload","reply","reply all","erase","unlock alternate","archive","translate","recycle","send","send outline","share alternate","share alternate square","wait","write square","share square","add to cart","in cart","add user","remove user","help circle","info circle","warning","warning circle","warning sign","help","info","announcement","birthday","users","doctor","child","user","handicap","student","spy","female","male","woman","man","non binary transgender","intergender","transgender","lesbian","gay","heterosexual","other gender","other gender vertical","other gender horizontal","neuter","grid layout","list layout","block layout","zoom","zoom out","resize vertical","resize horizontal","maximize","crop","cocktail","road","flag","book","gift","leaf","fire","plane","magnet","legal","lemon","world","travel","shipping","money","lightning","rain","treatment","suitcase","bar","flag outline","flag checkered","puzzle","fire extinguisher","rocket","anchor","bullseye","sun","moon","fax","life ring","bomb","soccer","calculator","diamond","crosshairs","asterisk","certificate","circle","quote left","quote right","ellipsis horizontal","ellipsis vertical","cube","cubes","circle notched","circle thin","square outline","square","checkmark","remove","checkmark box","move","add circle","minus circle","remove circle","check circle","remove circle outline","check circle outline","plus","minus","add square","radio","selected radio","minus square","minus square outline","check square","plus square outline","toggle off","toggle on","film","sound","photo","bar chart","camera retro","newspaper","area chart","pie chart","line chart","arrow circle outline down","arrow circle outline up","chevron left","chevron right","arrow left","arrow right","arrow up","arrow down","chevron up","chevron down","pointing right","pointing left","pointing up","pointing down","arrow circle left","arrow circle right","arrow circle up","arrow circle down","caret down","caret up","caret left","caret right","angle double left","angle double right","angle double up","angle double down","angle left","angle right","angle up","angle down","chevron circle left","chevron circle right","chevron circle up","chevron circle down","toggle down","toggle up","toggle right","long arrow down","long arrow up","long arrow left","long arrow right","arrow circle outline right","arrow circle outline left","toggle left","power","trash","trash outline","disk outline","desktop","laptop","tablet","mobile","game","keyboard","plug","folder","folder open","level up","level down","file","file outline","file text","file text outline","folder outline","folder open outline","file pdf outline","file word outline","file excel outline","file powerpoint outline","file image outline","file archive outline","file audio outline","file video outline","file code outline","barcode","qrcode","fork","html5","css3","rss","rss square","openid","database","server","heart","star","empty star","thumbs outline up","thumbs outline down","star half","empty heart","smile","frown","meh","star half empty","thumbs up","thumbs down","music","video play outline","volume off","volume down","volume up","record","step backward","fast backward","backward","play","pause","stop","forward","fast forward","step forward","eject","unmute","mute","video play","closed captioning","marker","coffee","food","building outline","hospital","emergency","first aid","military","h","location arrow","space shuttle","university","building","paw","spoon","car","taxi","tree","bicycle","bus","ship","motorcycle","street view","hotel","train","subway","table","columns","sort","sort ascending","sort descending","sort alphabet ascending","sort alphabet descending","sort content ascending","sort content descending","sort numeric ascending","sort numeric descending","font","bold","italic","text height","text width","align left","align center","align right","align justify","list","outdent","indent","linkify","cut","copy","attach","save","content","unordered list","ordered list","strikethrough","underline","paste","unlink","superscript","subscript","header","paragraph","euro","pound","dollar","rupee","yen","ruble","won","lira","shekel","paypal","paypal card","google wallet","visa","mastercard","discover","american express","stripe","twitter square","facebook square","linkedin square","github square","twitter","facebook","github","pinterest","pinterest square","google plus square","google plus","linkedin","github alternate","maxcdn","bitcoin","youtube square","youtube","xing","xing square","youtube play","dropbox","stack overflow","instagram","flickr","adn","bitbucket","bitbucket square","tumblr","tumblr square","apple","windows","android","linux","dribbble","skype","foursquare","trello","gittip","vk","weibo","renren","pagelines","stack exchange","vimeo","slack","wordpress","yahoo","google","reddit","reddit square","stumbleupon circle","stumbleupon","delicious","digg","pied piper","pied piper alternate","drupal","joomla","behance","behance square","steam","steam square","spotify","deviantart","soundcloud","vine","codepen","jsfiddle","rebel","empire","git square","git","hacker news","tencent weibo","qq","wechat","slideshare","twitch","yelp","lastfm","lastfm square","ioxhost","angellist","meanpath","buysellads","connectdevelop","dashcube","forumbee","leanpub","sellsy","shirtsinbulk","simplybuilt","skyatlas","whatsapp","viacoin","medium","like","favorite","video","check","close","cancel","delete","x","user times","user close","user cancel","user delete","user x","zoom in","magnify","shutdown","clock","time","play circle outline","headphone","camera","video camera","picture","pencil","compose","point","tint","signup","plus circle","dont","minimize","add","eye","attention","cart","shuffle","talk","chat","shopping cart","bar graph","area graph","pie graph","line graph","key","cogs","discussions","like outline","dislike outline","heart outline","log out","thumb tack","winner","bookmark outline","phone","phone square","credit card","hdd outline","bullhorn","bell","bell outline","bell slash","bell slash outline","hand outline right","hand outline left","hand outline up","hand outline down","globe","wrench","briefcase","group","flask","sidebar","bars","list ul","list ol","numbered list","magic","truck","currency","triangle down","dropdown","triangle up","triangle left","triangle right","envelope","conversation","umbrella","clipboard","lightbulb","ambulance","medkit","fighter jet","beer","plus square","computer","circle outline","intersex","asexual","spinner","gamepad","star half full","question","eraser","microphone","microphone slash","shield","target","play circle","pencil square","compass","amex","eur","gbp","usd","inr","cny","rmb","jpy","rouble","rub","krw","btc","sheqel","ils","try","zip","dot circle outline","sliders","wi-fi","graduation","weixin","binoculars","gratipay","genderless","teletype","power cord","tty","cc","plus cart","arrow down cart","detective","venus","mars","mercury","venus double","female homosexual","mars double","male homosexual","venus mars","mars stroke","mars alternate","mars vertical","mars horizontal","mars stroke vertical","mars stroke horizontal","facebook official","pinterest official","bed"];
 
-          // populate the modal with users/groups with data from Web Services collected in the Drupal module
+          // auto populate the modal with users/groups with data from Web Services collected in the Drupal module
           var cnt = 0;
           usersArray = new Array();
           var sf_groupList_vals = <?php print( $page['sf_groupList'] ); ?>;
@@ -3939,6 +3920,7 @@
           return [this.getFullYear(), mm.length===2 ? '-' : '-0', mm, dd.length===2 ? '-' : '-0', dd].join(''); // padding
         };
 
+        // wrap string to length "len" passed in
         String.prototype.wrap= function(len){
           var temp = this.split(/\s+/);
           var res = "";

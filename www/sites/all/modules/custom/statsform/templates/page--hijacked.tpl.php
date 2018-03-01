@@ -5,35 +5,20 @@
       <meta charset="utf-8">
       <title>JS Bin</title>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js" charset="utf-8"></script>
-      <script type="text/javascript" src="http://amsul.ca/pickadate.js/vendor/pickadate/lib/picker.js"></script>
-      <script type="text/javascript" src="http://amsul.ca/pickadate.js/vendor/pickadate/lib/picker.date.js"></script>
-      <script type="text/javascript" src="http://amsul.ca/pickadate.js/vendor/pickadate/lib/picker.time.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.js"></script>
-<!--
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
--->
-      <script type="text/javascript" src="/<?php print( $page['sf_path'] ); ?>/templates/accordion.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/picker.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/picker.date.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/picker.time.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/semantic.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/jquery-taphold@1.0.0/taphold.min.js"></script>
       <script type="text/javascript" src="/<?php print( $page['sf_path'] ); ?>/templates/custom.tap.js"></script>
-      <script type="text/javascript" src="/<?php print( $page['sf_path'] ); ?>/templates/jquery-taphold.js"></script>
-<!--
-      <script type="text/javascript" src="/<?php print( $page['sf_path'] ); ?>/templates/custom.accordion.js"></script>
--->
-<!--
-      <script type="text/javascript" src="/<?php print( $page['sf_path'] ); ?>/templates/jquery.touchSwipe.min.js"></script>
--->
 
-      <link rel="stylesheet" type="text/css" href="http://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.css">
-      <link rel="stylesheet" type="text/css" href="http://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.date.css">
-      <link rel="stylesheet" type="text/css" href="http://amsul.ca/pickadate.js/vendor/pickadate/lib/themes/default.time.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.css">
-<!--
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/themes/default.min.css">
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/themes/default.date.min.css">
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pickadate@3.5.6/lib/themes/default.time.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/semantic.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.css">
--->
       <link rel="stylesheet" type="text/css" src="/<?php print( $page['sf_path'] ); ?>/templates/custom.tap.css">
-
-      <link rel="stylesheet" type="text/css" src="/<?php print( $page['sf_path'] ); ?>/templates/custom.accordion.css">
-
       <link rel="stylesheet" type="text/css" href="/<?php print( $page['sf_path'] ); ?>/templates/responsive-full-background-image.css">
     
       <script type='text/javascript'>
@@ -91,26 +76,12 @@
           background-color: #CF322D;
         }
 
-        .ui.styled.accordion {
-          width: 100%;
-        }
-
         .shift {
           width: 100%;
           height: 50%;
           background-color: #68863F;
           font-size: 30px;
           vertical-align: middle;
-        }
-
-        .ui.styled.accordion .title, .ui.styled.accordion .title:hover {
-          background-color: grey;
-          color: white;
-        }
-
-        .ui.styled.accordion .active.title, .ui.styled.accordion .active.title:hover {
-          background-color: pink;
-          color: black;
         }
 
         .actions {
@@ -322,6 +293,68 @@ font-weight: lighter;
 .dimmable.dimmed > .dimmer {
   overflow: auto !important;
 }
+
+.ui.withCheckDivTouchOn {
+  background-color: rgba(50, 132, 191, 0.8);
+}
+
+.ui.withCheckDivTouch {
+  background-color: rgba(255, 255, 255, 1.0);
+}
+
+
+
+input[type=checkbox].css-checkbox {
+ position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+  padding-left:35px;
+  height:30px; 
+  display:inline-block;
+  line-height:30px;
+  background-repeat:no-repeat;
+  background-position: 0 0;
+  font-size:30px;
+  vertical-align:middle;
+  cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+  background-position: 0 -30px;
+}
+
+label.css-label {
+  background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_f60067e68146be412873f96f1d2458cd.png);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+
+textarea{
+    resize:none;
+width:100%;
+height:100%;
+}
+
+textarea:focus{
+    position:absolute;
+    z-index:1;
+}
+
+        .ui.border.padded.basic.segment.left.floated {
+          background-color: rgba(255, 255, 255, 0.0);
+          border-color: black;
+          border-radius: 8px;
+          border: 1px black solid;
+          margin-bottom: 1px;
+        }
+
       </style>
 
     </head>
@@ -816,15 +849,15 @@ font-weight: lighter;
               </div>
       
               <div class="actions">
-                <div class="ui approve button" data-value="The Reference Desk">
+                <div class="ui approve button" data-value="Reference Desk">
                   <div class="ui card">
                     <div class="blurring dimmable image">
                       <div class="ui inverted dimmer">
-                        <h2 class="ui aligned inverted header">The Reference Desk</h2>
+                        <h2 class="ui aligned inverted header">Reference Desk</h2>
                       </div>
                       <img class="ui small image" src="/<?php print( $page['sf_path'] ); ?>/img/Arts-Reference.jpg">
                       <div class="ui large label">
-                        <center>The Reference Desk</center>
+                        <center>Reference Desk</center>
                       </div>
                       <div class="meta">
                         <span class="right"><i></i>&nbsp;</span>
@@ -912,11 +945,11 @@ font-weight: lighter;
                   <div class="ui card">
                     <div class="blurring dimmable image">
                       <div class="ui inverted dimmer">
-                        <h2 class="ui aligned inverted header">The Reference Desk</h2>
+                        <h2 class="ui aligned inverted header">Reference Desk</h2>
                       </div>
                       <img class="ui small image" src="/<?php print( $page['sf_path'] ); ?>/img/Ref-Desk.jpg">
                       <div class="ui large label">
-                        <center>The Reference Desk</center>
+                        <center>Reference Desk</center>
                       </div>
                       <div class="meta">
                         <span class="right"><i></i>&nbsp;</span>
@@ -1073,15 +1106,15 @@ font-weight: lighter;
               </div>
       
               <div class="actions">
-                <div class="ui approve button" data-value="The Reference Desk">
+                <div class="ui approve button" data-value="Reference Desk">
                   <div class="ui card">
                     <div class="blurring dimmable image">
                       <div class="ui inverted dimmer">
-                        <h2 class="ui aligned inverted header">The Reference Desk</h2>
+                        <h2 class="ui aligned inverted header">Reference Desk</h2>
                       </div>
                       <img class="ui small image" src="/<?php print( $page['sf_path'] ); ?>/img/Clark-ReferenceDesk.jpg">
                       <div class="ui large label">
-                        <center>The Reference Desk</center>
+                        <center>Reference Desk</center>
                       </div>
                       <div class="meta">
                         <span class="right"><i></i>&nbsp;</span>
@@ -1388,11 +1421,11 @@ font-weight: lighter;
                   <div class="ui card">
                     <div class="blurring dimmable image">
                       <div class="ui inverted dimmer">
-                        <h2 class="ui aligned inverted header">The Reference Desk</h2>
+                        <h2 class="ui aligned inverted header">Reference Desk</h2>
                       </div>
                       <img class="ui small image" src="/<?php print( $page['sf_path'] ); ?>/img/Ref-Desk.jpg">
                       <div class="ui large label">
-                        <center>The Reference Desk</center>
+                        <center>Reference Desk</center>
                       </div>
                       <div class="meta">
                         <span class="right"><i></i>&nbsp;</span>
@@ -1480,11 +1513,11 @@ font-weight: lighter;
                   <div class="ui card">
                     <div class="blurring dimmable image">
                       <div class="ui inverted dimmer">
-                        <h2 class="ui aligned inverted header">The Reference Desk</h2>
+                        <h2 class="ui aligned inverted header">Reference Desk</h2>
                       </div>
                       <img class="ui small image" src="/<?php print( $page['sf_path'] ); ?>/img/Ref-Desk.jpg">
                       <div class="ui large label">
-                        <center>The Reference Desk</center>
+                        <center>Reference Desk</center>
                       </div>
                       <div class="meta">
                         <span class="right"><i></i>&nbsp;</span>
@@ -1572,11 +1605,11 @@ font-weight: lighter;
                   <div class="ui card">
                     <div class="blurring dimmable image">
                       <div class="ui inverted dimmer">
-                        <h2 class="ui aligned inverted header">The Reference Desk</h2>
+                        <h2 class="ui aligned inverted header">Reference Desk</h2>
                       </div>
                       <img class="ui small image" src="/<?php print( $page['sf_path'] ); ?>/img/Ref-Desk.jpg">
                       <div class="ui large label">
-                        <center>The Reference Desk</center>
+                        <center>Reference Desk</center>
                       </div>
                       <div class="meta">
                         <span class="right"><i></i>&nbsp;</span>
@@ -1718,7 +1751,7 @@ font-weight: lighter;
                   <div class="ui card">
                     <div class="blurring dimmable image">
                       <div class="ui inverted dimmer">
-                        <h2 class="ui aligned inverted header">The Reference Desk</h2>
+                        <h2 class="ui aligned inverted header">Reference Desk</h2>
                       </div>
                       <img class="ui small image" src="/<?php print( $page['sf_path'] ); ?>/img/Ref-Desk.jpg">
                       <div class="ui large label">
@@ -2636,9 +2669,9 @@ font-weight: lighter;
       <!-- MODALS END --------------------------------------------------------------------------------------- -->
 
 
-      <!-- HEADER -->
-      <!-- HEADER -->
-      <!-- HEADER -->
+      <!-- HEADER ------------------------------------------------------------------------------------------------------------->
+      <!-- HEADER ------------------------------------------------------------------------------------------------------------->
+      <!-- HEADER ------------------------------------------------------------------------------------------------------------->
 
       <!-- SPACER -->
       <div class="ui stackable grid container">
@@ -3061,9 +3094,9 @@ document.getElementById('sfUnitGroupID').value
       <!-------------------------- TAB 1 - Quick Questions - END -------------------------->
 
 
-      <!-------------------------- TAB 2 - Research Assistance -------------------------->
-      <!-------------------------- TAB 2 - Research Assistance -------------------------->
-      <!-------------------------- TAB 2 - Research Assistance -------------------------->
+      <!-------------------------- TAB 2 - Research Assistance ----------------------------------------------------------------------------------------------------->
+      <!-------------------------- TAB 2 - Research Assistance ----------------------------------------------------------------------------------------------------->
+      <!-------------------------- TAB 2 - Research Assistance ----------------------------------------------------------------------------------------------------->
       <div class="ui bottom attached tab" id="tabResearchAssistance" data-tab="researchAssistance">
 
         <!-- PAGE TOP CONTENT -->
@@ -3085,14 +3118,14 @@ document.getElementById('sfUnitGroupID').value
 
                 <div class="ui eight wide floated column">
                     <div class="content">
-
                       <div class="ui huge fluid input">
-                        <div class="ui big label">
-                          Question <br>/ Topic
+                        <div class="ui big label" id="questionTopic" name="questionTopic">
+                          Question<br>/ Topic
                         </div>
-                        <input id="questionTopic" placeholder="Enter here..." type="text">
+                        <div>
+                          <textarea class="sfTextArea" id="exboxQuestionTopic" placeholder="Enter here..." type="text"></textarea>
+                        </div>
                       </div>
-
                     </div>
                 </div>
 
@@ -3168,14 +3201,14 @@ document.getElementById('sfUnitGroupID').value
 
                 <div class="ui eight wide floated column">
                     <div class="content">
-
                       <div class="ui huge fluid input">
                         <div class="ui big label">
                           Course <br>/ Section
                         </div>
-                        <input id="courseSection" placeholder="Enter here..." type="text">
+                        <div>
+                          <textarea class="sfTextArea" id="exboxCourseSection" placeholder="Enter here..." type="text"></textarea>
+                        </div>
                       </div>
-
                     </div>
                 </div>
 
@@ -3213,37 +3246,23 @@ document.getElementById('sfUnitGroupID').value
                 <div class="active content">
                   <div class="ui equal width aligned grid"> <!-- Inner Grid2 -->
 
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card withCheckDiv"> <!-- withCheck is in custom.tap.js -->
+                    <div class="eight wide column">
+                      <div class="ui fluid card withCheckDivTouch" id="sfResearchCheckbox"> <!-- withCheck, withCheckTouch is in custom.tap.js -->
                         <div class="content middle aligned">
-
-                          <div class="ui padded inverted segment left floated"> <!-- positions the black box -->
-                            <div class="ui huge fitted withCheckBox checkbox">
-                              <input type="checkbox" id="researchCheckbox" name="researchCheckbox">
-                              <label></label>
-                            </div>
-                          </div>
-
-                          <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/research.png">
-
+                          <input type="checkbox" id="researchCheckbox" name="researchCheckbox" style="opacity: 0.0; position: absolute; left: -9999px">
+                          <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/research.png"> 
                           <div class="ui left aligned">
                             <div class="header"> Research Assistance </div>
                             <div class="meta"> Help patron with research strategy, advice, overview of resources (drop-in). </div>
                           </div>
-
                         </div> 
                       </div>
                     </div>
 
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card withCheckDiv">
+                    <div class="eight wide column">
+                      <div class="ui fluid card withCheckDivTouch" id="sfTechnicalCheckbox">
                         <div class="content middle aligned">
-                          <div class="ui padded inverted segment left floated">
-                            <div class="ui huge fitted withCheckBox checkbox">
-                              <input type="checkbox" id="technicalCheckbox" name="researchCheckbox">
-                              <label></label>
-                            </div>
-                          </div>
+                          <input type="checkbox" id="technicalCheckbox" name="technicalCheckbox" style="opacity: 0.0; position: absolute; left: -9999px">
                           <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/technical.png"> 
                           <div class="ui left aligned">
                             <div class="header"> Technical Assistance </div>
@@ -3253,51 +3272,36 @@ document.getElementById('sfUnitGroupID').value
                       </div>
                     </div>
 
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card withCheckDiv">
+                    <div class="eight wide column">
+                      <div class="ui fluid card withCheckDivTouch" id="sfLookupCheckbox">
                         <div class="content middle aligned">
-                          <div class="ui padded inverted segment left floated">
-                            <div class="ui huge fitted withCheckBox checkbox">
-                              <input type="checkbox" id="lookupCheckbox" name="researchCheckbox">
-                              <label></label>
-                            </div>
-                          </div>
+                          <input type="checkbox" id="lookupCheckbox" name="lookupCheckbox" style="opacity: 0.0; position: absolute; left: -9999px">
                           <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/lookup.png"> 
                           <div class="ui left aligned">
                             <div class="header"> Look Up Known Item </div>
                             <div class="meta"> Find call numbers, books, articles, locations, etc. for known items requested by patron. </div>
                           </div>
-                        </div>
+                        </div> 
                       </div>
                     </div>
 
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card withCheckDiv">
-                        <div class="content middle aligned"> 
-                          <div class="ui padded inverted segment left floated">
-                            <div class="ui huge fitted withCheckBox checkbox">
-                              <input type="checkbox" id="directionalCheckbox" name="researchCheckbox">
-                              <label></label>
-                            </div>
-                          </div>
-                          <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/directions.png">
+                    <div class="eight wide column">
+                      <div class="ui fluid card withCheckDivTouch" id="sfDirectionalCheckbox">
+                        <div class="content middle aligned">
+                          <input type="checkbox" id="directionalCheckbox" name="directionalCheckbox" style="opacity: 0.0; position: absolute; left: -9999px">
+                          <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/directions.png"> 
                           <div class="ui left aligned">
-                            <div class="header"> Directions2 </div> 
+                            <div class="header"> Directional Assistance </div>
                             <div class="meta"> Location or directions provided. E.G. rooms, events, contact info, etc. </div>
                           </div>
-                        </div>
+                        </div> 
                       </div>
                     </div>
 
-                    <div class="eight wide column"> 
-                      <div class="ui fluid card withCheckDiv">
+                    <div class="eight wide column">
+                      <div class="ui fluid card withCheckDivTouch" id="sfPolicyCheckbox">
                         <div class="content middle aligned">
-                          <div class="ui padded inverted segment left floated">
-                            <div class="ui huge fitted withCheckBox checkbox">
-                              <input type="checkbox" id="policyCheckbox" name="researchCheckbox">
-                              <label></label>
-                            </div>
-                          </div>
+                          <input type="checkbox" id="policyCheckbox" name="policyCheckbox" style="opacity: 0.0; position: absolute; left: -9999px">
                           <img class="ui tiny image left floated" src="/<?php print( $page['sf_path'] ); ?>/img/policy.png"> 
                           <div class="ui left aligned">
                             <div class="header"> Policy & Operations</div>
@@ -3646,6 +3650,7 @@ document.getElementById('sfUnitGroupID').value
 
           // make global
           var sfDateSubmit = 0;
+          var fromTab = 0;
 
           // this is displayed when switching between the Quick Questions and Research Asistance tabs
           var spMsgTxt = "Please re-select the Service Point when Switching between <em>Quick Search</em> and <em>Research Questions</em>.";
@@ -3670,13 +3675,13 @@ document.getElementById('sfUnitGroupID').value
 
             /// reset Service Point on tab selection
             ///  Research Assistance Page
-            document.getElementById("questionTopic").value = "";
+            document.getElementById("exboxQuestionTopic").value = "";
             $('.ui.dropdown').dropdown('restore defaults'); // do this one first
             $('.ui.status,dropdown').dropdown('set text', 'Patron Status');
             $('.ui.status,dropdown').dropdown('set value', '1');
             $('.ui.mode,dropdown').dropdown('set text', 'Assistance Method');
             $('.ui.mode,dropdown').dropdown('set value', '01');
-            document.getElementById("courseSection").value = "";
+            document.getElementById("exboxCourseSection").value = "";
             document.getElementById("referralCheckbox").checked = false;
             document.getElementById("researchCheckbox").checked = false;
             document.getElementById("researchCheckbox").value = 0;
@@ -3690,6 +3695,12 @@ document.getElementById('sfUnitGroupID').value
             document.getElementById("policyCheckbox").value = 0;
             document.getElementById("patronCount").textContent = 0;
             document.getElementById("minuteCount").textContent = 0;
+            document.getElementById("sfResearchCheckbox").className="ui fluid card withCheckDivTouch";
+            document.getElementById("sfTechnicalCheckbox").className="ui fluid card withCheckDivTouch";
+            document.getElementById("sfLookupCheckbox").className="ui fluid card withCheckDivTouch";
+            document.getElementById("sfDirectionalCheckbox").className="ui fluid card withCheckDivTouch";
+            document.getElementById("sfPolicyCheckbox").className="ui fluid card withCheckDivTouch";
+
             /// END - reset Service Point on tab selection
           }
 
@@ -3748,6 +3759,29 @@ document.getElementById('sfUnitGroupID').value
 
         //////////// the following section applies to the FORM pages
           if( <?php print( $page['sf_page_name'] ); ?> == 2 ) {
+
+            $('[id ^= "exbox"]').focus(function() {
+              $(this)
+              .css("resize", "both")
+              .animate({
+                width:"120%",
+                height:"300%"}, {
+                duration: 1000
+              }, {
+                scrollTop: document.body.scrollHeight
+              }, 'slow');
+              //$("#questionTopic").html("<font color=red>Tap <br>to Close&nbsp;</font>");
+            });
+
+            $('[id ^= "exbox"]').blur(function() {
+              $(this)
+              .css("resize", "none")
+              .stop()
+              .css("width", "100%")
+              .css("height", "100%")
+              .css("box-shadow", "none");
+              //$("#questionTopic").html("Question<br>/ Topic");
+            });
 
             // these sre present to show status - logout out to go back to preLogin and change
 //            document.getElementById("unitIndividual").disabled = true;
@@ -3830,7 +3864,7 @@ document.getElementById('sfUnitGroupID').value
             if( "<?php print( $page['sfUnitIndividualID'] ); ?>" == 'individual'){
               sfUnitIndividualID = 'individual';
               $("#unitIndividual").html( 'Set to use <br>UCLA <br>Login' );
-              document.getElementById('unitIndividual').className = 'show ui positive button';
+              document.getElementById('unitIndividual').className = 'show ui green button';
               $("#unitGroup").html( 'Choose <br>Group <br>Login' );
               document.getElementById('unitGroup').className = 'show ui basic rgba(255, 255, 255, 0.15) button label';
             } else if( "<?php print( $page['sfUnitIndividualID'] ); ?>" == 'notIndividual'){
@@ -3840,7 +3874,7 @@ document.getElementById('sfUnitGroupID').value
               $sfUnitGroupLabel = "<?php print( $page['sfUnitGroupLabel'] ); ?>";
               $("#unitGroup").html( $sfUnitGroupLabel );
               document.getElementById('unitGroup').value = document.getElementById("sfUnitGroupID").dataset.value;
-              document.getElementById('unitGroup').className = 'show ui positive button';
+              document.getElementById('unitGroup').className = 'show ui green button';
             }
             // apply the user selections OBTAINED from the preLogin page
 
@@ -3866,7 +3900,7 @@ document.getElementById('sfUnitGroupID').value
 
                   resetForms();
                   document.getElementById("submitQuickQuestions").disabled = true;
-                  document.getElementById("servicePoint").click();
+                  //document.getElementById("servicePoint").click();
                 }
               }
             );
@@ -4535,9 +4569,9 @@ document.getElementById('sfUnitGroupID').value
                   break;
     
                 //
-                case 'The Reference Desk':
+                case 'Reference Desk':
                   document.getElementById('sfServicePointID').dataset.value = sfServicePointID = "01";
-                  $("#servicePoint").html("The <br>Reference <br>Desk");
+                  $("#servicePoint").html("Reference <br>Desk <br>&nbsp;");
                   document.getElementById('servicePoint').className = 'show ui black button';
                   $(".ui.modal").modal("hide");
                   document.getElementById("unitIndividual").disabled = false;
@@ -4548,7 +4582,7 @@ document.getElementById('sfUnitGroupID').value
                 case 'Biomed Reference Desk':
                   document.getElementById('sfUnitPointID').dataset.value = sfUnitPointID = 'BIO04';
                   document.getElementById('sfServicePointID').dataset.value = sfServicePointID = "01";
-                  $("#servicePoint").html("The <br>Reference <br>Desk");
+                  $("#servicePoint").html("Reference <br>Desk <br>&nbsp;");
                   document.getElementById('servicePoint').className = 'show ui black button';
                   $(".ui.modal").modal("hide");
                   document.getElementById("unitIndividual").disabled = false;
@@ -4570,7 +4604,7 @@ document.getElementById('sfUnitGroupID').value
                 case 'Law Reference Desk':
                   document.getElementById('sfUnitPointID').dataset.value = sfUnitPointID = 'LAW00';
                   document.getElementById('sfServicePointID').dataset.value = sfServicePointID = "01";
-                  $("#servicePoint").html("The <br>Reference <br>Desk");
+                  $("#servicePoint").html("Reference <br>Desk <br>&nbsp;");
                   document.getElementById('servicePoint').className = 'show ui black button';
                   $(".ui.modal").modal("hide");
                   document.getElementById("unitIndividual").disabled = false;
@@ -4581,7 +4615,7 @@ document.getElementById('sfUnitGroupID').value
                 case 'Management Reference Desk':
                   document.getElementById('sfUnitPointID').dataset.value = sfUnitPointID = 'MAN00';
                   document.getElementById('sfServicePointID').dataset.value = sfServicePointID = "01";
-                  $("#servicePoint").html("The <br>Reference <br>Desk");
+                  $("#servicePoint").html("Reference <br>Desk <br>&nbsp;");
                   document.getElementById('servicePoint').className = 'show ui black button';
                   $(".ui.modal").modal("hide");
                   document.getElementById("unitIndividual").disabled = false;
@@ -4592,7 +4626,7 @@ document.getElementById('sfUnitGroupID').value
                 case 'Music Reference Desk':
                   document.getElementById('sfUnitPointID').dataset.value = sfUnitPointID = 'MUS00';
                   document.getElementById('sfServicePointID').dataset.value = sfServicePointID = "01";
-                  $("#servicePoint").html("The <br>Reference <br>Desk");
+                  $("#servicePoint").html("Reference <br>Desk <br>&nbsp;");
                   document.getElementById('servicePoint').className = 'show ui black button';
                   $(".ui.modal").modal("hide");
                   document.getElementById("unitIndividual").disabled = false;
@@ -4680,7 +4714,7 @@ document.getElementById('sfUnitGroupID').value
                 //
                 case 'UCLA Login':
                   $("#unitIndividual").html("Set to use <br>UCLA <br>Login");
-                  document.getElementById('unitIndividual').className = 'show ui positive button';
+                  document.getElementById('unitIndividual').className = 'show ui green button';
                   document.getElementById('unitGroup').className = 'show ui basic rgba(255, 255, 255, 0.15) button label';
                   $("#unitGroup").html("Choose <br>Group <br>Login");
                   sfUnitIndividualID = 'individual';
@@ -4699,7 +4733,7 @@ document.getElementById('sfUnitGroupID').value
                 case ($(this).data("value").match(/^sfGroup/) || {}).input:
                   sfGroupVals = $(this).data("value").split("_");
                   $("#unitGroup").html(sfGroupVals[2].wrap(20));
-                  document.getElementById('unitGroup').className = 'show ui positive button label';
+                  document.getElementById('unitGroup').className = 'show ui green button label';
                   document.getElementById('unitIndividual').className = 'show ui basic rgba(255, 255, 255, 0.15) button';
                   $("#unitIndividual").html("Choose <br>Single <br>Login");
 
@@ -5014,10 +5048,10 @@ document.getElementById('sfUnitGroupID').value
 ///                    'sfInputTime': ' '+document.getElementsByName("inputTime")[0].value,
                     'sfOperator': document.getElementById("sfUserName").dataset.value,
                     'sfDetailed': 'true', // always true for the Research Assistant session
-                    'sfTopic': document.getElementById("questionTopic").value,
+                    'sfTopic': document.getElementById("exboxQuestionTopic").value,
                     'sfPatronType': document.getElementById("patronStatusInput").value,
                     'sfDeptID': document.getElementById("deptWs").value,
-                    'sfCourse': document.getElementById("courseSection").value,
+                    'sfCourse': document.getElementById("exboxCourseSection").value,
                     'sfTypeID004': '13',
                     'sfModeID004': document.getElementById("interactionModeInput").value,
                     'sfReferralCount': document.getElementById("referralCheckbox").value,

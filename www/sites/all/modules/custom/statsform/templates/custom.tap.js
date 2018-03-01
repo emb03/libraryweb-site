@@ -9,11 +9,11 @@ $(document).ready(function() {
 
     // check/uncheck the checkboxes on Research Assistance by clicking on the div area
     //  and enable/disable submission if 1-or-more/none are checked
-    $('.withCheckDiv').click(function() {
+    $('.withCheckDivTouch').click(function() {
         var $checkbox = $(this).find(':checkbox');
         if( $checkbox[0].checked == 1 ){
             $checkbox[0].checked=0;
-
+            $(this)[0].className="ui fluid card withCheckDivTouch"
             var x = document.getElementsByName("researchCheckbox");
             var i;
             var j = 0;
@@ -32,6 +32,7 @@ $(document).ready(function() {
 
         } else {
             $checkbox[0].checked=1;
+            $(this)[0].className="ui fluid card withCheckDivTouchOn"
             document.getElementById("submitResearchAssistance").disabled = false;
         }
     });
