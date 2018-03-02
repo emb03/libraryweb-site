@@ -4018,7 +4018,7 @@
   
                   $.ajax({
                     type: "POST",
-                    url: "/statsform/ajax",
+                    url: "/app/statsform/ajax",
                     data: {
                       'from_js': true,
                       'sfToken': document.getElementById("sfToken").dataset.value,
@@ -4086,7 +4086,7 @@
 
                 $.ajax({
                   type: "POST",
-                  url: "/statsform/ajax",
+                  url: "/app/statsform/ajax",
                   data: {
                     'from_js': true,
                     'sfToken': document.getElementById("sfToken").dataset.value,

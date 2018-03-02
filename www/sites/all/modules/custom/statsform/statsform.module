@@ -22,7 +22,7 @@ function statsform_menu() {
     'description' => 'For statsform use',
   );
 
-  $items['statsform/form'] = array(
+  $items['app/statsform/form'] = array(
     'title' => 'Stats Form',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('statsform_page_one'),
@@ -46,7 +46,7 @@ function statsform_menu() {
     'description' => 'For statsform use',
   );
  
-  $items['statsform/ajax'] = array(
+  $items['app/statsform/ajax'] = array(
     'title' => 'Ajax Request',
     'page callback' => 'ajax_request_callback',
     'access callback' => TRUE,
@@ -80,7 +80,7 @@ function statsform_user_login(&$edit, $account) {
   if (!isset($_POST['form_id']) || $_POST['form_id'] != 'user_pass_reset' || variable_get('login_destination_immediate_redirect', FALSE)) {
     if( $_GET['q'] == 'statsform/login' ) {
       if(in_array('statsform',$account->roles)) {
-        drupal_goto( $base_url.'statsform/form' );
+        drupal_goto('app/statsform/form');
       } else {
         drupal_goto( $base_url.'services/statsformLogin' );
       }
@@ -232,7 +232,10 @@ function statsform_page_alter(&$page) {
           $page['sf_page_name'] = $sf_page_name;
         }
 
-        if( $query_parameters[reloginhereflag] == 1 ) {
+        // if the user chose Individual Login
+        if( $_SESSION['statsform']['sfUnitIndividualID'] == 'individual' ) {
+          drupal_goto( "/app/statsform/form" );
+        } else if( $query_parameters[reloginhereflag] == 1 ) {
           module_load_include('pages.inc', 'user');
 
           $_GET['destination'] = '/statsform/login?sfUnit='.$query_parameters[sfUnit].'&sfUnitPointID='.$query_parameters[sfUnitPointID].'&sfServicePointID='.$query_parameters[sfServicePointID].'&sfServicePoint='.$query_parameters[sfServicePoint].'&sfUnitColor='.$query_parameters[sfUnitColor].'&sfServicePointColor='.$query_parameters[sfServicePointColor].'&sfUnitIndividualID='.$query_parameters[sfUnitIndividualID].'&sfUnitIndividualLabel='.$query_parameters[sfUnitIndividualLabel].'&sfUnitIndividualColor='.$query_parameters[sfUnitIndividualColor].'&sfUnitGroupID='.$query_parameters[sfUnitGroupID].'&sfUnitGroupLabel='.$query_parameters[sfUnitGroupLabel].'&sfUnitGroupColor='.$query_parameters[sfUnitGroupColor].'&sfResearchTabValue='.$query_parameters[sfResearchTabValue].'&sfSession=false&reloginhereflag=2';
@@ -247,7 +250,13 @@ function statsform_page_alter(&$page) {
       // Form
       // Form
       // Form
-      } else if (arg(1) == 'form') {
+      }
+
+///    } else {
+///      drupal_goto('services/statsformLogin'); /// redirects all of the time???
+    } else if (arg(1) == 'statsform') {
+
+      if (arg(2) == 'form') {
 
         // set page name: 0=pre, 1=login, 2=form
         $sf_page_name = 2;
@@ -263,19 +272,11 @@ function statsform_page_alter(&$page) {
           if (
             ( $sf_user_login == 0 )
             ) {
-
-
-
               // go back to the start with an error message: missing parameters (prevents direct loading without parameters)
               drupal_goto( $base_url.'services/statsformLogin?missingParm=1' );
 
           // looks good, build out the Form page
           } else {
-
-
-
-
-
             // Retrieve values passed in from the Login page
             $query_parameters = drupal_get_query_parameters();
 

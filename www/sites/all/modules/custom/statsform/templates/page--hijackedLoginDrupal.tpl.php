@@ -292,7 +292,7 @@
       // Jquery ready
       $(document).ready(function() {
 
-        // insert the group ID sfUnitGroupID into the Frupal login form
+        // insert the group ID sfUnitGroupID into the Drupal login form
         $sfUnitGroupID = document.getElementById("sfUnitGroupID").dataset.value;
         document.getElementById('edit-name').value = $sfUnitGroupID;
 

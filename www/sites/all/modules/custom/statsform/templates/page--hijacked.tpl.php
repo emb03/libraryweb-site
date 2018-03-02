@@ -3337,7 +3337,7 @@ document.getElementById('sfUnitGroupID').value
                             <div class="ui tiny inverted statistics left floated"> 
                               <div class="statistic">
                                 <div class="value" id="minuteCount">0</div> 
-                                <div class="label">Count</div>
+                                <div class="label">Minutes</div>
                               </div>
                             </div>
                           </div>
@@ -4967,7 +4967,7 @@ document.getElementById('sfUnitGroupID').value
   
                   $.ajax({
                     type: "POST",
-                    url: "/statsform/ajax",
+                    url: "/app/statsform/ajax",
                     data: {
                       'from_js': true,
                       'sfToken': document.getElementById("sfToken").dataset.value,
@@ -5035,7 +5035,7 @@ document.getElementById('sfUnitGroupID').value
 
                 $.ajax({
                   type: "POST",
-                  url: "/statsform/ajax",
+                  url: "/app/statsform/ajax",
                   data: {
                     'from_js': true,
                     'sfToken': document.getElementById("sfToken").dataset.value,
