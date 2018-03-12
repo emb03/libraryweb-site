@@ -13,7 +13,7 @@ $(document).ready(function() {
         var $checkbox = $(this).find(':checkbox');
         if( $checkbox[0].checked == 1 ){
             $checkbox[0].checked=0;
-            $(this)[0].className="ui fluid card withCheckDivTouch"
+            $(this)[0].className="ui fluid card withCheckDivTouch";
             var x = document.getElementsByName("researchCheckbox");
             var i;
             var j = 0;

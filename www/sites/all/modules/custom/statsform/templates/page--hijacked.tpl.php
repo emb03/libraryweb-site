@@ -4967,7 +4967,7 @@ document.getElementById('sfUnitGroupID').value
   
                   $.ajax({
                     type: "POST",
-                    url: "/app/statsform/ajax",
+                    url: "/statsform/ajax",
                     data: {
                       'from_js': true,
                       'sfToken': document.getElementById("sfToken").dataset.value,
@@ -5035,7 +5035,7 @@ document.getElementById('sfUnitGroupID').value
 
                 $.ajax({
                   type: "POST",
-                  url: "/app/statsform/ajax",
+                  url: "/statsform/ajax",
                   data: {
                     'from_js': true,
                     'sfToken': document.getElementById("sfToken").dataset.value,

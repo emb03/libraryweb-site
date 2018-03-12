@@ -22,7 +22,7 @@ function statsform_menu() {
     'description' => 'For statsform use',
   );
 
-  $items['app/statsform/form'] = array(
+  $items['statsform/form'] = array(
     'title' => 'Stats Form',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('statsform_page_one'),
@@ -38,6 +38,14 @@ function statsform_menu() {
     'description' => 'For statsform use',
   );
  
+  $items['app/statsform/login'] = array(
+    'title' => 'Stats Form Login Shibboleth',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('statsform_page_one'),
+    'access callback' => TRUE,
+    'description' => 'For statsform use',
+  );
+ 
   $items['statsform/logout'] = array(
     'title' => 'Stats Form Logout Drupal',
     'page callback' => 'drupal_get_form',
@@ -46,7 +54,7 @@ function statsform_menu() {
     'description' => 'For statsform use',
   );
  
-  $items['app/statsform/ajax'] = array(
+  $items['statsform/ajax'] = array(
     'title' => 'Ajax Request',
     'page callback' => 'ajax_request_callback',
     'access callback' => TRUE,
@@ -77,10 +85,10 @@ function statsform_permission() {
  * Implements hook_user_login().
  */
 function statsform_user_login(&$edit, $account) {
-  if (!isset($_POST['form_id']) || $_POST['form_id'] != 'user_pass_reset' || variable_get('login_destination_immediate_redirect', FALSE)) {
-    if( $_GET['q'] == 'statsform/login' ) {
+  if ( !isset($_POST['form_id']) || $_POST['form_id'] != 'user_pass_reset' || variable_get('login_destination_immediate_redirect', FALSE) ) {
+    if( $_GET['q'] == 'statsform/login' && $_GET['q'] != 'app/statsform/login' ) {
       if(in_array('statsform',$account->roles)) {
-        drupal_goto('app/statsform/form');
+        drupal_goto('statsform/form');
       } else {
         drupal_goto( $base_url.'services/statsformLogin' );
       }
@@ -160,8 +168,7 @@ function statsform_page_alter(&$page) {
 
         if ( $query_parameters[reLogin] !== null && $query_parameters[reLogin] == 1 ) {
           session_destroy();
-//        drupal_goto( variable_get('shib_auth_full_logout_url') );
-          drupal_goto( $base_url.'services/statsformLogin' );
+          drupal_goto( 'https://shb.ais.ucla.edu/shibboleth-idp/Logout' );
 //        } else if ( $query_parameters[missingParm] !== null && $query_parameters[missingParm] == 1 ) {
 //          // create error message here: missing parameters, please start over and try again - pass flag to modal to trigger extra line of message: missing parameters...
         } else {
@@ -186,8 +193,10 @@ function statsform_page_alter(&$page) {
       // Login
       // Login
       if (arg(1) == 'login') {
+
         // set page name: 0=pre, 1=login, 2=form
         $sf_page_name = 1;
+        $_SESSION['statsform']['sfShib'] = 0;
 
         $page['variables'] = drupal_get_token();
         $page['sf_path'] = drupal_get_path('module', 'statsform');
@@ -200,7 +209,7 @@ function statsform_page_alter(&$page) {
           $query_parameters = drupal_get_query_parameters();
           $sfUnitColor = $query_parameters[sfUnitColor];
 
-// old, remove after confirming not needed
+          // old, remove after confirming not needed
           // insert vals into .../form template here
           $page['sfUnit'] = $query_parameters[sfUnit];
           $page['sfUnitPointID'] = $query_parameters[sfUnitPointID];
@@ -234,7 +243,7 @@ function statsform_page_alter(&$page) {
 
         // if the user chose Individual Login
         if( $_SESSION['statsform']['sfUnitIndividualID'] == 'individual' ) {
-          drupal_goto( "/app/statsform/form" );
+          drupal_goto( "/app/statsform/login" );
         } else if( $query_parameters[reloginhereflag] == 1 ) {
           module_load_include('pages.inc', 'user');
 
@@ -250,14 +259,7 @@ function statsform_page_alter(&$page) {
       // Form
       // Form
       // Form
-      }
-
-///    } else {
-///      drupal_goto('services/statsformLogin'); /// redirects all of the time???
-    } else if (arg(1) == 'statsform') {
-
-      if (arg(2) == 'form') {
-
+      } else if (arg(1) == 'form') {
         // set page name: 0=pre, 1=login, 2=form
         $sf_page_name = 2;
         // verify that the user is logged in and is a member of the Drupal role called statsform
@@ -319,9 +321,24 @@ function statsform_page_alter(&$page) {
           drupal_goto( $base_url.'services/statsformLogin' );
         }
       }
+    } else if (arg(0) == 'app') {
 
-///    } else {
-///      drupal_goto( $base_url.'services/statsformLogin' ); /// redirects all of the time???
+      ######################################################
+      ## DEVELOPMENT ONLY - programatically log in 502673598
+      #$username = '';
+      #$password = '';
+      #$uid = user_authenticate($username, $password);
+      #$faux_form_state = array('uid' => $uid);
+      #user_login_submit(array(), $faux_form_state);
+      ## DEVELOPMENT ONLY - programatically log in 502673598
+      ######################################################
+
+      if( $uid >= 0 ) {
+        $_SESSION['statsform']['sfShib'] = 1;
+        drupal_goto('statsform/form');
+      } else {
+        drupal_goto( $base_url.'services/statsformLogin?groupMember=0' );
+      }
     }
   }
 }
@@ -360,9 +377,13 @@ function statsform_theme($existing, $type, $theme, $path, $sfTemplate) {
  * Callback function for /statsform/logout
  */
 function logout_request_callback() {
-  session_destroy();
-  // drupal_goto(variable_get('shib_auth_full_logout_url'));
-  drupal_goto( $base_url.'services/statsformLogin' );
+  if( $_SESSION['statsform']['sfShib'] == 1 ){
+    session_destroy();
+    drupal_goto( 'https://shb.ais.ucla.edu/shibboleth-idp/Logout' );
+  } else {
+    session_destroy();
+    drupal_goto( $base_url.'services/statsformLogin' );
+  }
   exit;
 }
 
