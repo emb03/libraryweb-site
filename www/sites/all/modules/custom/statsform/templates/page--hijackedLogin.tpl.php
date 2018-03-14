@@ -2165,13 +2165,16 @@
                 <i class="massive exchange icon"></i>
               </div>
               <div class="ui fluid large label">
-                <center>To use StatsForm:<br><br>Tap here to log out<br>then<br>Log back in<br>on the following page<br><br>You may change location<br>or user/group settings<br>when logging back in.</center>
+                <center>Tap here to continue as<br><br><em><?php print( $page['sf_user_first'] ); ?> <?php print( $page['sf_user_last'] ); ?></em><br><br>Tap a button at the bottom to log in as a different user</center>
               </div>
             </div>
           </div>
         </div>
 
         <div class="actions">
+          <div class="ui green go button" data-value="gosavereLoginCancel">
+            Log in as a different user
+          </div>
           <div class="ui black deny button" data-value="savereLoginCancel">
             Cancel
           </div>
@@ -2223,7 +2226,7 @@
           <div class="ui centered approve button" data-value="reLogin">
             <div class="blurring dimmable image">
               <div class="ui center">
-                <i class="massive spinner loading icon"></i>
+                <i class="massive sun outline loading icon"></i>
               </div>
               <div class="ui huge fluid large label">
                 <center> logging out ... </center>
@@ -3903,7 +3906,20 @@
                 // Login, reLogin
                 //
                 case ($(this).data("value").match(/^reLogin/) || {}).input:
-                  location.href = '/services/statsformLogin?reLogin=1';
+//alert("cvbncvbncvbn");
+//                  location.href = '/services/statsformLogin';
+//                  $('.ui.united.large.reLoginConfSpinner.modal')
+//                    .modal('setting', 'closable', false)
+//                    $('#reLoginConfSpinner').modal('show')
+//                  ;
+                    $(".ui.modal").modal("hide");
+                  break;
+
+                // Login, reLogin
+                //
+                case ($(this).data("value").match(/^gosavereLoginCancel/) || {}).input:
+                  location.href = '/statsform/logout';
+                  //location.href = '/statsform/form';
                   $('.ui.united.large.reLoginConfSpinner.modal')
                     .modal('setting', 'closable', false)
                     $('#reLoginConfSpinner').modal('show')
@@ -4151,6 +4167,7 @@
                     'sfTopic': document.getElementById("questionTopic").value,
                     'sfPatronType': document.getElementById("patronStatusInput").value,
                     'sfDeptID': document.getElementById("deptWs").value,
+                    'sfComment': document.getElementById("commentTopic").value,
                     'sfCourse': document.getElementById("courseSection").value,
                     'sfTypeID004': '13',
                     'sfModeID004': document.getElementById("interactionModeInput").value,

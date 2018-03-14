@@ -158,19 +158,18 @@ function statsform_page_alter(&$page) {
 
     if (arg(0) == 'services') {
 
-      // PreLogin
-      // PreLogin
-      // PreLogin
+      // Chooser
+      // Chooser
+      // Chooser
       if (arg(1) == 'statsformLogin') {
 
         // set page name: 0=pre, 1=login, 2=form
         $sf_page_name = 0;
 
         if ( $query_parameters[reLogin] !== null && $query_parameters[reLogin] == 1 ) {
-          session_destroy();
-          drupal_goto( 'https://shb.ais.ucla.edu/shibboleth-idp/Logout' );
-//        } else if ( $query_parameters[missingParm] !== null && $query_parameters[missingParm] == 1 ) {
-//          // create error message here: missing parameters, please start over and try again - pass flag to modal to trigger extra line of message: missing parameters...
+          drupal_goto('statsform/logout');
+//      } else if ( $query_parameters[missingParm] !== null && $query_parameters[missingParm] == 1 ) {
+//        // create error message here: missing parameters, please start over and try again - pass flag to modal to trigger extra line of message: missing parameters...
         } else {
           // set the theme that corresponds to the path that led to here
           $page['#theme'] = 'hijackLogin';
@@ -242,8 +241,11 @@ function statsform_page_alter(&$page) {
         }
 
         // if the user chose Individual Login
+        // verify that the user is logged in and is a member of the Drupal role called statsform
         if( $_SESSION['statsform']['sfUnitIndividualID'] == 'individual' ) {
           drupal_goto( "/app/statsform/login" );
+        } else if (!empty($sf_user->uid) && ($sf_user->uid >= 0) && $sf_user_role == 1 ){
+          drupal_goto( "/statsform/form" );
         } else if( $query_parameters[reloginhereflag] == 1 ) {
           module_load_include('pages.inc', 'user');
 
@@ -489,7 +491,7 @@ function ajax_request_callback() {
 <topic>".$_POST['sfTopic']."</topic>
 <departmentID>".$_POST['sfDeptID']."</departmentID>
 <course>".$_POST['sfCourse']."</course>
-<staffFeedback></staffFeedback>
+<staffFeedback>".$_POST['sfComment']."</staffFeedback>
 <patronType>".$_POST['sfPatronType']."</patronType>
 <patronFeedback>thanks</patronFeedback>
 </interaction>

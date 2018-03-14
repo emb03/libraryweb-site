@@ -283,70 +283,76 @@
           border: 2px solid rgba(242, 242, 242, 0.3);
         }
         #grid2 {
-border: 2px solid rgba(255, 255, 255, 0.9);
-border-radius: 0px;
+          border: 2px solid rgba(255, 255, 255, 0.9);
+          border-radius: 0px;
         }
         #grid3 {
-font-weight: lighter;
+          font-weight: lighter;
         }
 
-.dimmable.dimmed > .dimmer {
-  overflow: auto !important;
-}
+        .dimmable.dimmed > .dimmer {
+          overflow: auto !important;
+        }
 
-.ui.withCheckDivTouchOn {
-  background-color: rgba(50, 132, 191, 0.8);
-}
+        .ui.withCheckDivTouchOn {
+          background-color: rgba(50, 132, 191, 0.8);
+        }
 
-.ui.withCheckDivTouch {
-  background-color: rgba(255, 255, 255, 1.0);
-}
+        .ui.withCheckDivTouch {
+          background-color: rgba(255, 255, 255, 1.0);
+        }
 
+        input[type=checkbox].css-checkbox {
+         position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+        }
 
+        input[type=checkbox].css-checkbox + label.css-label {
+          padding-left:35px;
+          height:30px; 
+          display:inline-block;
+          line-height:30px;
+          background-repeat:no-repeat;
+          background-position: 0 0;
+          font-size:30px;
+          vertical-align:middle;
+          cursor:pointer;
+        }
 
-input[type=checkbox].css-checkbox {
- position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
-}
+        input[type=checkbox].css-checkbox:checked + label.css-label {
+          background-position: 0 -30px;
+        }
 
-input[type=checkbox].css-checkbox + label.css-label {
-  padding-left:35px;
-  height:30px; 
-  display:inline-block;
-  line-height:30px;
-  background-repeat:no-repeat;
-  background-position: 0 0;
-  font-size:30px;
-  vertical-align:middle;
-  cursor:pointer;
-}
+        label.css-label {
+          background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_f60067e68146be412873f96f1d2458cd.png);
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
 
-input[type=checkbox].css-checkbox:checked + label.css-label {
-  background-position: 0 -30px;
-}
+        textarea{
+          resize:none;
+          width:100%;
+          height:100%;
+          border-color: black;
+          border-radius: 8px;
+          border: 1px black solid;
+          margin-bottom: 1px;
+          margin: 0px;
+          padding: 9px;
+        }
 
-label.css-label {
-  background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_f60067e68146be412873f96f1d2458cd.png);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+        #exboxQuestionTopic:focus{
+          position:absolute;
+          z-index:1;
+        }
 
-
-
-textarea{
-    resize:none;
-width:100%;
-height:100%;
-}
-
-textarea:focus{
-    position:absolute;
-    z-index:1;
-}
-
+        #exboxCourseSection:focus{
+          position:absolute;
+          z-index:1;
+        }
         .ui.border.padded.basic.segment.left.floated {
           background-color: rgba(255, 255, 255, 0.0);
           border-color: black;
@@ -3116,14 +3122,14 @@ document.getElementById('sfUnitGroupID').value
             <div class="ui main stackable center aligned middle aligned grid container"> <!-- grid container2 -->
               <div class="sixteen column row"> <!-- 16 column row -->
 
-                <div class="ui eight wide floated column">
+                <div class="ui eight wide column">
                     <div class="content">
                       <div class="ui huge fluid input">
                         <div class="ui big label" id="questionTopic" name="questionTopic">
                           Question<br>/ Topic
                         </div>
                         <div>
-                          <textarea class="sfTextArea" id="exboxQuestionTopic" placeholder="Enter here..." type="text"></textarea>
+                          <textarea id="exboxQuestionTopic" placeholder="Enter here..." type="text"></textarea>
                         </div>
                       </div>
                     </div>
@@ -3154,10 +3160,6 @@ document.getElementById('sfUnitGroupID').value
                 <div class="ui four wide column">
                   <div class="content">
                     <div class="ui left aligned">
-
-
-
-
                       <div id="interactionMode" name="method" class="ui fluid selection mode dropdown">
                         <input id="interactionModeInput" name="interactionModeInput" value="default" type="hidden">
                         <i class="dropdown icon"></i>
@@ -3169,9 +3171,6 @@ document.getElementById('sfUnitGroupID').value
                           <div class="item" data-value="02">Telephone</div>
                         </div>
                       </div>
-
-
-
                     </div>
                   </div>
                 </div>
@@ -3349,7 +3348,15 @@ document.getElementById('sfUnitGroupID').value
                       </div>
                     </div>
 
-                    <div class="eight wide right floated column"> 
+                    <div class="ui eight wide floated column">
+                      <div class="content">
+                        <div>
+                          <textarea style = "height: 120px" id="commentTopic" placeholder="Enter comments and feedback here..." type="text"></textarea>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="eight wide right floated column">
                       <div class="ui fluid card ">
                         <button style = "height: 120px" class=" ui button" id="submitResearchAssistance"> <h1 style = "font-size:70px"> SUBMIT </h1> </button>
                       </div>
@@ -3368,10 +3375,6 @@ document.getElementById('sfUnitGroupID').value
 
       </div>
       <!-------------------------- TAB 2 - Research Assistance - END -------------------------->
-
-
-
-
 
 
       <!-------------------------- REFERENCE ---------------------------->
@@ -3681,6 +3684,7 @@ document.getElementById('sfUnitGroupID').value
             $('.ui.status,dropdown').dropdown('set value', '1');
             $('.ui.mode,dropdown').dropdown('set text', 'Assistance Method');
             $('.ui.mode,dropdown').dropdown('set value', '01');
+            document.getElementById("commentTopic").value = "";
             document.getElementById("exboxCourseSection").value = "";
             document.getElementById("referralCheckbox").checked = false;
             document.getElementById("researchCheckbox").checked = false;
@@ -5051,6 +5055,7 @@ document.getElementById('sfUnitGroupID').value
                     'sfTopic': document.getElementById("exboxQuestionTopic").value,
                     'sfPatronType': document.getElementById("patronStatusInput").value,
                     'sfDeptID': document.getElementById("deptWs").value,
+                    'sfComment': document.getElementById("commentTopic").value,
                     'sfCourse': document.getElementById("exboxCourseSection").value,
                     'sfTypeID004': '13',
                     'sfModeID004': document.getElementById("interactionModeInput").value,
