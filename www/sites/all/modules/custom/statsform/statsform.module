@@ -380,8 +380,8 @@ function statsform_theme($existing, $type, $theme, $path, $sfTemplate) {
  */
 function logout_request_callback() {
   if( $_SESSION['statsform']['sfShib'] == 1 ){
-    session_destroy();
-    drupal_goto( 'https://shb.ais.ucla.edu/shibboleth-idp/Logout' );
+    // shib logs out drupal (verify)
+    drupal_goto(variable_get('shib_auth_full_logout_url'));
   } else {
     session_destroy();
     drupal_goto( $base_url.'services/statsformLogin' );

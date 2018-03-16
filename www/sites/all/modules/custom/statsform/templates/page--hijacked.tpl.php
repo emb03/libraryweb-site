@@ -2332,7 +2332,7 @@
           <div class="ui centered approve button" data-value="reLogin">
             <div class="blurring dimmable image">
               <div class="ui center">
-                <i class="massive spinner loading icon"></i>
+                <i class="massive sun outline loading icon"></i>
               </div>
               <div class="ui huge fluid large label">
                 <center> logging out ... </center>
@@ -2873,7 +2873,9 @@
                         <i class="dropdown icon"></i>
                         <div class="menu">
                           <div class="item disabled" data-value="darrowco" id="userName" name="userName"><i class="user icon"></i><?php print( $page['sfUserFirst'] ); ?> <?php print( $page['sfUserLast'] ); ?></div>
-                          <div class="item" data-value="1" id="reLoginHere"><i class="edit icon"></i> Change User (logs out curent user)</div>
+                          <!-- tbd
+                          <div class="item" data-value="1" id="reLoginHere"><i class="edit icon"></i> Change User (logs out current user)</div>
+                          -->
                           <div class="item" data-value="1" id="logout"><i class="edit icon"></i> Logout</div>
                         </div>
                       </div>
@@ -4828,7 +4830,13 @@ document.getElementById('sfUnitGroupID').value
                 //
                 case ($(this).data("value").match(/^logout/) || {}).input:
                   location.href = '/statsform/logout';
-                  $(".ui.modal").modal("hide");
+//                  $(".ui.modal").modal("hide");
+
+                  $('.ui.united.large.reLoginConfSpinner.modal')
+                    .modal('setting', 'closable', false)
+                    $('#reLoginConfSpinner').modal('show')
+                  ;
+
                   document.getElementById("submit0").disabled = false;
                   break;
 
