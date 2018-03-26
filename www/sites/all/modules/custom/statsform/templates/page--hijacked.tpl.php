@@ -360,7 +360,10 @@
           border: 1px black solid;
           margin-bottom: 1px;
         }
-
+        .ui.logout.xlabel {
+          font-size:20px;
+          vertical-align:middle;
+        }
       </style>
 
     </head>
@@ -2772,7 +2775,7 @@
                     <div class="ui center aligned">
                       <div class="ui fluid input right icon">
                         <i id="iconTim" class="large clock icon"></i>
-                        <input id="inputTime" name="inputTime" class="timepicker" type="text" placeholder="Date/Time" data-value="">
+                        <input id="inputTime" name="inputTime" class="timepicker" data-content="Your time selection will be held for 5 minutes - please submit your form in this period." type="text" placeholder="Date/Time" data-value="">
                       </div>
                     </div>
                   </div>
@@ -2808,16 +2811,22 @@
             <div class="content">
               <div class="ui stackable grid container">
                 <div class="two column row">
+
+
                   <div class="ui column">
                     <div class="ui fluid buttons">
                       <button data-modal="libraryUnits" class="show ui basic blue button" id="result" name="result">Choose <br>Library <br>Unit</button>
                     </div>
                   </div>
+
+
                   <div class="ui column">
                     <div class="ui fluid buttons">
                       <button data-modal="modal4" class="show ui basic black button" id="servicePoint" name="servicePoint">Choose <br>Service <br>Point</button>
                     </div>
                   </div>
+
+
                 </div>
               </div>
             </div>
@@ -2868,7 +2877,9 @@
                   <div class="ui center aligned column">
 
                     <div class="ui massive teal buttons">
-                      <div class="ui fluid button"><?php print( $page['sfUserName'] ); ?></div>
+                      <div class="ui fluid logout button">
+                        <div class="ui logout xlabel"><?php print( $page['sfUserName'] ); ?></div>
+                      </div>
                       <div class="ui floating logout dropdown icon button">
                         <i class="dropdown icon"></i>
                         <div class="menu">
@@ -2981,7 +2992,7 @@ document.getElementById('sfUnitGroupID').value
                   <div class="ui equal width aligned grid"> <!-- Inner Grid1 -->
 
                     <div class="eight wide column"> 
-                      <div class="ui fluid card withCount">
+                      <div class="ui fluid card withCount" id="directionsArea">
                         <div class="content"> 
                           <div class="ui inverted segment left floated" id="directions">
 
@@ -3003,7 +3014,7 @@ document.getElementById('sfUnitGroupID').value
                     </div>
 
                     <div class="eight wide column"> 
-                      <div class="ui fluid card withCount">
+                      <div class="ui fluid card withCount" id="lookupArea">
                         <div class="content">
                           <div class="ui inverted segment left floated" id="lookup">
                             <div class="ui tiny inverted statistics left floated"> 
@@ -3023,7 +3034,7 @@ document.getElementById('sfUnitGroupID').value
                     </div>
 
                     <div class="eight wide column"> 
-                      <div class="ui fluid card withCount">
+                      <div class="ui fluid card withCount" id="policyArea">
                         <div class="content">
                           <div class="ui inverted segment left floated" id="policy">
                             <div class="ui tiny inverted statistics left floated"> 
@@ -3043,7 +3054,7 @@ document.getElementById('sfUnitGroupID').value
                     </div>
 
                     <div class="eight wide column"> 
-                      <div class="ui fluid card withCount">
+                      <div class="ui fluid card withCount" id="researchArea">
                         <div class="content">
                           <div class="ui inverted segment left floated" id="research">
                             <div class="ui tiny inverted statistics left floated"> 
@@ -3063,7 +3074,7 @@ document.getElementById('sfUnitGroupID').value
                     </div>
 
                     <div class="eight wide column"> 
-                      <div class="ui fluid card withCount">
+                      <div class="ui fluid card withCount" id="technicalArea">
                         <div class="content">
                           <div class="ui inverted segment left floated" id="technical">
                             <div class="ui tiny inverted statistics left floated"> 
@@ -3097,7 +3108,6 @@ document.getElementById('sfUnitGroupID').value
           </div>
         </div> <!-- Outer Grid 1 - END -->
         <!-- MAIN PAGE CONTENT - Quick Questions  - END -->
-
       </div>
       <!-------------------------- TAB 1 - Quick Questions - END -------------------------->
 
@@ -3123,7 +3133,6 @@ document.getElementById('sfUnitGroupID').value
           <div class="three column row"> <!-- three column row -->
             <div class="ui main stackable center aligned middle aligned grid container"> <!-- grid container2 -->
               <div class="sixteen column row"> <!-- 16 column row -->
-
                 <div class="ui eight wide column">
                     <div class="content">
                       <div class="ui huge fluid input">
@@ -3188,7 +3197,6 @@ document.getElementById('sfUnitGroupID').value
           <div class="three column row"> <!-- three column row -->
             <div class="ui main stackable center aligned middle aligned grid container"> <!-- grid container2 -->
               <div class="sixteen column row"> <!-- 16 column row -->
-
                 <div class="ui four wide floated column">
                     <div class="content">
                       <div class="ui left aligned">
@@ -3215,18 +3223,16 @@ document.getElementById('sfUnitGroupID').value
 
                 <div class="ui three wide test column">
                   <div class="ui main stackable middle aligned grid container">
-                    <div class="sixteen column row">
+                    <div class="sixteen column row referralCheckboxArea">
                       <div class="ui sixteen wide left floated column">
-
                         <div class="ui test content">
                           <div class="ui left aligned">
-                            <div class="ui test checkbox">
+                            <div class="ui test checkbox referralCheckbox">
                               <input type="checkbox" id="referralCheckbox">
                               <label>Referral?</label> 
                             </div>
                           </div>
                         </div>
-
                       </div>
                     </div>
                   </div>
@@ -3656,6 +3662,8 @@ document.getElementById('sfUnitGroupID').value
           // make global
           var sfDateSubmit = 0;
           var fromTab = 0;
+          // increment the time display every minute (default); extend to x minutes below when user selects time
+          var sfIntervalTime = 1;
 
           // this is displayed when switching between the Quick Questions and Research Asistance tabs
           var spMsgTxt = "Please re-select the Service Point when Switching between <em>Quick Search</em> and <em>Research Questions</em>.";
@@ -3732,6 +3740,13 @@ document.getElementById('sfUnitGroupID').value
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         $(document).ready(function() {
 
+        // tooltip
+	$('.timepicker')
+	  .popup({
+		on: 'hover'
+	  })
+	;
+
         //////////// the following section applies to the PRELOGIN pages
           if( <?php print( $page['sf_page_name'] ); ?> == 0 ) {
 
@@ -3806,13 +3821,29 @@ document.getElementById('sfUnitGroupID').value
 
             // set checkbox values to 0/1 when checkbox is checked 
             //  on the Research Assistance page in order to use the same db field used by the Quick Questions page
-            $('#referralCheckbox').change(function(){
-              if(this.checked) {
-                document.getElementById("referralCheckbox").value = 1;
+            // This referral checkbox has extra code to allow an expanded touch area for use on tablets
+            $('.referralCheckboxArea').click(function( event ) {
+              if( document.getElementById("referralCheckbox").checked == 1 ) {
+                if( $(event.target)[0].id == 'referralCheckbox' ){
+                  document.getElementById("referralCheckbox").value = 1;
+                  document.getElementById("referralCheckbox").checked = 1;
+                } else {
+                  document.getElementById("referralCheckbox").value = 0;
+                  document.getElementById("referralCheckbox").checked = 0;
+                }
               } else {
-                document.getElementById("referralCheckbox").value = 0;
+                if( $(event.target)[0].id == 'referralCheckbox' ){
+                  document.getElementById("referralCheckbox").value = 0;
+                  document.getElementById("referralCheckbox").checked = 0;
+                } else {
+                  document.getElementById("referralCheckbox").value = 1;
+                  document.getElementById("referralCheckbox").checked = 1;
+                }
               }
             });
+
+            // set checkbox values to 0/1 when checkbox is checked 
+            //  on the Research Assistance page in order to use the same db field used by the Quick Questions page
             $('#researchCheckbox').change(function(){
               if(this.checked) {
                 document.getElementById("researchCheckbox").value = 1;
@@ -3931,13 +3962,21 @@ document.getElementById('sfUnitGroupID').value
 
 
           //////////// the following section applies to the BOTH pages
+
             // date/time section
             var $padTime = $('#inputTime').pickatime({
+              closeOnSelect: true,
               format: 'h:i a',
               formatSubmit: 'HH:i',
               hiddenName: true,
               editable: false,
-              interval: 60
+              interval: 60,
+              onClose: function() {
+                // hold the selected time for x minutes
+                sfIntervalTime = 5;
+                // prevent pickatime from popping open when page is re-focused
+                $(document.activeElement).blur();
+              }
             });
 
             var $padDate = $('#inputDatetime').pickadate({
@@ -3945,28 +3984,32 @@ document.getElementById('sfUnitGroupID').value
               formatSubmit: 'yyyy-mm-dd',
               hiddenName: true,
               selectYears: 2,
-              selectMonths: true
+              selectMonths: true,
+              onClose: function() {
+                // prevent pickadate from popping open when page is re-focused
+                $(document.activeElement).blur();
+              }
             });
 
-            // updates date/time display every 60 sec and runs on init
-            function fn60sec() {
-              var sfDate = new Date();
-  
-              var sfTimeOptions = { hour: 'numeric', minute: 'numeric'};
-              var sfTimeDisplay = new Intl.DateTimeFormat('en-AU', sfTimeOptions).format(sfDate);
-              document.getElementById("inputTime").value = sfTimeDisplay;
-
-              var sfDateOptions = { day: 'numeric', month: 'short'};
-              var sfDateDisplay = new Intl.DateTimeFormat('en-AU', sfDateOptions).format(sfDate);
-              document.getElementById("inputDatetime").value = sfDateDisplay;
-
-              // 2017-09-08
-              sfDateSubmit = sfDate.yyyymmdd();
+            // updates date/time display every 60 sec and runs on init; extends to 5 minutes (ajustable) if user chooses a new submit time
+            function fn60secTimer() {
+              if( sfIntervalTime == 1 ){
+                var sfDate = new Date();
+                var sfTimeOptions = { hour: 'numeric', minute: 'numeric'};
+                var sfTimeDisplay = new Intl.DateTimeFormat('en-AU', sfTimeOptions).format(sfDate);
+                document.getElementById("inputTime").value = sfTimeDisplay;
+                var sfDateOptions = { day: 'numeric', month: 'short'};
+                var sfDateDisplay = new Intl.DateTimeFormat('en-AU', sfDateOptions).format(sfDate);
+                document.getElementById("inputDatetime").value = sfDateDisplay;
+                // format is like this: 2017-09-08
+                sfDateSubmit = sfDate.yyyymmdd();
+              } else if ( sfIntervalTime > 1 ){
+                sfIntervalTime -= 1;
+              }
             }
-            fn60sec();
-            setInterval(fn60sec, 60*1000);
+            fn60secTimer();
+            sfInterval = setInterval(fn60secTimer, 60*1000);
             // date/time section
-
 
             // if a button is tapped
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4857,6 +4900,10 @@ document.getElementById('sfUnitGroupID').value
 
 
             // Semanti-UI icon names to choose from for group modal, possibly other modals
+            // This set is used
+            var semanticIconsActive = ["bell","bell outline","bookmark","bookmark outline","calendar","calendar outline","circle","circle outline","heart","heart outline","square","square outline","star","star outline"];
+
+            // Complete set
             var semanticIcons = [ 
 "search","mail outline","external","signal","setting","home","inbox","browser","tag","tags","calendar","comment","comments","shop","privacy","settings","trophy","payment","feed","alarm outline","tasks","cloud","lab","mail","idea","dashboard","sitemap","alarm","terminal","code","protect","calendar outline","ticket","external square","map","bug","mail square","history","options","comment outline","comments outline","text telephone","find","wifi","alarm slash","alarm slash outline","copyright","at","eyedropper","paint brush","heartbeat","download","repeat","refresh","lock","bookmark","print","write","theme","adjust","edit","external share","ban","mail forward","share","expand","compress","unhide","hide","random","retweet","sign out","pin","sign in","upload","call","call square","remove bookmark","unlock","configure","filter","wizard","undo","exchange","cloud download","cloud upload","reply","reply all","erase","unlock alternate","archive","translate","recycle","send","send outline","share alternate","share alternate square","wait","write square","share square","add to cart","in cart","add user","remove user","help circle","info circle","warning","warning circle","warning sign","help","info","announcement","birthday","users","doctor","child","user","handicap","student","spy","female","male","woman","man","non binary transgender","intergender","transgender","lesbian","gay","heterosexual","other gender","other gender vertical","other gender horizontal","neuter","grid layout","list layout","block layout","zoom","zoom out","resize vertical","resize horizontal","maximize","crop","cocktail","road","flag","book","gift","leaf","fire","plane","magnet","legal","lemon","world","travel","shipping","money","lightning","rain","treatment","suitcase","bar","flag outline","flag checkered","puzzle","fire extinguisher","rocket","anchor","bullseye","sun","moon","fax","life ring","bomb","soccer","calculator","diamond","crosshairs","asterisk","certificate","circle","quote left","quote right","ellipsis horizontal","ellipsis vertical","cube","cubes","circle notched","circle thin","square outline","square","checkmark","remove","checkmark box","move","add circle","minus circle","remove circle","check circle","remove circle outline","check circle outline","plus","minus","add square","radio","selected radio","minus square","minus square outline","check square","plus square outline","toggle off","toggle on","film","sound","photo","bar chart","camera retro","newspaper","area chart","pie chart","line chart","arrow circle outline down","arrow circle outline up","chevron left","chevron right","arrow left","arrow right","arrow up","arrow down","chevron up","chevron down","pointing right","pointing left","pointing up","pointing down","arrow circle left","arrow circle right","arrow circle up","arrow circle down","caret down","caret up","caret left","caret right","angle double left","angle double right","angle double up","angle double down","angle left","angle right","angle up","angle down","chevron circle left","chevron circle right","chevron circle up","chevron circle down","toggle down","toggle up","toggle right","long arrow down","long arrow up","long arrow left","long arrow right","arrow circle outline right","arrow circle outline left","toggle left","power","trash","trash outline","disk outline","desktop","laptop","tablet","mobile","game","keyboard","plug","folder","folder open","level up","level down","file","file outline","file text","file text outline","folder outline","folder open outline","file pdf outline","file word outline","file excel outline","file powerpoint outline","file image outline","file archive outline","file audio outline","file video outline","file code outline","barcode","qrcode","fork","html5","css3","rss","rss square","openid","database","server","heart","star","empty star","thumbs outline up","thumbs outline down","star half","empty heart","smile","frown","meh","star half empty","thumbs up","thumbs down","music","video play outline","volume off","volume down","volume up","record","step backward","fast backward","backward","play","pause","stop","forward","fast forward","step forward","eject","unmute","mute","video play","closed captioning","marker","coffee","food","building outline","hospital","emergency","first aid","military","h","location arrow","space shuttle","university","building","paw","spoon","car","taxi","tree","bicycle","bus","ship","motorcycle","street view","hotel","train","subway","table","columns","sort","sort ascending","sort descending","sort alphabet ascending","sort alphabet descending","sort content ascending","sort content descending","sort numeric ascending","sort numeric descending","font","bold","italic","text height","text width","align left","align center","align right","align justify","list","outdent","indent","linkify","cut","copy","attach","save","content","unordered list","ordered list","strikethrough","underline","paste","unlink","superscript","subscript","header","paragraph","euro","pound","dollar","rupee","yen","ruble","won","lira","shekel","paypal","paypal card","google wallet","visa","mastercard","discover","american express","stripe","twitter square","facebook square","linkedin square","github square","twitter","facebook","github","pinterest","pinterest square","google plus square","google plus","linkedin","github alternate","maxcdn","bitcoin","youtube square","youtube","xing","xing square","youtube play","dropbox","stack overflow","instagram","flickr","adn","bitbucket","bitbucket square","tumblr","tumblr square","apple","windows","android","linux","dribbble","skype","foursquare","trello","gittip","vk","weibo","renren","pagelines","stack exchange","vimeo","slack","wordpress","yahoo","google","reddit","reddit square","stumbleupon circle","stumbleupon","delicious","digg","pied piper","pied piper alternate","drupal","joomla","behance","behance square","steam","steam square","spotify","deviantart","soundcloud","vine","codepen","jsfiddle","rebel","empire","git square","git","hacker news","tencent weibo","qq","wechat","slideshare","twitch","yelp","lastfm","lastfm square","ioxhost","angellist","meanpath","buysellads","connectdevelop","dashcube","forumbee","leanpub","sellsy","shirtsinbulk","simplybuilt","skyatlas","whatsapp","viacoin","medium","like","favorite","video","check","close","cancel","delete","x","user times","user close","user cancel","user delete","user x","zoom in","magnify","shutdown","clock","time","play circle outline","headphone","camera","video camera","picture","pencil","compose","point","tint","signup","plus circle","dont","minimize","add","eye","attention","cart","shuffle","talk","chat","shopping cart","bar graph","area graph","pie graph","line graph","key","cogs","discussions","like outline","dislike outline","heart outline","log out","thumb tack","winner","bookmark outline","phone","phone square","credit card","hdd outline","bullhorn","bell","bell outline","bell slash","bell slash outline","hand outline right","hand outline left","hand outline up","hand outline down","globe","wrench","briefcase","group","flask","sidebar","bars","list ul","list ol","numbered list","magic","truck","currency","triangle down","dropdown","triangle up","triangle left","triangle right","envelope","conversation","umbrella","clipboard","lightbulb","ambulance","medkit","fighter jet","beer","plus square","computer","circle outline","intersex","asexual","spinner","gamepad","star half full","question","eraser","microphone","microphone slash","shield","target","play circle","pencil square","compass","amex","eur","gbp","usd","inr","cny","rmb","jpy","rouble","rub","krw","btc","sheqel","ils","try","zip","dot circle outline","sliders","wi-fi","graduation","weixin","binoculars","gratipay","genderless","teletype","power cord","tty","cc","plus cart","arrow down cart","detective","venus","mars","mercury","venus double","female homosexual","mars double","male homosexual","venus mars","mars stroke","mars alternate","mars vertical","mars horizontal","mars stroke vertical","mars stroke horizontal","facebook official","pinterest official","bed"];
 
@@ -4866,7 +4913,7 @@ document.getElementById('sfUnitGroupID').value
           var sf_groupList_vals = <?php print( $page['sf_groupList'] ); ?>;
           $.each(sf_groupList_vals.users,function(key,innerjson){
             // leading div name="..." is for sorting purposes
-            usersArray[cnt] = "<div name='" + innerjson.Name + "'><div class='actions'><div class='ui approve button' data-value='sfGroups_" + innerjson.LogonID + "_" + innerjson.Name + "'><div class='ui card'><div class='blurring dimmable image'><div class='ui center'><i class='huge " + semanticIcons[cnt+5] + " icon'></i></div><div class='ui fluid large label'><center>" + innerjson.Name + "</center></div></div></div></div></div></div>";    
+            usersArray[cnt] = "<div name='" + innerjson.Name + "'><div class='actions'><div class='ui approve button' data-value='sfGroups_" + innerjson.LogonID + "_" + innerjson.Name + "'><div class='ui card'><div class='blurring dimmable image'><div class='ui center'><i class='huge " + semanticIconsActive[cnt] + " icon'></i></div><div class='ui fluid large label'><center>" + innerjson.Name + "</center></div></div></div></div></div></div>"; 
             cnt+=1;
           });
           usersArray.sort();

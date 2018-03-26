@@ -76,11 +76,11 @@ $(document).ready(function() {
         }
     });
 
-    $('#directions').on('taphold', editDirections);
-    $('#lookup').on('taphold', editLookup);
-    $('#policy').on('taphold', editPolicy);
-    $('#research').on('taphold', editResearch);
-    $('#technical').on('taphold', editTechnical);
+    $('#directionsArea').on('taphold', editDirections);
+    $('#lookupArea').on('taphold', editLookup);
+    $('#policyArea').on('taphold', editPolicy);
+    $('#researchArea').on('taphold', editResearch);
+    $('#technicalArea').on('taphold', editTechnical);
 
     $('#directionsResearch').on('taphold', editDirectionsResearch);
     $('#lookupResearch').on('taphold', editLookupResearch);
