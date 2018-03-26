@@ -446,64 +446,92 @@ function ajax_request_callback() {
 </interaction>
 </Submission>
 ";
+
+// sanitize data from form
+$sansfUnitPointID = check_plain($_POST['sfUnitPointID']);
+$sansfServicePointID = check_plain($_POST['sfServicePointID']);
+$sansfInputDatetime = check_plain($_POST['sfInputDatetime']);
+$sansfInputTime = check_plain($_POST['sfInputTime']);
+$sansfOperator = check_plain($_POST['sfOperator']);
+$sansfPatronCount = check_plain($_POST['sfPatronCount']);
+$sansfTimeSpent = check_plain($_POST['sfTimeSpent']);
+$sansfDetailed = check_plain($_POST['sfDetailed']);
+$sansfTypeID004 = check_plain($_POST['sfTypeID004']);
+$sansfModeID004 = check_plain($_POST['sfModeID004']);
+$sansfReferralCount = check_plain($_POST['sfReferralCount']);
+$sansfTypeID006 = check_plain($_POST['sfTypeID006']);
+$sansfModeID006 = check_plain($_POST['sfModeID006']);
+$sansfResearchAsst = check_plain($_POST['sfResearchAsst']);
+$sansfTypeID005 = check_plain($_POST['sfTypeID005']);
+$sansfModeID005 = check_plain($_POST['sfModeID005']);
+$sansfTechnicalVal = check_plain($_POST['sfTechnicalVal']);
+$sansfTypeID002 = check_plain($_POST['sfTypeID002']);
+$sansfModeID002 = check_plain($_POST['sfModeID002']);
+$sansfLookUp = check_plain($_POST['sfLookUp']);
+$sansfTypeID001 = check_plain($_POST['sfTypeID001']);
+$sansfModeID001 = check_plain($_POST['sfModeID001']);
+$sansfDirectional = check_plain($_POST['sfDirectional']);
+$sansfTypeID003 = check_plain($_POST['sfTypeID003']);
+$sansfModeID003 = check_plain($_POST['sfModeID003']);
+$sansfPolicyVal = check_plain($_POST['sfPolicyVal']);
+$sansfReferralVal = check_plain($_POST['sfReferralVal']);
+$sansfTopic = check_plain($_POST['sfTopic']);
+$sansfDeptID = check_plain($_POST['sfDeptID']);
+$sansfCourse = check_plain($_POST['sfCourse']);
+$sansfComment = check_plain($_POST['sfComment']);
+$sansfPatronType = check_plain($_POST['sfPatronType']);
+
       $sf_xml = "
 <Submission>
-<unitPointID>".$_POST['sfUnitPointID'].$_POST['sfServicePointID']."</unitPointID>
-<dateTime>".$_POST['sfInputDatetime'].$_POST['sfInputTime']."</dateTime>
-<operator>".$_POST['sfOperator']."</operator>
-<patronCount>".$_POST['sfPatronCount']."</patronCount>
-<timeSpent>".$_POST['sfTimeSpent']."</timeSpent>
-<detailed>".$_POST['sfDetailed']."</detailed>
+<unitPointID>".$sansfUnitPointID.$sansfServicePointID."</unitPointID>
+<dateTime>".$sansfInputDatetime.$sansfInputTime."</dateTime>
+<operator>".$sansfOperator."</operator>
+<patronCount>".$sansfPatronCount."</patronCount>
+<timeSpent>".$sansfTimeSpent."</timeSpent>
+<detailed>".$sansfDetailed."</detailed>
 <stats>
-<typeID>".$_POST['sfTypeID004']."</typeID>
-<modeID>".$_POST['sfModeID004']."</modeID>
-<count>".$_POST['sfReferralCount']."</count>
+<typeID>".$sansfTypeID004."</typeID>
+<modeID>".$sansfModeID004."</modeID>
+<count>".$sansfReferralCount."</count>
 </stats>
 <stats>
-<typeID>".$_POST['sfTypeID006']."</typeID>
-<modeID>".$_POST['sfModeID006']."</modeID>
-<count>".$_POST['sfResearchAsst']."</count>
+<typeID>".$sansfTypeID006."</typeID>
+<modeID>".$sansfModeID006."</modeID>
+<count>".$sansfResearchAsst."</count>
 </stats>
 <stats>
-<typeID>".$_POST['sfTypeID005']."</typeID>
-<modeID>".$_POST['sfModeID005']."</modeID>
-<count>".$_POST['sfTechnicalVal']."</count>
+<typeID>".$sansfTypeID005."</typeID>
+<modeID>".$sansfModeID005."</modeID>
+<count>".$sansfTechnicalVal."</count>
 </stats>
 <stats>
-<typeID>".$_POST['sfTypeID002']."</typeID>
-<modeID>".$_POST['sfModeID002']."</modeID>
-<count>".$_POST['sfLookUp']."</count>
+<typeID>".$sansfTypeID002."</typeID>
+<modeID>".$sansfModeID002."</modeID>
+<count>".$sansfLookUp."</count>
 </stats>
 <stats>
-<typeID>".$_POST['sfTypeID001']."</typeID>
-<modeID>".$_POST['sfModeID001']."</modeID>
-<count>".$_POST['sfDirectional']."</count>
+<typeID>".$sansfTypeID001."</typeID>
+<modeID>".$sansfModeID001."</modeID>
+<count>".$sansfDirectional."</count>
 </stats>
 <stats>
-<typeID>".$_POST['sfTypeID003']."</typeID>
-<modeID>".$_POST['sfModeID003']."</modeID>
-<count>".$_POST['sfPolicyVal']."</count>
+<typeID>".$sansfTypeID003."</typeID>
+<modeID>".$sansfModeID003."</modeID>
+<count>".$sansfPolicyVal."</count>
 </stats>
 <referral>
-<text>".$_POST['sfReferralVal']."</text>
+<text>".$sansfReferralVal."</text>
 </referral>
 <interaction>
-<topic>".$_POST['sfTopic']."</topic>
-<departmentID>".$_POST['sfDeptID']."</departmentID>
-<course>".$_POST['sfCourse']."</course>
-<staffFeedback>".$_POST['sfComment']."</staffFeedback>
-<patronType>".$_POST['sfPatronType']."</patronType>
+<topic>".$sansfTopic."</topic>
+<departmentID>".$sansfDeptID."</departmentID>
+<course>".$sansfCourse."</course>
+<staffFeedback>".$sansfComment."</staffFeedback>
+<patronType>".$sansfPatronType."</patronType>
 <patronFeedback>thanks</patronFeedback>
 </interaction>
 </Submission>
       ";
-
-
-
-
-
-
-
 
       $sf_json = array (
         'Submission' => 
