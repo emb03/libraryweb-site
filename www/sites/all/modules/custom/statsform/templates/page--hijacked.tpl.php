@@ -5030,7 +5030,7 @@ document.getElementById('sfUnitGroupID').value
                     data: {
                       'from_js': true,
                       'sfToken': document.getElementById("sfToken").dataset.value,
-                      /// 'sfToken': 'badTokenTest'
+                      ///'sfToken': 'badTokenTest',
                       'sfUnitPointID': document.getElementById("sfUnitPointID").dataset.value,
                       'sfServicePointID': document.getElementById("sfServicePointID").dataset.value,
                       'sfInputDatetime': sfDateSubmit,
@@ -5059,14 +5059,23 @@ document.getElementById('sfUnitGroupID').value
                     dataType: "json",
                     success: function (data) {
                       // Display the time from successful response
-                      if( data.wsResponse.code == 200 ) {
-                        alert("Data saved:\n  "+$("#result")[0].textContent.trim()+"\n  "+$("#servicePoint")[0].textContent.trim()+"\n  "+document.getElementById("sfUserName").dataset.value+"\n  "+document.getElementsByName("inputDatetime")[0].value+"\n  "+document.getElementById("inputTime").value);
-                        resetForms();
-                        document.getElementById("submitQuickQuestions").disabled = true;
-                      } else if( data.wsResponse.code == 500 ) {
-                        alert("Web service error 500 - Please contact the Help Desk.");
+                      bad_token ="Expired token";
+                      if( data ) {
+                        if( data.wsResponse ) {
+                          if( data.wsResponse.code == 200 ) {
+                            alert("Data saved:\n  "+$("#result")[0].textContent.trim()+"\n  "+$("#servicePoint")[0].textContent.trim()+"\n  "+document.getElementById("sfUserName").dataset.value+"\n  "+document.getElementsByName("inputDatetime")[0].value+"\n  "+document.getElementById("inputTime").value);
+                            resetForms();
+                            document.getElementById("submitQuickQuestions").disabled = true;
+                          } else if( data.wsResponse.code == 500 ) {
+                            alert("Web service error 500 - Please contact the Help Desk.");
+                          } else {
+                            alert("Web service error 000  - Please contact the Help Desk.");
+                          }
+                        } else if( data.message.includes( bad_token ) ) {
+                          alert( data.message );
+                        }
                       } else {
-                        alert("Web service error 000  - Please contact the Help Desk.");
+                        alert("Module error 000  - Please contact the Help Desk: No data available.");
                       }
                     },
                     error: function (xmlhttp) {

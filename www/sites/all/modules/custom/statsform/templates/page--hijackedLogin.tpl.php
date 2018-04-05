@@ -2672,7 +2672,7 @@
                     <div class="ui center aligned">
                       <div class="ui fluid input right icon">
                         <i id="iconTim" class="large clock icon"></i>
-                        <input id="inputTime" name="inputTime" class="timepicker" data-content="Your time selection will be held for 5 minutes - please submit your form in this period." type="text" placeholder="Date/Time" data-value="">
+                        <input id="inputTime" name="inputTime" class="timepicker" data-content="Your time selection will be held for 5 minutes - please submit your form in this period." data-position="bottom center" type="text" placeholder="Date/Time" data-value="">
                       </div>
                     </div>
                   </div>
@@ -2838,8 +2838,6 @@
 
           // make global
           var sfDateSubmit = 0;
-          // increment the time display every minute (default); extend to x minutes below when user selects time
-          var sfIntervalTime = 1;
 
           // this is displayed when switching between the Quick Questions and Research Asistance tabs
           var spMsgTxt = "Please re-select the Service Point when Switching between <em>Quick Search</em> and <em>Research Questions</em>.";
@@ -2892,6 +2890,9 @@
 
 
         //////////// the following section applies to the BOTH pages
+
+        // increment the time display every minute (default); extend to x minutes below when user selects time
+        var sfIntervalTime = 1;
 
         // used to set the yyy-mmm-dd in ISO format
         Date.prototype.yyyymmdd = function() {

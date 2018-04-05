@@ -619,7 +619,7 @@ $sansfPatronType = check_plain($_POST['sfPatronType']);
   } else {
     // Return Missing Token message
     $response = array(
-      'message' => t('Error #asdf90g: Missing token.'.$_POST['sfToken'].'  '.drupal_get_token()),
+      'message' => t('Expired token: Please log out and start over. If this problem happens again, please contact the Help Desk and report: Module Error 001'),
     );
     drupal_json_output($response);
     exit;
