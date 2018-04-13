@@ -2165,7 +2165,7 @@
                 <i class="massive exchange icon"></i>
               </div>
               <div class="ui fluid large label">
-                <center>Tap here to continue as<br><br><em><?php print( $page['sf_user_first'] ); ?> <?php print( $page['sf_user_last'] ); ?></em><br><br>Tap a button at the bottom to log in as a different user</center>
+                <center>Tap here to continue as<br><br><em><?php print( $page['sf_user_first'] ); ?> <?php print( $page['sf_user_last'] ); ?></em><br><br>Tap a button at the bottom to log in as a different user or group</center>
               </div>
             </div>
           </div>
@@ -2173,7 +2173,8 @@
 
         <div class="actions">
           <div class="ui green go button" data-value="gosavereLoginCancel">
-            Log in as a different user
+            <!-- dhc: Log out and start over -->
+            Log in as a different user or group
           </div>
           <div class="ui black deny button" data-value="savereLoginCancel">
             Cancel
