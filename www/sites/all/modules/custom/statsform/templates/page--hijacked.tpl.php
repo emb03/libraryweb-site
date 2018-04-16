@@ -5148,7 +5148,7 @@ document.getElementById('sfUnitGroupID').value
                       if( data.wsResponse.code == 200 ) {
                         alert("Data saved:\n  "+$("#result")[0].textContent.trim()+"\n  "+$("#servicePoint")[0].textContent.trim()+"\n  "+document.getElementById("sfUserName").dataset.value+"\n  "+document.getElementsByName("inputDatetime")[0].value+"\n  "+document.getElementById("inputTime").value);
                         resetForms();
-                        document.getElementById("submitQuickQuestions").disabled = true;
+                        document.getElementById("submitResearchAssistance").disabled = true;
                       } else if( data.wsResponse.code == 500 ) {
                         alert("Web service error 500 - Please contact the Help Desk.");
                       } else {
