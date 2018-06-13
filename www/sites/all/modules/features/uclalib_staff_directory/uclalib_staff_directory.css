@@ -2,8 +2,3 @@
 #views-exposed-form-staff-search-staff-search-results .views-exposed-form .views-exposed-widget {
   float: none;
 }
-
-/* #views-exposed-form-staff-default  */
-.view-staff-search .view-empty {
-  display: none;
-}
