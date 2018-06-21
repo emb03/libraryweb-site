@@ -744,7 +744,7 @@ function uclalib_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['field_staff_location']['field'] = 'field_staff_location';
   $handler->display->display_options['fields']['field_staff_location']['label'] = '';
   $handler->display->display_options['fields']['field_staff_location']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_staff_location']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_staff_location']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_staff_location']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_staff_location']['bypass_access'] = 0;
   /* Field: Content: Link */

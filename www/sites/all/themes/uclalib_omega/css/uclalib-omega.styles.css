@@ -1775,6 +1775,10 @@ td.grid-3:nth-last-child(-n+3) {
   margin-top: 2em;
 }
 
+body.page-staff .l-region--highlighted .panel-pane {
+  padding: 24px 0;
+}
+
 .ap_graphic {
   width: 38%;
 }
@@ -3465,7 +3469,9 @@ td.title {
   padding-right: 3px;
 }
 
-div.panel-pane.pane-views-panes.pane-staff-pane-staff-dept h2 {
+.panel-pane.pane-views-panes.pane-staff-pane-staff-dept h2,
+.panel-pane.pane-views-panes.pane-staff-staff-loc-list h2,
+.panel-pane.pane-views-panes.pane-staff-department-departments h2 {
   margin-top: calc(2rem - 0.142857em);
 }
 
