@@ -594,7 +594,15 @@ function uclalib_staff_directory_default_page_manager_pages() {
         'context' => 'argument_string_1',
         'not' => FALSE,
       ),
+      1 => array(
+        'name' => 'query_string_exists',
+        'settings' => array(
+          'key' => 'search_api_views_fulltext',
+        ),
+        'not' => FALSE,
+      ),
     ),
+    'logic' => 'or',
   );
   $pane->configuration = array(
     'override_pager_settings' => 0,
