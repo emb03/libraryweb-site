@@ -42,6 +42,10 @@ function uclalib_staff_directory_views_default_views() {
     ),
   );
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
   /* Field: Content: Staff Image Thumbnail */
   $handler->display->display_options['fields']['field_staff_image_thumbnail']['id'] = 'field_staff_image_thumbnail';
   $handler->display->display_options['fields']['field_staff_image_thumbnail']['table'] = 'field_data_field_staff_image_thumbnail';
@@ -101,14 +105,6 @@ function uclalib_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['field_staff_departments']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_staff_departments']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_staff_departments']['delta_reversed'] = TRUE;
-  /* Sort criterion: Content: Staff Departments (field_staff_departments) */
-  $handler->display->display_options['sorts']['field_staff_departments_tid']['id'] = 'field_staff_departments_tid';
-  $handler->display->display_options['sorts']['field_staff_departments_tid']['table'] = 'field_data_field_staff_departments';
-  $handler->display->display_options['sorts']['field_staff_departments_tid']['field'] = 'field_staff_departments_tid';
-  /* Sort criterion: Content: Staff Last Name (field_staff_last_name) */
-  $handler->display->display_options['sorts']['field_staff_last_name_value']['id'] = 'field_staff_last_name_value';
-  $handler->display->display_options['sorts']['field_staff_last_name_value']['table'] = 'field_data_field_staff_last_name';
-  $handler->display->display_options['sorts']['field_staff_last_name_value']['field'] = 'field_staff_last_name_value';
   /* Contextual filter: Content: Staff Departments (field_staff_departments) */
   $handler->display->display_options['arguments']['field_staff_departments_tid']['id'] = 'field_staff_departments_tid';
   $handler->display->display_options['arguments']['field_staff_departments_tid']['table'] = 'field_data_field_staff_departments';
@@ -127,6 +123,13 @@ function uclalib_staff_directory_views_default_views() {
   $handler->display->display_options['arguments']['field_staff_last_name_value']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_staff_last_name_value']['glossary'] = TRUE;
   $handler->display->display_options['arguments']['field_staff_last_name_value']['limit'] = '0';
+  /* Contextual filter: Taxonomy term: Term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -150,6 +153,45 @@ function uclalib_staff_directory_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Staff by Department', 'pane_staff_dept');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Staff by Department';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'name',
+      'rendered' => 0,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['label'] = 'department';
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'staff_departments' => 'staff_departments',
+    'academic_departmental_liaison' => 0,
+    'area_of_expertise' => 0,
+    'audience' => 0,
+    'blog_name' => 0,
+    'collection_endowment_initiative' => 0,
+    'events_and_exhibitions_series' => 0,
+    'events_categories' => 0,
+    'location_amenities' => 0,
+    'location_equipment' => 0,
+    'location_study_areas' => 0,
+    'media_subject' => 0,
+    'media_tags' => 0,
+    'news_categories' => 0,
+    'news_tags' => 0,
+    'resource_categories' => 0,
+    'staff_subject_areas' => 0,
+    'tags' => 0,
+  );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Staff Image Thumbnail */
   $handler->display->display_options['fields']['field_staff_image_thumbnail']['id'] = 'field_staff_image_thumbnail';
@@ -210,6 +252,44 @@ function uclalib_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['field_staff_departments']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_staff_departments']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_staff_departments']['delta_reversed'] = TRUE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Taxonomy term: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  $handler->display->display_options['sorts']['name']['relationship'] = 'term_node_tid';
+  /* Sort criterion: Content: Staff Last Name (field_staff_last_name) */
+  $handler->display->display_options['sorts']['field_staff_last_name_value']['id'] = 'field_staff_last_name_value';
+  $handler->display->display_options['sorts']['field_staff_last_name_value']['table'] = 'field_data_field_staff_last_name';
+  $handler->display->display_options['sorts']['field_staff_last_name_value']['field'] = 'field_staff_last_name_value';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '1';
+  /* Contextual filter: Content: Staff Last Name (field_staff_last_name) */
+  $handler->display->display_options['arguments']['field_staff_last_name_value']['id'] = 'field_staff_last_name_value';
+  $handler->display->display_options['arguments']['field_staff_last_name_value']['table'] = 'field_data_field_staff_last_name';
+  $handler->display->display_options['arguments']['field_staff_last_name_value']['field'] = 'field_staff_last_name_value';
+  $handler->display->display_options['arguments']['field_staff_last_name_value']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['field_staff_last_name_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_staff_last_name_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_staff_last_name_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_staff_last_name_value']['glossary'] = TRUE;
+  $handler->display->display_options['arguments']['field_staff_last_name_value']['limit'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'field_staff_departments_tid' => array(
       'type' => 'panel',
