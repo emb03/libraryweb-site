@@ -18,7 +18,6 @@ function uclalib_staff_directory_page_alter(&$page) {
     // detect if an alias needs to be created
     if ($path == $alias) {
       $location_alias = drupal_get_path_alias('node/'. arg(1));
-      dpm($location_alias, "\$location_alias");
       if ($location_alias == 'node/'. arg(1)) {
         // do not create alias
       } else {
@@ -182,7 +181,7 @@ function uclalib_staff_directory_form_views_exposed_form_alter(&$form, &$form_st
 /**
 * Create Staff Directory Gallery default block.
 */
-function uclalib_staff_directory_update_7000(&$sandbox) {
+function uclalib_staff_directory_install() {
   // Bean content info.
   $beans = array(
     'staff-directory-gallery' => array(

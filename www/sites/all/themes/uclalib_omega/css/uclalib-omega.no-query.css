@@ -3460,6 +3460,10 @@ td.title {
   float: left;
 }
 
+.l-region--top .pane-bean-staff-directory-gallery.panel-pane {
+  margin: 0;
+}
+
 .panel-pane.pane-entity-field.pane-taxonomy-term-field-department-social-links {
   float: right;
 }
