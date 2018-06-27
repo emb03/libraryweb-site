@@ -3460,12 +3460,15 @@ td.title {
   float: left;
 }
 
-.l-region--top .pane-bean-staff-directory-gallery.panel-pane {
-  margin: 0;
-}
-
+.pane-bean-staff-directory-gallery
 .panel-pane.pane-entity-field.pane-taxonomy-term-field-department-social-links {
   float: right;
+}
+
+body.page-staff .panel-sidebar-left .l-region--sidebar-left,
+body.section-staff-departments .panel-sidebar-left-golden .l-region--sidebar-left,
+body.page-node-staff .panel-sidebar-left-golden .l-region--sidebar-left {
+  padding: 0;
 }
 
 .page-taxonomy.page-taxonomy-term .pane-taxonomy-term-field-department-social-links .field__items .field__item {
