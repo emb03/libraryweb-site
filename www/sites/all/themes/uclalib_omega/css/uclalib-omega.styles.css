@@ -3466,8 +3466,7 @@ td.title {
 }
 
 body.page-staff .panel-sidebar-left .l-region--sidebar-left,
-body.section-staff-departments .panel-sidebar-left-golden .l-region--sidebar-left,
-body.page-node-staff .panel-sidebar-left-golden .l-region--sidebar-left {
+body.section-staff-departments .panel-sidebar-left-golden .l-region--sidebar-left {
   padding: 0;
 }
 

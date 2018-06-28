@@ -314,6 +314,9 @@ function uclalib_staff_directory_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Staff by Location', 'pane_staff_loc');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Staff by Location';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['grouping'] = array(
@@ -386,6 +389,11 @@ function uclalib_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['field_staff_departments']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_staff_departments']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_staff_departments']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Staff Last Name (field_staff_last_name) */
+  $handler->display->display_options['sorts']['field_staff_last_name_value']['id'] = 'field_staff_last_name_value';
+  $handler->display->display_options['sorts']['field_staff_last_name_value']['table'] = 'field_data_field_staff_last_name';
+  $handler->display->display_options['sorts']['field_staff_last_name_value']['field'] = 'field_staff_last_name_value';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Staff Location (field_staff_location) */
   $handler->display->display_options['arguments']['field_staff_location_target_id']['id'] = 'field_staff_location_target_id';
@@ -487,6 +495,10 @@ function uclalib_staff_directory_views_default_views() {
   $handler = $view->new_display('attachment', 'Attachment Glossary', 'attachment_glossary');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Browse by Last Name';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -820,17 +832,6 @@ function uclalib_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['field_staff_last_name']['id'] = 'field_staff_last_name';
   $handler->display->display_options['fields']['field_staff_last_name']['table'] = 'search_api_index_site_general_search';
   $handler->display->display_options['fields']['field_staff_last_name']['field'] = 'field_staff_last_name';
-  /* Field: Indexed Content: Alternate Names */
-  $handler->display->display_options['fields']['field_location_alt_names']['id'] = 'field_location_alt_names';
-  $handler->display->display_options['fields']['field_location_alt_names']['table'] = 'search_api_index_site_general_search';
-  $handler->display->display_options['fields']['field_location_alt_names']['field'] = 'field_location_alt_names';
-  $handler->display->display_options['fields']['field_location_alt_names']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_location_alt_names']['delta_offset'] = '0';
-  /* Field: Indexed Content: Building Name */
-  $handler->display->display_options['fields']['field_location_building']['id'] = 'field_location_building';
-  $handler->display->display_options['fields']['field_location_building']['table'] = 'search_api_index_site_general_search';
-  $handler->display->display_options['fields']['field_location_building']['field'] = 'field_location_building';
-  $handler->display->display_options['fields']['field_location_building']['exclude'] = TRUE;
   /* Field: Indexed Content: Staff Departments */
   $handler->display->display_options['fields']['field_staff_departments']['id'] = 'field_staff_departments';
   $handler->display->display_options['fields']['field_staff_departments']['table'] = 'search_api_index_site_general_search';
