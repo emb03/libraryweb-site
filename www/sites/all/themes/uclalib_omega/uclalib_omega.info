@@ -33,6 +33,7 @@ stylesheets[all][] = vertical-tabs.css
 ; ========================================
 ; Scripts
 ; ========================================
+scripts[] = js/libsurvey.js
 scripts[] = js/mobile-collapsible.js
 scripts[] = js/mobile-collapsible-panel-pane-init.js
 scripts[] = js/uclalib-omega.behaviors.js
