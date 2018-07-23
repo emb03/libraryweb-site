@@ -10,7 +10,7 @@
 function ucla_cost_survey_js_alter(&$javascript) {
   // Not actually altering existing js but seemed the most appropriate hook?
   // Add reference with no protocol, instead of hard-coding http or https, so will work under both protocols.
-  drupal_add_js('//www-test.library.ucla.edu/sites/all/themes/uclalib_omega/js/libsurvey.js', array(
+  drupal_add_js('//gitcdn.link/repo/UCLALibrary/unitproj/master/lis/libweb/libsurvey.js', array(
     'type' => 'external',
     'scope' => 'header',
     'every_page' => TRUE,
