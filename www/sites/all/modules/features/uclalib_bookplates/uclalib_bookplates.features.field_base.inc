@@ -10,64 +10,6 @@
 function uclalib_bookplates_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_bookplate_author_first_nam'
-  $field_bases['field_bookplate_author_first_nam'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_bookplate_author_first_nam',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_bookplate_author_last_name'
-  $field_bases['field_bookplate_author_last_name'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_bookplate_author_last_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
   // Exported field_base: 'field_bookplate_description'
   $field_bases['field_bookplate_description'] = array(
     'active' => 1,
@@ -75,33 +17,6 @@ function uclalib_bookplates_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_bookplate_description',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_bookplate_fund_purpose'
-  $field_bases['field_bookplate_fund_purpose'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_bookplate_fund_purpose',
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -215,13 +130,32 @@ function uclalib_bookplates_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_donor_name_bookplates'
-  $field_bases['field_donor_name_bookplates'] = array(
+  // Exported field_base: 'field_collection_donor'
+  $field_bases['field_collection_donor'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_donor_name_bookplates',
+    'field_name' => 'field_collection_donor',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'field_collection',
+    'settings' => array(
+      'hide_blank_items' => 1,
+      'path' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'field_collection',
+  );
+
+  // Exported field_base: 'field_donor_name_first'
+  $field_bases['field_donor_name_first'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_donor_name_first',
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -244,34 +178,63 @@ function uclalib_bookplates_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_image_custom_link'
-  $field_bases['field_image_custom_link'] = array(
+  // Exported field_base: 'field_donor_name_last'
+  $field_bases['field_donor_name_last'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_image_custom_link',
-    'foreign keys' => array(),
-    'indexes' => array(),
+    'field_name' => 'field_donor_name_last',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
     'locked' => 0,
-    'module' => 'link',
+    'module' => 'text',
     'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'rel' => '',
-        'target' => 'default',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
+      'max_length' => 255,
     ),
     'translatable' => 0,
-    'type' => 'link_field',
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_give_now_link'
+  $field_bases['field_give_now_link'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_give_now_link',
+    'foreign keys' => array(
+      'field_link_description_format' => array(
+        'columns' => array(
+          'field_link_description_format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'field_link_description_format' => array(
+        0 => 'field_link_description_format',
+      ),
+      'id' => array(
+        0 => 'id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'multifield',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'link_with_description',
   );
 
   return $field_bases;

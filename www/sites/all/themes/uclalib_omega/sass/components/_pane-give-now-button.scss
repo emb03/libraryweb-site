@@ -1,0 +1,64 @@
+a.give_now_sprites {
+  margin-left: 10px;
+}
+.give_now_sprites {
+  background: url(../images/sprites.png) no-repeat 0 1px;
+  overflow: hidden;
+  float: right;
+  transform: scale(1.2);
+  margin-right: -90px;
+  padding: 16px 22px;
+  color: $ucla-dark-gray;
+  border-top     : none !important;
+  box-shadow     : none !important;
+  display        : block;
+  font-size      : .9em;
+  font-weight    : 800;
+  height         : 50px !important;
+  letter-spacing : .1em;
+  line-height    : 1em !important;
+  text-decoration: none;
+  text-shadow    : none !important;
+  text-transform : uppercase;
+  width          : 107px !important;
+  padding-top    : 10px;
+  &:hover {
+    background-position: 0 -56px;
+    color: #fff;
+    text-shadow: none !important;
+    background-position: left -50px !important;
+  }
+}
+.pane-give-now-button p {
+  // text-shadow: 0 0.04em 0.02em #8d6e2d;
+  font-size: 16px;
+  text-align: center;
+  margin-top: -16px;
+  text-transform: uppercase;
+}
+.pane-give-now-button p a:hover {
+    text-decoration: none;
+}
+@media only screen and (max-width: 1150px) {
+  .give_now_sprites {
+    margin-right: 0;
+  }
+}
+  @media only screen and #{$desktop-header} and (max-width: 910px) {
+    .logged-in .pane-block.pane-system-user-menu .pane-content ul.menu li {
+      width: 50%;
+      padding: 0;
+    }
+    .logged-in .pane-block.pane-system-user-menu .pane-content ul.menu {
+      width: 165px;
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+    }
+    .logged-in .l-header .menu li:after {
+      content: "";
+    }
+    .logged-in .l-header {
+      padding-left: 15px;
+    }
+  }

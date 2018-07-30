@@ -82,7 +82,7 @@ function uclalib_news_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'trim_length' => 600,
+          'trim_length' => 3200,
         ),
         'type' => 'text_summary_or_trimmed',
         'weight' => 0,
@@ -122,7 +122,7 @@ function uclalib_news_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'event_listed_from_bean' => array(
         'label' => 'above',
@@ -148,7 +148,7 @@ function uclalib_news_field_default_field_instances() {
     'label' => 'News Thumbnail',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -172,6 +172,7 @@ function uclalib_news_field_default_field_instances() {
           'fancybox__custom_crop' => 0,
           'fancybox__large' => 0,
           'fancybox__linkit_thumb' => 0,
+          'fancybox__media_thumbnail' => 0,
           'fancybox__medium' => 0,
           'fancybox__thumbnail' => 0,
           'fancybox__thumbnail_crop' => 0,
@@ -236,7 +237,7 @@ function uclalib_news_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'event_listed_from_bean' => array(
         'label' => 'above',
@@ -276,20 +277,15 @@ function uclalib_news_field_default_field_instances() {
   // Exported field_instance: 'node-news-field_news_blog_name'
   $field_instances['node-news-field_news_blog_name'] = array(
     'bundle' => 'news',
-    'default_value' => array(
-      0 => array(
-        'tid' => 839,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => 'If this news item belongs in a blog, please select the proper Blog Name',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 9,
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'event_listed_from_bean' => array(
         'label' => 'above',
@@ -335,10 +331,9 @@ function uclalib_news_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'event_listed_from_bean' => array(
         'label' => 'above',
@@ -393,7 +388,7 @@ function uclalib_news_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'event_listed_from_bean' => array(
         'label' => 'above',
@@ -480,7 +475,7 @@ function uclalib_news_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'event_listed_from_bean' => array(
         'label' => 'above',
@@ -539,7 +534,7 @@ function uclalib_news_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 5,
+        'weight' => 3,
       ),
       'event_listed_from_bean' => array(
         'label' => 'above',
@@ -596,7 +591,7 @@ function uclalib_news_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'event_listed_from_bean' => array(
         'label' => 'above',
@@ -645,9 +640,8 @@ function uclalib_news_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 10,
       ),
       'event_listed_from_bean' => array(

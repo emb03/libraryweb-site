@@ -10,7 +10,7 @@
 function uclalib_location_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_location-comment_body'
+  // Exported field_instance: 'comment-comment_node_location-comment_body'.
   $field_instances['comment-comment_node_location-comment_body'] = array(
     'bundle' => 'comment_node_location',
     'default_value' => NULL,
@@ -43,7 +43,7 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-body'
+  // Exported field_instance: 'node-location-body'.
   $field_instances['node-location-body'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -64,6 +64,12 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -71,6 +77,18 @@ function uclalib_location_field_default_field_instances() {
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'weeks_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
@@ -113,7 +131,7 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_address'
+  // Exported field_instance: 'node-location-field_address'.
   $field_instances['node-location-field_address'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -134,7 +152,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 5,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -178,7 +214,7 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_amenities'
+  // Exported field_instance: 'node-location-field_amenities'.
   $field_instances['node-location-field_amenities'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -199,7 +235,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 16,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -222,7 +276,7 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_equipment'
+  // Exported field_instance: 'node-location-field_equipment'.
   $field_instances['node-location-field_equipment'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -243,7 +297,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 18,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -266,7 +338,78 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_alt_names'
+  // Exported field_instance: 'node-location-field_hours'.
+  $field_instances['node-location-field_hours'] = array(
+    'bundle' => 'location',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Until a better id selector UI element is build, please use the <a href="https://webservices.library.ucla.edu/calendar/units" target="_blank">calendar/units</a> webservice manually.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 24,
+      ),
+      'hours_page' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'module' => 'ucla_libhours',
+        'settings' => array(),
+        'type' => 'library_hours_today',
+        'weight' => 0,
+      ),
+      'weeks_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_hours',
+    'label' => 'Hours',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-location-field_location_alt_names'.
   $field_instances['node-location-field_location_alt_names'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -287,7 +430,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -331,7 +492,7 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_building'
+  // Exported field_instance: 'node-location-field_location_building'.
   $field_instances['node-location-field_location_building'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -352,7 +513,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -396,7 +575,7 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_destinations'
+  // Exported field_instance: 'node-location-field_location_destinations'.
   $field_instances['node-location-field_location_destinations'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -421,7 +600,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 14,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -452,7 +649,7 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_email'
+  // Exported field_instance: 'node-location-field_location_email'.
   $field_instances['node-location-field_location_email'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -473,7 +670,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'email_default',
         'weight' => 3,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -498,7 +713,7 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_floor_plan'
+  // Exported field_instance: 'node-location-field_location_floor_plan'.
   $field_instances['node-location-field_location_floor_plan'] = array(
     'bundle' => 'location',
     'deleted' => 0,
@@ -517,7 +732,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -552,11 +785,11 @@ function uclalib_location_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_image'
+  // Exported field_instance: 'node-location-field_location_image'.
   $field_instances['node-location-field_location_image'] = array(
     'bundle' => 'location',
     'deleted' => 0,
@@ -578,7 +811,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -662,7 +913,7 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_map_file'
+  // Exported field_instance: 'node-location-field_location_map_file'.
   $field_instances['node-location-field_location_map_file'] = array(
     'bundle' => 'location',
     'deleted' => 0,
@@ -682,7 +933,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'file_default',
         'weight' => 11,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -721,7 +990,7 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_map_image'
+  // Exported field_instance: 'node-location-field_location_map_image'.
   $field_instances['node-location-field_location_map_image'] = array(
     'bundle' => 'location',
     'deleted' => 0,
@@ -747,7 +1016,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'image',
         'weight' => 12,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -759,7 +1046,7 @@ function uclalib_location_field_default_field_instances() {
     'label' => 'Map thumbnail image',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => 'location_map_images',
       'file_extensions' => 'png gif jpg jpeg',
@@ -774,28 +1061,61 @@ function uclalib_location_field_default_field_instances() {
       'module' => 'image',
       'settings' => array(
         'insert' => 0,
-        'insert_absolute' => FALSE,
+        'insert_absolute' => 0,
         'insert_class' => '',
-        'insert_default' => array(
-          0 => 'auto',
-        ),
+        'insert_default' => 'auto',
         'insert_styles' => array(
-          0 => 'auto',
+          'auto' => 'auto',
+          'fancybox__category_icon' => 0,
+          'fancybox__custom_crop' => 0,
+          'fancybox__large' => 0,
+          'fancybox__linkit_thumb' => 0,
+          'fancybox__media_thumbnail' => 0,
+          'fancybox__medium' => 0,
+          'fancybox__staff_profile_photo' => 0,
+          'fancybox__staff_profile_photo_thumbnail' => 0,
+          'fancybox__thumbnail' => 0,
+          'fancybox__thumbnail_crop' => 0,
+          'fancybox__thumbnail_large' => 0,
+          'fancybox__thumbnail_small' => 0,
+          'fancybox__widescreen_crop' => 0,
+          'fancybox__widescreen_large' => 0,
+          'fancybox__widescreen_medium' => 0,
+          'fancybox__widescreen_small' => 0,
+          'icon_link' => 0,
+          'image' => 0,
+          'image_category_icon' => 0,
+          'image_custom_crop' => 0,
+          'image_large' => 0,
+          'image_linkit_thumb' => 0,
+          'image_media_thumbnail' => 0,
+          'image_medium' => 0,
+          'image_staff_profile_photo' => 0,
+          'image_staff_profile_photo_thumbnail' => 0,
+          'image_thumbnail' => 0,
+          'image_thumbnail_crop' => 0,
+          'image_thumbnail_large' => 0,
+          'image_thumbnail_small' => 0,
+          'image_widescreen_crop' => 0,
+          'image_widescreen_large' => 0,
+          'image_widescreen_medium' => 0,
+          'image_widescreen_small' => 0,
+          'link' => 0,
         ),
         'insert_width' => '',
-        'manualcrop_crop_info' => TRUE,
-        'manualcrop_default_crop_area' => TRUE,
-        'manualcrop_enable' => FALSE,
-        'manualcrop_filter_insert' => TRUE,
-        'manualcrop_inline_crop' => FALSE,
-        'manualcrop_instant_crop' => FALSE,
-        'manualcrop_instant_preview' => TRUE,
-        'manualcrop_keyboard' => TRUE,
-        'manualcrop_maximize_default_crop_area' => FALSE,
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 0,
+        'manualcrop_filter_insert' => 0,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => 0,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
         'manualcrop_require_cropping' => array(),
         'manualcrop_styles_list' => array(),
         'manualcrop_styles_mode' => 'include',
-        'manualcrop_thumblist' => FALSE,
+        'manualcrop_thumblist' => 0,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -804,7 +1124,7 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_map_link'
+  // Exported field_instance: 'node-location-field_location_map_link'.
   $field_instances['node-location-field_location_map_link'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -825,7 +1145,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 13,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -865,7 +1203,90 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_nickname'
+  // Exported field_instance: 'node-location-field_location_map_link_mobile'.
+  $field_instances['node-location-field_location_map_link_mobile'] = array(
+    'bundle' => 'location',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please enter the corresponding URL to the mobile version of the map. Use <a href="http://maps.ucla.edu/m/campus" target="_blank">http://maps.ucla.edu/m/campus</a> to search for the desired URL.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 23,
+      ),
+      'hours_page' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'weeks_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_location_map_link_mobile',
+    'label' => 'Mobile Map Link',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance: 'node-location-field_location_nickname'.
   $field_instances['node-location-field_location_nickname'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -886,7 +1307,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -930,80 +1369,7 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_oh_name'
-  $field_instances['node-location-field_location_oh_name'] = array(
-    'bundle' => 'location',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Library',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'This is the name that will be used in the tables that display these opening hours.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 15,
-      ),
-      'hours_page' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 15,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_location_oh_name',
-    'label' => 'Opening Hours alternate short name',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'full_html' => 'full_html',
-          'php_code' => 'php_code',
-          'plain_text' => 'plain_text',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'full_html' => array(
-              'weight' => 0,
-            ),
-            'php_code' => array(
-              'weight' => 11,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-          ),
-        ),
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 40,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-location-field_location_phone'
+  // Exported field_instance: 'node-location-field_location_phone'.
   $field_instances['node-location-field_location_phone'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -1024,7 +1390,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'phone',
         'weight' => 6,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1052,7 +1436,7 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_social_links'
+  // Exported field_instance: 'node-location-field_location_social_links'.
   $field_instances['node-location-field_location_social_links'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -1074,7 +1458,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1093,11 +1495,11 @@ function uclalib_location_field_default_field_instances() {
       'module' => 'multifield',
       'settings' => array(),
       'type' => 'multifield_default',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
-  // Exported field_instance: 'node-location-field_quick_links'
+  // Exported field_instance: 'node-location-field_quick_links'.
   $field_instances['node-location-field_quick_links'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -1117,7 +1519,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1162,7 +1582,7 @@ function uclalib_location_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_study_areas'
+  // Exported field_instance: 'node-location-field_study_areas'.
   $field_instances['node-location-field_study_areas'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -1183,7 +1603,25 @@ function uclalib_location_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 17,
       ),
+      'staff_locations' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'weeks_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1218,17 +1656,21 @@ function uclalib_location_field_default_field_instances() {
   t('Email');
   t('Equipment');
   t('Floor Plan');
+  t('Hours');
   t('Location Map');
   t('Location image');
   t('Map Link');
   t('Map thumbnail image');
+  t('Mobile Map Link');
   t('Nickname');
   t('Opening Hours alternate short name');
   t('Phone Number');
+  t('Please enter the corresponding URL to the mobile version of the map. Use <a href="http://maps.ucla.edu/m/campus" target="_blank">http://maps.ucla.edu/m/campus</a> to search for the desired URL.');
   t('Quick Links');
   t('Social Links');
   t('Study areas');
   t('This is the name that will be used in the tables that display these opening hours.');
+  t('Until a better id selector UI element is build, please use the <a href="https://webservices.library.ucla.edu/calendar/units" target="_blank">calendar/units</a> webservice manually.');
   t('Upload an image which represents the location.');
 
   return $field_instances;

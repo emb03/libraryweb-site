@@ -1,15 +1,10 @@
 <?php
 /**
  * @file
-<<<<<<< Updated upstream
  * Code for the UCLALIB Bookplates feature.
-=======
- * Code for the uclalib_bookplates feature.
->>>>>>> Stashed changes
  */
 
 include_once 'uclalib_bookplates.features.inc';
-
 
 /**
  * Implements hook_ctools_plugin_directory()
@@ -43,15 +38,6 @@ function uclalib_bookplates_ctools_plugin_directory($owner, $plugin_type) {
   return NULL;
 }
 
-
-/**
- * Implements hook_preprocess_node().
- */
-function uclalib_bookplates_preprocess_node(&$variables) {
-  if($variables['view_mode'] == 'bookplates_landing_page') {
-    $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__landing_page';
-  }
-}
 /**
  * Implements hook_theme().
  */
@@ -63,5 +49,194 @@ function uclalib_bookplates_theme($existing, $type, $theme, $path) {
       'template' => 'node--bookplates',
       'path' => drupal_get_path('module', 'uclalib_bookplates') . '/templates',
     ),
+    'views_view_summary_unformatted__bookplates' => array(
+      // 'render element' => 'content',
+      'base hook' => 'views_view_summary_unformatted',
+      'template' => 'views-view-summary-unformatted--bookplates',
+      'path' => drupal_get_path('module', 'uclalib_bookplates') . '/templates',
+    ),
+    
   );
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function uclalib_bookplates_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'views_exposed_form') {
+    $view = $form_state['view'];
+    if ($view->name == 'bookplates_full_content') {
+      if (isset($form['search_api_views_fulltext'])) {
+        $form['search_api_views_fulltext']['#title'] = t('Search by Donor Name');
+        $form['search_api_views_fulltext']['#title_display'] = 'invisible';
+        $form['search_api_views_fulltext']['#attributes'] = array(
+          'placeholder' => array(t('Search by Donor Name')),
+        );
+      }
+    }
+  }
+}
+
+/**
+ * Callback function for Bookplates Admin form.
+ */
+function uclalib_bookplates_admin() {
+  $form = array();
+
+  $form['uclalib_bookplates_spak_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Spak URL'),
+    '#default_value' => variable_get('uclalib_bookplates_spak_url', 'http://catalog.library.ucla.edu/vwebv/search?searchArg=SPAE+'),
+    '#size' => 100,
+    '#maxlength' => 1000,
+    '#description' => t("The spak code URL"),
+    '#required' => TRUE,
+  );
+  $form['uclalib_bookplates_spak_args'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Spak args'),
+    '#default_value' => variable_get('uclalib_bookplates_spak_args', '&searchCode=CMD&setLimit=1&recCount=50&searchType=1&page.search.search.button=Search'),
+    '#size' => 100,
+    '#maxlength' => 1000,
+    '#description' => t("The spak code arguments to be passed"),
+    '#required' => TRUE,
+  );
+  // Add the reset button.
+  $form['actions']['reset'] = array(
+    '#type' => 'submit',
+    '#value' => t('Reset to defaults'),
+    '#submit' => array('uclalib_bookplates_admin_reset_defaults'),
+  );
+  //will include submit button
+  return system_settings_form($form);
+}
+
+/**
+ * Submit handler for reset button.
+ */
+function uclalib_bookplates_admin_reset_defaults($form, &$form_state) {
+  variable_del('uclalib_bookplates_spak_args');
+  variable_del('uclalib_bookplates_spak_url');
+  drupal_set_message(t('The configuration options have been reset to their default values.'));
+}
+
+/**
+ * Implements hook_menu().
+ */
+function uclalib_bookplates_menu() {
+
+  $items = array();
+
+  $items['admin/config/content/bookplates'] = array(
+    'title' => 'Bookplates Spak Code URL',
+    'description' => 'Spak URL and arguments',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('uclalib_bookplates_admin'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function uclalib_bookplates_preprocess_views_view_field(&$variables) {
+  // provide SPAK url
+  if ($variables['field']->field == 'field_bookplates_spak_code') {
+    if (!empty($variables['output'])) {
+      $url = variable_get('uclalib_bookplates_spak_url') . $variables['output'] . variable_get('uclalib_bookplates_spak_args');
+      $variables['output'] = l(t("See all items purchased through this Endowment."), $url, array(
+        'attributes' => array(
+          'target' => '_blank',
+        )
+      ));
+    }
+  }
+  //$variables['classes_array'][] = 'your-class-here';
+  if ($variables['field']->field == 'field_collection_donor') {
+    // create array of donor names
+    $variables['donor_names'] = array();
+    $variables['output'] = '';
+
+    foreach ($variables['row']->field_field_collection_donor as $key => $value) {
+      $variables['donor_names'][] = $value;
+      $value_raw = $value['raw']['value'];
+      if (array_key_exists('field_donor_name_first', $value['rendered']['entity']['field_collection_item'][$value_raw])) {
+        $donor_name = $value['rendered']['entity']['field_collection_item'][$value_raw]['field_donor_name_first']['#items'][0]['safe_value'] . " " . $value['rendered']['entity']['field_collection_item'][$value_raw]['field_donor_name_last']['#items'][0]['safe_value'];
+      }
+    }
+
+    // render text for single donor
+    if (count($variables['row']->field_field_collection_donor) == 1) {
+      $variables['output'] = $variables['field']->last_render_text;
+    }
+    else {
+      // get all the donors
+      $donors = array();
+      foreach ($variables['row']->field_field_collection_donor as $value) {
+        $variables['donor_names'][] = $donor_name;
+        $value_raw = $value['raw']['value'];
+        $donor_name = $value['rendered']['entity']['field_collection_item'][$value_raw]['field_donor_name_first']['#items'][0]['safe_value'] . " " . $value['rendered']['entity']['field_collection_item'][$value_raw]['field_donor_name_last']['#items'][0]['safe_value'];
+        $donors[] = $donor_name;
+      }
+
+      // append the last donor with an "and" before it
+      $donor_last = array_pop($donors);
+      $variables['output'] = implode(', ', $donors) . ' and ' . $donor_last;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function uclalib_bookplates_preprocess_views_view_summary_unformatted(&$variables) {
+  if ($variables['view']->name == 'bookplates_donor_directory' && $variables['view']->current_display == 'attachment_1') {
+    // suggest using a template that adds an "All" link to the bookplates glossary display
+    $variables['theme_hook_suggestions'][] = 'views_view_summary_unformatted__bookplates';
+  }
+}
+
+/**
+ * Implements hook_update_N() - removes unneeded bookplate fields
+ */
+function uclalib_bookplates_update_7000(&$sandbox) {
+  // fields to remove
+  $fields = array(
+    'field_bookplate_author_first_nam',
+    'field_bookplate_author_last_name',
+    'field_bookplate_fund_purpose',
+    'field_image_custom_link',
+  );
+  foreach ($fields as $field) {
+    field_delete_field($field);
+    field_purge_batch();
+  }
+}
+
+/**
+ * Implements hook_update_N() - removes unneeded sorted by and donor name
+ * bookplates fields
+ */
+function uclalib_bookplates_update_7200(&$sandbox) {
+  // fields to remove
+  $fields = array(
+    'field_donor_name_bookplates',
+    'field_sort_by',
+  );
+  foreach ($fields as $field) {
+    field_delete_field($field);
+    field_purge_batch();
+  }
+}
+
+/**
+ * Updates variables for Catalog linking per DRUP-1142.
+ */
+function uclalib_bookplates_update_7201(&$sandbox) {
+  // Same variables as in uclalib_bookplates_admin()
+  variable_set('uclalib_bookplates_spak_url', 'http://catalog.library.ucla.edu/vwebv/search?searchArg=SPAE+');
+  variable_set('uclalib_bookplates_spak_args', '&searchCode=CMD&setLimit=1&recCount=50&searchType=1&page.search.search.button=Search');
 }

@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function uclalib_bookplates_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "ctools_custom_content" && $api == "ctools_content") {
+    return array("version" => "1");
+  }
   if ($module == "facetapi" && $api == "facetapi_defaults") {
     return array("version" => "1");
   }
@@ -15,9 +18,6 @@ function uclalib_bookplates_ctools_plugin_api($module = NULL, $api = NULL) {
     return array("version" => "1");
   }
   if ($module == "page_manager" && $api == "pages_default") {
-    return array("version" => "1");
-  }
-  if ($module == "panelizer" && $api == "panelizer") {
     return array("version" => "1");
   }
   if ($module == "strongarm" && $api == "strongarm") {
@@ -64,14 +64,19 @@ function uclalib_bookplates_default_search_api_index() {
       "index_directly" : 1,
       "cron_limit" : "50",
       "fields" : {
-        "field_bookplate_author_first_nam" : { "type" : "string" },
-        "field_bookplate_author_last_name" : { "type" : "string" },
+        "author" : { "type" : "integer", "entity_type" : "user" },
         "field_bookplate_description:value" : { "type" : "text" },
-        "field_bookplate_fund_purpose:value" : { "type" : "text" },
         "field_bookplates_subject_area" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_donor_name_bookplates" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_collection_donor" : {
+          "type" : "list\\u003Cinteger\\u003E",
+          "entity_type" : "field_collection_item"
+        },
+        "field_collection_donor:field_donor_name_first" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_collection_donor:field_donor_name_last" : { "type" : "list\\u003Ctext\\u003E" },
         "nid" : { "type" : "integer" },
+        "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
         "search_api_language" : { "type" : "string" },
+        "status" : { "type" : "boolean" },
         "title" : { "type" : "text" },
         "type" : { "type" : "string" }
       },
@@ -81,10 +86,10 @@ function uclalib_bookplates_default_search_api_index() {
           "weight" : "-10",
           "settings" : { "default" : "0", "bundles" : { "bookplates" : "bookplates" } }
         },
-        "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_node_status" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_panelized_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "page_manager" } },
         "uclalib_search_staff_index_fields" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_node_access" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
         "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_aggregation" : { "status" : 1, "weight" : "0", "settings" : [] },

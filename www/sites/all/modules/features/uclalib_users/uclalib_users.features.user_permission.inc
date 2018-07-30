@@ -563,6 +563,7 @@ function uclalib_users_user_default_permissions() {
   $permissions['administer page manager'] = array(
     'name' => 'administer page manager',
     'roles' => array(
+      'Lead Site Editor' => 'Lead Site Editor',
       'administrator' => 'administrator',
     ),
     'module' => 'page_manager',
@@ -1214,6 +1215,7 @@ function uclalib_users_user_default_permissions() {
   $permissions['administer permissions'] = array(
     'name' => 'administer permissions',
     'roles' => array(
+      'Lead Site Editor' => 'Lead Site Editor',
       'administrator' => 'administrator',
     ),
     'module' => 'user',
@@ -1228,6 +1230,16 @@ function uclalib_users_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'redirect',
+  );
+
+  // Exported permission: 'administer schedule source'.
+  $permissions['administer schedule source'] = array(
+    'name' => 'administer schedule source',
+    'roles' => array(
+      'Schedule Source Admin' => 'Schedule Source Admin',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'schedule_source_config',
   );
 
   // Exported permission: 'administer search_api'.
@@ -1308,6 +1320,7 @@ function uclalib_users_user_default_permissions() {
   $permissions['administer url aliases'] = array(
     'name' => 'administer url aliases',
     'roles' => array(
+      'Lead Site Editor' => 'Lead Site Editor',
       'admin_ga' => 'admin_ga',
       'administrator' => 'administrator',
     ),
@@ -1318,6 +1331,7 @@ function uclalib_users_user_default_permissions() {
   $permissions['administer users'] = array(
     'name' => 'administer users',
     'roles' => array(
+      'Lead Site Editor' => 'Lead Site Editor',
       'administrator' => 'administrator',
     ),
     'module' => 'user',
@@ -1566,6 +1580,7 @@ function uclalib_users_user_default_permissions() {
   $permissions['create destination content'] = array(
     'name' => 'create destination content',
     'roles' => array(
+      'CE_Basic' => 'CE_Basic',
       'Lead Site Editor' => 'Lead Site Editor',
       'administrator' => 'administrator',
       'content editors' => 'content editors',
@@ -1637,6 +1652,7 @@ function uclalib_users_user_default_permissions() {
   $permissions['create staff_profile content'] = array(
     'name' => 'create staff_profile content',
     'roles' => array(
+      'CE_Basic' => 'CE_Basic',
       'Lead Site Editor' => 'Lead Site Editor',
       'administrator' => 'administrator',
       'content editors' => 'content editors',
@@ -1687,6 +1703,7 @@ function uclalib_users_user_default_permissions() {
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
     'roles' => array(
+      'Lead Site Editor' => 'Lead Site Editor',
       'admin_ga' => 'admin_ga',
       'administrator' => 'administrator',
     ),
@@ -2710,9 +2727,7 @@ function uclalib_users_user_default_permissions() {
     'name' => 'edit opening hours for content',
     'roles' => array(
       'Hours' => 'Hours',
-      'Lead Site Editor' => 'Lead Site Editor',
       'administrator' => 'administrator',
-      'content editors' => 'content editors',
     ),
     'module' => 'opening_hours',
   );
@@ -3408,15 +3423,6 @@ function uclalib_users_user_default_permissions() {
     'module' => 'feeds',
   );
 
-  // Exported permission: 'use PHP for settings'.
-  $permissions['use PHP for settings'] = array(
-    'name' => 'use PHP for settings',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'php',
-  );
-
   // Exported permission: 'use PHP to import nodes'.
   $permissions['use PHP to import nodes'] = array(
     'name' => 'use PHP to import nodes',
@@ -3444,6 +3450,18 @@ function uclalib_users_user_default_permissions() {
       'content editors' => 'content editors',
     ),
     'module' => 'manualcrop',
+  );
+
+  // Exported permission: 'use media wysiwyg'.
+  $permissions['use media wysiwyg'] = array(
+    'name' => 'use media wysiwyg',
+    'roles' => array(
+      'CE_Basic' => 'CE_Basic',
+      'Lead Site Editor' => 'Lead Site Editor',
+      'administrator' => 'administrator',
+      'content editors' => 'content editors',
+    ),
+    'module' => 'media_wysiwyg',
   );
 
   // Exported permission: 'use page manager'.

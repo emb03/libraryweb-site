@@ -4,10 +4,6 @@ Patches to Drupal Core
 Patches to Contrib modules
 **************************
 
-Bean - Panelizer support for Bean
-https://drupal.org/node/2161535
-https://drupal.org/files/issues/bean-panelizer_support-2161535-9.patch
-
 CKeditor - Make CKEditor plugin system modular and clean
 https://www.drupal.org/node/2159403
 https://www.drupal.org/files/issues/make_ckeditor_plugin-2159403-90.patch
@@ -15,28 +11,25 @@ https://www.drupal.org/files/issues/make_ckeditor_plugin-2159403-90.patch
 Ctools - hide empty page title pane when wrapper tag is used
 https://drupal.org/node/2265451
 https://drupal.org/files/issues/ctools-hide-empty-page-title-with-wrapper-tag-2265451.patch
+Ctools - ctools calling missing file
+https://www.drupal.org/node/1775612
+https://www.drupal.org/files/plugin-load-use-include-1775612-3.patch
+
+Entity View Modes - Features Module Support
+https://www.drupal.org/node/1425620
+https://www.drupal.org/files/1425620-features-support_3.patch
 
 Facetapi_bonus - add plugin filter to hide facet count.
 https://drupal.org/node/2266717
 https://drupal.org/files/issues/facetapi-bonus-hide-count-2266717-1.patch
 
-Media - Blank WYSWIG with existing multiple Media content
-https://www.drupal.org/node/2317519
-https://www.drupal.org/files/issues/blank_wyswig_with-2317519-12.patch
-
-** The folowing media patches were applied to 7.x-2.0-alpha3 but are no longer present – 4/21/2015 **
-TODO: check if these Media module patches are still needed: 
-Media - Allow custom file view modes for WYSIWYG display
-https://www.drupal.org/node/1792738
-https://www.drupal.org/files/issues/media-custom_view_modes_for_wysiwyg-1792738-139.patch
-
-Media - Custom wrapper breaks tokens with CKEditor >=4.0 without widget plugin
-https://www.drupal.org/node/2177893
-https://www.drupal.org/files/issues/media-ckeditor4-media-plugin-2177893-13.patch
-
-Media - Media inline filter: Delegate "float" to outer element
-https://www.drupal.org/node/2018075
-https://www.drupal.org/files/issues/media_filter_float_delegate-2018075-8.patch
+Google Tag Manager
+* Add aria-hidden state to GTM noscript snippet
+  - https://www.drupal.org/node/2878894
+  - https://www.drupal.org/files/issues/2878894--aria-hidden-noscript--1.patch
+* Fatal error: Can't use function return value in write context
+  - https://www.drupal.org/node/2911657
+  - https://www.drupal.org/files/issues/2911657_variable_php_error.patch
 
 Panels - Allow users to manually control window title.
 https://drupal.org/node/2262173
@@ -46,7 +39,3 @@ Redirect - Enable wordpress_migrate to function properly.
 Support migrate module: Destination handler class
 https://www.drupal.org/node/1116408
 https://www.drupal.org/files/issues/redirect-migrate-support-1116408-92.patch
-
-References Dialog - Recoverable fatal error: Argument 3 passed to l() must be an array, string given with references_dialogs
-https://www.drupal.org/node/2315905
-https://www.drupal.org/files/issues/references_dialog_fix_theme_links-2315905-5.patch.patch

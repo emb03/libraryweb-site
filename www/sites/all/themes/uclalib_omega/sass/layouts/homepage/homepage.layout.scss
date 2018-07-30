@@ -1,72 +1,120 @@
+@import "compass";
+@import "breakpoint";
 @import "singularitygs";
 @import "abstractions/faux-columns";
+@import "abstractions/clearfix";
+@import "variables/breakpoints";
+@import "variables/colors";
 
-// 3-column assymetrical grid w/ fixed 30px gutters between columns.
-$grid: 11 5;
-$gutters: 40px;
-$gutter-styles: 'split'; // gitter is split between left and right of each col.
 
 .l-region {
   @include box-sizing(border-box);
 }
 
-/**
- * Main columns and separators.
- */
-@include layout($grid) {
-  .panel-homepage {
-    //@include background-grid($color: blue);
-    @include clearfix;
-    position: relative; // Needed for faux-column.
+.panel-homepage {
+  //@include background-grid($color: blue);
+  @include clearfix;
+  position: relative; // Needed for faux-column.
+}
+
+.homepage-top {
+  padding-top: 25px;
+}
+
+.homepage-top, .homepage-bottom {
+  clear: both;
+}
+
+.l-region--top-left-bottom-after {
+  margin-top: 25px;
+  clear: both;
+}
+
+.page-homepage.homepage .views-field-field-linklist-links .field-content ul {
+    padding: 0;
+    margin: 0;
+  li {
+    list-style-type: none;
+    padding-top:5px;
   }
+}
 
-  .homepage-top {
-    padding-top: 25px;
+.page-homepage.homepage {
+  .icon.icomoon.icon-clicc-computer, .icon.icomoon.icon-collaboration-pod, .icon.icomoon.icon-copy, .icon.icomoon.icon-more {
+    float: left;
+    padding-right: 5px;
+    font-size: 21px;
+    margin-top: -5px;
   }
-  .homepage-top, .homepage-bottom {
-    clear: both;
+}
+.no-bullets ul {
+  list-style: outside none none;
+  padding: 0;
+  li {
+    padding-bottom: 13px;
   }
+}
+@media #{$desk-only} {
 
-  // Span 1 column, starting at the 1st column
-  .homepage-top-left,
-  .l-region--bottom-left {
-    @include grid-span(1, 1);
-    padding-left: 0; // kill left rail gutter.
+  // 2-column assymetrical grid w/ fixed 20px gutters between columns.
+  @include add-grid(11 5);
+  @include add-gutter(40px);
+  @include add-gutter-style('split'); // gutter is split between left and right of each col.
 
-    // Full-height faux-column for adding a background color in the theme.
-    $left: column-span(0, 1); // Span 0 columns, starting from 1st column.
-    $width: column-span(1, 1); // Span 1 column, starting from 1st column.
-    @include faux-column($left, $width/* , #eee */);
-  }
+  /**
+   * Main columns and separators.
+   */
+  @include layout(11 5) {
 
-  // Span 1 column, starting at the 2nd column
-  .homepage-top-right-sidebar,
-  .l-region--bottom-right {
-    @include grid-span(1, 2);
-    padding-right: 0; // kill right rail gutter.
+    // Span 1 column, starting at the 1st column
+    .homepage-top-left,
+    .l-region--bottom-left {
+      @include grid-span(1, 1);
+      padding-left: 0; // kill left rail gutter.
 
-    // Full-height faux-column for adding a background color in the theme.
-    $left: column-span(1, 1); // Span 1 columns, starting from 1st column.
-    $width: column-span(1, 2); // Span 1 columns, starting from 2nd column.
-    @include faux-column($left, $width/* , #ddd */);
+      // Full-height faux-column for adding a background color in the theme.
+      $left: column-span(0, 1); // Span 0 columns, starting from 1st column.
+      $width: column-span(1, 1); // Span 1 column, starting from 1st column.
+      @include faux-column($left, $width/* , #eee */);
+    }
+
+    // Span 1 column, starting at the 2nd column
+    .homepage-top-right-sidebar,
+    .l-region--bottom-right {
+      @include grid-span(1, 2);
+      padding-right: 0; // kill right rail gutter.
+
+      // Full-height faux-column for adding a background color in the theme.
+      $left: column-span(1, 1); // Span 1 columns, starting from 1st column.
+      $width: column-span(1, 2); // Span 1 columns, starting from 2nd column.
+      @include faux-column($left, $width/* , #ddd */);
+    }
   }
 }
 
 /**
  * Embedded regions inside columns.
  */
+@media #{$lap-desk-only} {
 
-// Adjust this nested grid for a two column layout.
-@include layout(2) {
-  // Span 1 column, starting at the 1st column
-  .l-region--top-left-bottom-left {
-    @include grid-span(1, 1);
-    padding-left: 0;
+  .homepage-top-left {
+    @include clearfix();
   }
 
-  // Span 1 column, starting at the 1st column
-  .l-region--top-left-bottom-right {
-    @include grid-span(1, 2);
-    padding-right: 0;
+  @include layout(2) {
+    // Span 1 column, starting at the 1st column
+    .l-region--top-left-bottom-left {
+      @include grid-span(1, 1);
+      padding-left: 0;
+    }
+
+    // Span 1 column, starting at the 1st column
+    .l-region--top-left-bottom-right {
+      @include grid-span(1, 2);
+      padding-right: 0;
+    }
+  }
+  .page-homepage.homepage .icon.icomoon.icon-collaboration-pod {
+    margin-top:0;
   }
 }

@@ -102,25 +102,25 @@ function uclalib_bookplates_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'default_opening_hours' => array(
-          'weight' => '8',
+          'weight' => '6',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '12',
+          'weight' => '9',
         ),
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '7',
         ),
         'xmlsitemap' => array(
-          'weight' => '11',
+          'weight' => '8',
         ),
       ),
       'display' => array(
         'default_opening_hours' => array(
           'teaser' => array(
-            'weight' => '9',
+            'weight' => '5',
             'visible' => FALSE,
           ),
           'default' => array(
@@ -154,7 +154,7 @@ function uclalib_bookplates_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_bookplates';
   $strongarm->value = array(
-    0 => 'main-menu',
+    0 => 'menu-bookplates',
   );
   $export['menu_options_bookplates'] = $strongarm;
 
@@ -162,7 +162,7 @@ function uclalib_bookplates_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_bookplates';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'menu-bookplates:3814';
   $export['menu_parent_bookplates'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -185,6 +185,20 @@ function uclalib_bookplates_strongarm() {
   $strongarm->name = 'node_submitted_bookplates';
   $strongarm->value = 0;
   $export['node_submitted_bookplates'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_bookplates_pattern';
+  $strongarm->value = 'bookplates/[node:title]';
+  $export['pathauto_node_bookplates_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_collection_endowment_initiative_pattern';
+  $strongarm->value = 'bookplates/[term:name]';
+  $export['pathauto_taxonomy_term_collection_endowment_initiative_pattern'] = $strongarm;
 
   return $export;
 }

@@ -54,12 +54,13 @@ function uclalib_homepage_default_page_manager_pages() {
       'top_left_main' => NULL,
       'top_left_bottom_left' => NULL,
       'top_left_bottom_right' => NULL,
+      'top_left_bottom_after' => NULL,
       'top_right_sidebar' => NULL,
       'bottom_left' => NULL,
       'bottom_right' => NULL,
       'top' => NULL,
     ),
-    'bottom_left' => array(
+    'top_left_bottom_after' => array(
       'style' => 'tabs',
     ),
   );
@@ -71,7 +72,7 @@ function uclalib_homepage_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-97526c73-2b2d-4c6e-b996-4400d4747414';
-    $pane->panel = 'bottom_left';
+    $pane->panel = 'top_left_bottom_after';
     $pane->type = 'block';
     $pane->subtype = 'bean-upcoming-events-homepage';
     $pane->shown = TRUE;
@@ -90,10 +91,10 @@ function uclalib_homepage_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '97526c73-2b2d-4c6e-b996-4400d4747414';
     $display->content['new-97526c73-2b2d-4c6e-b996-4400d4747414'] = $pane;
-    $display->panels['bottom_left'][0] = 'new-97526c73-2b2d-4c6e-b996-4400d4747414';
+    $display->panels['top_left_bottom_after'][0] = 'new-97526c73-2b2d-4c6e-b996-4400d4747414';
     $pane = new stdClass();
     $pane->pid = 'new-ec681041-0a57-47c4-80dd-9b52a8f3acd4';
-    $pane->panel = 'bottom_left';
+    $pane->panel = 'top_left_bottom_after';
     $pane->type = 'block';
     $pane->subtype = 'bean-homepage-news';
     $pane->shown = TRUE;
@@ -112,7 +113,7 @@ function uclalib_homepage_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = 'ec681041-0a57-47c4-80dd-9b52a8f3acd4';
     $display->content['new-ec681041-0a57-47c4-80dd-9b52a8f3acd4'] = $pane;
-    $display->panels['bottom_left'][1] = 'new-ec681041-0a57-47c4-80dd-9b52a8f3acd4';
+    $display->panels['top_left_bottom_after'][1] = 'new-ec681041-0a57-47c4-80dd-9b52a8f3acd4';
     $pane = new stdClass();
     $pane->pid = 'new-a6495e16-112d-4a6a-9c90-9e8412d95a0a';
     $pane->panel = 'top_left_bottom_left';
@@ -133,7 +134,7 @@ function uclalib_homepage_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'pane-todays-hours',
+      'css_class' => 'pane-todays-hours mobile-collapsible',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -159,7 +160,10 @@ function uclalib_homepage_default_page_manager_pages() {
       ),
       'style' => 'border-blue',
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'mobile-collapsible',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -167,30 +171,34 @@ function uclalib_homepage_default_page_manager_pages() {
     $display->content['new-54cf3e3c-a95f-484d-8bc8-0a72e3c0e3d2'] = $pane;
     $display->panels['top_left_bottom_right'][0] = 'new-54cf3e3c-a95f-484d-8bc8-0a72e3c0e3d2';
     $pane = new stdClass();
-    $pane->pid = 'new-6c94d951-6cfe-47a7-b021-d603823cd012';
+    $pane->pid = 'new-b7a1603e-c68e-4a4f-998f-26bae301d717';
     $pane->panel = 'top_left_bottom_right';
     $pane->type = 'block';
-    $pane->subtype = 'bean-find-printers-copiers-and-other-';
+    $pane->subtype = 'bean-homepage-equipment-block';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 0,
       'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => array(
-        'title_alignment' => 'center',
+        'title_alignment' => 'left',
       ),
       'style' => 'border-blue',
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'mobile-collapsible',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '6c94d951-6cfe-47a7-b021-d603823cd012';
-    $display->content['new-6c94d951-6cfe-47a7-b021-d603823cd012'] = $pane;
-    $display->panels['top_left_bottom_right'][1] = 'new-6c94d951-6cfe-47a7-b021-d603823cd012';
+    $pane->uuid = 'b7a1603e-c68e-4a4f-998f-26bae301d717';
+    $display->content['new-b7a1603e-c68e-4a4f-998f-26bae301d717'] = $pane;
+    $display->panels['top_left_bottom_right'][1] = 'new-b7a1603e-c68e-4a4f-998f-26bae301d717';
     $pane = new stdClass();
     $pane->pid = 'new-768d72ca-cc3f-49d5-9995-d55c357ef337';
     $pane->panel = 'top_left_main';
